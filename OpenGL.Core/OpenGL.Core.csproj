@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AEF49083-D5A5-4E78-A828-C710E5AA633F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenGL.Core</RootNamespace>
+    <AssemblyName>OpenGL.Core</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\OpenGL.Core.XML</DocumentationFile>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\OpenGL.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Defines\glGraphicsResetStatus.cs" />
+    <Compile Include="Defines\glPixelStoreParameter.cs" />
+    <Compile Include="gl.Defines.cs" />
+    <Compile Include="Defines\glProgramStageMask.cs" />
+    <Compile Include="Defines\glClientWaitSyncFlag.cs" />
+    <Compile Include="Defines\glWaitSyncFlag.cs" />
+    <Compile Include="Defines\glMemoryBarrierMask.cs" />
+    <Compile Include="Defines\glBufferStorageFlag.cs" />
+    <Compile Include="Defines\glMapBufferRangeAccess.cs" />
+    <Compile Include="Defines\glBufferMask.cs" />
+    <Compile Include="Defines\glContextFlag.cs" />
+    <Compile Include="Defines\glSyncFlag.cs" />
+    <Compile Include="Defines\glContextProfileMask.cs" />
+    <Compile Include="Defines\glHintMode.cs" />
+    <Compile Include="Defines\glHintTarget.cs" />
+    <Compile Include="Defines\glPolygonMode.cs" />
+    <Compile Include="Defines\glFace.cs" />
+    <Compile Include="Defines\glFrontFaceDirection.cs" />
+    <Compile Include="Defines\glTexture1DProxyTarget.cs" />
+    <Compile Include="Defines\glTexture1DTarget.cs" />
+    <Compile Include="Defines\glTexture2DProxyTarget.cs" />
+    <Compile Include="Defines\glTexture2DTarget.cs" />
+    <Compile Include="Defines\glTexture3DProxyTarget.cs" />
+    <Compile Include="Defines\glTexture3DTarget.cs" />
+    <Compile Include="Defines\glTextureProxyTarget.cs" />
+    <Compile Include="Defines\glTextureTarget.cs" />
+    <Compile Include="Defines\glGetBooleanIndexedParameter.cs" />
+    <Compile Include="Defines\glGetBooleanParameter.cs" />
+    <Compile Include="Defines\glGetFloatIndexedParameter.cs" />
+    <Compile Include="Defines\glGetFloatParameter.cs" />
+    <Compile Include="Defines\glGetInteger64IndexedParameter.cs" />
+    <Compile Include="Defines\glGetInteger64Parameter.cs" />
+    <Compile Include="Defines\glGetIntegerIndexedParameter.cs" />
+    <Compile Include="Defines\glGetIntegerParameter.cs" />
+    <Compile Include="Defines\glGetStringIndexedParameter.cs" />
+    <Compile Include="Defines\glGetStringParameter.cs" />
+    <Compile Include="Defines\glInternalFormat.cs" />
+    <Compile Include="Defines\glPixelDataType.cs" />
+    <Compile Include="Defines\glPixelFormat.cs" />
+    <Compile Include="Defines\glBuffer.cs" />
+    <Compile Include="Defines\glGLSLType.cs" />
+    <Compile Include="Defines\glCapability.cs" />
+    <Compile Include="Defines\glIndexedCapability.cs" />
+    <Compile Include="Defines\glDrawElementsType.cs" />
+    <Compile Include="Defines\glDrawMode.cs" />
+    <Compile Include="Defines\glTextureUnit.cs" />
+    <Compile Include="Defines\glFunc.cs" />
+    <Compile Include="Defines\glLogicOpMode.cs" />
+    <Compile Include="Defines\glBlendEquationMode.cs" />
+    <Compile Include="Defines\glBlendFuncFactor.cs" />
+    <Compile Include="Defines\glStencilOpMode.cs" />
+    <Compile Include="Defines\glClampColorMode.cs" />
+    <Compile Include="Defines\glClampColorTarget.cs" />
+    <Compile Include="Defines\glShaderType.cs" />
+    <Compile Include="Defines\glBufferTarget.cs" />
+    <Compile Include="Defines\glTexBufferTarget.cs" />
+    <Compile Include="Defines\glDebugSeverity.cs" />
+    <Compile Include="Defines\glDebugSource.cs" />
+    <Compile Include="Defines\glDebugType.cs" />
+    <Compile Include="Defines\glShaderPrecisionType.cs" />
+    <Compile Include="Defines\glSyncCondition.cs" />
+    <Compile Include="Defines\glSyncObjectType.cs" />
+    <Compile Include="Defines\glSyncParameter.cs" />
+    <Compile Include="Defines\glSyncStatus.cs" />
+    <Compile Include="Defines\glTransformFeedbackTarget.cs" />
+    <Compile Include="Defines\glGeometryInputType.cs" />
+    <Compile Include="Defines\glGeometryOutputType.cs" />
+    <Compile Include="Defines\glTessGenMode.cs" />
+    <Compile Include="Defines\glQueryObjectParameter.cs" />
+    <Compile Include="Defines\glQueryParameter.cs" />
+    <Compile Include="Defines\glQueryTarget.cs" />
+    <Compile Include="Defines\glTextureSwizzleValue.cs" />
+    <Compile Include="Defines\glImageCompatiblityClass.cs" />
+    <Compile Include="Defines\glTextureWrapMode.cs" />
+    <Compile Include="Defines\glFilter.cs" />
+    <Compile Include="Defines\glViewCompatibilityClass.cs" />
+    <Compile Include="Defines\glFramebufferParameter.cs" />
+    <Compile Include="Defines\glPatchParameter.cs" />
+    <Compile Include="Defines\glComponentType.cs" />
+    <Compile Include="Defines\glTexLevelParameter.cs" />
+    <Compile Include="Defines\glProgramInterface.cs" />
+    <Compile Include="Defines\glProgramInterfaceParameter.cs" />
+    <Compile Include="Defines\glUniformParameter.cs" />
+    <Compile Include="Defines\glImageFormatCompatibilityType.cs" />
+    <Compile Include="Defines\glColorEncoding.cs" />
+    <Compile Include="Defines\glClientWaitSyncResult.cs" />
+    <Compile Include="Defines\glRenderbufferParameter.cs" />
+    <Compile Include="Defines\glErrorCode.cs" />
+    <Compile Include="Defines\glDepthStencilTextureMode.cs" />
+    <Compile Include="Defines\glVertexAttribType.cs" />
+    <Compile Include="Defines\glTessGenSpacing.cs" />
+    <Compile Include="Defines\glVertexAttribPointerParameter.cs" />
+    <Compile Include="Defines\glBufferUsage.cs" />
+    <Compile Include="Defines\glFramebufferAttachmentObjectType.cs" />
+    <Compile Include="Defines\glFramebufferAttachmentParameter.cs" />
+    <Compile Include="Defines\glGetPointerParameter.cs" />
+    <Compile Include="Defines\glPointParameter.cs" />
+    <Compile Include="Defines\glOrientationOrigin.cs" />
+    <Compile Include="Defines\glTextureCompareMode.cs" />
+    <Compile Include="Defines\glAccess.cs" />
+    <Compile Include="Defines\glObjectNamespaceIdentifier.cs" />
+    <Compile Include="Defines\glRenderbufferTarget.cs" />
+    <Compile Include="Defines\glFramebufferTarget.cs" />
+    <Compile Include="Defines\glGetInternalformatResult.cs" />
+    <Compile Include="Defines\glProvokingVertexMode.cs" />
+    <Compile Include="Defines\glImplementationColorReadFormat.cs" />
+    <Compile Include="Defines\glImplementationColorReadType.cs" />
+    <Compile Include="Defines\glMultisampleParameter.cs" />
+    <Compile Include="Defines\glShaderParameter.cs" />
+    <Compile Include="Defines\glGetBufferParameter.cs" />
+    <Compile Include="Defines\glAtomicCounterBufferParameter.cs" />
+    <Compile Include="Defines\glConditionalRenderMode.cs" />
+    <Compile Include="Defines\glFramebufferStatus.cs" />
+    <Compile Include="Defines\glInternalformatParameter.cs" />
+    <Compile Include="Defines\glProgramParameter.cs" />
+    <Compile Include="Defines\glProgramPipelineParameter.cs" />
+    <Compile Include="Defines\glProgramResourceProperty.cs" />
+    <Compile Include="Defines\glProgramStageParameter.cs" />
+    <Compile Include="Defines\glSubroutineUniformParameter.cs" />
+    <Compile Include="Defines\glTextureParameter.cs" />
+    <Compile Include="Defines\glTransformFeedbackBufferMode.cs" />
+    <Compile Include="Defines\glUniformBlockParameter.cs" />
+    <Compile Include="Defines\glVertexAttribParameter.cs" />
+    <Compile Include="gl.Version_1_0.cs" />
+    <Compile Include="gl.Version_1_1.cs" />
+    <Compile Include="gl.Version_1_2.cs" />
+    <Compile Include="gl.Version_1_3.cs" />
+    <Compile Include="gl.Version_1_4.cs" />
+    <Compile Include="gl.Version_1_5.cs" />
+    <Compile Include="gl.Version_2_0.cs" />
+    <Compile Include="gl.Version_3_0.cs" />
+    <Compile Include="gl.Version_3_1.cs" />
+    <Compile Include="gl.Version_3_2.cs" />
+    <Compile Include="gl.Version_3_3.cs" />
+    <Compile Include="gl.Version_4_0.cs" />
+    <Compile Include="gl.Version_4_1.cs" />
+    <Compile Include="gl.Version_4_2.cs" />
+    <Compile Include="gl.Version_4_3.cs" />
+    <Compile Include="gl.Version_4_4.cs" />
+    <Compile Include="gl.Version_4_5.cs" />
+    <Compile Include="Defines\glClipDepthMode.cs" />
+    <Compile Include="Defines\glContextReleaseBehavior.cs" />
+    <Compile Include="Defines\glResetNotificationStrategy.cs" />
+    <Compile Include="Defines\glTransformFeedbackParameter.cs" />
+    <Compile Include="Defines\glVertexArrayParameter.cs" />
+    <Compile Include="Structs\glDrawArraysIndirectCommand.cs" />
+    <Compile Include="Structs\glDrawElementsIndirectCommand.cs" />
+    <Compile Include="gl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gl.Version_2_1.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
