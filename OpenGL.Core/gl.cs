@@ -29,14 +29,23 @@ using System.Security;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// OpenGLCore is for use with OpenGL core profile implementations.
+	/// OpenGL.Core's gl class is intented for the use with OpenGL core profile implementations.
 	/// </summary>
 	/// <remarks>
-	/// OpenGLCore includes only APIs in the latest OpenGL core profile
-	/// implementation together with APIs and newer ARB extensions which
-	/// can be supported by the core profile. It does not, and never will
-	/// include functionality removed from the core profile, such as
-	/// fixed-function vertex and fragment processing.
+	/// <para>OpenGL.Core includes only the API of the latest OpenGL core profile. It does
+	/// not, and never will, include functionality removed from the core profile, such as
+	/// fixed-function vertex and fragment processing.</para>
+	/// <para>To load OpenGL functions not available via interop binding you have call
+	/// <see cref="LoadOpenGL"/> while the rendering context is made current.</para>
+	/// <para>The class is currently intended to be used with Microsoft Windows OS and the
+	/// Net-Framework. It uses the Win32 WGL API to load the OpenGL functions of the core
+	/// profile that aren't available in Microsoft's OpenGL32.dll, which is basicly
+	/// everything newer than OpenGL version 1.1. To adapt the class to a different OS and/or
+	/// runtime environment you'll have to change the code at certain points if necessary.</para>
+	/// <para>1. Change the name of the dll in <b>gl.DLLName</b> constant. (see gl.Defines.cs)</para>
+	/// <para>2. Change the method <b>gl.GetAddress&lt;TDelegate&gt;</b> to use your function loading mechanism. (see gl.cs)</para>
+	/// <para>3. Add/remove the function available via interop binding. (<b>[DllImport]</b>)</para>
+	/// <para>4. Add/remove the function not available via interop binding. (loaded with <b>gl.GetAddress&lt;&gt;</b>)</para>
 	/// </remarks>
 	[SuppressUnmanagedCodeSecurity()]
 	public static partial class gl
@@ -54,7 +63,7 @@ namespace OpenGL.Core
 		#endregion
 
 		/// <summary>
-		/// Loads the available functions of the OpenGL core profile of the currently active OpenGL context into the static delegates of <see cref="gl"/>.
+		/// Loads the available functions of the OpenGL core profile of the currently active OpenGL rendering context into the static delegates of <see cref="gl"/>.
 		/// </summary>
 		/// <remarks>
 		/// The OpenGL context must be made current before and still be current when this funtion is called.

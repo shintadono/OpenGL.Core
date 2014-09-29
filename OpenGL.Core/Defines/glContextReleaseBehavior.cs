@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Enum returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])"/> for <see cref="glGetIntegerParameter.CONTEXT_RELEASE_BEHAVIOR"/>.
+	/// Enum returned by <see cref="O:OpenGL.Core.gl.GetIntegerv"/> for <see cref="glGetIntegerParameter.CONTEXT_RELEASE_BEHAVIOR"/>.
 	/// </summary>
 	public enum glContextReleaseBehavior : uint
 	{

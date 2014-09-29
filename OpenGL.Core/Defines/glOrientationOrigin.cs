@@ -26,9 +26,9 @@ namespace OpenGL.Core
 {
 	/// <summary>
 	/// Enum for orientation origin for point sprites.
-	/// Set with <see cref="gl.PointParameteri(glPointParameter, glOrientationOrigin)"/> using <see cref="glPointParameter.POINT_SPRITE_COORD_ORIGIN"/>, or
+	/// Set with <see cref="O:OpenGL.Core.gl.PointParameteri">gl.PointParameteri</see> using <see cref="glPointParameter.POINT_SPRITE_COORD_ORIGIN"/>, or
 	/// <see cref="gl.ClipControl"/>.
-	/// Get with <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see> using <see cref="glGetIntegerParameter.POINT_SPRITE_COORD_ORIGIN"/>, or
+	/// Get with <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> using <see cref="glGetIntegerParameter.POINT_SPRITE_COORD_ORIGIN"/>, or
 	/// <see cref="glGetIntegerParameter.CLIP_ORIGIN"/>.
 	/// </summary>
 	public enum glOrientationOrigin : uint

@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Enum used by <see cref="gl.BufferData(glBufferTarget, int, System.IntPtr, glBufferUsage)">gl.BufferData</see>.
+	/// Enum used by <see cref="O:OpenGL.Core.gl.BufferData">gl.BufferData</see>.
 	/// </summary>
 	public enum glBufferUsage : uint
 	{

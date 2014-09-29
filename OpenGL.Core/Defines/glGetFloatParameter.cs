@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Value for <see cref="gl.GetFloatv(glGetFloatParameter, float[])">gl.GetFloatv</see> and <see cref="gl.GetDoublev(glGetFloatParameter, double[])">gl.GetDoublev</see>.
+	/// Value for <see cref="O:OpenGL.Core.gl.GetFloatv">gl.GetFloatv</see> and <see cref="O:OpenGL.Core.gl.GetDoublev">gl.GetDoublev</see>.
 	/// </summary>
 	public enum glGetFloatParameter : uint
 	{

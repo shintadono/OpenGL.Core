@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OpenGL.Core")]
 [assembly: AssemblyCopyright("Copyright © 2014 by the Authors")]
-[assembly: AssemblyTrademark("OpenGL is a trademark for a specific application programming interface software from SGI.")]
+[assembly: AssemblyTrademark("OpenGL is a registered trademark, of Silicon Graphics International.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -20,3 +20,12 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("6D7B914B-664C-41DF-80DC-A22756A94A2A")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version
+//      Build Number
+//      Revision
+[assembly: AssemblyVersion("4.5.0.0")]
+[assembly: AssemblyFileVersion("4.5.0.0")]

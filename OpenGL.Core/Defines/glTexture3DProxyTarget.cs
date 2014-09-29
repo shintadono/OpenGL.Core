@@ -25,9 +25,9 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Target for <see cref="gl.TexImage3D(glTexture3DProxyTarget, int, glInternalFormat, int, int, int, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.TexImage3D</see>,
+	/// Target for <see cref="O:OpenGL.Core.gl.TexImage3D">gl.TexImage3D</see>,
 	/// <see cref="gl.TexImage3DMultisample"/>,
-	/// <see cref="gl.CompressedTexImage3D(glTexture3DProxyTarget, int, glInternalFormat, int, int, int, int, int, byte[])">gl.CompressedTexImage3D</see>,
+	/// <see cref="O:OpenGL.Core.gl.CompressedTexImage3D">gl.CompressedTexImage3D</see>,
 	/// <see cref="gl.TexStorage3D"/> and <see cref="gl.TexStorage3DMultisample"/>.
 	/// </summary>
 	public enum glTexture3DProxyTarget : uint

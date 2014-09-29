@@ -27,7 +27,7 @@ using System;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Bitmask returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.CONTEXT_PROFILE_MASK"/>).
+	/// Bitmask returned by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.CONTEXT_PROFILE_MASK"/>.
 	/// </summary>
 	[Flags]
 	public enum glContextProfileMask : uint

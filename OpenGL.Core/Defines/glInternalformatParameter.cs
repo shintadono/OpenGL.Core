@@ -101,13 +101,13 @@ namespace OpenGL.Core
 		GEOMETRY_TEXTURE=0x829E,
 
 		/// <summary>
-		/// The implementation-preferred format to pass to <see cref="gl.GetTexImage(glTextureProxyTarget, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.GetTexImage</see>
+		/// The implementation-preferred format to pass to <see cref="O:OpenGL.Core.gl.GetTexImage">gl.GetTexImage</see>
 		/// when querying texture image data from this resource is returned as <see cref="glPixelFormat"/> or <see cref="gl.NONE"/> if the resource does not support this operation.
 		/// </summary>
 		GET_TEXTURE_IMAGE_FORMAT=0x8291,
 
 		/// <summary>
-		/// The implementation-preferred data type to pass to <see cref="gl.GetTexImage(glTextureProxyTarget, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.GetTexImage</see>
+		/// The implementation-preferred data type to pass to <see cref="O:OpenGL.Core.gl.GetTexImage">gl.GetTexImage</see>
 		/// when querying texture image data from this resource is returned as <see cref="glPixelDataType"/> or <see cref="gl.NONE"/> if the resource does not support this operation.
 		/// </summary>
 		GET_TEXTURE_IMAGE_TYPE=0x8292,
@@ -259,14 +259,14 @@ namespace OpenGL.Core
 		READ_PIXELS=0x828C,
 
 		/// <summary>
-		/// The format to pass to <see cref="gl.ReadPixels(int, int, int, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.ReadPixels</see>
+		/// The format to pass to <see cref="O:OpenGL.Core.gl.ReadPixels">gl.ReadPixels</see>
 		/// to obtain the best performance and image quality when reading from framebuffers with the internal format is returned as
 		/// <see cref="glPixelFormat"/> or <see cref="gl.NONE"/> if the internal format the not supported.
 		/// </summary>
 		READ_PIXELS_FORMAT=0x828D,
 
 		/// <summary>
-		/// The data type to pass to <see cref="gl.ReadPixels(int, int, int, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.ReadPixels</see>
+		/// The data type to pass to <see cref="O:OpenGL.Core.gl.ReadPixels">gl.ReadPixels</see>
 		/// to obtain the best performance and image quality when reading from framebuffers with the internal format is returned as
 		/// <see cref="glPixelDataType"/> or <see cref="gl.NONE"/> if the internal format the not supported.
 		/// </summary>

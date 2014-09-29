@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Enum returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])"/> for <see cref="glGetIntegerParameter.RESET_NOTIFICATION_STRATEGY"/>.
+	/// Enum returned by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.RESET_NOTIFICATION_STRATEGY"/>.
 	/// </summary>
 	public enum glResetNotificationStrategy : uint
 	{

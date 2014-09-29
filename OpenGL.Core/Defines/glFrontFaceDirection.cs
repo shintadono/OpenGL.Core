@@ -29,8 +29,8 @@ namespace OpenGL.Core
 	/// </summary>
 	/// <remarks>
 	/// glVertexOrder is used as <c>dir</c> argument in <see cref="gl.FrontFace"/>,
-	/// and is returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.FRONT_FACE"/>) and
-	/// <see cref="gl.GetProgramiv"/>(<see cref="glProgramParameter.TESS_GEN_VERTEX_ORDER"/>).
+	/// and is returned by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.FRONT_FACE"/> and
+	/// <see cref="gl.GetProgramiv"/> for <see cref="glProgramParameter.TESS_GEN_VERTEX_ORDER"/>.
 	/// </remarks>
 	public enum glFrontFaceDirection : uint
 	{

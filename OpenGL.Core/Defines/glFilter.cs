@@ -27,8 +27,8 @@ namespace OpenGL.Core
 	/// <summary>
 	/// nterpolation filter value for <see cref="glTextureParameter.TEXTURE_MIN_FILTER"/> and
 	/// <see cref="glTextureParameter.TEXTURE_MAG_FILTER"/>. Used as value by <see cref="gl.BlitFramebuffer"/>,
-	/// <see cref="gl.TexParameteri(glTextureTarget, glTextureParameter, glFilter)">gl.TexParameteri</see> and
-	/// <see cref="gl.GetTexParameteriv(glTextureTarget, glTextureParameter, int[])">gl.GetTexParameter</see>.
+	/// <see cref="O:OpenGL.Core.gl.TexParameteri">gl.TexParameteri</see> and
+	/// <see cref="O:OpenGL.Core.gl.GetTexParameteriv">gl.GetTexParameter</see>.
 	/// </summary>
 	public enum glFilter : uint
 	{

@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see> with <see cref="glGetIntegerParameter.IMPLEMENTATION_COLOR_READ_TYPE"/>.
+	/// Returned by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.IMPLEMENTATION_COLOR_READ_TYPE"/>.
 	/// </summary>
 	public enum glImplementationColorReadType : uint
 	{

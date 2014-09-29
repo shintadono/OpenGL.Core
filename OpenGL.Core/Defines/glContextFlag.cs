@@ -27,7 +27,7 @@ using System;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Flags returned by <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.CONTEXT_FLAGS"/>).
+	/// Flags returned by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.CONTEXT_FLAGS"/>.
 	/// </summary>
 	[Flags]
 	public enum glContextFlag : uint

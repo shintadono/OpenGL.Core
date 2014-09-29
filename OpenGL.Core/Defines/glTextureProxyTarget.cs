@@ -25,9 +25,9 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Target for <see cref="gl.GetTexImage(glTextureProxyTarget, int, glPixelFormat, glPixelDataType, System.IntPtr)">gl.GetTexImage</see>,
-	/// <see cref="gl.GetTexParameteriv(glTextureTarget, glTextureParameter, int[])">gl.GetTexParameter*</see> and
-	/// <see cref="gl.GetCompressedTexImage(glTextureProxyTarget, int, byte[])">gl.GetCompressedTexImage</see>.
+	/// Target for <see cref="O:OpenGL.Core.gl.GetTexImage">gl.GetTexImage</see>,
+	/// <see cref="O:OpenGL.Core.gl.GetTexParameteriv">gl.GetTexParameter*</see> and
+	/// <see cref="O:OpenGL.Core.gl.GetCompressedTexImage">gl.GetCompressedTexImage</see>.
 	/// </summary>
 	public enum glTextureProxyTarget : uint
 	{
@@ -38,8 +38,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_1D=0x8063,
 
@@ -50,8 +50,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_2D=0x8064,
 
@@ -62,8 +62,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_3D=0x8070,
 
@@ -74,8 +74,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_RECTANGLE=0x84F7,
 
@@ -116,8 +116,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_CUBE_MAP=0x851B,
 
@@ -128,8 +128,8 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_1D_ARRAY=0x8C19,
 
@@ -140,15 +140,15 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_2D_ARRAY=0x8C1B,
 
 		/// <summary>
 		/// Buffer texture object.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		TEXTURE_BUFFER=0x8C2A,
 
@@ -159,36 +159,36 @@ namespace OpenGL.Core
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_CUBE_MAP_ARRAY=0x900B,
 
 		/// <summary>
 		/// 2D multisample texture object.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		TEXTURE_2D_MULTISAMPLE=0x9100,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_2D_MULTISAMPLE=0x9101,
 
 		/// <summary>
 		/// 2D multisample texture array object.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		TEXTURE_2D_MULTISAMPLE_ARRAY=0x9102,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
-		/// Allowed only as argument in <see cref="gl.GetTexLevelParameterfv(glTextureProxyTarget, int, glTexLevelParameter, float[])">gl.GetTexLevelParameterfv</see>
-		/// and <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
+		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
 		PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY=0x9103,
 	}

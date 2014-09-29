@@ -27,7 +27,7 @@ using System;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Value for <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>.
+	/// Value for <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see>.
 	/// </summary>
 	public enum glGetIntegerParameter : uint
 	{
@@ -67,7 +67,7 @@ namespace OpenGL.Core
 		CLIP_DEPTH_MODE=0x935D,
 
 		/// <summary>
-		/// List of compressed texture formats. Returns <see cref="glInternalFormat"/>[<see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.NUM_COMPRESSED_TEXTURE_FORMATS"/>)]
+		/// List of compressed texture formats. Returns <see cref="glInternalFormat"/>[<see cref="gl.GetInteger">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.NUM_COMPRESSED_TEXTURE_FORMATS"/>)]
 		/// </summary>
 		[Obsolete("Deprecated since 4.2")]
 		COMPRESSED_TEXTURE_FORMATS=0x86A3,
@@ -483,12 +483,12 @@ namespace OpenGL.Core
 		MAX_DUAL_SOURCE_DRAW_BUFFERS=0x88FC,
 
 		/// <summary>
-		/// Recommended maximum number of <see cref="gl.DrawRangeElements(glDrawMode, uint, uint, int, glDrawElementsType, System.IntPtr)">gl.DrawRangeElements</see> indices.
+		/// Recommended maximum number of <see cref="O:OpenGL.Core.gl.DrawRangeElements">gl.DrawRangeElements</see> indices.
 		/// </summary>
 		MAX_ELEMENTS_INDICES=0x80E9,
 
 		/// <summary>
-		/// Recommended maximum number of <see cref="gl.DrawRangeElements(glDrawMode, uint, uint, int, glDrawElementsType, System.IntPtr)">gl.DrawRangeElements</see> vertices.
+		/// Recommended maximum number of <see cref="O:OpenGL.Core.gl.DrawRangeElements">gl.DrawRangeElements</see> vertices.
 		/// </summary>
 		MAX_ELEMENTS_VERTICES=0x80E8,
 

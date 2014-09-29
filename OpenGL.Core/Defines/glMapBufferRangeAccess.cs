@@ -27,7 +27,7 @@ using System;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Flags for <see cref="gl.MapBufferRange(glBufferTarget, int, int, glMapBufferRangeAccess)">gl.MapBufferRange</see>.
+	/// Flags for <see cref="O:OpenGL.Core.gl.MapBufferRange">gl.MapBufferRange</see>.
 	/// </summary>
 	[Flags]
 	public enum glMapBufferRangeAccess : uint
@@ -58,7 +58,7 @@ namespace OpenGL.Core
 		MAP_INVALIDATE_BUFFER_BIT=0x0008,
 
 		/// <summary>
-		/// Modification to the buffer must/will be flushed by calling <see cref="gl.FlushMappedBufferRange(glBufferTarget, int, int)">gl.FlushMappedBufferRange</see>
+		/// Modification to the buffer must/will be flushed by calling <see cref="O:OpenGL.Core.gl.FlushMappedBufferRange">gl.FlushMappedBufferRange</see>
 		/// </summary>
 		MAP_FLUSH_EXPLICIT_BIT=0x0010,
 

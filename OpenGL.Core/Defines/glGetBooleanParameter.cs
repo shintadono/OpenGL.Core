@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Value for <see cref="gl.GetBooleanv(glGetBooleanParameter, byte[])">gl.GetBooleanv</see>.
+	/// Value for <see cref="O:OpenGL.Core.gl.GetBooleanv">gl.GetBooleanv</see>.
 	/// </summary>
 	public enum glGetBooleanParameter : uint
 	{

@@ -25,8 +25,8 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Target for <see cref="gl.TexImage2D(glTexture2DProxyTarget, int, OpenGL.Core.glInternalFormat, int, int, int, glPixelFormat, glPixelDataType, System.IntPtr)"/>,
-	/// <see cref="gl.TexImage2DMultisample"/>, <see cref="gl.CompressedTexImage2D(glTexture2DProxyTarget, int, glInternalFormat, int, int, int, int, byte[])">gl.CompressedTexImage2D</see>,
+	/// Target for <see cref="O:OpenGL.Core.gl.TexImage2D">gl.TexImage2D</see>,
+	/// <see cref="gl.TexImage2DMultisample"/>, <see cref="O:OpenGL.Core.gl.CompressedTexImage2D">gl.CompressedTexImage2D</see>,
 	/// <see cref="gl.TexStorage2D"/> and <see cref="gl.TexStorage2DMultisample"/>.
 	/// </summary>
 	public enum glTexture2DProxyTarget : uint

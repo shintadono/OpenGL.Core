@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Draw mode. Used for e.g. <see cref="gl.DrawElements(glDrawMode, int, glDrawElementsType, System.IntPtr)">gl.DrawElements</see>.
+	/// Draw mode. Used for e.g. <see cref="O:OpenGL.Core.gl.DrawElements">gl.DrawElements</see>.
 	/// </summary>
 	public enum glDrawMode : uint
 	{

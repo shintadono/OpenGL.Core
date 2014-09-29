@@ -30,12 +30,13 @@ namespace OpenGL.Core
 	public enum glGetInteger64IndexedParameter : uint
 	{
 		/// <summary>
-		/// Size of binding range for each (indexed) atomic counter buffer. Used <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/>) to get the current number of bindings.
+		/// Size of binding range for each (indexed) atomic counter buffer. Used <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see>
+		/// for <see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/> to get the current number of bindings.
 		/// </summary>
 		ATOMIC_COUNTER_BUFFER_SIZE=0x92C3,
 
 		/// <summary>
-		/// Start offset of binding range for each (indexed) atomic counter buffer. Used <see cref="gl.GetIntegerv(glGetIntegerParameter, int[])">gl.GetIntegerv</see>(<see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/>) to get the current number of bindings.
+		/// Start offset of binding range for each (indexed) atomic counter buffer. Used by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/> to get the current number of bindings.
 		/// </summary>
 		ATOMIC_COUNTER_BUFFER_START=0x92C2,
 

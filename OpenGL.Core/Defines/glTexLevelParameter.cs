@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Texture level parameter. Used by <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>.
+	/// Texture level parameter. Used by <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 	/// </summary>
 	public enum glTexLevelParameter : uint
 	{

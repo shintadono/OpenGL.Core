@@ -25,8 +25,8 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Target for <see cref="gl.BindTexture"/>, <see cref="gl.TexParameteri(glTextureTarget, glTextureParameter, int)">gl.TexParameter*</see>,
-	/// <see cref="gl.GetTexParameteriv(glTextureTarget, glTextureParameter, int[])">gl.GetTexParameter*</see>,
+	/// Target for <see cref="gl.BindTexture"/>, <see cref="O:OpenGL.Core.gl.TexParameteri">gl.TexParameter*</see>,
+	/// <see cref="O:OpenGL.Core.gl.GetTexParameteriv">gl.GetTexParameter*</see>,
 	/// <see cref="gl.GetInternalformativ">gl.GetInternalformati*</see>,
 	/// <see cref="gl.GenerateMipmap"/>, <see cref="gl.TextureView"/>, and <see cref="gl.CopyImageSubData"/>.
 	/// </summary>

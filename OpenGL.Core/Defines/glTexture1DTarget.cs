@@ -25,8 +25,8 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Target for <see cref="gl.TexSubImage1D(glTexture1DTarget, int, int, int, glPixelFormat, glPixelDataType, System.IntPtr)"/>, <see cref="gl.CopyTexImage1D"/>,
-	/// <see cref="gl.CopyTexSubImage1D"/> and <see cref="gl.CompressedTexImage1D(glTexture1DProxyTarget, int, glInternalFormat, int, int, int, byte[])">gl.CompressedTexImage1D</see>,
+	/// Target for <see cref="O:OpenGL.Core.gl.TexSubImage1D">gl.TexSubImage1D</see>, <see cref="gl.CopyTexImage1D"/>,
+	/// <see cref="gl.CopyTexSubImage1D"/> and <see cref="O:OpenGL.Core.gl.CompressedTexImage1D">gl.CompressedTexImage1D</see>,
 	/// and texture target for <see cref="gl.FramebufferTexture1D"/>.
 	/// </summary>
 	public enum glTexture1DTarget : uint

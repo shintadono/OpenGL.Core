@@ -206,16 +206,23 @@
     <Compile Include="Defines\glResetNotificationStrategy.cs" />
     <Compile Include="Defines\glTransformFeedbackParameter.cs" />
     <Compile Include="Defines\glVertexArrayParameter.cs" />
+    <Compile Include="glPixelFormatAdapter.cs" />
+    <Compile Include="Structs\glFloat16.cs" />
     <Compile Include="Structs\glDrawArraysIndirectCommand.cs" />
     <Compile Include="Structs\glDrawElementsIndirectCommand.cs" />
     <Compile Include="gl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs\SingleUInt32Union.cs" />
+    <Compile Include="Structs\glUFloat10.cs" />
+    <Compile Include="Structs\glUFloat11.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gl.Version_2_1.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

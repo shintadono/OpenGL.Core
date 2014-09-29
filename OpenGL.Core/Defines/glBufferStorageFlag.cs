@@ -27,7 +27,7 @@ using System;
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Flags for <see cref="gl.BufferStorage(glBufferTarget, int, IntPtr, glBufferStorageFlag)">gl.BufferStorage</see>.
+	/// Flags for <see cref="O:OpenGL.Core.gl.BufferStorage">gl.BufferStorage</see>.
 	/// </summary>
 	[Flags]
 	public enum glBufferStorageFlag : uint
@@ -58,7 +58,7 @@ namespace OpenGL.Core
 		MAP_COHERENT_BIT=0x0080,
 
 		/// <summary>
-		/// Allow client updates to buffer through calls to <see cref="gl.BufferSubData(glBufferTarget, int, int, System.IntPtr)">gl.BufferSubData</see>.
+		/// Allow client updates to buffer through calls to <see cref="O:OpenGL.Core.gl.BufferSubData">gl.BufferSubData</see>.
 		/// </summary>
 		DYNAMIC_STORAGE_BIT=0x0100,
 

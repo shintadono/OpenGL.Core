@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Enum returned by <see cref="gl.GetTexLevelParameteriv(glTextureProxyTarget, int, glTexLevelParameter, int[])">gl.GetTexLevelParameteriv</see>
+	/// Enum returned by <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>
 	/// for <c>glGetTexLevelParameters.TEXTURE_*_TYPE</c>,
 	/// <see cref="gl.GetFramebufferAttachmentParameteriv"/> for <see cref="glFramebufferAttachmentParameter.FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE"/> and 
 	/// <see cref="gl.GetInternalformativ"/> for <c>glInternalformatParameter.INTERNALFORMAT_*_TYPE</c>

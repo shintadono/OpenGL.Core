@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Enum returns by <see cref="gl.GetTexParameteriv(glTextureTarget, glTextureParameter, int[])">gl.GetTexParameteriv</see> for <see cref="glTextureParameter.IMAGE_FORMAT_COMPATIBILITY_TYPE"/> and
+	/// Enum returns by <see cref="O:OpenGL.Core.gl.GetTexParameteriv">gl.GetTexParameteriv</see> for <see cref="glTextureParameter.IMAGE_FORMAT_COMPATIBILITY_TYPE"/> and
 	/// <see cref="gl.GetInternalformativ"/> for <see cref="glInternalformatParameter.IMAGE_FORMAT_COMPATIBILITY_TYPE"/>.
 	/// </summary>
 	public enum glImageFormatCompatibilityType : uint

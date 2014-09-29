@@ -25,7 +25,7 @@
 namespace OpenGL.Core
 {
 	/// <summary>
-	/// Used by <see cref="gl.GetVertexAttribPointerv(uint, glVertexAttribPointerParameter, out int)">gl.GetVertexAttribPointerv</see>.
+	/// Used by <see cref="O:OpenGL.Core.gl.GetVertexAttribPointerv">gl.GetVertexAttribPointerv</see>.
 	/// </summary>
 	public enum glVertexAttribPointerParameter : uint
 	{

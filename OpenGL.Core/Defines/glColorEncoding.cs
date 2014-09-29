@@ -24,8 +24,10 @@
 
 namespace OpenGL.Core
 {
+	/// <summary>
 	/// Enum returns by <see cref="gl.GetInternalformativ"/> for <see cref="glInternalformatParameter.COLOR_ENCODING"/> and
 	/// <see cref="gl.GetFramebufferAttachmentParameteriv"/> for <see cref="glFramebufferAttachmentParameter.FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING"/>.
+	/// </summary>
 	public enum glColorEncoding : uint
 	{
 		/// <summary>
