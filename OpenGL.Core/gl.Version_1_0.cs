@@ -123,7 +123,7 @@ namespace OpenGL.Core
 		/// Sets texture parameter for the currently bound texture.
 		/// </summary>
 		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture filtering parameter in allowed.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture filtering parameter is allowed.</param>
 		/// <param name="param">The value the parameter is set to.</param>
 		[DllImport(DLLName, EntryPoint="glTexParameteri")]
 		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glFilter param);
@@ -132,7 +132,7 @@ namespace OpenGL.Core
 		/// Sets texture parameter for the currently bound texture.
 		/// </summary>
 		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture wrapping parameter in allowed.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture wrapping parameter is allowed.</param>
 		/// <param name="param">The value the parameter is set to.</param>
 		[DllImport(DLLName, EntryPoint="glTexParameteri")]
 		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glTextureWrapMode param);
@@ -141,7 +141,34 @@ namespace OpenGL.Core
 		/// Sets texture parameter for the currently bound texture.
 		/// </summary>
 		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture swizzle parameter in allowed.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		[DllImport(DLLName, EntryPoint="glTexParameteri")]
+		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glTextureCompareMode param);
+
+		/// <summary>
+		/// Sets texture parameter for the currently bound texture.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		[DllImport(DLLName, EntryPoint="glTexParameteri")]
+		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glFunc param);
+
+		/// <summary>
+		/// Sets texture parameter for the currently bound texture.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.DEPTH_STENCIL_TEXTURE_MODE"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		[DllImport(DLLName, EntryPoint="glTexParameteri")]
+		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glDepthStencilTextureMode param);
+
+		/// <summary>
+		/// Sets texture parameter for the currently bound texture.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture swizzle parameter is allowed.</param>
 		/// <param name="param">The value the parameter is set to.</param>
 		[DllImport(DLLName, EntryPoint="glTexParameteri")]
 		public static extern void TexParameteri(glTextureTarget target, glTextureParameter pname, glTextureSwizzleValue param);
@@ -1168,10 +1195,64 @@ namespace OpenGL.Core
 		/// Returns the value of a texture parameter.
 		/// </summary>
 		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter. Only one of the texture filtering parameter is allowed.</param>
 		/// <param name="param">Returns the requested value.</param>
 		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
 		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glFilter param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.  Only one of the texture wrapping parameter is allowed.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureWrapMode param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureCompareMode param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glFunc param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.DEPTH_STENCIL_TEXTURE_MODE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glDepthStencilTextureMode param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_TARGET"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureTarget param);
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.IMAGE_FORMAT_COMPATIBILITY_TYPE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
+		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glImageFormatCompatibilityType param);
 
 		/// <summary>
 		/// Returns the value of a texture parameter.
@@ -1181,15 +1262,6 @@ namespace OpenGL.Core
 		/// <param name="param">Returns the requested value.</param>
 		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
 		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureSwizzleValue param);
-
-		/// <summary>
-		/// Returns the value of a texture parameter.
-		/// </summary>
-		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
-		/// <param name="param">Returns the requested value.</param>
-		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
-		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureWrapMode param);
 
 		/// <summary>
 		/// Returns the value(s) of a texture parameter.

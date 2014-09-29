@@ -525,13 +525,7 @@ namespace OpenGL.Core
 		/// <param name="params">The value the parameter is set to.</param>
 		public delegate void glTextureParameterfv(uint texture, glTextureParameter pname, params float[] @params);
 
-		/// <summary>
-		/// Sets texture parameters of texture object.
-		/// </summary>
-		/// <param name="texture">The name of the texture.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
-		/// <param name="param">The value the parameter is set to.</param>
-		public delegate void glTextureParameteri(uint texture, glTextureParameter pname, int param);
+		internal delegate void glTextureParameteri(uint texture, glTextureParameter pname, int param);
 
 		/// <summary>
 		/// Sets texture parameters of texture object.
@@ -1157,10 +1151,7 @@ namespace OpenGL.Core
 		/// </summary>
 		public static glTextureParameterfv TextureParameterfv;
 
-		/// <summary>
-		/// Sets texture parameters of texture object.
-		/// </summary>
-		public static glTextureParameteri TextureParameteri;
+		private static glTextureParameteri _TextureParameteri;
 
 		/// <summary>
 		/// Sets texture parameters of texture object.
@@ -5328,6 +5319,85 @@ namespace OpenGL.Core
 		}
 		#endregion
 
+		#region TextureParameteri
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, int param)
+		{
+			_TextureParameteri(texture, pname, param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture filtering parameter is allowed.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glFilter param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture wrapping parameter is allowed.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glTextureWrapMode param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glTextureCompareMode param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glFunc param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.DEPTH_STENCIL_TEXTURE_MODE"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glDepthStencilTextureMode param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameters of texture object.
+		/// </summary>
+		/// <param name="texture">The name of the texture.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set. Only one of the texture swizzle parameter is allowed.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void TextureParameteri(uint texture, glTextureParameter pname, glTextureSwizzleValue param)
+		{
+			_TextureParameteri(texture, pname, (int)param);
+		}
+		#endregion
+
 		#region GetTextureImage
 		/// <summary>
 		/// Reads a texture.
@@ -5671,24 +5741,50 @@ namespace OpenGL.Core
 		/// <param name="texture">The name of the texture object.</param>
 		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
 		/// <param name="param">Returns the requested value.</param>
-		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glTextureSwizzleValue param)
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glTextureWrapMode param)
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureSwizzleValue)ret;
+			param=(glTextureWrapMode)ret;
 		}
 
 		/// <summary>
 		/// Returns the value of a texture parameter.
 		/// </summary>
 		/// <param name="texture">The name of the texture object.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
 		/// <param name="param">Returns the requested value.</param>
-		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glTextureWrapMode param)
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glTextureCompareMode param)
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureWrapMode)ret;
+			param=(glTextureCompareMode)ret;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="texture">The name of the texture object.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glFunc param)
+		{
+			int ret;
+			_GetTextureParameteri(texture, pname, out ret);
+			param=(glFunc)ret;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="texture">The name of the texture object.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.DEPTH_STENCIL_TEXTURE_MODE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glDepthStencilTextureMode param)
+		{
+			int ret;
+			_GetTextureParameteri(texture, pname, out ret);
+			param=(glDepthStencilTextureMode)ret;
 		}
 
 		/// <summary>
@@ -5702,6 +5798,32 @@ namespace OpenGL.Core
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
 			param=(glTextureTarget)ret;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="texture">The name of the texture object.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.IMAGE_FORMAT_COMPATIBILITY_TYPE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glImageFormatCompatibilityType param)
+		{
+			int ret;
+			_GetTextureParameteri(texture, pname, out ret);
+			param=(glImageFormatCompatibilityType)ret;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter.
+		/// </summary>
+		/// <param name="texture">The name of the texture object.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetTextureParameteri(uint texture, glTextureParameter pname, out glTextureSwizzleValue param)
+		{
+			int ret;
+			_GetTextureParameteri(texture, pname, out ret);
+			param=(glTextureSwizzleValue)ret;
 		}
 
 		/// <summary>
@@ -7083,7 +7205,7 @@ namespace OpenGL.Core
 			CopyTextureSubImage3D=GetAddress<glCopyTextureSubImage3D>("glCopyTextureSubImage3D");
 			TextureParameterf=GetAddress<glTextureParameterf>("glTextureParameterf");
 			TextureParameterfv=GetAddress<glTextureParameterfv>("glTextureParameterfv");
-			TextureParameteri=GetAddress<glTextureParameteri>("glTextureParameteri");
+			_TextureParameteri=GetAddress<glTextureParameteri>("glTextureParameteri");
 			TextureParameteriv=GetAddress<glTextureParameteriv>("glTextureParameteriv");
 			TextureParameterIiv=GetAddress<glTextureParameterIiv>("glTextureParameterIiv");
 			TextureParameterIuiv=GetAddress<glTextureParameterIuiv>("glTextureParameterIuiv");
@@ -7194,7 +7316,7 @@ namespace OpenGL.Core
 				TextureStorage2DMultisample!=null&&TextureStorage3DMultisample!=null&&_TextureSubImage1D!=null&&_TextureSubImage2D!=null&&
 				_TextureSubImage3D!=null&&_CompressedTextureSubImage1D!=null&&_CompressedTextureSubImage2D!=null&&
 				_CompressedTextureSubImage3D!=null&&CopyTextureSubImage1D!=null&&CopyTextureSubImage2D!=null&&CopyTextureSubImage3D!=null&&
-				TextureParameterf!=null&&TextureParameterfv!=null&&TextureParameteri!=null&&TextureParameteriv!=null&&TextureParameterIiv!=null&&
+				TextureParameterfv!=null&&TextureParameteriv!=null&&TextureParameterIiv!=null&&
 				TextureParameterIuiv!=null&&GenerateTextureMipmap!=null&&BindTextureUnit!=null&&_GetTextureImage!=null&&
 				_GetCompressedTextureImage!=null&&GetTextureLevelParameterfv!=null&&GetTextureLevelParameteriv!=null&&
 				GetTextureParameterfv!=null&&_GetTextureParameteriv!=null&&GetTextureParameterIiv!=null&&GetTextureParameterIuiv!=null&&

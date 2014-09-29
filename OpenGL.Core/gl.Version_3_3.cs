@@ -72,13 +72,7 @@ namespace OpenGL.Core
 		/// <param name="sampler">The name of the sampler.</param>
 		public delegate void glBindSampler(uint unit, uint sampler);
 
-		/// <summary>
-		/// Sets texture parameter for the sampler.
-		/// </summary>
-		/// <param name="sampler">The name of the sampler.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
-		/// <param name="param">The value the parameter is set to.</param>
-		public delegate void glSamplerParameteri(uint sampler, glTextureParameter pname, int param);
+		internal delegate void glSamplerParameteri(uint sampler, glTextureParameter pname, int param);
 
 		/// <summary>
 		/// Sets texture parameter for the sampler.
@@ -120,13 +114,7 @@ namespace OpenGL.Core
 		/// <param name="params">The value the parameter is set to.</param>
 		public delegate void glSamplerParameterIuiv(uint sampler, glTextureParameter pname, params uint[] @params);
 
-		/// <summary>
-		/// Returns the value of a texture parameter of a sampler.
-		/// </summary>
-		/// <param name="sampler">The name of the sampler.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
-		/// <param name="param">Returns the requested value.</param>
-		public delegate void glGetSamplerParameteri(uint sampler, glTextureParameter pname, out int param);
+		internal delegate void glGetSamplerParameteri(uint sampler, glTextureParameter pname, out int param);
 
 		/// <summary>
 		/// Returns the value(s) of a texture parameter of a sampler.
@@ -339,10 +327,7 @@ namespace OpenGL.Core
 		/// </summary>
 		public static glBindSampler BindSampler;
 
-		/// <summary>
-		/// Sets texture parameter for the sampler.
-		/// </summary>
-		public static glSamplerParameteri SamplerParameteri;
+		private static glSamplerParameteri _SamplerParameteri;
 
 		/// <summary>
 		/// Sets texture parameter for the sampler.
@@ -369,10 +354,7 @@ namespace OpenGL.Core
 		/// </summary>
 		public static glSamplerParameterIuiv SamplerParameterIuiv;
 
-		/// <summary>
-		/// Returns the value of a texture parameter of a sampler.
-		/// </summary>
-		public static glGetSamplerParameteri GetSamplerParameteri;
+		private static glGetSamplerParameteri _GetSamplerParameteri;
 
 		/// <summary>
 		/// Returns the value(s) of a texture parameter of a sampler.
@@ -524,6 +506,128 @@ namespace OpenGL.Core
 			_GenSamplers(count, samplers);
 		}
 		#endregion
+
+		#region GetSamplerParameteri
+		/// <summary>
+		/// Returns the value of a texture parameter of a sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetSamplerParameteri(uint sampler, glTextureParameter pname, out int param)
+		{
+			_GetSamplerParameteri(sampler, pname, out param);
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter of a sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetSamplerParameteri(uint sampler, glTextureParameter pname, out glFilter param)
+		{
+			int p;
+			_GetSamplerParameteri(sampler, pname, out p);
+			param=(glFilter)p;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter of a sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetSamplerParameteri(uint sampler, glTextureParameter pname, out glTextureWrapMode param)
+		{
+			int p;
+			_GetSamplerParameteri(sampler, pname, out p);
+			param=(glTextureWrapMode)p;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter of a sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetSamplerParameteri(uint sampler, glTextureParameter pname, out glTextureCompareMode param)
+		{
+			int p;
+			_GetSamplerParameteri(sampler, pname, out p);
+			param=(glTextureCompareMode)p;
+		}
+
+		/// <summary>
+		/// Returns the value of a texture parameter of a sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">Returns the requested value.</param>
+		public static void GetSamplerParameteri(uint sampler, glTextureParameter pname, out glFunc param)
+		{
+			int p;
+			_GetSamplerParameteri(sampler, pname, out p);
+			param=(glFunc)p;
+		}
+		#endregion
+
+		#region SamplerParameteri
+		/// <summary>
+		/// Sets texture parameter for the sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void SamplerParameteri(uint sampler, glTextureParameter pname, int param)
+		{
+			_SamplerParameteri(sampler, pname, param);
+		}
+
+		/// <summary>
+		/// Sets texture parameter for the sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void SamplerParameteri(uint sampler, glTextureParameter pname, glFilter param)
+		{
+			_SamplerParameteri(sampler, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameter for the sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> selecting the parameter to be set.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void SamplerParameteri(uint sampler, glTextureParameter pname, glTextureWrapMode param)
+		{
+			_SamplerParameteri(sampler, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameter for the sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_MODE"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void SamplerParameteri(uint sampler, glTextureParameter pname, glTextureCompareMode param)
+		{
+			_SamplerParameteri(sampler, pname, (int)param);
+		}
+
+		/// <summary>
+		/// Sets texture parameter for the sampler.
+		/// </summary>
+		/// <param name="sampler">The name of the sampler.</param>
+		/// <param name="pname">Must be <see cref="glTextureParameter.TEXTURE_COMPARE_FUNC"/>.</param>
+		/// <param name="param">The value the parameter is set to.</param>
+		public static void SamplerParameteri(uint sampler, glTextureParameter pname, glFunc param)
+		{
+			_SamplerParameteri(sampler, pname, (int)param);
+		}
+		#endregion
 		#endregion
 
 		private static void Load_VERSION_3_3()
@@ -535,13 +639,13 @@ namespace OpenGL.Core
 			DeleteSamplers=GetAddress<glDeleteSamplers>("glDeleteSamplers");
 			IsSampler=GetAddress<glIsSampler>("glIsSampler");
 			BindSampler=GetAddress<glBindSampler>("glBindSampler");
-			SamplerParameteri=GetAddress<glSamplerParameteri>("glSamplerParameteri");
+			_SamplerParameteri=GetAddress<glSamplerParameteri>("glSamplerParameteri");
 			SamplerParameteriv=GetAddress<glSamplerParameteriv>("glSamplerParameteriv");
 			SamplerParameterf=GetAddress<glSamplerParameterf>("glSamplerParameterf");
 			SamplerParameterfv=GetAddress<glSamplerParameterfv>("glSamplerParameterfv");
 			SamplerParameterIiv=GetAddress<glSamplerParameterIiv>("glSamplerParameterIiv");
 			SamplerParameterIuiv=GetAddress<glSamplerParameterIuiv>("glSamplerParameterIuiv");
-			GetSamplerParameteri=GetAddress<glGetSamplerParameteri>("glGetSamplerParameteriv");
+			_GetSamplerParameteri=GetAddress<glGetSamplerParameteri>("glGetSamplerParameteriv");
 			GetSamplerParameteriv=GetAddress<glGetSamplerParameteriv>("glGetSamplerParameteriv");
 			GetSamplerParameterIi=GetAddress<glGetSamplerParameterIi>("glGetSamplerParameterIiv");
 			GetSamplerParameterIiv=GetAddress<glGetSamplerParameterIiv>("glGetSamplerParameterIiv");
@@ -565,7 +669,7 @@ namespace OpenGL.Core
 			VertexAttribP4uiv=GetAddress<glVertexAttribP4uiv>("glVertexAttribP4uiv");
 
 			VERSION_3_3=VERSION_3_2&&BindFragDataLocationIndexed!=null&&GetFragDataIndex!=null&&_GenSamplers!=null&&
-				DeleteSamplers!=null&&IsSampler!=null&&BindSampler!=null&&SamplerParameteri!=null&&
+				DeleteSamplers!=null&&IsSampler!=null&&BindSampler!=null&&_SamplerParameteri!=null&&
 				SamplerParameteriv!=null&&SamplerParameterf!=null&&SamplerParameterfv!=null&&SamplerParameterIiv!=null&&
 				SamplerParameterIuiv!=null&&GetSamplerParameteriv!=null&&GetSamplerParameterIiv!=null&&
 				GetSamplerParameterfv!=null&&GetSamplerParameterIuiv!=null&&QueryCounter!=null&&
