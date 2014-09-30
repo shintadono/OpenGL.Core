@@ -7,8 +7,8 @@ OpenGL.Core includes only the API of the latest OpenGL core profile. It does not
 include functionality removed from the core profile, such as fixed-function vertex and fragment
 processing.
 
-OpenGL.Core's gl class is intented for the use with OpenGL core profile implementations. 
-!!!Do not use, until a core profile rendering context is made current!!!
+OpenGL.Core's gl class is intented for the use with OpenGL core profile implementations.<br/>
+**!!!Do not use, until a core profile rendering context is made current!!!**
 
 * The binding it strongly type.
 * Defines (e.g. GL_POLYGON_SMOOTH_HINT, GL_CCW) are sorted and encapsulated into enums. For example, the enum glErrorCode contains all error codes returned by gl.GetError and gl.GetError returns this enum.
@@ -21,6 +21,5 @@ OpenGL.Core's gl class is intented for the use with OpenGL core profile implemen
 
 **Authors**
 
-Copyright (c) 2013-2014 The Khronos Group Inc.
-
-Copyright (c) of C# port 2014 by Shinta <shintadono@googlemail.com>
+Copyright (c) 2013-2014 The Khronos Group Inc.<br/>
+Copyright (c) of C# port 2014 by Shinta <shintadono@googlemail.com><br/>
