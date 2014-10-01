@@ -1,7 +1,7 @@
 OpenGL.Core
 ===========
 
-OpenGL core profile binding for .Net written in C#
+OpenGL core profile binding for .NET written in C#
 
 OpenGL.Core includes only the API of the latest OpenGL core profile. It does not, and shall never,
 include functionality removed from the core profile, such as fixed-function vertex and fragment
