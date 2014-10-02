@@ -788,6 +788,14 @@ namespace OpenGL.Core
 		internal delegate void glCreateProgramPipelines(int count, uint[] pipelines);
 		internal delegate void glCreateQuery(glQueryTarget target, int one, out uint id);
 		internal delegate void glCreateQueries(glQueryTarget target, int count, uint[] ids);
+		internal delegate void glGetQueryBufferObjecti64v_32(uint id, uint buffer, glQueryObjectParameter pname, int offset);
+		internal delegate void glGetQueryBufferObjecti64v_64(uint id, uint buffer, glQueryObjectParameter pname, long offset);
+		internal delegate void glGetQueryBufferObjectiv_32(uint id, uint buffer, glQueryObjectParameter pname, int offset);
+		internal delegate void glGetQueryBufferObjectiv_64(uint id, uint buffer, glQueryObjectParameter pname, long offset);
+		internal delegate void glGetQueryBufferObjectui64v_32(uint id, uint buffer, glQueryObjectParameter pname, int offset);
+		internal delegate void glGetQueryBufferObjectui64v_64(uint id, uint buffer, glQueryObjectParameter pname, long offset);
+		internal delegate void glGetQueryBufferObjectuiv_32(uint id, uint buffer, glQueryObjectParameter pname, int offset);
+		internal delegate void glGetQueryBufferObjectuiv_64(uint id, uint buffer, glQueryObjectParameter pname, long offset);
 
 		/// <summary>
 		/// Orders memory transactions for regions issued prior to this command relative to those issued after this.
@@ -1318,6 +1326,14 @@ namespace OpenGL.Core
 		private static glCreateProgramPipelines _CreateProgramPipelines;
 		private static glCreateQuery _CreateQuery;
 		private static glCreateQueries _CreateQueries;
+		private static glGetQueryBufferObjecti64v_32 GetQueryBufferObjecti64v_32;
+		private static glGetQueryBufferObjecti64v_64 GetQueryBufferObjecti64v_64;
+		private static glGetQueryBufferObjectiv_32 GetQueryBufferObjectiv_32;
+		private static glGetQueryBufferObjectiv_64 GetQueryBufferObjectiv_64;
+		private static glGetQueryBufferObjectui64v_32 GetQueryBufferObjectui64v_32;
+		private static glGetQueryBufferObjectui64v_64 GetQueryBufferObjectui64v_64;
+		private static glGetQueryBufferObjectuiv_32 GetQueryBufferObjectuiv_32;
+		private static glGetQueryBufferObjectuiv_64 GetQueryBufferObjectuiv_64;
 
 		/// <summary>
 		/// Orders memory transactions for regions issued prior to this command relative to those issued after this.
@@ -6127,6 +6143,132 @@ namespace OpenGL.Core
 		}
 		#endregion
 
+		#region GetQueryBufferObject
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjecti64v(uint id, uint buffer, glQueryObjectParameter pname, int offset)
+		{
+			if(IntPtr.Size==4) GetQueryBufferObjecti64v_32(id, buffer, pname, offset);
+			else GetQueryBufferObjecti64v_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjecti64v(uint id, uint buffer, glQueryObjectParameter pname, long offset)
+		{
+			if(IntPtr.Size==4)
+			{
+				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+
+				GetQueryBufferObjecti64v_32(id, buffer, pname, (int)offset);
+			}
+			else GetQueryBufferObjecti64v_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectiv(uint id, uint buffer, glQueryObjectParameter pname, int offset)
+		{
+			if(IntPtr.Size==4) GetQueryBufferObjectiv_32(id, buffer, pname, offset);
+			else GetQueryBufferObjectiv_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectiv(uint id, uint buffer, glQueryObjectParameter pname, long offset)
+		{
+			if(IntPtr.Size==4)
+			{
+				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+
+				GetQueryBufferObjectiv_32(id, buffer, pname, (int)offset);
+			}
+			else GetQueryBufferObjectiv_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectui64v(uint id, uint buffer, glQueryObjectParameter pname, int offset)
+		{
+			if(IntPtr.Size==4) GetQueryBufferObjectui64v_32(id, buffer, pname, offset);
+			else GetQueryBufferObjectui64v_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectui64v(uint id, uint buffer, glQueryObjectParameter pname, long offset)
+		{
+			if(IntPtr.Size==4)
+			{
+				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+
+				GetQueryBufferObjectui64v_32(id, buffer, pname, (int)offset);
+			}
+			else GetQueryBufferObjectui64v_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectuiv(uint id, uint buffer, glQueryObjectParameter pname, int offset)
+		{
+			if(IntPtr.Size==4) GetQueryBufferObjectuiv_32(id, buffer, pname, offset);
+			else GetQueryBufferObjectuiv_64(id, buffer, pname, offset);
+		}
+
+		/// <summary>
+		/// Writes the parameters of a query into a query buffer object.
+		/// </summary>
+		/// <param name="id">The query-ID.</param>
+		/// <param name="buffer">The name of the query buffer object to write into.</param>
+		/// <param name="pname">A <see cref="glQueryObjectParameter"/> specifying the parameter.</param>
+		/// <param name="offset">The object into the query buffer object to write into.</param>
+		public static void GetQueryBufferObjectuiv(uint id, uint buffer, glQueryObjectParameter pname, long offset)
+		{
+			if(IntPtr.Size==4)
+			{
+				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+
+				GetQueryBufferObjectuiv_32(id, buffer, pname, (int)offset);
+			}
+			else GetQueryBufferObjectuiv_64(id, buffer, pname, offset);
+		}
+		#endregion
+
 		#region GetTextureSubImage
 		/// <summary>
 		/// Reads/Copies all or part of a texture into client memory.
@@ -7275,11 +7417,17 @@ namespace OpenGL.Core
 				TextureBufferRange_32=GetAddress<glTextureBufferRange_32>("glTextureBufferRange");
 				VertexArrayVertexBuffer_32=GetAddress<glVertexArrayVertexBuffer_32>("glVertexArrayVertexBuffer");
 				VertexArrayVertexBuffers_32=GetAddress<glVertexArrayVertexBuffers_32>("glVertexArrayVertexBuffers");
+				GetQueryBufferObjecti64v_32=GetAddress<glGetQueryBufferObjecti64v_32>("glGetQueryBufferObjecti64v");
+				GetQueryBufferObjectiv_32=GetAddress<glGetQueryBufferObjectiv_32>("glGetQueryBufferObjectiv");
+				GetQueryBufferObjectui64v_32=GetAddress<glGetQueryBufferObjectui64v_32>("glGetQueryBufferObjectui64v");
+				GetQueryBufferObjectuiv_32=GetAddress<glGetQueryBufferObjectuiv_32>("glGetQueryBufferObjectuiv");
 
 				platformDependend=TransformFeedbackBufferRange_32!=null&&NamedBufferStorage_32!=null&&NamedBufferData_32!=null&&
 					NamedBufferSubData_32!=null&&CopyNamedBufferSubData_32!=null&&ClearNamedBufferSubData_32!=null&&
 					MapNamedBufferRange_32!=null&&FlushMappedNamedBufferRange_32!=null&&GetNamedBufferSubData_32!=null&&
-					TextureBufferRange_32!=null&&VertexArrayVertexBuffer_32!=null&&VertexArrayVertexBuffers_32!=null;
+					TextureBufferRange_32!=null&&VertexArrayVertexBuffer_32!=null&&VertexArrayVertexBuffers_32!=null&&
+					GetQueryBufferObjecti64v_32!=null&&GetQueryBufferObjectiv_32!=null&&GetQueryBufferObjectui64v_32!=null&&
+					GetQueryBufferObjectuiv_32!=null;
 			}
 			else
 			{
@@ -7295,11 +7443,17 @@ namespace OpenGL.Core
 				TextureBufferRange_64=GetAddress<glTextureBufferRange_64>("glTextureBufferRange");
 				VertexArrayVertexBuffer_64=GetAddress<glVertexArrayVertexBuffer_64>("glVertexArrayVertexBuffer");
 				VertexArrayVertexBuffers_64=GetAddress<glVertexArrayVertexBuffers_64>("glVertexArrayVertexBuffers");
+				GetQueryBufferObjecti64v_64=GetAddress<glGetQueryBufferObjecti64v_64>("glGetQueryBufferObjecti64v");
+				GetQueryBufferObjectiv_64=GetAddress<glGetQueryBufferObjectiv_64>("glGetQueryBufferObjectiv");
+				GetQueryBufferObjectui64v_64=GetAddress<glGetQueryBufferObjectui64v_64>("glGetQueryBufferObjectui64v");
+				GetQueryBufferObjectuiv_64=GetAddress<glGetQueryBufferObjectuiv_64>("glGetQueryBufferObjectuiv");
 
 				platformDependend=TransformFeedbackBufferRange_64!=null&&NamedBufferStorage_64!=null&&NamedBufferData_64!=null&&
 					NamedBufferSubData_64!=null&&CopyNamedBufferSubData_64!=null&&ClearNamedBufferSubData_64!=null&&
 					MapNamedBufferRange_64!=null&&FlushMappedNamedBufferRange_64!=null&&GetNamedBufferSubData_64!=null&&
-					TextureBufferRange_64!=null&&VertexArrayVertexBuffer_64!=null&&VertexArrayVertexBuffers_64!=null;
+					TextureBufferRange_64!=null&&VertexArrayVertexBuffer_64!=null&&VertexArrayVertexBuffers_64!=null&&
+					GetQueryBufferObjecti64v_64!=null&&GetQueryBufferObjectiv_64!=null&&GetQueryBufferObjectui64v_64!=null&&
+					GetQueryBufferObjectuiv_64!=null;
 			}
 
 			VERSION_4_5=VERSION_4_4&&ClipControl!=null&&_CreateTransformFeedbacks!=null&&TransformFeedbackBufferBase!=null&&
