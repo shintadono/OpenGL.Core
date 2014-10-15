@@ -86,6 +86,8 @@ namespace OpenGL.Core
 			Load_VERSION_4_3();
 			Load_VERSION_4_4();
 			Load_VERSION_4_5();
+
+			Marshal.GetLastWin32Error(); // clear 127 'procedure not found' error
 		}
 	}
 }
