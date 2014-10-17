@@ -22,4 +22,4 @@ OpenGL.Core's gl class is intented for the use with OpenGL core profile implemen
 **Authors**
 
 Copyright (c) 2013-2014 The Khronos Group Inc.<br/>
-Copyright (c) of C# port 2014 by Shinta <shintadono@googlemail.com><br/>
+Copyright (c) of C# port 2014 by Shinta (<shintadono@googlemail.com>)<br/>
