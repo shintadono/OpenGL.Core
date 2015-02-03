@@ -120,11 +120,6 @@ namespace OpenGL.Core
 		SHADER_STORAGE_BUFFER_BINDING=0x90D3,
 
 		/// <summary>
-		/// Texture object bound to the texture unit.
-		/// </summary>
-		TEXTURE_BINDING=0x82EB,
-
-		/// <summary>
 		/// 1D texture object bound to the texture unit.
 		/// </summary>
 		TEXTURE_BINDING_1D=0x8068,

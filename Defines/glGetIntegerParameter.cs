@@ -1213,11 +1213,6 @@ namespace OpenGL.Core
 		SUBPIXEL_BITS=0x0D50,
 
 		/// <summary>
-		/// Currently bound texture object.
-		/// </summary>
-		TEXTURE_BINDING=0x82EB,
-
-		/// <summary>
 		/// Currently bound 1D texture object.
 		/// </summary>
 		TEXTURE_BINDING_1D=0x8068,
