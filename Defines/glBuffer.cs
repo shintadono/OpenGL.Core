@@ -180,6 +180,86 @@ namespace OpenGL.Core
 		COLOR_ATTACHMENT15=0x8CEF,
 
 		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT16=0x8CF0,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT17=0x8CF1,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT18=0x8CF2,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT19=0x8CF3,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT20=0x8CF4,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT21=0x8CF5,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT22=0x8CF6,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT23=0x8CF7,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT24=0x8CF8,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT25=0x8CF9,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT26=0x8CFA,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT27=0x8CFB,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT28=0x8CFC,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT29=0x8CFD,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT30=0x8CFE,
+
+		/// <summary>
+		/// Framebuffer color attachment point.
+		/// </summary>
+		COLOR_ATTACHMENT31=0x8CFF,
+
+		/// <summary>
 		/// Framebuffer depth attachment point.
 		/// </summary>
 		DEPTH_ATTACHMENT=0x8D00,
