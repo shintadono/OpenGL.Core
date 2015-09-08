@@ -47,7 +47,7 @@ namespace OpenGL.Core
 	/// <para>3. Add/remove the function available via interop binding. (<b>[DllImport]</b>)</para>
 	/// <para>4. Add/remove the function not available via interop binding. (loaded with <b>gl.GetAddress&lt;&gt;</b>)</para>
 	/// </remarks>
-	[SuppressUnmanagedCodeSecurity()]
+	[SuppressUnmanagedCodeSecurity]
 	public static partial class gl
 	{
 		#region WGL binding
