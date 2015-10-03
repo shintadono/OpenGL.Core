@@ -28,10 +28,10 @@ namespace OpenGL.Core
 	{
 		internal const string DLLName="OPENGL32.DLL";
 
-		const string platformErrorString="Value to big of 32bit platform.";
+		const string platformErrorString="Value to big for 32bit platform.";
 		static string PlatformErrorString { get { return platformErrorString; } }
 
-		const string platformArrayErrorString="A value in the array to big of 32bit platform.";
+		const string platformArrayErrorString="A value in the array to big for 32bit platform.";
 		static string PlatformArrayErrorString { get { return platformErrorString; } }
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace OpenGL.Core
 		public const ulong TIMEOUT_IGNORED=0xFFFFFFFFFFFFFFFFul;
 
 		/// <summary>
-		/// Value for <see cref="gl.VertexAttribFormat"/> size argument.
+		/// Value for <see cref="gl.VertexAttribFormat"/> and <see cref="O:gl.VertexAttribPointer"/>size argument.
 		/// </summary>
 		public const int BGRA=0x80E1;
 

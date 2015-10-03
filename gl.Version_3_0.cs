@@ -1159,7 +1159,7 @@ namespace OpenGL.Core
 		public static glBindVertexArray BindVertexArray;
 
 		/// <summary>
-		/// Releases multiple  vertex array names.
+		/// Releases multiple vertex array names.
 		/// </summary>
 		public static glDeleteVertexArrays DeleteVertexArrays;
 		private static glGenVertexArray _GenVertexArray;

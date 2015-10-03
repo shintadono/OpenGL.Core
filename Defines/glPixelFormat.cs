@@ -100,7 +100,7 @@ namespace OpenGL.Core
 		GREEN_INTEGER=0x8D95,
 
 		/// <summary>
-		/// Blue  color value as integer.
+		/// Blue color value as integer.
 		/// </summary>
 		BLUE_INTEGER=0x8D96,
 

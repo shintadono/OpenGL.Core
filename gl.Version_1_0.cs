@@ -30,7 +30,7 @@ namespace OpenGL.Core
 	public static partial class gl
 	{
 		/// <summary>
-		///  Sets what side(s) of a polygon is/are not rasterized.
+		/// Sets what side(s) of a polygon is/are not rasterized.
 		/// </summary>
 		/// <param name="mode">A <see cref="glFace"/> specifying the face(s).</param>
 		[DllImport(DLLName, EntryPoint="glCullFace")]
@@ -1204,7 +1204,7 @@ namespace OpenGL.Core
 		/// Returns the value of a texture parameter.
 		/// </summary>
 		/// <param name="target">A <see cref="glTextureTarget"/> specifying the texture target.</param>
-		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter.  Only one of the texture wrapping parameter is allowed.</param>
+		/// <param name="pname">A <see cref="glTextureParameter"/> specifying the texture parameter. Only one of the texture wrapping parameter is allowed.</param>
 		/// <param name="param">Returns the requested value.</param>
 		[DllImport(DLLName, EntryPoint="glGetTexParameteriv")]
 		public static extern void GetTexParameteriv(glTextureTarget target, glTextureParameter pname, out glTextureWrapMode param);

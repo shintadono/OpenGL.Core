@@ -70,7 +70,7 @@ namespace OpenGL.Core
 		ATTACHED_SHADERS=0x8B85,
 
 		/// <summary>
-		/// Returns  an array of three <b>int</b>s containing the local work group size of the compute program,
+		/// Returns an array of three <b>int</b>s containing the local work group size of the compute program,
 		/// as specified by its input layout qualifier(s).
 		/// </summary>
 		COMPUTE_WORK_GROUP_SIZE=0x8267,
@@ -171,7 +171,7 @@ namespace OpenGL.Core
 		TRANSFORM_FEEDBACK_VARYINGS=0x8C83,
 
 		/// <summary>
-		/// Returns <see cref="gl.TRUE"/>  if the last call to <see cref="gl.ValidateProgram"/> with program was successful.
+		/// Returns <see cref="gl.TRUE"/> if the last call to <see cref="gl.ValidateProgram"/> with program was successful.
 		/// </summary>
 		VALIDATE_STATUS=0x8B83,
 	}

@@ -1039,7 +1039,7 @@ namespace OpenGL.Core
 		public static glClearNamedFramebufferfi ClearNamedFramebufferfi;
 
 		/// <summary>
-		///  Copies a block of pixels between two framebuffer objects.
+		/// Copies a block of pixels between two framebuffer objects.
 		/// </summary>
 		public static glBlitNamedFramebuffer BlitNamedFramebuffer;
 

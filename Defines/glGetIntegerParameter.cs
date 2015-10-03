@@ -673,7 +673,7 @@ namespace OpenGL.Core
 		MAX_SHADER_STORAGE_BUFFER_BINDINGS=0x90DD,
 
 		/// <summary>
-		/// Maximum number  of subroutine uniform locations per stage.
+		/// Maximum number of subroutine uniform locations per stage.
 		/// </summary>
 		MAX_SUBROUTINE_UNIFORM_LOCATIONS=0x8DE8,
 

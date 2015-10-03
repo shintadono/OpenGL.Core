@@ -45,7 +45,7 @@ namespace OpenGL.Core
 		ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS=0x8E47,
 
 		/// <summary>
-		/// Length of the longest  subroutine name.
+		/// Length of the longest subroutine name.
 		/// </summary>
 		ACTIVE_SUBROUTINE_MAX_LENGTH=0x8E48,
 

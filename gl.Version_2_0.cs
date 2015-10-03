@@ -1263,7 +1263,7 @@ namespace OpenGL.Core
 
 		#region GetActiveUniform
 		/// <summary>
-		///  Returns multiple informations about an active uniform variable.
+		/// Returns multiple informations about an active uniform variable.
 		/// </summary>
 		/// <param name="program">The name of the program.</param>
 		/// <param name="index">The index of the uniform variable.</param>
@@ -1393,6 +1393,7 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Sets the address of an array of vertex attributes.
 		/// </summary>
+		/// <overloads>Sets the address of an array of vertex attributes.</overloads>
 		/// <param name="index">The index of the vertex attribute.</param>
 		/// <param name="size">Size of the vertex attribute. Can be <see cref="gl.BGRA"/>.</param>
 		/// <param name="type">Data type of the vertex attribute data.</param>

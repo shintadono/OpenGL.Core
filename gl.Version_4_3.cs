@@ -149,7 +149,7 @@ namespace OpenGL.Core
 		public delegate void glInvalidateFramebuffer(glFramebufferTarget target, int numAttachments, params glBuffer[] attachments);
 
 		/// <summary>
-		/// Invalidates the content of a region of  some or all of a framebuffer's attachments.
+		/// Invalidates the content of a region of some or all of a framebuffer's attachments.
 		/// </summary>
 		/// <param name="target">A <see cref="glFramebufferTarget"/> specifying the framebuffer target.</param>
 		/// <param name="numAttachments">The number of attachments in <paramref name="attachments"/>.</param>
@@ -498,7 +498,7 @@ namespace OpenGL.Core
 		public static glInvalidateFramebuffer InvalidateFramebuffer;
 
 		/// <summary>
-		/// Invalidates the content of a region of  some or all of a framebuffer's attachments.
+		/// Invalidates the content of a region of some or all of a framebuffer's attachments.
 		/// </summary>
 		public static glInvalidateSubFramebuffer InvalidateSubFramebuffer;
 
