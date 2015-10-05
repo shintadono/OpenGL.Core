@@ -37,11 +37,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Clockwise.
 		/// </summary>
-		CW=0x0900,
+		CW = 0x0900,
 
 		/// <summary>
 		/// Counter-clockwise.
 		/// </summary>
-		CCW=0x0901,
+		CCW = 0x0901,
 	}
 }

@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns the query result.
 		/// </summary>
-		QUERY_RESULT=0x8866,
+		QUERY_RESULT = 0x8866,
 
 		/// <summary>
 		/// Returns <b>true</b>, if the query result is available.
 		/// </summary>
-		QUERY_RESULT_AVAILABLE=0x8867,
+		QUERY_RESULT_AVAILABLE = 0x8867,
 
 		/// <summary>
 		/// Returns the query result, or nothing, if query result is not (yet) available.
 		/// </summary>
-		QUERY_RESULT_NO_WAIT=0x9194,
+		QUERY_RESULT_NO_WAIT = 0x9194,
 
 		/// <summary>
 		/// Returns the target of the query object.
 		/// </summary>
-		QUERY_TARGET=0x82EA,
+		QUERY_TARGET = 0x82EA,
 	}
 }

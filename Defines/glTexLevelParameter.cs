@@ -32,116 +32,116 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Width of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_WIDTH=0x1000,
+		TEXTURE_WIDTH = 0x1000,
 
 		/// <summary>
 		/// Height of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_HEIGHT=0x1001,
+		TEXTURE_HEIGHT = 0x1001,
 
 		/// <summary>
 		/// Depth of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_DEPTH=0x8071,
+		TEXTURE_DEPTH = 0x8071,
 
 		/// <summary>
 		/// Internal format of the specified level-of-detail of the current texture. (<see cref="glInternalFormat"/>)
 		/// </summary>
-		TEXTURE_INTERNAL_FORMAT=0x1003,
+		TEXTURE_INTERNAL_FORMAT = 0x1003,
 
 		/// <summary>
 		/// Number of samples per texel of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_SAMPLES=0x9106,
+		TEXTURE_SAMPLES = 0x9106,
 
 		/// <summary>
 		/// Fixed sample pattern used for the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_FIXED_SAMPLE_LOCATIONS=0x9107,
+		TEXTURE_FIXED_SAMPLE_LOCATIONS = 0x9107,
 
 		/// <summary>
 		/// Type (<see cref="glComponentType"/>) of the red component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_RED_TYPE=0x8C10,
+		TEXTURE_RED_TYPE = 0x8C10,
 
 		/// <summary>
 		/// Type (<see cref="glComponentType"/>) of the green component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_GREEN_TYPE=0x8C11,
+		TEXTURE_GREEN_TYPE = 0x8C11,
 
 		/// <summary>
 		/// Type (<see cref="glComponentType"/>) of the blue component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_BLUE_TYPE=0x8C12,
+		TEXTURE_BLUE_TYPE = 0x8C12,
 
 		/// <summary>
 		/// Type (<see cref="glComponentType"/>) of the alpha component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_ALPHA_TYPE=0x8C13,
+		TEXTURE_ALPHA_TYPE = 0x8C13,
 
 		/// <summary>
 		/// Type (<see cref="glComponentType"/>) of the depth component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_DEPTH_TYPE=0x8C16,
+		TEXTURE_DEPTH_TYPE = 0x8C16,
 
 		/// <summary>
 		/// Size/Resolition of the red component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_RED_SIZE=0x805C,
+		TEXTURE_RED_SIZE = 0x805C,
 
 		/// <summary>
 		/// Size/Resolition of the green component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_GREEN_SIZE=0x805D,
+		TEXTURE_GREEN_SIZE = 0x805D,
 
 		/// <summary>
 		/// Size/Resolition of the blue component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_BLUE_SIZE=0x805E,
+		TEXTURE_BLUE_SIZE = 0x805E,
 
 		/// <summary>
 		/// Size/Resolition of the alpha component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_ALPHA_SIZE=0x805F,
+		TEXTURE_ALPHA_SIZE = 0x805F,
 
 		/// <summary>
 		/// Size/Resolition of the depth component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_DEPTH_SIZE=0x884A,
+		TEXTURE_DEPTH_SIZE = 0x884A,
 
 		/// <summary>
 		/// Size/Resolition of the stencil component of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_STENCIL_SIZE=0x88F1,
+		TEXTURE_STENCIL_SIZE = 0x88F1,
 
 		/// <summary>
 		/// Size/Resolition of the shared exponent of the components of the specified level-of-detail of the current texture.
 		/// </summary>
-		TEXTURE_SHARED_SIZE=0x8C3F,
+		TEXTURE_SHARED_SIZE = 0x8C3F,
 
 		/// <summary>
 		/// <b>True</b> if image has a compressed internal format.
 		/// </summary>
-		TEXTURE_COMPRESSED=0x86A1,
+		TEXTURE_COMPRESSED = 0x86A1,
 
 		/// <summary>
 		/// Size (in bytes) of compressed image.
 		/// </summary>
-		TEXTURE_COMPRESSED_IMAGE_SIZE=0x86A0,
+		TEXTURE_COMPRESSED_IMAGE_SIZE = 0x86A0,
 
 		/// <summary>
 		/// Buffer object bound as the data store for the active image unit's buffer texture.
 		/// </summary>
-		TEXTURE_BUFFER_DATA_STORE_BINDING=0x8C2D,
+		TEXTURE_BUFFER_DATA_STORE_BINDING = 0x8C2D,
 
 		/// <summary>
 		/// Offset into buffer's data store used for the active image unit's buffer texture.
 		/// </summary>
-		TEXTURE_BUFFER_OFFSET=0x919D,
+		TEXTURE_BUFFER_OFFSET = 0x919D,
 
 		/// <summary>
 		/// Size into buffer's data store used for the active image unit's buffer texture.
 		/// </summary>
-		TEXTURE_BUFFER_SIZE=0x919E,
+		TEXTURE_BUFFER_SIZE = 0x919E,
 	}
 }

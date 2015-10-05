@@ -32,46 +32,46 @@ namespace OpenGL.Core
 		/// <summary>
 		/// No error.
 		/// </summary>
-		NO_ERROR=0,
+		NO_ERROR = 0,
 
 		/// <summary>
 		/// Enum argument out of range.
 		/// </summary>
-		INVALID_ENUM=0x0500,
+		INVALID_ENUM = 0x0500,
 
 		/// <summary>
 		/// Numeric argument out of range.
 		/// </summary>
-		INVALID_VALUE=0x0501,
+		INVALID_VALUE = 0x0501,
 
 		/// <summary>
 		/// Operation illegal in current state.
 		/// </summary>
-		INVALID_OPERATION=0x0502,
+		INVALID_OPERATION = 0x0502,
 
 		/// <summary>
 		/// Framebuffer object is not complete.
 		/// </summary>
-		INVALID_FRAMEBUFFER_OPERATION=0x0506,
+		INVALID_FRAMEBUFFER_OPERATION = 0x0506,
 
 		/// <summary>
 		/// Not enough memory left to execute command.
 		/// </summary>
-		OUT_OF_MEMORY=0x0505,
+		OUT_OF_MEMORY = 0x0505,
 
 		/// <summary>
 		/// Command would cause a stack overflow.
 		/// </summary>
-		STACK_OVERFLOW=0x0503,
+		STACK_OVERFLOW = 0x0503,
 
 		/// <summary>
 		/// Command would cause a stack underflow.
 		/// </summary>
-		STACK_UNDERFLOW=0x0504,
+		STACK_UNDERFLOW = 0x0504,
 
 		/// <summary>
 		/// Context has been lost and reset by the driver.
 		/// </summary>
-		CONTEXT_LOST=0x507,
+		CONTEXT_LOST = 0x507,
 	}
 }

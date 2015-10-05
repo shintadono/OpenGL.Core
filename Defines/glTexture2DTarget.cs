@@ -35,52 +35,52 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 2D texture object.
 		/// </summary>
-		TEXTURE_2D=0x0DE1,
+		TEXTURE_2D = 0x0DE1,
 
 		/// <summary>
 		/// 2D rectangle texture object.
 		/// </summary>
-		TEXTURE_RECTANGLE=0x84F5,
+		TEXTURE_RECTANGLE = 0x84F5,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_X=0x8515,
+		TEXTURE_CUBE_MAP_POSITIVE_X = 0x8515,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_X=0x8516,
+		TEXTURE_CUBE_MAP_NEGATIVE_X = 0x8516,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_Y=0x8517,
+		TEXTURE_CUBE_MAP_POSITIVE_Y = 0x8517,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_Y=0x8518,
+		TEXTURE_CUBE_MAP_NEGATIVE_Y = 0x8518,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_Z=0x8519,
+		TEXTURE_CUBE_MAP_POSITIVE_Z = 0x8519,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_Z=0x851A,
+		TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851A,
 
 		/// <summary>
 		/// 1D texture array object.
 		/// </summary>
-		TEXTURE_1D_ARRAY=0x8C18,
+		TEXTURE_1D_ARRAY = 0x8C18,
 
 		/// <summary>
 		/// 2D multisample texture object.
 		/// Allowed only as argument in <see cref="gl.FramebufferTexture2D"/>.
 		/// </summary>
-		TEXTURE_2D_MULTISAMPLE=0x9100,
+		TEXTURE_2D_MULTISAMPLE = 0x9100,
 	}
 }

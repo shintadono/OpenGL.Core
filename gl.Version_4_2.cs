@@ -24,7 +24,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace OpenGL.Core
 {
@@ -41,7 +40,7 @@ namespace OpenGL.Core
 		/// <param name="instancecount">Number of instances to be rendered.</param>
 		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
 		public delegate void glDrawArraysInstancedBaseInstance(glDrawMode mode, int first, int count, int instancecount, uint baseinstance);
-		
+
 		internal delegate void glDrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, IntPtr indices, int instancecount, uint baseinstance);
 		internal delegate void glDrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, IntPtr indices, int instancecount, int basevertex, uint baseinstance);
 
@@ -229,12 +228,12 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
 		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, IntPtr indices, int instancecount, uint baseinstance)
+		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, int offset, int instancecount, uint baseinstance)
 		{
-			_DrawElementsInstancedBaseInstance(mode, count, type, indices, instancecount, baseinstance);
+			_DrawElementsInstancedBaseInstance(mode, count, type, (IntPtr)offset, instancecount, baseinstance);
 		}
 
 		/// <summary>
@@ -243,86 +242,13 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
 		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, byte[] indices, int instancecount, uint baseinstance)
+		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, long offset, int instancecount, uint baseinstance)
 		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, ushort[] indices, int instancecount, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, int[] indices, int instancecount, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseInstance(glDrawMode mode, int count, glDrawElementsType type, uint[] indices, int instancecount, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			_DrawElementsInstancedBaseInstance(mode, count, type, (IntPtr)offset, instancecount, baseinstance);
 		}
 		#endregion
 
@@ -333,13 +259,13 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
 		/// <param name="basevertex">The per-element offset.</param>
 		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, IntPtr indices, int instancecount, int basevertex, uint baseinstance)
+		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, int offset, int instancecount, int basevertex, uint baseinstance)
 		{
-			_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, indices, instancecount, basevertex, baseinstance);
+			_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, (IntPtr)offset, instancecount, basevertex, baseinstance);
 		}
 
 		/// <summary>
@@ -348,116 +274,40 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
 		/// <param name="basevertex">The per-element offset.</param>
 		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, byte[] indices, int instancecount, int basevertex, uint baseinstance)
+		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, long offset, int instancecount, int basevertex, uint baseinstance)
 		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, basevertex, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with a per-element offset and an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="basevertex">The per-element offset.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, ushort[] indices, int instancecount, int basevertex, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, basevertex, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with a per-element offset and an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="basevertex">The per-element offset.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, int[] indices, int instancecount, int basevertex, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, basevertex, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices with a per-element offset and an offset to all instanced vertex attributes.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		/// <param name="basevertex">The per-element offset.</param>
-		/// <param name="baseinstance">Offset to all instanced vertex attributes.</param>
-		public static void DrawElementsInstancedBaseVertexBaseInstance(glDrawMode mode, int count, glDrawElementsType type, uint[] indices, int instancecount, int basevertex, uint baseinstance)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount, basevertex, baseinstance);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			_DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, (IntPtr)offset, instancecount, basevertex, baseinstance);
 		}
 		#endregion
 		#endregion
 
 		private static void Load_VERSION_4_2()
 		{
-			DrawArraysInstancedBaseInstance=GetAddress<glDrawArraysInstancedBaseInstance>("glDrawArraysInstancedBaseInstance");
-			_DrawElementsInstancedBaseInstance=GetAddress<glDrawElementsInstancedBaseInstance>("glDrawElementsInstancedBaseInstance");
-			_DrawElementsInstancedBaseVertexBaseInstance=GetAddress<glDrawElementsInstancedBaseVertexBaseInstance>("glDrawElementsInstancedBaseVertexBaseInstance");
-			GetInternalformati=GetAddress<glGetInternalformati>("glGetInternalformativ");
-			GetInternalformativ=GetAddress<glGetInternalformativ>("glGetInternalformativ");
-			GetActiveAtomicCounterBufferi=GetAddress<glGetActiveAtomicCounterBufferi>("glGetActiveAtomicCounterBufferiv");
-			GetActiveAtomicCounterBufferiv=GetAddress<glGetActiveAtomicCounterBufferiv>("glGetActiveAtomicCounterBufferiv");
-			BindImageTexture=GetAddress<glBindImageTexture>("glBindImageTexture");
-			MemoryBarrier=GetAddress<glMemoryBarrier>("glMemoryBarrier");
-			TexStorage1D=GetAddress<glTexStorage1D>("glTexStorage1D");
-			TexStorage2D=GetAddress<glTexStorage2D>("glTexStorage2D");
-			TexStorage3D=GetAddress<glTexStorage3D>("glTexStorage3D");
-			DrawTransformFeedbackInstanced=GetAddress<glDrawTransformFeedbackInstanced>("glDrawTransformFeedbackInstanced");
-			DrawTransformFeedbackStreamInstanced=GetAddress<glDrawTransformFeedbackStreamInstanced>("glDrawTransformFeedbackStreamInstanced");
+			DrawArraysInstancedBaseInstance = GetAddress<glDrawArraysInstancedBaseInstance>("glDrawArraysInstancedBaseInstance");
+			_DrawElementsInstancedBaseInstance = GetAddress<glDrawElementsInstancedBaseInstance>("glDrawElementsInstancedBaseInstance");
+			_DrawElementsInstancedBaseVertexBaseInstance = GetAddress<glDrawElementsInstancedBaseVertexBaseInstance>("glDrawElementsInstancedBaseVertexBaseInstance");
+			GetInternalformati = GetAddress<glGetInternalformati>("glGetInternalformativ");
+			GetInternalformativ = GetAddress<glGetInternalformativ>("glGetInternalformativ");
+			GetActiveAtomicCounterBufferi = GetAddress<glGetActiveAtomicCounterBufferi>("glGetActiveAtomicCounterBufferiv");
+			GetActiveAtomicCounterBufferiv = GetAddress<glGetActiveAtomicCounterBufferiv>("glGetActiveAtomicCounterBufferiv");
+			BindImageTexture = GetAddress<glBindImageTexture>("glBindImageTexture");
+			MemoryBarrier = GetAddress<glMemoryBarrier>("glMemoryBarrier");
+			TexStorage1D = GetAddress<glTexStorage1D>("glTexStorage1D");
+			TexStorage2D = GetAddress<glTexStorage2D>("glTexStorage2D");
+			TexStorage3D = GetAddress<glTexStorage3D>("glTexStorage3D");
+			DrawTransformFeedbackInstanced = GetAddress<glDrawTransformFeedbackInstanced>("glDrawTransformFeedbackInstanced");
+			DrawTransformFeedbackStreamInstanced = GetAddress<glDrawTransformFeedbackStreamInstanced>("glDrawTransformFeedbackStreamInstanced");
 
-			VERSION_4_2=VERSION_4_1&&DrawArraysInstancedBaseInstance!=null&&_DrawElementsInstancedBaseInstance!=null&&
-				_DrawElementsInstancedBaseVertexBaseInstance!=null&&GetInternalformati!=null&&GetInternalformativ!=null&&
-				GetActiveAtomicCounterBufferi!=null&&GetActiveAtomicCounterBufferiv!=null&&BindImageTexture!=null&&
-				MemoryBarrier!=null&&TexStorage1D!=null&&TexStorage2D!=null&&TexStorage3D!=null&&
-				DrawTransformFeedbackInstanced!=null&&DrawTransformFeedbackStreamInstanced!=null;
+			VERSION_4_2 = VERSION_4_1 && DrawArraysInstancedBaseInstance != null && _DrawElementsInstancedBaseInstance != null &&
+				_DrawElementsInstancedBaseVertexBaseInstance != null && GetInternalformati != null && GetInternalformativ != null &&
+				GetActiveAtomicCounterBufferi != null && GetActiveAtomicCounterBufferiv != null && BindImageTexture != null &&
+				MemoryBarrier != null && TexStorage1D != null && TexStorage2D != null && TexStorage3D != null &&
+				DrawTransformFeedbackInstanced != null && DrawTransformFeedbackStreamInstanced != null;
 		}
 	}
 }

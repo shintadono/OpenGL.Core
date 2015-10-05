@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Tesselation evaluation shader input is <c>equal_spacing</c>.
 		/// </summary>
-		EQUAL=0x0202,
+		EQUAL = 0x0202,
 
 		/// <summary>
 		/// Tesselation evaluation shader input is <c>fractional_odd_spacing</c>.
 		/// </summary>
-		FRACTIONAL_ODD=0x8E7B,
+		FRACTIONAL_ODD = 0x8E7B,
 
 		/// <summary>
 		/// Tesselation evaluation shader input is <c>fractional_even_spacing</c>.
 		/// </summary>
-		FRACTIONAL_EVEN=0x8E7C,
+		FRACTIONAL_EVEN = 0x8E7C,
 	}
 }

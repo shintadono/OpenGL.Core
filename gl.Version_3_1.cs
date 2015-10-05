@@ -23,7 +23,6 @@
 #endregion
 
 using System;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace OpenGL.Core
@@ -204,11 +203,11 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
-		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, IntPtr indices, int instancecount)
+		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, int offset, int instancecount)
 		{
-			_DrawElementsInstanced(mode, count, type, indices, instancecount);
+			_DrawElementsInstanced(mode, count, type, (IntPtr)offset, instancecount);
 		}
 
 		/// <summary>
@@ -217,82 +216,12 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
+		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="instancecount">Number of instances to be rendered.</param>
-		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, byte[] indices, int instancecount)
+		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, long offset, int instancecount)
 		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstanced(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, ushort[] indices, int instancecount)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstanced(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, int[] indices, int instancecount)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstanced(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Renders multiple instances from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to be rendered.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="instancecount">Number of instances to be rendered.</param>
-		public static void DrawElementsInstanced(glDrawMode mode, int count, glDrawElementsType type, uint[] indices, int instancecount)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawElementsInstanced(mode, count, type, hIndices.AddrOfPinnedObject(), instancecount);
-			}
-			finally
-			{
-				hIndices.Free();
-			}
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			_DrawElementsInstanced(mode, count, type, (IntPtr)offset, instancecount);
 		}
 		#endregion
 
@@ -307,7 +236,7 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the region.</param>
 		public static void CopyBufferSubData(glBufferTarget readTarget, glBufferTarget writeTarget, int readOffset, int writeOffset, int size)
 		{
-			if(IntPtr.Size==4) CopyBufferSubData_32(readTarget, writeTarget, readOffset, writeOffset, size);
+			if (IntPtr.Size == 4) CopyBufferSubData_32(readTarget, writeTarget, readOffset, writeOffset, size);
 			else CopyBufferSubData_64(readTarget, writeTarget, readOffset, writeOffset, size);
 		}
 
@@ -321,12 +250,11 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the region.</param>
 		public static void CopyBufferSubData(glBufferTarget readTarget, glBufferTarget writeTarget, long readOffset, long writeOffset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)readOffset>>32)!=0) throw new ArgumentOutOfRangeException("readOffset", PlatformErrorString);
-				if(((long)writeOffset>>32)!=0) throw new ArgumentOutOfRangeException("writeOffset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)readOffset >> 32) != 0) throw new ArgumentOutOfRangeException("readOffset", PlatformErrorString);
+				if (((long)writeOffset >> 32) != 0) throw new ArgumentOutOfRangeException("writeOffset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				CopyBufferSubData_32(readTarget, writeTarget, (int)readOffset, (int)writeOffset, (int)size);
 			}
 			else CopyBufferSubData_64(readTarget, writeTarget, readOffset, writeOffset, size);
@@ -344,9 +272,9 @@ namespace OpenGL.Core
 		/// <param name="uniformName">Returns the name of the uniform.</param>
 		public static void GetActiveUniformName(uint program, uint uniformIndex, int bufSize, out int length, out string uniformName)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveUniformName(program, uniformIndex, bufSize+1, out length, tmp);
-			uniformName=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveUniformName(program, uniformIndex, bufSize + 1, out length, tmp);
+			uniformName = tmp.ToString();
 		}
 		#endregion
 
@@ -361,37 +289,37 @@ namespace OpenGL.Core
 		/// <param name="uniformBlockName">Returns the name of the uniform block.</param>
 		public static void GetActiveUniformBlockName(uint program, uint uniformBlockIndex, int bufSize, out int length, out string uniformBlockName)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveUniformBlockName(program, uniformBlockIndex, bufSize+1, out length, tmp);
-			uniformBlockName=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveUniformBlockName(program, uniformBlockIndex, bufSize + 1, out length, tmp);
+			uniformBlockName = tmp.ToString();
 		}
 		#endregion
 		#endregion
 
 		private static void Load_VERSION_3_1()
 		{
-			DrawArraysInstanced=GetAddress<glDrawArraysInstanced>("glDrawArraysInstanced");
-			_DrawElementsInstanced=GetAddress<glDrawElementsInstanced>("glDrawElementsInstanced");
-			TexBuffer=GetAddress<glTexBuffer>("glTexBuffer");
-			PrimitiveRestartIndex=GetAddress<glPrimitiveRestartIndex>("glPrimitiveRestartIndex");
-			GetUniformIndices=GetAddress<glGetUniformIndices>("glGetUniformIndices");
-			GetActiveUniformsi=GetAddress<glGetActiveUniformsi>("glGetActiveUniformsi");
-			GetActiveUniformsiv=GetAddress<glGetActiveUniformsiv>("glGetActiveUniformsiv");
-			_GetActiveUniformName=GetAddress<glGetActiveUniformName>("glGetActiveUniformName");
-			GetUniformBlockIndex=GetAddress<glGetUniformBlockIndex>("glGetUniformBlockIndex");
-			GetActiveUniformBlocki=GetAddress<glGetActiveUniformBlocki>("glGetActiveUniformBlocki");
-			GetActiveUniformBlockiv=GetAddress<glGetActiveUniformBlockiv>("glGetActiveUniformBlockiv");
-			_GetActiveUniformBlockName=GetAddress<glGetActiveUniformBlockName>("glGetActiveUniformBlockName");
-			UniformBlockBinding=GetAddress<glUniformBlockBinding>("glUniformBlockBinding");
+			DrawArraysInstanced = GetAddress<glDrawArraysInstanced>("glDrawArraysInstanced");
+			_DrawElementsInstanced = GetAddress<glDrawElementsInstanced>("glDrawElementsInstanced");
+			TexBuffer = GetAddress<glTexBuffer>("glTexBuffer");
+			PrimitiveRestartIndex = GetAddress<glPrimitiveRestartIndex>("glPrimitiveRestartIndex");
+			GetUniformIndices = GetAddress<glGetUniformIndices>("glGetUniformIndices");
+			GetActiveUniformsi = GetAddress<glGetActiveUniformsi>("glGetActiveUniformsi");
+			GetActiveUniformsiv = GetAddress<glGetActiveUniformsiv>("glGetActiveUniformsiv");
+			_GetActiveUniformName = GetAddress<glGetActiveUniformName>("glGetActiveUniformName");
+			GetUniformBlockIndex = GetAddress<glGetUniformBlockIndex>("glGetUniformBlockIndex");
+			GetActiveUniformBlocki = GetAddress<glGetActiveUniformBlocki>("glGetActiveUniformBlocki");
+			GetActiveUniformBlockiv = GetAddress<glGetActiveUniformBlockiv>("glGetActiveUniformBlockiv");
+			_GetActiveUniformBlockName = GetAddress<glGetActiveUniformBlockName>("glGetActiveUniformBlockName");
+			UniformBlockBinding = GetAddress<glUniformBlockBinding>("glUniformBlockBinding");
 
-			if(IntPtr.Size==4) CopyBufferSubData_32=GetAddress<glCopyBufferSubData_32>("glCopyBufferSubData");
-			else CopyBufferSubData_64=GetAddress<glCopyBufferSubData_64>("glCopyBufferSubData");
-			bool CopyBufferSubData=CopyBufferSubData_32!=null||CopyBufferSubData_64!=null;
+			if (IntPtr.Size == 4) CopyBufferSubData_32 = GetAddress<glCopyBufferSubData_32>("glCopyBufferSubData");
+			else CopyBufferSubData_64 = GetAddress<glCopyBufferSubData_64>("glCopyBufferSubData");
+			bool CopyBufferSubData = CopyBufferSubData_32 != null || CopyBufferSubData_64 != null;
 
-			VERSION_3_1=VERSION_3_0&&DrawArraysInstanced!=null&&_DrawElementsInstanced!=null&&TexBuffer!=null&&
-				PrimitiveRestartIndex!=null&&GetUniformIndices!=null&&GetActiveUniformsiv!=null&&
-				_GetActiveUniformName!=null&&GetUniformBlockIndex!=null&&GetActiveUniformBlockiv!=null&&
-				_GetActiveUniformBlockName!=null&&UniformBlockBinding!=null&&CopyBufferSubData;
+			VERSION_3_1 = VERSION_3_0 && DrawArraysInstanced != null && _DrawElementsInstanced != null && TexBuffer != null &&
+				PrimitiveRestartIndex != null && GetUniformIndices != null && GetActiveUniformsiv != null &&
+				_GetActiveUniformName != null && GetUniformBlockIndex != null && GetActiveUniformBlockiv != null &&
+				_GetActiveUniformBlockName != null && UniformBlockBinding != null && CopyBufferSubData;
 		}
 	}
 }

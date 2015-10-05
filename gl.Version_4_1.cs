@@ -132,7 +132,7 @@ namespace OpenGL.Core
 		/// <param name="count">Number of pipeline names to be released.</param>
 		/// <param name="pipelines">Array of pipeline names to be released.</param>
 		public delegate void glDeleteProgramPipelines(int count, params uint[] pipelines);
-		
+
 		internal delegate void glGenProgramPipeline(int one, out uint pipeline);
 		internal delegate void glGenProgramPipelines(int count, uint[] pipelines);
 
@@ -1315,7 +1315,7 @@ namespace OpenGL.Core
 		/// <returns>The new program pipeline names as array.</returns>
 		public static uint[] GenProgramPipelines(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenProgramPipelines(count, ret);
 			return ret;
 		}
@@ -1341,9 +1341,9 @@ namespace OpenGL.Core
 		/// <param name="infoLog">Returns the name of the shader subroutine uniform.</param>
 		public static void GetProgramPipelineInfoLog(uint pipeline, int bufSize, out int length, out string infoLog)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetProgramPipelineInfoLog(pipeline, bufSize+1, out length, tmp);
-			infoLog=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetProgramPipelineInfoLog(pipeline, bufSize + 1, out length, tmp);
+			infoLog = tmp.ToString();
 		}
 		#endregion
 
@@ -1358,7 +1358,7 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribLPointer(uint index, int size, glVertexAttribType type, int stride, int pointer)
 		{
-			if(IntPtr.Size==4) VertexAttribLPointer_32(index, size, type, stride, pointer);
+			if (IntPtr.Size == 4) VertexAttribLPointer_32(index, size, type, stride, pointer);
 			else VertexAttribLPointer_64(index, size, type, stride, pointer);
 		}
 
@@ -1372,10 +1372,9 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribLPointer(uint index, int size, glVertexAttribType type, int stride, long pointer)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)pointer>>32)!=0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
-
+				if (((long)pointer >> 32) != 0) throw new ArgumentOutOfRangeException("pointer", PlatformErrorString);
 				VertexAttribLPointer_32(index, size, type, stride, (int)pointer);
 			}
 			else VertexAttribLPointer_64(index, size, type, stride, pointer);
@@ -1385,121 +1384,121 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_4_1()
 		{
-			ReleaseShaderCompiler=GetAddress<glReleaseShaderCompiler>("glReleaseShaderCompiler");
-			ShaderBinary=GetAddress<glShaderBinary>("glShaderBinary");
-			GetShaderPrecisionFormat=GetAddress<glGetShaderPrecisionFormat>("glGetShaderPrecisionFormat");
-			DepthRangef=GetAddress<glDepthRangef>("glDepthRangef");
-			ClearDepthf=GetAddress<glClearDepthf>("glClearDepthf");
-			GetProgramBinary=GetAddress<glGetProgramBinary>("glGetProgramBinary");
-			ProgramBinary=GetAddress<glProgramBinary>("glProgramBinary");
-			ProgramParameteri=GetAddress<glProgramParameteri>("glProgramParameteri");
-			UseProgramStages=GetAddress<glUseProgramStages>("glUseProgramStages");
-			ActiveShaderProgram=GetAddress<glActiveShaderProgram>("glActiveShaderProgram");
-			CreateShaderProgramv=GetAddress<glCreateShaderProgramv>("glCreateShaderProgramv");
-			BindProgramPipeline=GetAddress<glBindProgramPipeline>("glBindProgramPipeline");
-			DeleteProgramPipelines=GetAddress<glDeleteProgramPipelines>("glDeleteProgramPipelines");
-			_GenProgramPipeline=GetAddress<glGenProgramPipeline>("glGenProgramPipelines");
-			_GenProgramPipelines=GetAddress<glGenProgramPipelines>("glGenProgramPipelines");
-			IsProgramPipeline=GetAddress<glIsProgramPipeline>("glIsProgramPipeline");
-			GetProgramPipelinei=GetAddress<glGetProgramPipelinei>("glGetProgramPipelineiv");
-			GetProgramPipelineiv=GetAddress<glGetProgramPipelineiv>("glGetProgramPipelineiv");
-			ProgramUniform1i=GetAddress<glProgramUniform1i>("glProgramUniform1i");
-			ProgramUniform1iv=GetAddress<glProgramUniform1iv>("glProgramUniform1iv");
-			ProgramUniform1f=GetAddress<glProgramUniform1f>("glProgramUniform1f");
-			ProgramUniform1fv=GetAddress<glProgramUniform1fv>("glProgramUniform1fv");
-			ProgramUniform1d=GetAddress<glProgramUniform1d>("glProgramUniform1d");
-			ProgramUniform1dv=GetAddress<glProgramUniform1dv>("glProgramUniform1dv");
-			ProgramUniform1ui=GetAddress<glProgramUniform1ui>("glProgramUniform1ui");
-			ProgramUniform1uiv=GetAddress<glProgramUniform1uiv>("glProgramUniform1uiv");
-			ProgramUniform2i=GetAddress<glProgramUniform2i>("glProgramUniform2i");
-			ProgramUniform2iv=GetAddress<glProgramUniform2iv>("glProgramUniform2iv");
-			ProgramUniform2f=GetAddress<glProgramUniform2f>("glProgramUniform2f");
-			ProgramUniform2fv=GetAddress<glProgramUniform2fv>("glProgramUniform2fv");
-			ProgramUniform2d=GetAddress<glProgramUniform2d>("glProgramUniform2d");
-			ProgramUniform2dv=GetAddress<glProgramUniform2dv>("glProgramUniform2dv");
-			ProgramUniform2ui=GetAddress<glProgramUniform2ui>("glProgramUniform2ui");
-			ProgramUniform2uiv=GetAddress<glProgramUniform2uiv>("glProgramUniform2uiv");
-			ProgramUniform3i=GetAddress<glProgramUniform3i>("glProgramUniform3i");
-			ProgramUniform3iv=GetAddress<glProgramUniform3iv>("glProgramUniform3iv");
-			ProgramUniform3f=GetAddress<glProgramUniform3f>("glProgramUniform3f");
-			ProgramUniform3fv=GetAddress<glProgramUniform3fv>("glProgramUniform3fv");
-			ProgramUniform3d=GetAddress<glProgramUniform3d>("glProgramUniform3d");
-			ProgramUniform3dv=GetAddress<glProgramUniform3dv>("glProgramUniform3dv");
-			ProgramUniform3ui=GetAddress<glProgramUniform3ui>("glProgramUniform3ui");
-			ProgramUniform3uiv=GetAddress<glProgramUniform3uiv>("glProgramUniform3uiv");
-			ProgramUniform4i=GetAddress<glProgramUniform4i>("glProgramUniform4i");
-			ProgramUniform4iv=GetAddress<glProgramUniform4iv>("glProgramUniform4iv");
-			ProgramUniform4f=GetAddress<glProgramUniform4f>("glProgramUniform4f");
-			ProgramUniform4fv=GetAddress<glProgramUniform4fv>("glProgramUniform4fv");
-			ProgramUniform4d=GetAddress<glProgramUniform4d>("glProgramUniform4d");
-			ProgramUniform4dv=GetAddress<glProgramUniform4dv>("glProgramUniform4dv");
-			ProgramUniform4ui=GetAddress<glProgramUniform4ui>("glProgramUniform4ui");
-			ProgramUniform4uiv=GetAddress<glProgramUniform4uiv>("glProgramUniform4uiv");
-			ProgramUniformMatrix2fv=GetAddress<glProgramUniformMatrix2fv>("glProgramUniformMatrix2fv");
-			ProgramUniformMatrix3fv=GetAddress<glProgramUniformMatrix3fv>("glProgramUniformMatrix3fv");
-			ProgramUniformMatrix4fv=GetAddress<glProgramUniformMatrix4fv>("glProgramUniformMatrix4fv");
-			ProgramUniformMatrix2dv=GetAddress<glProgramUniformMatrix2dv>("glProgramUniformMatrix2dv");
-			ProgramUniformMatrix3dv=GetAddress<glProgramUniformMatrix3dv>("glProgramUniformMatrix3dv");
-			ProgramUniformMatrix4dv=GetAddress<glProgramUniformMatrix4dv>("glProgramUniformMatrix4dv");
-			ProgramUniformMatrix2x3fv=GetAddress<glProgramUniformMatrix2x3fv>("glProgramUniformMatrix2x3fv");
-			ProgramUniformMatrix3x2fv=GetAddress<glProgramUniformMatrix3x2fv>("glProgramUniformMatrix3x2fv");
-			ProgramUniformMatrix2x4fv=GetAddress<glProgramUniformMatrix2x4fv>("glProgramUniformMatrix2x4fv");
-			ProgramUniformMatrix4x2fv=GetAddress<glProgramUniformMatrix4x2fv>("glProgramUniformMatrix4x2fv");
-			ProgramUniformMatrix3x4fv=GetAddress<glProgramUniformMatrix3x4fv>("glProgramUniformMatrix3x4fv");
-			ProgramUniformMatrix4x3fv=GetAddress<glProgramUniformMatrix4x3fv>("glProgramUniformMatrix4x3fv");
-			ProgramUniformMatrix2x3dv=GetAddress<glProgramUniformMatrix2x3dv>("glProgramUniformMatrix2x3dv");
-			ProgramUniformMatrix3x2dv=GetAddress<glProgramUniformMatrix3x2dv>("glProgramUniformMatrix3x2dv");
-			ProgramUniformMatrix2x4dv=GetAddress<glProgramUniformMatrix2x4dv>("glProgramUniformMatrix2x4dv");
-			ProgramUniformMatrix4x2dv=GetAddress<glProgramUniformMatrix4x2dv>("glProgramUniformMatrix4x2dv");
-			ProgramUniformMatrix3x4dv=GetAddress<glProgramUniformMatrix3x4dv>("glProgramUniformMatrix3x4dv");
-			ProgramUniformMatrix4x3dv=GetAddress<glProgramUniformMatrix4x3dv>("glProgramUniformMatrix4x3dv");
-			ValidateProgramPipeline=GetAddress<glValidateProgramPipeline>("glValidateProgramPipeline");
-			_GetProgramPipelineInfoLog=GetAddress<glGetProgramPipelineInfoLog>("glGetProgramPipelineInfoLog");
-			VertexAttribL1d=GetAddress<glVertexAttribL1d>("glVertexAttribL1d");
-			VertexAttribL2d=GetAddress<glVertexAttribL2d>("glVertexAttribL2d");
-			VertexAttribL3d=GetAddress<glVertexAttribL3d>("glVertexAttribL3d");
-			VertexAttribL4d=GetAddress<glVertexAttribL4d>("glVertexAttribL4d");
-			VertexAttribL1dv=GetAddress<glVertexAttribL1dv>("glVertexAttribL1dv");
-			VertexAttribL2dv=GetAddress<glVertexAttribL2dv>("glVertexAttribL2dv");
-			VertexAttribL3dv=GetAddress<glVertexAttribL3dv>("glVertexAttribL3dv");
-			VertexAttribL4dv=GetAddress<glVertexAttribL4dv>("glVertexAttribL4dv");
-			GetVertexAttribLd=GetAddress<glGetVertexAttribLd>("glGetVertexAttribLdv");
-			GetVertexAttribLdv=GetAddress<glGetVertexAttribLdv>("glGetVertexAttribLdv");
-			ViewportArrayv=GetAddress<glViewportArrayv>("glViewportArrayv");
-			ViewportIndexedf=GetAddress<glViewportIndexedf>("glViewportIndexedf");
-			ViewportIndexedfv=GetAddress<glViewportIndexedfv>("glViewportIndexedfv");
-			ScissorArrayv=GetAddress<glScissorArrayv>("glScissorArrayv");
-			ScissorIndexed=GetAddress<glScissorIndexed>("glScissorIndexed");
-			ScissorIndexedv=GetAddress<glScissorIndexedv>("glScissorIndexedv");
-			DepthRangeArrayv=GetAddress<glDepthRangeArrayv>("glDepthRangeArrayv");
-			DepthRangeIndexed=GetAddress<glDepthRangeIndexed>("glDepthRangeIndexed");
-			GetFloati_=GetAddress<glGetFloati_>("glGetFloati_v");
-			GetFloati_v=GetAddress<glGetFloati_v>("glGetFloati_v");
-			GetDoublei_=GetAddress<glGetDoublei_>("glGetDoublei_v");
-			GetDoublei_v=GetAddress<glGetDoublei_v>("glGetDoublei_v");
+			ReleaseShaderCompiler = GetAddress<glReleaseShaderCompiler>("glReleaseShaderCompiler");
+			ShaderBinary = GetAddress<glShaderBinary>("glShaderBinary");
+			GetShaderPrecisionFormat = GetAddress<glGetShaderPrecisionFormat>("glGetShaderPrecisionFormat");
+			DepthRangef = GetAddress<glDepthRangef>("glDepthRangef");
+			ClearDepthf = GetAddress<glClearDepthf>("glClearDepthf");
+			GetProgramBinary = GetAddress<glGetProgramBinary>("glGetProgramBinary");
+			ProgramBinary = GetAddress<glProgramBinary>("glProgramBinary");
+			ProgramParameteri = GetAddress<glProgramParameteri>("glProgramParameteri");
+			UseProgramStages = GetAddress<glUseProgramStages>("glUseProgramStages");
+			ActiveShaderProgram = GetAddress<glActiveShaderProgram>("glActiveShaderProgram");
+			CreateShaderProgramv = GetAddress<glCreateShaderProgramv>("glCreateShaderProgramv");
+			BindProgramPipeline = GetAddress<glBindProgramPipeline>("glBindProgramPipeline");
+			DeleteProgramPipelines = GetAddress<glDeleteProgramPipelines>("glDeleteProgramPipelines");
+			_GenProgramPipeline = GetAddress<glGenProgramPipeline>("glGenProgramPipelines");
+			_GenProgramPipelines = GetAddress<glGenProgramPipelines>("glGenProgramPipelines");
+			IsProgramPipeline = GetAddress<glIsProgramPipeline>("glIsProgramPipeline");
+			GetProgramPipelinei = GetAddress<glGetProgramPipelinei>("glGetProgramPipelineiv");
+			GetProgramPipelineiv = GetAddress<glGetProgramPipelineiv>("glGetProgramPipelineiv");
+			ProgramUniform1i = GetAddress<glProgramUniform1i>("glProgramUniform1i");
+			ProgramUniform1iv = GetAddress<glProgramUniform1iv>("glProgramUniform1iv");
+			ProgramUniform1f = GetAddress<glProgramUniform1f>("glProgramUniform1f");
+			ProgramUniform1fv = GetAddress<glProgramUniform1fv>("glProgramUniform1fv");
+			ProgramUniform1d = GetAddress<glProgramUniform1d>("glProgramUniform1d");
+			ProgramUniform1dv = GetAddress<glProgramUniform1dv>("glProgramUniform1dv");
+			ProgramUniform1ui = GetAddress<glProgramUniform1ui>("glProgramUniform1ui");
+			ProgramUniform1uiv = GetAddress<glProgramUniform1uiv>("glProgramUniform1uiv");
+			ProgramUniform2i = GetAddress<glProgramUniform2i>("glProgramUniform2i");
+			ProgramUniform2iv = GetAddress<glProgramUniform2iv>("glProgramUniform2iv");
+			ProgramUniform2f = GetAddress<glProgramUniform2f>("glProgramUniform2f");
+			ProgramUniform2fv = GetAddress<glProgramUniform2fv>("glProgramUniform2fv");
+			ProgramUniform2d = GetAddress<glProgramUniform2d>("glProgramUniform2d");
+			ProgramUniform2dv = GetAddress<glProgramUniform2dv>("glProgramUniform2dv");
+			ProgramUniform2ui = GetAddress<glProgramUniform2ui>("glProgramUniform2ui");
+			ProgramUniform2uiv = GetAddress<glProgramUniform2uiv>("glProgramUniform2uiv");
+			ProgramUniform3i = GetAddress<glProgramUniform3i>("glProgramUniform3i");
+			ProgramUniform3iv = GetAddress<glProgramUniform3iv>("glProgramUniform3iv");
+			ProgramUniform3f = GetAddress<glProgramUniform3f>("glProgramUniform3f");
+			ProgramUniform3fv = GetAddress<glProgramUniform3fv>("glProgramUniform3fv");
+			ProgramUniform3d = GetAddress<glProgramUniform3d>("glProgramUniform3d");
+			ProgramUniform3dv = GetAddress<glProgramUniform3dv>("glProgramUniform3dv");
+			ProgramUniform3ui = GetAddress<glProgramUniform3ui>("glProgramUniform3ui");
+			ProgramUniform3uiv = GetAddress<glProgramUniform3uiv>("glProgramUniform3uiv");
+			ProgramUniform4i = GetAddress<glProgramUniform4i>("glProgramUniform4i");
+			ProgramUniform4iv = GetAddress<glProgramUniform4iv>("glProgramUniform4iv");
+			ProgramUniform4f = GetAddress<glProgramUniform4f>("glProgramUniform4f");
+			ProgramUniform4fv = GetAddress<glProgramUniform4fv>("glProgramUniform4fv");
+			ProgramUniform4d = GetAddress<glProgramUniform4d>("glProgramUniform4d");
+			ProgramUniform4dv = GetAddress<glProgramUniform4dv>("glProgramUniform4dv");
+			ProgramUniform4ui = GetAddress<glProgramUniform4ui>("glProgramUniform4ui");
+			ProgramUniform4uiv = GetAddress<glProgramUniform4uiv>("glProgramUniform4uiv");
+			ProgramUniformMatrix2fv = GetAddress<glProgramUniformMatrix2fv>("glProgramUniformMatrix2fv");
+			ProgramUniformMatrix3fv = GetAddress<glProgramUniformMatrix3fv>("glProgramUniformMatrix3fv");
+			ProgramUniformMatrix4fv = GetAddress<glProgramUniformMatrix4fv>("glProgramUniformMatrix4fv");
+			ProgramUniformMatrix2dv = GetAddress<glProgramUniformMatrix2dv>("glProgramUniformMatrix2dv");
+			ProgramUniformMatrix3dv = GetAddress<glProgramUniformMatrix3dv>("glProgramUniformMatrix3dv");
+			ProgramUniformMatrix4dv = GetAddress<glProgramUniformMatrix4dv>("glProgramUniformMatrix4dv");
+			ProgramUniformMatrix2x3fv = GetAddress<glProgramUniformMatrix2x3fv>("glProgramUniformMatrix2x3fv");
+			ProgramUniformMatrix3x2fv = GetAddress<glProgramUniformMatrix3x2fv>("glProgramUniformMatrix3x2fv");
+			ProgramUniformMatrix2x4fv = GetAddress<glProgramUniformMatrix2x4fv>("glProgramUniformMatrix2x4fv");
+			ProgramUniformMatrix4x2fv = GetAddress<glProgramUniformMatrix4x2fv>("glProgramUniformMatrix4x2fv");
+			ProgramUniformMatrix3x4fv = GetAddress<glProgramUniformMatrix3x4fv>("glProgramUniformMatrix3x4fv");
+			ProgramUniformMatrix4x3fv = GetAddress<glProgramUniformMatrix4x3fv>("glProgramUniformMatrix4x3fv");
+			ProgramUniformMatrix2x3dv = GetAddress<glProgramUniformMatrix2x3dv>("glProgramUniformMatrix2x3dv");
+			ProgramUniformMatrix3x2dv = GetAddress<glProgramUniformMatrix3x2dv>("glProgramUniformMatrix3x2dv");
+			ProgramUniformMatrix2x4dv = GetAddress<glProgramUniformMatrix2x4dv>("glProgramUniformMatrix2x4dv");
+			ProgramUniformMatrix4x2dv = GetAddress<glProgramUniformMatrix4x2dv>("glProgramUniformMatrix4x2dv");
+			ProgramUniformMatrix3x4dv = GetAddress<glProgramUniformMatrix3x4dv>("glProgramUniformMatrix3x4dv");
+			ProgramUniformMatrix4x3dv = GetAddress<glProgramUniformMatrix4x3dv>("glProgramUniformMatrix4x3dv");
+			ValidateProgramPipeline = GetAddress<glValidateProgramPipeline>("glValidateProgramPipeline");
+			_GetProgramPipelineInfoLog = GetAddress<glGetProgramPipelineInfoLog>("glGetProgramPipelineInfoLog");
+			VertexAttribL1d = GetAddress<glVertexAttribL1d>("glVertexAttribL1d");
+			VertexAttribL2d = GetAddress<glVertexAttribL2d>("glVertexAttribL2d");
+			VertexAttribL3d = GetAddress<glVertexAttribL3d>("glVertexAttribL3d");
+			VertexAttribL4d = GetAddress<glVertexAttribL4d>("glVertexAttribL4d");
+			VertexAttribL1dv = GetAddress<glVertexAttribL1dv>("glVertexAttribL1dv");
+			VertexAttribL2dv = GetAddress<glVertexAttribL2dv>("glVertexAttribL2dv");
+			VertexAttribL3dv = GetAddress<glVertexAttribL3dv>("glVertexAttribL3dv");
+			VertexAttribL4dv = GetAddress<glVertexAttribL4dv>("glVertexAttribL4dv");
+			GetVertexAttribLd = GetAddress<glGetVertexAttribLd>("glGetVertexAttribLdv");
+			GetVertexAttribLdv = GetAddress<glGetVertexAttribLdv>("glGetVertexAttribLdv");
+			ViewportArrayv = GetAddress<glViewportArrayv>("glViewportArrayv");
+			ViewportIndexedf = GetAddress<glViewportIndexedf>("glViewportIndexedf");
+			ViewportIndexedfv = GetAddress<glViewportIndexedfv>("glViewportIndexedfv");
+			ScissorArrayv = GetAddress<glScissorArrayv>("glScissorArrayv");
+			ScissorIndexed = GetAddress<glScissorIndexed>("glScissorIndexed");
+			ScissorIndexedv = GetAddress<glScissorIndexedv>("glScissorIndexedv");
+			DepthRangeArrayv = GetAddress<glDepthRangeArrayv>("glDepthRangeArrayv");
+			DepthRangeIndexed = GetAddress<glDepthRangeIndexed>("glDepthRangeIndexed");
+			GetFloati_ = GetAddress<glGetFloati_>("glGetFloati_v");
+			GetFloati_v = GetAddress<glGetFloati_v>("glGetFloati_v");
+			GetDoublei_ = GetAddress<glGetDoublei_>("glGetDoublei_v");
+			GetDoublei_v = GetAddress<glGetDoublei_v>("glGetDoublei_v");
 
-			if(IntPtr.Size==4) VertexAttribLPointer_32=GetAddress<glVertexAttribLPointer_32>("glVertexAttribLPointer");
-			else VertexAttribLPointer_64=GetAddress<glVertexAttribLPointer_64>("glVertexAttribLPointer");
-			bool platformDependend=VertexAttribLPointer_32!=null||VertexAttribLPointer_64!=null;
+			if (IntPtr.Size == 4) VertexAttribLPointer_32 = GetAddress<glVertexAttribLPointer_32>("glVertexAttribLPointer");
+			else VertexAttribLPointer_64 = GetAddress<glVertexAttribLPointer_64>("glVertexAttribLPointer");
+			bool platformDependend = VertexAttribLPointer_32 != null || VertexAttribLPointer_64 != null;
 
-			VERSION_4_1=VERSION_4_0&&ReleaseShaderCompiler!=null&&ShaderBinary!=null&&GetShaderPrecisionFormat!=null&&
-				DepthRangef!=null&&ClearDepthf!=null&&GetProgramBinary!=null&&ProgramBinary!=null&&ProgramParameteri!=null&&
-				UseProgramStages!=null&&ActiveShaderProgram!=null&&CreateShaderProgramv!=null&&BindProgramPipeline!=null&&
-				DeleteProgramPipelines!=null&&_GenProgramPipelines!=null&&IsProgramPipeline!=null&&GetProgramPipelineiv!=null&&
-				ProgramUniform1iv!=null&&ProgramUniform1fv!=null&&ProgramUniform1dv!=null&&ProgramUniform1uiv!=null&&
-				ProgramUniform2iv!=null&&ProgramUniform2fv!=null&&ProgramUniform2dv!=null&&ProgramUniform2uiv!=null&&
-				ProgramUniform3iv!=null&&ProgramUniform3fv!=null&&ProgramUniform3dv!=null&&ProgramUniform3uiv!=null&&
-				ProgramUniform4iv!=null&&ProgramUniform4fv!=null&&ProgramUniform4dv!=null&&ProgramUniform4uiv!=null&&
-				ProgramUniformMatrix4fv!=null&&ProgramUniformMatrix3fv!=null&&ProgramUniformMatrix4fv!=null&&
-				ProgramUniformMatrix2dv!=null&&ProgramUniformMatrix3dv!=null&&ProgramUniformMatrix4dv!=null&&
-				ProgramUniformMatrix2x3fv!=null&&ProgramUniformMatrix3x2fv!=null&&ProgramUniformMatrix2x4fv!=null&&
-				ProgramUniformMatrix4x2fv!=null&&ProgramUniformMatrix3x4fv!=null&&ProgramUniformMatrix4x3fv!=null&&
-				ProgramUniformMatrix2x3dv!=null&&ProgramUniformMatrix3x2dv!=null&&ProgramUniformMatrix2x4dv!=null&&
-				ProgramUniformMatrix4x2dv!=null&&ProgramUniformMatrix3x4dv!=null&&ProgramUniformMatrix4x3dv!=null&&
-				ValidateProgramPipeline!=null&&_GetProgramPipelineInfoLog!=null&&VertexAttribL4d!=null&&
-				VertexAttribL4dv!=null&&GetVertexAttribLdv!=null&&ViewportArrayv!=null&&ViewportIndexedf!=null&&
-				ViewportIndexedfv!=null&&ScissorArrayv!=null&&ScissorIndexed!=null&&ScissorIndexedv!=null&&
-				DepthRangeArrayv!=null&&DepthRangeIndexed!=null&&GetFloati_v!=null&&GetDoublei_v!=null&&platformDependend;
+			VERSION_4_1 = VERSION_4_0 && ReleaseShaderCompiler != null && ShaderBinary != null && GetShaderPrecisionFormat != null &&
+				DepthRangef != null && ClearDepthf != null && GetProgramBinary != null && ProgramBinary != null && ProgramParameteri != null &&
+				UseProgramStages != null && ActiveShaderProgram != null && CreateShaderProgramv != null && BindProgramPipeline != null &&
+				DeleteProgramPipelines != null && _GenProgramPipelines != null && IsProgramPipeline != null && GetProgramPipelineiv != null &&
+				ProgramUniform1iv != null && ProgramUniform1fv != null && ProgramUniform1dv != null && ProgramUniform1uiv != null &&
+				ProgramUniform2iv != null && ProgramUniform2fv != null && ProgramUniform2dv != null && ProgramUniform2uiv != null &&
+				ProgramUniform3iv != null && ProgramUniform3fv != null && ProgramUniform3dv != null && ProgramUniform3uiv != null &&
+				ProgramUniform4iv != null && ProgramUniform4fv != null && ProgramUniform4dv != null && ProgramUniform4uiv != null &&
+				ProgramUniformMatrix4fv != null && ProgramUniformMatrix3fv != null && ProgramUniformMatrix4fv != null &&
+				ProgramUniformMatrix2dv != null && ProgramUniformMatrix3dv != null && ProgramUniformMatrix4dv != null &&
+				ProgramUniformMatrix2x3fv != null && ProgramUniformMatrix3x2fv != null && ProgramUniformMatrix2x4fv != null &&
+				ProgramUniformMatrix4x2fv != null && ProgramUniformMatrix3x4fv != null && ProgramUniformMatrix4x3fv != null &&
+				ProgramUniformMatrix2x3dv != null && ProgramUniformMatrix3x2dv != null && ProgramUniformMatrix2x4dv != null &&
+				ProgramUniformMatrix4x2dv != null && ProgramUniformMatrix3x4dv != null && ProgramUniformMatrix4x3dv != null &&
+				ValidateProgramPipeline != null && _GetProgramPipelineInfoLog != null && VertexAttribL4d != null &&
+				VertexAttribL4dv != null && GetVertexAttribLdv != null && ViewportArrayv != null && ViewportIndexedf != null &&
+				ViewportIndexedfv != null && ScissorArrayv != null && ScissorIndexed != null && ScissorIndexedv != null &&
+				DepthRangeArrayv != null && DepthRangeIndexed != null && GetFloati_v != null && GetDoublei_v != null && platformDependend;
 		}
 	}
 }

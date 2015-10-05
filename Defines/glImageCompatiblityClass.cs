@@ -32,61 +32,61 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returned if resource is not supported, or if image textures are not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Resource is compatible to image class 4x32.
 		/// </summary>
-		IMAGE_CLASS_4_X_32=0x82B9,
+		IMAGE_CLASS_4_X_32 = 0x82B9,
 
 		/// <summary>
 		/// Resource is compatible to image class 2x32.
 		/// </summary>
-		IMAGE_CLASS_2_X_32=0x82BA,
+		IMAGE_CLASS_2_X_32 = 0x82BA,
 
 		/// <summary>
 		/// Resource is compatible to image class 1x32.
 		/// </summary>
-		IMAGE_CLASS_1_X_32=0x82BB,
+		IMAGE_CLASS_1_X_32 = 0x82BB,
 
 		/// <summary>
 		/// Resource is compatible to image class 4x16.
 		/// </summary>
-		IMAGE_CLASS_4_X_16=0x82BC,
+		IMAGE_CLASS_4_X_16 = 0x82BC,
 
 		/// <summary>
 		/// Resource is compatible to image class 2x16.
 		/// </summary>
-		IMAGE_CLASS_2_X_16=0x82BD,
+		IMAGE_CLASS_2_X_16 = 0x82BD,
 
 		/// <summary>
 		/// Resource is compatible to image class 1x16.
 		/// </summary>
-		IMAGE_CLASS_1_X_16=0x82BE,
+		IMAGE_CLASS_1_X_16 = 0x82BE,
 
 		/// <summary>
 		/// Resource is compatible to image class 4x8.
 		/// </summary>
-		IMAGE_CLASS_4_X_8=0x82BF,
+		IMAGE_CLASS_4_X_8 = 0x82BF,
 
 		/// <summary>
 		/// Resource is compatible to image class 2x8.
 		/// </summary>
-		IMAGE_CLASS_2_X_8=0x82C0,
+		IMAGE_CLASS_2_X_8 = 0x82C0,
 
 		/// <summary>
 		/// Resource is compatible to image class 1x8.
 		/// </summary>
-		IMAGE_CLASS_1_X_8=0x82C1,
+		IMAGE_CLASS_1_X_8 = 0x82C1,
 
 		/// <summary>
 		/// Resource is compatible to image class 11/11/10 packed floating-point.
 		/// </summary>
-		IMAGE_CLASS_11_11_10=0x82C2,
+		IMAGE_CLASS_11_11_10 = 0x82C2,
 
 		/// <summary>
 		/// Resource is compatible to image class 10/10/10/2 packed.
 		/// </summary>
-		IMAGE_CLASS_10_10_10_2=0x82C3,
+		IMAGE_CLASS_10_10_10_2 = 0x82C3,
 	}
 }

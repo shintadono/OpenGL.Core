@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Stencil component.
 		/// </summary>
-		STENCIL_INDEX=0x1901,
+		STENCIL_INDEX = 0x1901,
 
 		/// <summary>
 		/// Depth component.
 		/// </summary>
-		DEPTH_COMPONENT=0x1902,
+		DEPTH_COMPONENT = 0x1902,
 	}
 }

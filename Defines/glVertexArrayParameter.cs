@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Element array buffer binding.
 		/// </summary>
-		ELEMENT_ARRAY_BUFFER_BINDING=0x8895,
+		ELEMENT_ARRAY_BUFFER_BINDING = 0x8895,
 	}
 }

@@ -32,46 +32,46 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Name of the program object currently bound to the fragement shader.
 		/// </summary>
-		FRAGMENT_SHADER=0x8B30,
+		FRAGMENT_SHADER = 0x8B30,
 
 		/// <summary>
 		/// Name of the program object currently bound to the vertex shader.
 		/// </summary>
-		VERTEX_SHADER=0x8B31,
+		VERTEX_SHADER = 0x8B31,
 
 		/// <summary>
 		/// Name of the program object currently bound to the geometry shader.
 		/// </summary>
-		GEOMETRY_SHADER=0x8DD9,
+		GEOMETRY_SHADER = 0x8DD9,
 
 		/// <summary>
 		/// Name of the program object currently bound to the tesselation evaluation shader.
 		/// </summary>
-		TESS_EVALUATION_SHADER=0x8E87,
+		TESS_EVALUATION_SHADER = 0x8E87,
 
 		/// <summary>
 		/// Name of the program object currently bound to the tesselation control shader.
 		/// </summary>
-		TESS_CONTROL_SHADER=0x8E88,
+		TESS_CONTROL_SHADER = 0x8E88,
 
 		/// <summary>
 		/// Name of the program object currently bound to the compute shader.
 		/// </summary>
-		COMPUTE_SHADER=0x91B9,
+		COMPUTE_SHADER = 0x91B9,
 
 		/// <summary>
 		/// The name of the active program object (used for uniform updates) of pipeline is returned.
 		/// </summary>
-		ACTIVE_PROGRAM=0x8259,
+		ACTIVE_PROGRAM = 0x8259,
 
 		/// <summary>
 		/// The validation status of pipeline, as determined by <see cref="gl.ValidateProgramPipeline"/> is returned.
 		/// </summary>
-		VALIDATE_STATUS=0x8B83,
+		VALIDATE_STATUS = 0x8B83,
 
 		/// <summary>
 		/// Length of the info log for pipeline, including a null terminator, is returned. If there is no info log, zero is returned.
 		/// </summary>
-		INFO_LOG_LENGTH=0x8B84,
+		INFO_LOG_LENGTH = 0x8B84,
 	}
 }

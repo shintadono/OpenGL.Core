@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed target.
 		/// </summary>
-		TEXTURE_BUFFER=0x8C2A,
+		TEXTURE_BUFFER = 0x8C2A,
 	}
 }

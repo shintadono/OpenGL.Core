@@ -32,16 +32,15 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Clamping disabled.
 		/// </summary>
-		FALSE=0,
-
+		FALSE = 0,
 		/// <summary>
 		/// Clamping enabled.
 		/// </summary>
-		TRUE=1,
+		TRUE = 1,
 
 		/// <summary>
 		/// Clamping only enabled for buffers with fixed-point components.
 		/// </summary>
-		FIXED_ONLY=0x891D,
+		FIXED_ONLY = 0x891D,
 	}
 }

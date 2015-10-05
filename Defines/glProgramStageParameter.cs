@@ -32,26 +32,26 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Number of active subroutines.
 		/// </summary>
-		ACTIVE_SUBROUTINES=0x8DE5,
+		ACTIVE_SUBROUTINES = 0x8DE5,
 
 		/// <summary>
 		/// Number of active subroutine variables.
 		/// </summary>
-		ACTIVE_SUBROUTINE_UNIFORMS=0x8DE6,
+		ACTIVE_SUBROUTINE_UNIFORMS = 0x8DE6,
 
 		/// <summary>
 		/// Number of active subroutine variable locations.
 		/// </summary>
-		ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS=0x8E47,
+		ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS = 0x8E47,
 
 		/// <summary>
 		/// Length of the longest subroutine name.
 		/// </summary>
-		ACTIVE_SUBROUTINE_MAX_LENGTH=0x8E48,
+		ACTIVE_SUBROUTINE_MAX_LENGTH = 0x8E48,
 
 		/// <summary>
 		/// Length of the longest subroutine uniform.
 		/// </summary>
-		ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH=0x8E49,
+		ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH = 0x8E49,
 	}
 }

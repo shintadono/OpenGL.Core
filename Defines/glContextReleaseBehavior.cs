@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// No <see cref="gl.Flush"/> on context release.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Implicit <see cref="gl.Flush"/> all pending commands of the context before releasing it.
 		/// </summary>
-		FLUSH=0x82FC,
+		FLUSH = 0x82FC,
 	}
 }

@@ -35,16 +35,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returned, if context is forward compatible.
 		/// </summary>
-		CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT=0x00000001,
+		CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT = 0x00000001,
 
 		/// <summary>
 		/// Returned, if context is a debug context.
 		/// </summary>
-		CONTEXT_FLAG_DEBUG_BIT=0x00000002,
+		CONTEXT_FLAG_DEBUG_BIT = 0x00000002,
 
 		/// <summary>
 		/// Returned, if context is a robust context.
 		/// </summary>
-		CONTEXT_FLAG_ROBUST_ACCESS_BIT=0x00000004,
+		CONTEXT_FLAG_ROBUST_ACCESS_BIT = 0x00000004,
 	}
 }

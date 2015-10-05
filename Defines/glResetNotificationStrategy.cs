@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Loss of all context state on graphics resets, requiring the recreation of all associated objects.
 		/// </summary>
-		LOSE_CONTEXT_ON_RESET=0x8252,
+		LOSE_CONTEXT_ON_RESET = 0x8252,
 
 		/// <summary>
 		/// No notifications of reset events.
 		/// </summary>
-		NO_RESET_NOTIFICATION=0x8261,
+		NO_RESET_NOTIFICATION = 0x8261,
 	}
 }

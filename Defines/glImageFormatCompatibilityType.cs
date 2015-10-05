@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returned if resource is not supported, or if image textures are not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Compatibility is matched by size.
 		/// </summary>
-		IMAGE_FORMAT_COMPATIBILITY_BY_SIZE=0x90C8,
+		IMAGE_FORMAT_COMPATIBILITY_BY_SIZE = 0x90C8,
 
 		/// <summary>
 		/// Compatibility is matched by class.
 		/// </summary>
-		IMAGE_FORMAT_COMPATIBILITY_BY_CLASS=0x90C9,
+		IMAGE_FORMAT_COMPATIBILITY_BY_CLASS = 0x90C9,
 	}
 }

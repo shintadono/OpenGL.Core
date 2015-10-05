@@ -51,13 +51,13 @@ namespace OpenGL.Core
 	public static partial class gl
 	{
 		#region WGL binding
-		[DllImport(DLLName, CharSet=CharSet.Ansi)]
+		[DllImport(DLLName, CharSet = CharSet.Ansi)]
 		private static extern IntPtr wglGetProcAddress(string lpszProc);
 
 		private static TDelegate GetAddress<TDelegate>(string name) where TDelegate : class
 		{
-			IntPtr addr=wglGetProcAddress(name);
-			if(addr==IntPtr.Zero) return null;
+			IntPtr addr = wglGetProcAddress(name);
+			if (addr == IntPtr.Zero) return null;
 			return (TDelegate)(object)Marshal.GetDelegateForFunctionPointer(addr, typeof(TDelegate));
 		}
 		#endregion

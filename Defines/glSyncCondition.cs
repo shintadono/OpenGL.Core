@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Fence command and all preceding commands in the same command stream completed.
 		/// </summary>
-		SYNC_GPU_COMMANDS_COMPLETE=0x9117,
+		SYNC_GPU_COMMANDS_COMPLETE = 0x9117,
 	}
 }

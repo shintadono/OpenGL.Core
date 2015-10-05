@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// [-1, 1]
 		/// </summary>
-		NEGATIVE_ONE_TO_ONE=0x935E,
+		NEGATIVE_ONE_TO_ONE = 0x935E,
 
 		/// <summary>
 		/// [0, 1]
 		/// </summary>
-		ZERO_TO_ONE=0x935F,
+		ZERO_TO_ONE = 0x935F,
 	}
 }

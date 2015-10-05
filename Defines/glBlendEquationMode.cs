@@ -32,26 +32,26 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Add weighted source and weighted destination.
 		/// </summary>
-		FUNC_ADD=0x8006,
+		FUNC_ADD = 0x8006,
 
 		/// <summary>
 		/// Subtract weighted destination from weighted source.
 		/// </summary>
-		FUNC_SUBTRACT=0x800A,
+		FUNC_SUBTRACT = 0x800A,
 
 		/// <summary>
 		/// Subtract weighted source from weighted destination.
 		/// </summary>
-		FUNC_REVERSE_SUBTRACT=0x800B,
+		FUNC_REVERSE_SUBTRACT = 0x800B,
 
 		/// <summary>
 		/// Minimum of source and destination.
 		/// </summary>
-		MIN=0x8007,
+		MIN = 0x8007,
 
 		/// <summary>
 		/// Maximum of source and destination.
 		/// </summary>
-		MAX=0x8008,
+		MAX = 0x8008,
 	}
 }

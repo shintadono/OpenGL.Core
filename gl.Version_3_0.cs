@@ -499,7 +499,7 @@ namespace OpenGL.Core
 		/// <param name="drawbuffer">The index of the color buffer if <paramref name="buffer"/> is <see cref="glBuffer.COLOR"/></param>
 		/// <param name="value">The value to be set.</param>
 		public delegate void glClearBufferfv(glBuffer buffer, int drawbuffer, params float[] value);
-		
+
 		/// <summary>
 		/// Clears/Resets the values of the depth-stencil-buffer to a specific value.
 		/// </summary>
@@ -771,7 +771,7 @@ namespace OpenGL.Core
 		/// Starts transform feedback operation.
 		/// </summary>
 		public static glBeginTransformFeedback BeginTransformFeedback;
-		
+
 		/// <summary>
 		/// Stops transform feedback operation.
 		/// </summary>
@@ -789,7 +789,7 @@ namespace OpenGL.Core
 		/// Sets values to record in transform feedback buffers.
 		/// </summary>
 		public static glTransformFeedbackVaryings TransformFeedbackVaryings;
-		
+
 		private static glGetTransformFeedbackVarying _GetTransformFeedbackVarying;
 
 		/// <summary>
@@ -1181,7 +1181,7 @@ namespace OpenGL.Core
 		/// <param name="data">Returns the requested value(s).</param>
 		public static void GetBooleani_v(glGetBooleanIndexedParameter target, uint index, bool[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_GetBooleani_v(target, index, hData.AddrOfPinnedObject());
@@ -1204,7 +1204,7 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the range.</param>
 		public static void BindBufferRange(glBufferTarget target, uint index, uint buffer, int offset, int size)
 		{
-			if(IntPtr.Size==4) BindBufferRange_32(target, index, buffer, offset, size);
+			if (IntPtr.Size == 4) BindBufferRange_32(target, index, buffer, offset, size);
 			else BindBufferRange_64(target, index, buffer, offset, size);
 		}
 
@@ -1218,10 +1218,10 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the range.</param>
 		public static void BindBufferRange(glBufferTarget target, uint index, uint buffer, long offset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				BindBufferRange_32(target, index, buffer, (int)offset, (int)size);
 			}
 			else BindBufferRange_64(target, index, buffer, offset, size);
@@ -1241,9 +1241,9 @@ namespace OpenGL.Core
 		/// <param name="name">Returns the name of the attribute variable.</param>
 		public static void GetTransformFeedbackVarying(uint program, uint index, int bufSize, out int length, out int size, out glGLSLType type, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetTransformFeedbackVarying(program, index, bufSize+1, out length, out size, out type, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetTransformFeedbackVarying(program, index, bufSize + 1, out length, out size, out type, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -1258,7 +1258,7 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribIPointer(uint index, int size, glVertexAttribType type, int stride, int pointer)
 		{
-			if(IntPtr.Size==4) VertexAttribIPointer_32(index, size, type, stride, pointer);
+			if (IntPtr.Size == 4) VertexAttribIPointer_32(index, size, type, stride, pointer);
 			else VertexAttribIPointer_64(index, size, type, stride, pointer);
 		}
 
@@ -1272,10 +1272,9 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribIPointer(uint index, int size, glVertexAttribType type, int stride, long pointer)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)pointer>>32)!=0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
-
+				if (((long)pointer >> 32) != 0) throw new ArgumentOutOfRangeException("pointer", PlatformErrorString);
 				VertexAttribIPointer_32(index, size, type, stride, (int)pointer);
 			}
 			else VertexAttribIPointer_64(index, size, type, stride, pointer);
@@ -1323,7 +1322,7 @@ namespace OpenGL.Core
 		/// <returns>The new renderbuffer names as array.</returns>
 		public static uint[] GenRenderbuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenRenderbuffers(count, ret);
 			return ret;
 		}
@@ -1367,7 +1366,7 @@ namespace OpenGL.Core
 		/// <returns>The new framebuffer names as array.</returns>
 		public static uint[] GenFramebuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenFramebuffers(count, ret);
 			return ret;
 		}
@@ -1394,7 +1393,7 @@ namespace OpenGL.Core
 		/// <returns>The pointer to the data. Use result with Marshal.Copy(...); to access data.</returns>
 		public static IntPtr MapBufferRange(glBufferTarget target, int offset, int length, glMapBufferRangeAccess access)
 		{
-			if(IntPtr.Size==4) return MapBufferRange_32(target, offset, length, access);
+			if (IntPtr.Size == 4) return MapBufferRange_32(target, offset, length, access);
 			return MapBufferRange_64(target, offset, length, access);
 		}
 
@@ -1408,10 +1407,10 @@ namespace OpenGL.Core
 		/// <returns>The pointer to the data. Use result with Marshal.Copy(...); to access data.</returns>
 		public static IntPtr MapBufferRange(glBufferTarget target, long offset, long length, glMapBufferRangeAccess access)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)length>>32)!=0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)length >> 32) != 0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
 				return MapBufferRange_32(target, (int)offset, (int)length, access);
 			}
 			return MapBufferRange_64(target, offset, length, access);
@@ -1427,7 +1426,7 @@ namespace OpenGL.Core
 		/// <param name="length">The size of the region.</param>
 		public static void FlushMappedBufferRange(glBufferTarget target, int offset, int length)
 		{
-			if(IntPtr.Size==4) FlushMappedBufferRange_32(target, offset, length);
+			if (IntPtr.Size == 4) FlushMappedBufferRange_32(target, offset, length);
 			else FlushMappedBufferRange_64(target, offset, length);
 		}
 
@@ -1439,10 +1438,10 @@ namespace OpenGL.Core
 		/// <param name="length">The size of the region.</param>
 		public static void FlushMappedBufferRange(glBufferTarget target, long offset, long length)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)length>>32)!=0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)length >> 32) != 0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
 				FlushMappedBufferRange_32(target, (int)offset, (int)length);
 			}
 			else FlushMappedBufferRange_64(target, offset, length);
@@ -1477,7 +1476,7 @@ namespace OpenGL.Core
 		/// <returns>The new vertex array names as array.</returns>
 		public static uint[] GenVertexArrays(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenVertexArrays(count, ret);
 			return ret;
 		}
@@ -1496,140 +1495,140 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_3_0()
 		{
-			ColorMaski=GetAddress<glColorMaski>("glColorMaski");
-			GetBooleani_=GetAddress<glGetBooleani_>("glGetBooleani_v");
-			_GetBooleani_v=GetAddress<glGetBooleani_v>("glGetBooleani_v");
-			GetIntegeri_=GetAddress<glGetIntegeri_>("glGetIntegeri_v");
-			GetIntegeri_v=GetAddress<glGetIntegeri_v>("glGetIntegeri_v");
-			Enablei=GetAddress<glEnablei>("glEnablei");
-			Disablei=GetAddress<glDisablei>("glDisablei");
-			IsEnabledi=GetAddress<glIsEnabledi>("glIsEnabledi");
-			BeginTransformFeedback=GetAddress<glBeginTransformFeedback>("glBeginTransformFeedback");
-			EndTransformFeedback=GetAddress<glEndTransformFeedback>("glEndTransformFeedback");
-			BindBufferBase=GetAddress<glBindBufferBase>("glBindBufferBase");
-			TransformFeedbackVaryings=GetAddress<glTransformFeedbackVaryings>("glTransformFeedbackVaryings");
-			_GetTransformFeedbackVarying=GetAddress<glGetTransformFeedbackVarying>("glGetTransformFeedbackVarying");
-			ClampColor=GetAddress<glClampColor>("glClampColor");
-			BeginConditionalRender=GetAddress<glBeginConditionalRender>("glBeginConditionalRender");
-			EndConditionalRender=GetAddress<glEndConditionalRender>("glEndConditionalRender");
-			GetVertexAttribIi=GetAddress<glGetVertexAttribIi>("glGetVertexAttribIiv");
-			GetVertexAttribIiv=GetAddress<glGetVertexAttribIiv>("glGetVertexAttribIiv");
-			GetVertexAttribIui=GetAddress<glGetVertexAttribIui>("glGetVertexAttribIuiv");
-			GetVertexAttribIuiv=GetAddress<glGetVertexAttribIuiv>("glGetVertexAttribIuiv");
-			VertexAttribI1i=GetAddress<glVertexAttribI1i>("glVertexAttribI1i");
-			VertexAttribI2i=GetAddress<glVertexAttribI2i>("glVertexAttribI2i");
-			VertexAttribI3i=GetAddress<glVertexAttribI3i>("glVertexAttribI3i");
-			VertexAttribI4i=GetAddress<glVertexAttribI4i>("glVertexAttribI4i");
-			VertexAttribI1ui=GetAddress<glVertexAttribI1ui>("glVertexAttribI1ui");
-			VertexAttribI2ui=GetAddress<glVertexAttribI2ui>("glVertexAttribI2ui");
-			VertexAttribI3ui=GetAddress<glVertexAttribI3ui>("glVertexAttribI3ui");
-			VertexAttribI4ui=GetAddress<glVertexAttribI4ui>("glVertexAttribI4ui");
-			VertexAttribI1iv=GetAddress<glVertexAttribI1iv>("glVertexAttribI1iv");
-			VertexAttribI2iv=GetAddress<glVertexAttribI2iv>("glVertexAttribI2iv");
-			VertexAttribI3iv=GetAddress<glVertexAttribI3iv>("glVertexAttribI3iv");
-			VertexAttribI4iv=GetAddress<glVertexAttribI4iv>("glVertexAttribI4iv");
-			VertexAttribI1uiv=GetAddress<glVertexAttribI1uiv>("glVertexAttribI1uiv");
-			VertexAttribI2uiv=GetAddress<glVertexAttribI2uiv>("glVertexAttribI2uiv");
-			VertexAttribI3uiv=GetAddress<glVertexAttribI3uiv>("glVertexAttribI3uiv");
-			VertexAttribI4uiv=GetAddress<glVertexAttribI4uiv>("glVertexAttribI4uiv");
-			VertexAttribI4bv=GetAddress<glVertexAttribI4bv>("glVertexAttribI4bv");
-			VertexAttribI4sv=GetAddress<glVertexAttribI4sv>("glVertexAttribI4sv");
-			VertexAttribI4ubv=GetAddress<glVertexAttribI4ubv>("glVertexAttribI4ubv");
-			VertexAttribI4usv=GetAddress<glVertexAttribI4usv>("glVertexAttribI4usv");
-			GetUniformui=GetAddress<glGetUniformui>("glGetUniformuiv");
-			GetUniformuiv=GetAddress<glGetUniformuiv>("glGetUniformuiv");
-			BindFragDataLocation=GetAddress<glBindFragDataLocation>("glBindFragDataLocation");
-			GetFragDataLocation=GetAddress<glGetFragDataLocation>("glGetFragDataLocation");
-			Uniform1ui=GetAddress<glUniform1ui>("glUniform1ui");
-			Uniform2ui=GetAddress<glUniform2ui>("glUniform2ui");
-			Uniform3ui=GetAddress<glUniform3ui>("glUniform3ui");
-			Uniform4ui=GetAddress<glUniform4ui>("glUniform4ui");
-			Uniform1uiv=GetAddress<glUniform1uiv>("glUniform1uiv");
-			Uniform2uiv=GetAddress<glUniform2uiv>("glUniform2uiv");
-			Uniform3uiv=GetAddress<glUniform3uiv>("glUniform3uiv");
-			Uniform4uiv=GetAddress<glUniform4uiv>("glUniform4uiv");
-			TexParameterIiv=GetAddress<glTexParameterIiv>("glTexParameterIiv");
-			TexParameterIuiv=GetAddress<glTexParameterIuiv>("glTexParameterIuiv");
-			GetTexParameterIi=GetAddress<glGetTexParameterIi>("glGetTexParameterIiv");
-			GetTexParameterIiv=GetAddress<glGetTexParameterIiv>("glGetTexParameterIiv");
-			GetTexParameterIui=GetAddress<glGetTexParameterIui>("glGetTexParameterIuiv");
-			GetTexParameterIuiv=GetAddress<glGetTexParameterIuiv>("glGetTexParameterIuiv");
-			ClearBufferiv=GetAddress<glClearBufferiv>("glClearBufferiv");
-			ClearBufferuiv=GetAddress<glClearBufferuiv>("glClearBufferuiv");
-			ClearBufferfv=GetAddress<glClearBufferfv>("glClearBufferfv");
-			ClearBufferfi=GetAddress<glClearBufferfi>("glClearBufferfi");
-			_GetStringi=GetAddress<glGetStringi>("glGetStringi");
-			IsRenderbuffer=GetAddress<glIsRenderbuffer>("glIsRenderbuffer");
-			BindRenderbuffer=GetAddress<glBindRenderbuffer>("glBindRenderbuffer");
-			DeleteRenderbuffers=GetAddress<glDeleteRenderbuffers>("glDeleteRenderbuffers");
-			_GenRenderbuffer=GetAddress<glGenRenderbuffer>("glGenRenderbuffers");
-			_GenRenderbuffers=GetAddress<glGenRenderbuffers>("glGenRenderbuffers");
-			RenderbufferStorage=GetAddress<glRenderbufferStorage>("glRenderbufferStorage");
-			GetRenderbufferParameteri=GetAddress<glGetRenderbufferParameteri>("glGetRenderbufferParameteriv");
-			GetRenderbufferParameteriv=GetAddress<glGetRenderbufferParameteriv>("glGetRenderbufferParameteriv");
-			IsFramebuffer=GetAddress<glIsFramebuffer>("glIsFramebuffer");
-			BindFramebuffer=GetAddress<glBindFramebuffer>("glBindFramebuffer");
-			DeleteFramebuffers=GetAddress<glDeleteFramebuffers>("glDeleteFramebuffers");
-			_GenFramebuffer=GetAddress<glGenFramebuffer>("glGenFramebuffers");
-			_GenFramebuffers=GetAddress<glGenFramebuffers>("glGenFramebuffers");
-			CheckFramebufferStatus=GetAddress<glCheckFramebufferStatus>("glCheckFramebufferStatus");
-			FramebufferTexture1D=GetAddress<glFramebufferTexture1D>("glFramebufferTexture1D");
-			FramebufferTexture2D=GetAddress<glFramebufferTexture2D>("glFramebufferTexture2D");
-			FramebufferTexture3D=GetAddress<glFramebufferTexture3D>("glFramebufferTexture3D");
-			FramebufferRenderbuffer=GetAddress<glFramebufferRenderbuffer>("glFramebufferRenderbuffer");
-			GetFramebufferAttachmentParameteri=GetAddress<glGetFramebufferAttachmentParameteri>("glGetFramebufferAttachmentParameteriv");
-			GetFramebufferAttachmentParameteriv=GetAddress<glGetFramebufferAttachmentParameteriv>("glGetFramebufferAttachmentParameteriv");
-			GenerateMipmap=GetAddress<glGenerateMipmap>("glGenerateMipmap");
-			BlitFramebuffer=GetAddress<glBlitFramebuffer>("glBlitFramebuffer");
-			RenderbufferStorageMultisample=GetAddress<glRenderbufferStorageMultisample>("glRenderbufferStorageMultisample");
-			FramebufferTextureLayer=GetAddress<glFramebufferTextureLayer>("glFramebufferTextureLayer");
-			BindVertexArray=GetAddress<glBindVertexArray>("glBindVertexArray");
-			DeleteVertexArrays=GetAddress<glDeleteVertexArrays>("glDeleteVertexArrays");
-			_GenVertexArray=GetAddress<glGenVertexArray>("glGenVertexArrays");
-			_GenVertexArrays=GetAddress<glGenVertexArrays>("glGenVertexArrays");
-			IsVertexArray=GetAddress<glIsVertexArray>("glIsVertexArray");
+			ColorMaski = GetAddress<glColorMaski>("glColorMaski");
+			GetBooleani_ = GetAddress<glGetBooleani_>("glGetBooleani_v");
+			_GetBooleani_v = GetAddress<glGetBooleani_v>("glGetBooleani_v");
+			GetIntegeri_ = GetAddress<glGetIntegeri_>("glGetIntegeri_v");
+			GetIntegeri_v = GetAddress<glGetIntegeri_v>("glGetIntegeri_v");
+			Enablei = GetAddress<glEnablei>("glEnablei");
+			Disablei = GetAddress<glDisablei>("glDisablei");
+			IsEnabledi = GetAddress<glIsEnabledi>("glIsEnabledi");
+			BeginTransformFeedback = GetAddress<glBeginTransformFeedback>("glBeginTransformFeedback");
+			EndTransformFeedback = GetAddress<glEndTransformFeedback>("glEndTransformFeedback");
+			BindBufferBase = GetAddress<glBindBufferBase>("glBindBufferBase");
+			TransformFeedbackVaryings = GetAddress<glTransformFeedbackVaryings>("glTransformFeedbackVaryings");
+			_GetTransformFeedbackVarying = GetAddress<glGetTransformFeedbackVarying>("glGetTransformFeedbackVarying");
+			ClampColor = GetAddress<glClampColor>("glClampColor");
+			BeginConditionalRender = GetAddress<glBeginConditionalRender>("glBeginConditionalRender");
+			EndConditionalRender = GetAddress<glEndConditionalRender>("glEndConditionalRender");
+			GetVertexAttribIi = GetAddress<glGetVertexAttribIi>("glGetVertexAttribIiv");
+			GetVertexAttribIiv = GetAddress<glGetVertexAttribIiv>("glGetVertexAttribIiv");
+			GetVertexAttribIui = GetAddress<glGetVertexAttribIui>("glGetVertexAttribIuiv");
+			GetVertexAttribIuiv = GetAddress<glGetVertexAttribIuiv>("glGetVertexAttribIuiv");
+			VertexAttribI1i = GetAddress<glVertexAttribI1i>("glVertexAttribI1i");
+			VertexAttribI2i = GetAddress<glVertexAttribI2i>("glVertexAttribI2i");
+			VertexAttribI3i = GetAddress<glVertexAttribI3i>("glVertexAttribI3i");
+			VertexAttribI4i = GetAddress<glVertexAttribI4i>("glVertexAttribI4i");
+			VertexAttribI1ui = GetAddress<glVertexAttribI1ui>("glVertexAttribI1ui");
+			VertexAttribI2ui = GetAddress<glVertexAttribI2ui>("glVertexAttribI2ui");
+			VertexAttribI3ui = GetAddress<glVertexAttribI3ui>("glVertexAttribI3ui");
+			VertexAttribI4ui = GetAddress<glVertexAttribI4ui>("glVertexAttribI4ui");
+			VertexAttribI1iv = GetAddress<glVertexAttribI1iv>("glVertexAttribI1iv");
+			VertexAttribI2iv = GetAddress<glVertexAttribI2iv>("glVertexAttribI2iv");
+			VertexAttribI3iv = GetAddress<glVertexAttribI3iv>("glVertexAttribI3iv");
+			VertexAttribI4iv = GetAddress<glVertexAttribI4iv>("glVertexAttribI4iv");
+			VertexAttribI1uiv = GetAddress<glVertexAttribI1uiv>("glVertexAttribI1uiv");
+			VertexAttribI2uiv = GetAddress<glVertexAttribI2uiv>("glVertexAttribI2uiv");
+			VertexAttribI3uiv = GetAddress<glVertexAttribI3uiv>("glVertexAttribI3uiv");
+			VertexAttribI4uiv = GetAddress<glVertexAttribI4uiv>("glVertexAttribI4uiv");
+			VertexAttribI4bv = GetAddress<glVertexAttribI4bv>("glVertexAttribI4bv");
+			VertexAttribI4sv = GetAddress<glVertexAttribI4sv>("glVertexAttribI4sv");
+			VertexAttribI4ubv = GetAddress<glVertexAttribI4ubv>("glVertexAttribI4ubv");
+			VertexAttribI4usv = GetAddress<glVertexAttribI4usv>("glVertexAttribI4usv");
+			GetUniformui = GetAddress<glGetUniformui>("glGetUniformuiv");
+			GetUniformuiv = GetAddress<glGetUniformuiv>("glGetUniformuiv");
+			BindFragDataLocation = GetAddress<glBindFragDataLocation>("glBindFragDataLocation");
+			GetFragDataLocation = GetAddress<glGetFragDataLocation>("glGetFragDataLocation");
+			Uniform1ui = GetAddress<glUniform1ui>("glUniform1ui");
+			Uniform2ui = GetAddress<glUniform2ui>("glUniform2ui");
+			Uniform3ui = GetAddress<glUniform3ui>("glUniform3ui");
+			Uniform4ui = GetAddress<glUniform4ui>("glUniform4ui");
+			Uniform1uiv = GetAddress<glUniform1uiv>("glUniform1uiv");
+			Uniform2uiv = GetAddress<glUniform2uiv>("glUniform2uiv");
+			Uniform3uiv = GetAddress<glUniform3uiv>("glUniform3uiv");
+			Uniform4uiv = GetAddress<glUniform4uiv>("glUniform4uiv");
+			TexParameterIiv = GetAddress<glTexParameterIiv>("glTexParameterIiv");
+			TexParameterIuiv = GetAddress<glTexParameterIuiv>("glTexParameterIuiv");
+			GetTexParameterIi = GetAddress<glGetTexParameterIi>("glGetTexParameterIiv");
+			GetTexParameterIiv = GetAddress<glGetTexParameterIiv>("glGetTexParameterIiv");
+			GetTexParameterIui = GetAddress<glGetTexParameterIui>("glGetTexParameterIuiv");
+			GetTexParameterIuiv = GetAddress<glGetTexParameterIuiv>("glGetTexParameterIuiv");
+			ClearBufferiv = GetAddress<glClearBufferiv>("glClearBufferiv");
+			ClearBufferuiv = GetAddress<glClearBufferuiv>("glClearBufferuiv");
+			ClearBufferfv = GetAddress<glClearBufferfv>("glClearBufferfv");
+			ClearBufferfi = GetAddress<glClearBufferfi>("glClearBufferfi");
+			_GetStringi = GetAddress<glGetStringi>("glGetStringi");
+			IsRenderbuffer = GetAddress<glIsRenderbuffer>("glIsRenderbuffer");
+			BindRenderbuffer = GetAddress<glBindRenderbuffer>("glBindRenderbuffer");
+			DeleteRenderbuffers = GetAddress<glDeleteRenderbuffers>("glDeleteRenderbuffers");
+			_GenRenderbuffer = GetAddress<glGenRenderbuffer>("glGenRenderbuffers");
+			_GenRenderbuffers = GetAddress<glGenRenderbuffers>("glGenRenderbuffers");
+			RenderbufferStorage = GetAddress<glRenderbufferStorage>("glRenderbufferStorage");
+			GetRenderbufferParameteri = GetAddress<glGetRenderbufferParameteri>("glGetRenderbufferParameteriv");
+			GetRenderbufferParameteriv = GetAddress<glGetRenderbufferParameteriv>("glGetRenderbufferParameteriv");
+			IsFramebuffer = GetAddress<glIsFramebuffer>("glIsFramebuffer");
+			BindFramebuffer = GetAddress<glBindFramebuffer>("glBindFramebuffer");
+			DeleteFramebuffers = GetAddress<glDeleteFramebuffers>("glDeleteFramebuffers");
+			_GenFramebuffer = GetAddress<glGenFramebuffer>("glGenFramebuffers");
+			_GenFramebuffers = GetAddress<glGenFramebuffers>("glGenFramebuffers");
+			CheckFramebufferStatus = GetAddress<glCheckFramebufferStatus>("glCheckFramebufferStatus");
+			FramebufferTexture1D = GetAddress<glFramebufferTexture1D>("glFramebufferTexture1D");
+			FramebufferTexture2D = GetAddress<glFramebufferTexture2D>("glFramebufferTexture2D");
+			FramebufferTexture3D = GetAddress<glFramebufferTexture3D>("glFramebufferTexture3D");
+			FramebufferRenderbuffer = GetAddress<glFramebufferRenderbuffer>("glFramebufferRenderbuffer");
+			GetFramebufferAttachmentParameteri = GetAddress<glGetFramebufferAttachmentParameteri>("glGetFramebufferAttachmentParameteriv");
+			GetFramebufferAttachmentParameteriv = GetAddress<glGetFramebufferAttachmentParameteriv>("glGetFramebufferAttachmentParameteriv");
+			GenerateMipmap = GetAddress<glGenerateMipmap>("glGenerateMipmap");
+			BlitFramebuffer = GetAddress<glBlitFramebuffer>("glBlitFramebuffer");
+			RenderbufferStorageMultisample = GetAddress<glRenderbufferStorageMultisample>("glRenderbufferStorageMultisample");
+			FramebufferTextureLayer = GetAddress<glFramebufferTextureLayer>("glFramebufferTextureLayer");
+			BindVertexArray = GetAddress<glBindVertexArray>("glBindVertexArray");
+			DeleteVertexArrays = GetAddress<glDeleteVertexArrays>("glDeleteVertexArrays");
+			_GenVertexArray = GetAddress<glGenVertexArray>("glGenVertexArrays");
+			_GenVertexArrays = GetAddress<glGenVertexArrays>("glGenVertexArrays");
+			IsVertexArray = GetAddress<glIsVertexArray>("glIsVertexArray");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				BindBufferRange_32=GetAddress<glBindBufferRange_32>("glBindBufferRange");
-				VertexAttribIPointer_32=GetAddress<glVertexAttribIPointer_32>("glVertexAttribIPointer");
-				MapBufferRange_32=GetAddress<glMapBufferRange_32>("glMapBufferRange");
-				FlushMappedBufferRange_32=GetAddress<glFlushMappedBufferRange_32>("glFlushMappedBufferRange");
+				BindBufferRange_32 = GetAddress<glBindBufferRange_32>("glBindBufferRange");
+				VertexAttribIPointer_32 = GetAddress<glVertexAttribIPointer_32>("glVertexAttribIPointer");
+				MapBufferRange_32 = GetAddress<glMapBufferRange_32>("glMapBufferRange");
+				FlushMappedBufferRange_32 = GetAddress<glFlushMappedBufferRange_32>("glFlushMappedBufferRange");
 
-				platformDependend=BindBufferRange_32!=null&&VertexAttribIPointer_32!=null&&
-					MapBufferRange_32!=null&&FlushMappedBufferRange_32!=null;
+				platformDependend = BindBufferRange_32 != null && VertexAttribIPointer_32 != null &&
+					MapBufferRange_32 != null && FlushMappedBufferRange_32 != null;
 			}
 			else
 			{
-				BindBufferRange_64=GetAddress<glBindBufferRange_64>("glBindBufferRange");
-				VertexAttribIPointer_64=GetAddress<glVertexAttribIPointer_64>("glVertexAttribIPointer");
-				MapBufferRange_64=GetAddress<glMapBufferRange_64>("glMapBufferRange");
-				FlushMappedBufferRange_64=GetAddress<glFlushMappedBufferRange_64>("glFlushMappedBufferRange");
+				BindBufferRange_64 = GetAddress<glBindBufferRange_64>("glBindBufferRange");
+				VertexAttribIPointer_64 = GetAddress<glVertexAttribIPointer_64>("glVertexAttribIPointer");
+				MapBufferRange_64 = GetAddress<glMapBufferRange_64>("glMapBufferRange");
+				FlushMappedBufferRange_64 = GetAddress<glFlushMappedBufferRange_64>("glFlushMappedBufferRange");
 
-				platformDependend=BindBufferRange_64!=null&&VertexAttribIPointer_64!=null&&
-					MapBufferRange_64!=null&&FlushMappedBufferRange_64!=null;
+				platformDependend = BindBufferRange_64 != null && VertexAttribIPointer_64 != null &&
+					MapBufferRange_64 != null && FlushMappedBufferRange_64 != null;
 			}
 
-			VERSION_3_0=VERSION_2_1&&ColorMaski!=null&&_GetBooleani_v!=null&&GetIntegeri_v!=null&&
-				Enablei!=null&&Disablei!=null&&IsEnabledi!=null&&BeginTransformFeedback!=null&&
-				EndTransformFeedback!=null&&BindBufferBase!=null&&TransformFeedbackVaryings!=null&&
-				_GetTransformFeedbackVarying!=null&&ClampColor!=null&&BeginConditionalRender!=null&&
-				EndConditionalRender!=null&&GetVertexAttribIiv!=null&&GetVertexAttribIuiv!=null&&
-				VertexAttribI4i!=null&&VertexAttribI4ui!=null&&VertexAttribI4iv!=null&&VertexAttribI4uiv!=null&&
-				VertexAttribI4bv!=null&&VertexAttribI4sv!=null&&VertexAttribI4ubv!=null&&
-				VertexAttribI4usv!=null&&GetUniformuiv!=null&&BindFragDataLocation!=null&&
-				GetFragDataLocation!=null&&Uniform4ui!=null&&Uniform4uiv!=null&&TexParameterIiv!=null&&
-				TexParameterIuiv!=null&&GetTexParameterIiv!=null&&GetTexParameterIuiv!=null&&
-				ClearBufferiv!=null&&ClearBufferuiv!=null&&ClearBufferfv!=null&&ClearBufferfi!=null&&
-				_GetStringi!=null&&IsRenderbuffer!=null&&BindRenderbuffer!=null&&DeleteRenderbuffers!=null&&
-				_GenRenderbuffers!=null&&RenderbufferStorage!=null&&GetRenderbufferParameteriv!=null&&
-				IsFramebuffer!=null&&BindFramebuffer!=null&&DeleteFramebuffers!=null&&
-				_GenFramebuffers!=null&&CheckFramebufferStatus!=null&&FramebufferTexture1D!=null&&
-				FramebufferRenderbuffer!=null&&GetFramebufferAttachmentParameteriv!=null&&GenerateMipmap!=null&&
-				BlitFramebuffer!=null&&RenderbufferStorageMultisample!=null&&FramebufferTextureLayer!=null&&
-				BindVertexArray!=null&&DeleteVertexArrays!=null&&_GenVertexArrays!=null&&
-				IsVertexArray!=null&&platformDependend;
+			VERSION_3_0 = VERSION_2_1 && ColorMaski != null && _GetBooleani_v != null && GetIntegeri_v != null &&
+				Enablei != null && Disablei != null && IsEnabledi != null && BeginTransformFeedback != null &&
+				EndTransformFeedback != null && BindBufferBase != null && TransformFeedbackVaryings != null &&
+				_GetTransformFeedbackVarying != null && ClampColor != null && BeginConditionalRender != null &&
+				EndConditionalRender != null && GetVertexAttribIiv != null && GetVertexAttribIuiv != null &&
+				VertexAttribI4i != null && VertexAttribI4ui != null && VertexAttribI4iv != null && VertexAttribI4uiv != null &&
+				VertexAttribI4bv != null && VertexAttribI4sv != null && VertexAttribI4ubv != null &&
+				VertexAttribI4usv != null && GetUniformuiv != null && BindFragDataLocation != null &&
+				GetFragDataLocation != null && Uniform4ui != null && Uniform4uiv != null && TexParameterIiv != null &&
+				TexParameterIuiv != null && GetTexParameterIiv != null && GetTexParameterIuiv != null &&
+				ClearBufferiv != null && ClearBufferuiv != null && ClearBufferfv != null && ClearBufferfi != null &&
+				_GetStringi != null && IsRenderbuffer != null && BindRenderbuffer != null && DeleteRenderbuffers != null &&
+				_GenRenderbuffers != null && RenderbufferStorage != null && GetRenderbufferParameteriv != null &&
+				IsFramebuffer != null && BindFramebuffer != null && DeleteFramebuffers != null &&
+				_GenFramebuffers != null && CheckFramebufferStatus != null && FramebufferTexture1D != null &&
+				FramebufferRenderbuffer != null && GetFramebufferAttachmentParameteriv != null && GenerateMipmap != null &&
+				BlitFramebuffer != null && RenderbufferStorageMultisample != null && FramebufferTextureLayer != null &&
+				BindVertexArray != null && DeleteVertexArrays != null && _GenVertexArrays != null &&
+				IsVertexArray != null && platformDependend;
 		}
 	}
 }

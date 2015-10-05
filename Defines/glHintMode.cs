@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// No preference.
 		/// </summary>
-		DONT_CARE=0x1100,
+		DONT_CARE = 0x1100,
 
 		/// <summary>
 		/// The most efficient option should be chosen.
 		/// </summary>
-		FASTEST=0x1101,
+		FASTEST = 0x1101,
 
 		/// <summary>
 		/// The highest quality option should be chosen.
 		/// </summary>
-		NICEST=0x1102,
+		NICEST = 0x1102,
 	}
 }

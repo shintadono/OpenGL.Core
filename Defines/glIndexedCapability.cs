@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Blending activation state for each (indexed) drawbuffer.
 		/// </summary>
-		BLEND=0x0BE2,
+		BLEND = 0x0BE2,
 
 		/// <summary>
 		/// Scissor test activation state for each (indexed) viewport.
 		/// </summary>
-		SCISSOR_TEST=0x0C11,
+		SCISSOR_TEST = 0x0C11,
 	}
 }

@@ -32,46 +32,46 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Type of the uniform.
 		/// </summary>
-		UNIFORM_TYPE=0x8A37,
+		UNIFORM_TYPE = 0x8A37,
 
 		/// <summary>
 		/// Size of the uniform.
 		/// </summary>
-		UNIFORM_SIZE=0x8A38,
+		UNIFORM_SIZE = 0x8A38,
 
 		/// <summary>
 		/// Length of the uniform name.
 		/// </summary>
-		UNIFORM_NAME_LENGTH=0x8A39,
+		UNIFORM_NAME_LENGTH = 0x8A39,
 
 		/// <summary>
 		/// Block index of the uniform.
 		/// </summary>
-		UNIFORM_BLOCK_INDEX=0x8A3A,
+		UNIFORM_BLOCK_INDEX = 0x8A3A,
 
 		/// <summary>
 		/// Offset of the uniform.
 		/// </summary>
-		UNIFORM_OFFSET=0x8A3B,
+		UNIFORM_OFFSET = 0x8A3B,
 
 		/// <summary>
 		/// Array stride of the uniform.
 		/// </summary>
-		UNIFORM_ARRAY_STRIDE=0x8A3C,
+		UNIFORM_ARRAY_STRIDE = 0x8A3C,
 
 		/// <summary>
 		/// Matrix stride of the uniform.
 		/// </summary>
-		UNIFORM_MATRIX_STRIDE=0x8A3D,
+		UNIFORM_MATRIX_STRIDE = 0x8A3D,
 
 		/// <summary>
 		/// Boolean indicating the kind of matrix order of the uniform.
 		/// </summary>
-		UNIFORM_IS_ROW_MAJOR=0x8A3E,
+		UNIFORM_IS_ROW_MAJOR = 0x8A3E,
 
 		/// <summary>
 		/// Atomic counter buffer index of the uniform.
 		/// </summary>
-		UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX=0x92DA,
+		UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX = 0x92DA,
 	}
 }

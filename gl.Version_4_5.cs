@@ -1408,7 +1408,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new transform feedback objects as array.</returns>
 		public static uint[] CreateTransformFeedbacks(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateTransformFeedbacks(count, ret);
 			return ret;
 		}
@@ -1435,7 +1435,7 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the region.</param>
 		public static void TransformFeedbackBufferRange(uint xfb, uint index, uint buffer, int offset, int size)
 		{
-			if(IntPtr.Size==4) TransformFeedbackBufferRange_32(xfb, index, buffer, offset, size);
+			if (IntPtr.Size == 4) TransformFeedbackBufferRange_32(xfb, index, buffer, offset, size);
 			else TransformFeedbackBufferRange_64(xfb, index, buffer, offset, size);
 		}
 
@@ -1449,11 +1449,10 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the region.</param>
 		public static void TransformFeedbackBufferRange(uint xfb, uint index, uint buffer, long offset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				TransformFeedbackBufferRange_32(xfb, index, buffer, (int)offset, (int)size);
 			}
 			else TransformFeedbackBufferRange_64(xfb, index, buffer, offset, size);
@@ -1488,7 +1487,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new buffer objects as array.</returns>
 		public static uint[] CreateBuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateBuffers(count, ret);
 			return ret;
 		}
@@ -1514,7 +1513,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, IntPtr data, glBufferStorageFlag flags)
 		{
-			if(IntPtr.Size==4) NamedBufferStorage_32(buffer, size, data, flags);
+			if (IntPtr.Size == 4) NamedBufferStorage_32(buffer, size, data, flags);
 			else NamedBufferStorage_64(buffer, size, data, flags);
 		}
 
@@ -1527,10 +1526,9 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, IntPtr data, glBufferStorageFlag flags)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				NamedBufferStorage_32(buffer, (int)size, data, flags);
 			}
 			else NamedBufferStorage_64(buffer, size, data, flags);
@@ -1545,7 +1543,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, byte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1565,7 +1563,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, byte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1585,7 +1583,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, sbyte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1605,7 +1603,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, sbyte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1625,7 +1623,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, short[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1645,7 +1643,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, short[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1665,7 +1663,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, ushort[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1685,7 +1683,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, ushort[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1705,7 +1703,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, int[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1725,7 +1723,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, int[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1745,7 +1743,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, uint[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1765,7 +1763,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, uint[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1785,7 +1783,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, long[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1805,7 +1803,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, long[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1825,7 +1823,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, ulong[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1845,7 +1843,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, ulong[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1865,7 +1863,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, float[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1885,7 +1883,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, float[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1905,7 +1903,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, int size, double[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1925,7 +1923,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void NamedBufferStorage(uint buffer, long size, double[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferStorage(buffer, size, hData.AddrOfPinnedObject(), flags);
@@ -1947,7 +1945,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, IntPtr data, glBufferUsage usage)
 		{
-			if(IntPtr.Size==4) NamedBufferData_32(buffer, size, data, usage);
+			if (IntPtr.Size == 4) NamedBufferData_32(buffer, size, data, usage);
 			else NamedBufferData_64(buffer, size, data, usage);
 		}
 
@@ -1960,9 +1958,9 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, IntPtr data, glBufferUsage usage)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				NamedBufferData_32(buffer, (int)size, data, usage);
 			}
 			else NamedBufferData_64(buffer, size, data, usage);
@@ -1977,7 +1975,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, byte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -1997,7 +1995,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, byte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2017,7 +2015,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, sbyte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2037,7 +2035,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, sbyte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2057,7 +2055,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, short[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2077,7 +2075,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, short[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2097,7 +2095,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, ushort[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2117,7 +2115,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, ushort[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2137,7 +2135,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, int[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2157,7 +2155,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, int[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2177,7 +2175,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, uint[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2197,7 +2195,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, uint[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2217,7 +2215,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, long[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2237,7 +2235,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, long[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2257,7 +2255,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, ulong[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2277,7 +2275,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, ulong[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2297,7 +2295,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, float[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2317,7 +2315,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, float[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2337,7 +2335,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, int size, double[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2357,7 +2355,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void NamedBufferData(uint buffer, long size, double[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferData(buffer, size, h.AddrOfPinnedObject(), usage);
@@ -2379,7 +2377,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, IntPtr data)
 		{
-			if(IntPtr.Size==4) NamedBufferSubData_32(buffer, offset, size, data);
+			if (IntPtr.Size == 4) NamedBufferSubData_32(buffer, offset, size, data);
 			else NamedBufferSubData_64(buffer, offset, size, data);
 		}
 
@@ -2392,11 +2390,10 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				NamedBufferSubData_32(buffer, (int)offset, (int)size, data);
 			}
 			else NamedBufferSubData_64(buffer, offset, size, data);
@@ -2411,7 +2408,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2431,7 +2428,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2451,7 +2448,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2471,7 +2468,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2491,7 +2488,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2511,7 +2508,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2531,7 +2528,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2551,7 +2548,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2571,7 +2568,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2591,7 +2588,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2611,7 +2608,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2631,7 +2628,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2651,7 +2648,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2671,7 +2668,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2691,7 +2688,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2711,7 +2708,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2731,7 +2728,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2751,7 +2748,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2771,7 +2768,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, int offset, int size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2791,7 +2788,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void NamedBufferSubData(uint buffer, long offset, long size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				NamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -2814,7 +2811,7 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the data block to be copied.</param>
 		public static void CopyNamedBufferSubData(uint readbuffer, uint writebuffer, int readOffset, int writeOffset, int size)
 		{
-			if(IntPtr.Size==4) CopyNamedBufferSubData_32(readbuffer, writebuffer, readOffset, writeOffset, size);
+			if (IntPtr.Size == 4) CopyNamedBufferSubData_32(readbuffer, writebuffer, readOffset, writeOffset, size);
 			else CopyNamedBufferSubData_64(readbuffer, writebuffer, readOffset, writeOffset, size);
 		}
 
@@ -2828,12 +2825,11 @@ namespace OpenGL.Core
 		/// <param name="size">The size of the data block to be copied.</param>
 		public static void CopyNamedBufferSubData(uint readbuffer, uint writebuffer, long readOffset, long writeOffset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)readOffset>>32)!=0) throw new ArgumentOutOfRangeException("readOffset", PlatformErrorString);
-				if(((long)writeOffset>>32)!=0) throw new ArgumentOutOfRangeException("writeOffset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)readOffset >> 32) != 0) throw new ArgumentOutOfRangeException("readOffset", PlatformErrorString);
+				if (((long)writeOffset >> 32) != 0) throw new ArgumentOutOfRangeException("writeOffset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				CopyNamedBufferSubData_32(readbuffer, writebuffer, (int)readOffset, (int)writeOffset, (int)size);
 			}
 			else CopyNamedBufferSubData_64(readbuffer, writebuffer, readOffset, writeOffset, size);
@@ -2864,7 +2860,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2885,7 +2881,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2906,7 +2902,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2927,7 +2923,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2948,7 +2944,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2969,7 +2965,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -2990,7 +2986,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -3011,7 +3007,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -3032,7 +3028,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -3053,7 +3049,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferData(uint buffer, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearNamedBufferData(buffer, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -3078,7 +3074,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, IntPtr data)
 		{
-			if(IntPtr.Size==4) ClearNamedBufferSubData_32(buffer, internalformat, offset, size, format, type, data);
+			if (IntPtr.Size == 4) ClearNamedBufferSubData_32(buffer, internalformat, offset, size, format, type, data);
 			else ClearNamedBufferSubData_64(buffer, internalformat, offset, size, format, type, data);
 		}
 
@@ -3094,11 +3090,10 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				ClearNamedBufferSubData_32(buffer, internalformat, (int)offset, (int)size, format, type, data);
 			}
 			else ClearNamedBufferSubData_64(buffer, internalformat, offset, size, format, type, data);
@@ -3116,7 +3111,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3139,7 +3134,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3162,7 +3157,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3185,7 +3180,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3208,7 +3203,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3231,7 +3226,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3254,7 +3249,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3277,7 +3272,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3300,7 +3295,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3323,7 +3318,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3346,7 +3341,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3369,7 +3364,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3392,7 +3387,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3415,7 +3410,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3438,7 +3433,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3461,7 +3456,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3484,7 +3479,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3507,7 +3502,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3530,7 +3525,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3553,7 +3548,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearNamedBufferSubData(uint buffer, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -3576,7 +3571,7 @@ namespace OpenGL.Core
 		/// <returns>The pointer to the data. Use result with Marshal.Copy(...); to access data.</returns>
 		public static IntPtr MapNamedBufferRange(uint buffer, int offset, int length, glMapBufferRangeAccess access)
 		{
-			if(IntPtr.Size==4) return MapNamedBufferRange_32(buffer, offset, length, access);
+			if (IntPtr.Size == 4) return MapNamedBufferRange_32(buffer, offset, length, access);
 			return MapNamedBufferRange_64(buffer, offset, length, access);
 		}
 
@@ -3590,10 +3585,10 @@ namespace OpenGL.Core
 		/// <returns>The pointer to the data. Use result with Marshal.Copy(...); to access data.</returns>
 		public static IntPtr MapNamedBufferRange(uint buffer, long offset, long length, glMapBufferRangeAccess access)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)length>>32)!=0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)length >> 32) != 0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
 				return MapNamedBufferRange_32(buffer, (int)offset, (int)length, access);
 			}
 			return MapNamedBufferRange_64(buffer, offset, length, access);
@@ -3609,7 +3604,7 @@ namespace OpenGL.Core
 		/// <param name="length">The size of the region.</param>
 		public static void FlushMappedNamedBufferRange(uint buffer, int offset, int length)
 		{
-			if(IntPtr.Size==4) FlushMappedNamedBufferRange_32(buffer, offset, length);
+			if (IntPtr.Size == 4) FlushMappedNamedBufferRange_32(buffer, offset, length);
 			else FlushMappedNamedBufferRange_64(buffer, offset, length);
 		}
 
@@ -3621,10 +3616,10 @@ namespace OpenGL.Core
 		/// <param name="length">The size of the region.</param>
 		public static void FlushMappedNamedBufferRange(uint buffer, long offset, long length)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)length>>32)!=0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)length >> 32) != 0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
 				FlushMappedNamedBufferRange_32(buffer, (int)offset, (int)length);
 			}
 			else FlushMappedNamedBufferRange_64(buffer, offset, length);
@@ -3641,7 +3636,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, IntPtr data)
 		{
-			if(IntPtr.Size==4) GetNamedBufferSubData_32(buffer, offset, size, data);
+			if (IntPtr.Size == 4) GetNamedBufferSubData_32(buffer, offset, size, data);
 			else GetNamedBufferSubData_64(buffer, offset, size, data);
 		}
 
@@ -3654,11 +3649,10 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				GetNamedBufferSubData_32(buffer, (int)offset, (int)size, data);
 			}
 			else GetNamedBufferSubData_64(buffer, offset, size, data);
@@ -3673,7 +3667,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3693,7 +3687,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3713,7 +3707,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3733,7 +3727,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3753,7 +3747,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3773,7 +3767,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3793,7 +3787,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3813,7 +3807,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3833,7 +3827,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3853,7 +3847,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3873,7 +3867,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3893,7 +3887,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3913,7 +3907,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3933,7 +3927,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3953,7 +3947,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3973,7 +3967,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -3993,7 +3987,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -4013,7 +4007,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -4033,7 +4027,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, int offset, int size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -4053,7 +4047,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetNamedBufferSubData(uint buffer, long offset, long size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetNamedBufferSubData(buffer, offset, size, h.AddrOfPinnedObject());
@@ -4093,7 +4087,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new framebuffer objects as array.</returns>
 		public static uint[] CreateFramebuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateFramebuffers(count, ret);
 			return ret;
 		}
@@ -4137,7 +4131,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new renderbuffer objects as array.</returns>
 		public static uint[] CreateRenderbuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateRenderbuffers(count, ret);
 			return ret;
 		}
@@ -4184,7 +4178,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new texture objects as array.</returns>
 		public static uint[] CreateTextures(glTextureTarget target, int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateTextures(target, count, ret);
 			return ret;
 		}
@@ -4212,7 +4206,7 @@ namespace OpenGL.Core
 		/// <param name="size">The length of the region.</param>
 		public static void TextureBufferRange(uint texture, glInternalFormat internalformat, uint buffer, int offset, int size)
 		{
-			if(IntPtr.Size==4) TextureBufferRange_32(texture, internalformat, buffer, offset, size);
+			if (IntPtr.Size == 4) TextureBufferRange_32(texture, internalformat, buffer, offset, size);
 			else TextureBufferRange_64(texture, internalformat, buffer, offset, size);
 		}
 
@@ -4226,11 +4220,10 @@ namespace OpenGL.Core
 		/// <param name="size">The length of the region.</param>
 		public static void TextureBufferRange(uint texture, glInternalFormat internalformat, uint buffer, long offset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				TextureBufferRange_32(texture, internalformat, buffer, (int)offset, (int)size);
 			}
 			else TextureBufferRange_64(texture, internalformat, buffer, offset, size);
@@ -4280,7 +4273,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_TextureSubImage1D(texture, level, xoffset, width, format, type, (IntPtr)offset);
 		}
 
@@ -4296,7 +4289,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4319,7 +4312,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4342,7 +4335,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4365,7 +4358,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4388,7 +4381,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4411,7 +4404,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4434,7 +4427,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4457,7 +4450,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4480,7 +4473,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4503,7 +4496,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage1D(uint texture, int level, int xoffset, int width, glPixelFormat format, glPixelDataType type, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage1D(texture, level, xoffset, width, format, type, hPixels.AddrOfPinnedObject());
@@ -4564,7 +4557,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, (IntPtr)offset);
 		}
 
@@ -4582,7 +4575,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4607,7 +4600,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4632,7 +4625,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4657,7 +4650,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4682,7 +4675,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4707,7 +4700,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4732,7 +4725,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4757,7 +4750,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4782,7 +4775,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4807,7 +4800,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glPixelFormat format, glPixelDataType type, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, type, hPixels.AddrOfPinnedObject());
@@ -4874,7 +4867,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (IntPtr)offset);
 		}
 
@@ -4894,7 +4887,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -4921,7 +4914,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -4948,7 +4941,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -4975,7 +4968,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5002,7 +4995,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5029,7 +5022,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5056,7 +5049,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5083,7 +5076,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5110,7 +5103,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5137,7 +5130,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -5177,7 +5170,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, glInternalFormat format, int imageSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_CompressedTextureSubImage1D(texture, level, xoffset, width, format, imageSize, (IntPtr)offset);
 		}
 
@@ -5193,7 +5186,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void CompressedTextureSubImage1D(uint texture, int level, int xoffset, int width, glInternalFormat format, int imageSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_CompressedTextureSubImage1D(texture, level, xoffset, width, format, imageSize, hPixels.AddrOfPinnedObject());
@@ -5237,7 +5230,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glInternalFormat format, int imageSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, imageSize, (IntPtr)offset);
 		}
 
@@ -5255,7 +5248,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void CompressedTextureSubImage2D(uint texture, int level, int xoffset, int yoffset, int width, int height, glInternalFormat format, int imageSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_CompressedTextureSubImage2D(texture, level, xoffset, yoffset, width, height, format, imageSize, hPixels.AddrOfPinnedObject());
@@ -5303,7 +5296,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glInternalFormat format, int imageSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, (IntPtr)offset);
 		}
 
@@ -5323,7 +5316,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void CompressedTextureSubImage3D(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glInternalFormat format, int imageSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, hPixels.AddrOfPinnedObject());
@@ -5454,7 +5447,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_PACK_BUFFER"/>.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetTextureImage(texture, level, format, type, bufSize, (IntPtr)offset);
 		}
 
@@ -5469,7 +5462,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5491,7 +5484,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5513,7 +5506,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5535,7 +5528,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5557,7 +5550,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5579,7 +5572,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5601,7 +5594,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5623,7 +5616,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5645,7 +5638,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5667,7 +5660,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int bufSize, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureImage(texture, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -5701,7 +5694,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_PACK_BUFFER"/>.</param>
 		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetCompressedTextureImage(texture, level, bufSize, (IntPtr)offset);
 		}
 
@@ -5714,7 +5707,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetCompressedTextureImage(uint texture, int level, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetCompressedTextureImage(texture, level, bufSize, hPixels.AddrOfPinnedObject());
@@ -5748,7 +5741,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glFilter)ret;
+			param = (glFilter)ret;
 		}
 
 		/// <summary>
@@ -5761,7 +5754,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureWrapMode)ret;
+			param = (glTextureWrapMode)ret;
 		}
 
 		/// <summary>
@@ -5774,7 +5767,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureCompareMode)ret;
+			param = (glTextureCompareMode)ret;
 		}
 
 		/// <summary>
@@ -5787,7 +5780,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glFunc)ret;
+			param = (glFunc)ret;
 		}
 
 		/// <summary>
@@ -5800,7 +5793,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glDepthStencilTextureMode)ret;
+			param = (glDepthStencilTextureMode)ret;
 		}
 
 		/// <summary>
@@ -5813,7 +5806,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureTarget)ret;
+			param = (glTextureTarget)ret;
 		}
 
 		/// <summary>
@@ -5826,7 +5819,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glImageFormatCompatibilityType)ret;
+			param = (glImageFormatCompatibilityType)ret;
 		}
 
 		/// <summary>
@@ -5839,7 +5832,7 @@ namespace OpenGL.Core
 		{
 			int ret;
 			_GetTextureParameteri(texture, pname, out ret);
-			param=(glTextureSwizzleValue)ret;
+			param = (glTextureSwizzleValue)ret;
 		}
 
 		/// <summary>
@@ -5861,9 +5854,9 @@ namespace OpenGL.Core
 		/// <param name="params">Returns the requested value.</param>
 		public static void GetTextureParameteriv(uint texture, glTextureParameter pname, glTextureSwizzleValue[] @params)
 		{
-			int[] ret=new int[@params.Length];
+			int[] ret = new int[@params.Length];
 			_GetTextureParameteriv(texture, pname, ret);
-			for(int i=0; i<ret.Length; i++) @params[i]=(glTextureSwizzleValue)ret[i];
+			for (int i = 0; i < ret.Length; i++) @params[i] = (glTextureSwizzleValue)ret[i];
 		}
 		#endregion
 
@@ -5895,7 +5888,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new vertex array objects as array.</returns>
 		public static uint[] CreateVertexArrays(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateVertexArrays(count, ret);
 			return ret;
 		}
@@ -5922,7 +5915,7 @@ namespace OpenGL.Core
 		/// <param name="stride">The distance between elements within the buffer.</param>
 		public static void VertexArrayVertexBuffer(uint vaobj, uint bindingindex, uint buffer, int offset, int stride)
 		{
-			if(IntPtr.Size==4) VertexArrayVertexBuffer_32(vaobj, bindingindex, buffer, offset, stride);
+			if (IntPtr.Size == 4) VertexArrayVertexBuffer_32(vaobj, bindingindex, buffer, offset, stride);
 			else VertexArrayVertexBuffer_64(vaobj, bindingindex, buffer, offset, stride);
 		}
 
@@ -5936,10 +5929,9 @@ namespace OpenGL.Core
 		/// <param name="stride">The distance between elements within the buffer.</param>
 		public static void VertexArrayVertexBuffer(uint vaobj, uint bindingindex, uint buffer, long offset, int stride)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				VertexArrayVertexBuffer_32(vaobj, bindingindex, buffer, (int)offset, stride);
 			}
 			else VertexArrayVertexBuffer_64(vaobj, bindingindex, buffer, offset, stride);
@@ -5958,16 +5950,16 @@ namespace OpenGL.Core
 		/// <param name="strides">The strides to associate with the binding points.</param>
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint[] buffers, int[] offsets, int[] strides)
 		{
-			if(IntPtr.Size==4) VertexArrayVertexBuffers_32(vaobj, first, count, buffers, offsets, strides);
+			if (IntPtr.Size == 4) VertexArrayVertexBuffers_32(vaobj, first, count, buffers, offsets, strides);
 			else
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					VertexArrayVertexBuffers_64(vaobj, first, count, null, null, null);
 					return;
 				}
 
-				long[] lOffsets=new long[offsets.Length];
+				long[] lOffsets = new long[offsets.Length];
 				Array.Copy(offsets, lOffsets, offsets.Length);
 
 				VertexArrayVertexBuffers_64(vaobj, first, count, buffers, lOffsets, strides);
@@ -5985,20 +5977,20 @@ namespace OpenGL.Core
 		/// <param name="strides">The strides to associate with the binding points.</param>
 		public static void VertexArrayVertexBuffers(uint vaobj, uint first, int count, uint[] buffers, long[] offsets, int[] strides)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					VertexArrayVertexBuffers_32(vaobj, first, count, null, null, null);
 					return;
 				}
 
-				int[] iOffsets=new int[first+count];
-				for(int i=0; i<count; i++)
+				int[] iOffsets = new int[first + count];
+				for (int i = 0; i < count; i++)
 				{
-					long offset=offsets[first+i];
-					if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
-					iOffsets[first+i]=(int)offset;
+					long offset = offsets[first + i];
+					if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
+					iOffsets[first + i] = (int)offset;
 				}
 
 				VertexArrayVertexBuffers_32(vaobj, first, count, buffers, iOffsets, strides);
@@ -6035,7 +6027,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new sampler objects as array.</returns>
 		public static uint[] CreateSamplers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateSamplers(count, ret);
 			return ret;
 		}
@@ -6079,7 +6071,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new program pipeline objects as array.</returns>
 		public static uint[] CreateProgramPipelines(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateProgramPipelines(count, ret);
 			return ret;
 		}
@@ -6126,7 +6118,7 @@ namespace OpenGL.Core
 		/// <returns>The names of the new query objects as array.</returns>
 		public static uint[] CreateQueries(glQueryTarget target, int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_CreateQueries(target, count, ret);
 			return ret;
 		}
@@ -6153,7 +6145,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjecti64v(uint id, uint buffer, glQueryObjectParameter pname, int offset)
 		{
-			if(IntPtr.Size==4) GetQueryBufferObjecti64v_32(id, buffer, pname, offset);
+			if (IntPtr.Size == 4) GetQueryBufferObjecti64v_32(id, buffer, pname, offset);
 			else GetQueryBufferObjecti64v_64(id, buffer, pname, offset);
 		}
 
@@ -6166,10 +6158,9 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjecti64v(uint id, uint buffer, glQueryObjectParameter pname, long offset)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				GetQueryBufferObjecti64v_32(id, buffer, pname, (int)offset);
 			}
 			else GetQueryBufferObjecti64v_64(id, buffer, pname, offset);
@@ -6184,7 +6175,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectiv(uint id, uint buffer, glQueryObjectParameter pname, int offset)
 		{
-			if(IntPtr.Size==4) GetQueryBufferObjectiv_32(id, buffer, pname, offset);
+			if (IntPtr.Size == 4) GetQueryBufferObjectiv_32(id, buffer, pname, offset);
 			else GetQueryBufferObjectiv_64(id, buffer, pname, offset);
 		}
 
@@ -6197,10 +6188,9 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectiv(uint id, uint buffer, glQueryObjectParameter pname, long offset)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				GetQueryBufferObjectiv_32(id, buffer, pname, (int)offset);
 			}
 			else GetQueryBufferObjectiv_64(id, buffer, pname, offset);
@@ -6215,7 +6205,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectui64v(uint id, uint buffer, glQueryObjectParameter pname, int offset)
 		{
-			if(IntPtr.Size==4) GetQueryBufferObjectui64v_32(id, buffer, pname, offset);
+			if (IntPtr.Size == 4) GetQueryBufferObjectui64v_32(id, buffer, pname, offset);
 			else GetQueryBufferObjectui64v_64(id, buffer, pname, offset);
 		}
 
@@ -6228,10 +6218,9 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectui64v(uint id, uint buffer, glQueryObjectParameter pname, long offset)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				GetQueryBufferObjectui64v_32(id, buffer, pname, (int)offset);
 			}
 			else GetQueryBufferObjectui64v_64(id, buffer, pname, offset);
@@ -6246,7 +6235,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectuiv(uint id, uint buffer, glQueryObjectParameter pname, int offset)
 		{
-			if(IntPtr.Size==4) GetQueryBufferObjectuiv_32(id, buffer, pname, offset);
+			if (IntPtr.Size == 4) GetQueryBufferObjectuiv_32(id, buffer, pname, offset);
 			else GetQueryBufferObjectuiv_64(id, buffer, pname, offset);
 		}
 
@@ -6259,10 +6248,9 @@ namespace OpenGL.Core
 		/// <param name="offset">The object into the query buffer object to write into.</param>
 		public static void GetQueryBufferObjectuiv(uint id, uint buffer, glQueryObjectParameter pname, long offset)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				GetQueryBufferObjectuiv_32(id, buffer, pname, (int)offset);
 			}
 			else GetQueryBufferObjectuiv_64(id, buffer, pname, offset);
@@ -6347,7 +6335,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6375,7 +6363,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6403,7 +6391,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6431,7 +6419,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6459,7 +6447,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6487,7 +6475,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6515,7 +6503,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6543,7 +6531,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6571,7 +6559,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6599,7 +6587,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int bufSize, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6645,7 +6633,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_PACK_BUFFER"/>.</param>
 		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, (IntPtr)offset);
 		}
 
@@ -6664,7 +6652,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, hPixels.AddrOfPinnedObject());
@@ -6698,7 +6686,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_PACK_BUFFER"/>.</param>
 		public static void GetnCompressedTexImage(glTextureProxyTarget target, int level, int bufSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetnCompressedTexImage(target, level, bufSize, (IntPtr)offset);
 		}
 
@@ -6711,7 +6699,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnCompressedTexImage(glTextureProxyTarget target, int level, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnCompressedTexImage(target, level, bufSize, hPixels.AddrOfPinnedObject());
@@ -6763,7 +6751,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_PACK_BUFFER"/>.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetnTexImage(target, level, format, type, bufSize, (IntPtr)offset);
 		}
 
@@ -6778,7 +6766,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6800,7 +6788,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6822,7 +6810,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6844,7 +6832,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6866,7 +6854,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6888,7 +6876,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6910,7 +6898,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6932,7 +6920,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6954,7 +6942,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -6976,7 +6964,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void GetnTexImage(glTextureProxyTarget target, int level, glPixelFormat format, glPixelDataType type, int bufSize, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_GetnTexImage(target, level, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7050,7 +7038,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7074,7 +7062,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7098,7 +7086,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7122,7 +7110,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7146,7 +7134,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7170,7 +7158,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7194,7 +7182,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7218,7 +7206,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7242,7 +7230,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7266,7 +7254,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the buffer for the returning data.</param>
 		public static void ReadnPixels(int x, int y, int width, int height, glPixelFormat format, glPixelDataType type, int bufSize, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_ReadnPixels(x, y, width, height, format, type, bufSize, hPixels.AddrOfPinnedObject());
@@ -7281,206 +7269,206 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_4_5()
 		{
-			ClipControl=GetAddress<glClipControl>("glClipControl");
-			_CreateTransformFeedback=GetAddress<glCreateTransformFeedback>("glCreateTransformFeedbacks");
-			_CreateTransformFeedbacks=GetAddress<glCreateTransformFeedbacks>("glCreateTransformFeedbacks");
-			TransformFeedbackBufferBase=GetAddress<glTransformFeedbackBufferBase>("glTransformFeedbackBufferBase");
-			GetTransformFeedbacki=GetAddress<glGetTransformFeedbacki>("glGetTransformFeedbackiv");
-			GetTransformFeedbackiv=GetAddress<glGetTransformFeedbackiv>("glGetTransformFeedbackiv");
-			GetTransformFeedbacki_=GetAddress<glGetTransformFeedbacki_>("glGetTransformFeedbacki_v");
-			GetTransformFeedbacki_v=GetAddress<glGetTransformFeedbacki_v>("glGetTransformFeedbacki_v");
-			GetTransformFeedbacki64_=GetAddress<glGetTransformFeedbacki64_>("glGetTransformFeedbacki64_v");
-			GetTransformFeedbacki64_v=GetAddress<glGetTransformFeedbacki64_v>("glGetTransformFeedbacki64_v");
-			_CreateBuffer=GetAddress<glCreateBuffer>("glCreateBuffers");
-			_CreateBuffers=GetAddress<glCreateBuffers>("glCreateBuffers");
-			_ClearNamedBufferData=GetAddress<glClearNamedBufferData>("glClearNamedBufferData");
-			MapNamedBuffer=GetAddress<glMapNamedBuffer>("glMapNamedBuffer");
-			UnmapNamedBuffer=GetAddress<glUnmapNamedBuffer>("glUnmapNamedBuffer");
-			GetNamedBufferParameteri=GetAddress<glGetNamedBufferParameteri>("glGetNamedBufferParameteriv");
-			GetNamedBufferParameteriv=GetAddress<glGetNamedBufferParameteriv>("glGetNamedBufferParameteriv");
-			GetNamedBufferParameteri64=GetAddress<glGetNamedBufferParameteri64>("glGetNamedBufferParameteri64v");
-			GetNamedBufferParameteri64v=GetAddress<glGetNamedBufferParameteri64v>("glGetNamedBufferParameteri64v");
-			GetNamedBufferPointerv=GetAddress<glGetNamedBufferPointerv>("glGetNamedBufferPointerv");
-			_CreateFramebuffer=GetAddress<glCreateFramebuffer>("glCreateFramebuffers");
-			_CreateFramebuffers=GetAddress<glCreateFramebuffers>("glCreateFramebuffers");
-			NamedFramebufferRenderbuffer=GetAddress<glNamedFramebufferRenderbuffer>("glNamedFramebufferRenderbuffer");
-			NamedFramebufferParameteri=GetAddress<glNamedFramebufferParameteri>("glNamedFramebufferParameteri");
-			NamedFramebufferTexture=GetAddress<glNamedFramebufferTexture>("glNamedFramebufferTexture");
-			NamedFramebufferTextureLayer=GetAddress<glNamedFramebufferTextureLayer>("glNamedFramebufferTextureLayer");
-			NamedFramebufferDrawBuffer=GetAddress<glNamedFramebufferDrawBuffer>("glNamedFramebufferDrawBuffer");
-			NamedFramebufferDrawBuffers=GetAddress<glNamedFramebufferDrawBuffers>("glNamedFramebufferDrawBuffers");
-			NamedFramebufferReadBuffer=GetAddress<glNamedFramebufferReadBuffer>("glNamedFramebufferReadBuffer");
-			InvalidateNamedFramebufferData=GetAddress<glInvalidateNamedFramebufferData>("glInvalidateNamedFramebufferData");
-			InvalidateNamedFramebufferSubData=GetAddress<glInvalidateNamedFramebufferSubData>("glInvalidateNamedFramebufferSubData");
-			ClearNamedFramebufferiv=GetAddress<glClearNamedFramebufferiv>("glClearNamedFramebufferiv");
-			ClearNamedFramebufferuiv=GetAddress<glClearNamedFramebufferuiv>("glClearNamedFramebufferuiv");
-			ClearNamedFramebufferfv=GetAddress<glClearNamedFramebufferfv>("glClearNamedFramebufferfv");
-			ClearNamedFramebufferfi=GetAddress<glClearNamedFramebufferfi>("glClearNamedFramebufferfi");
-			BlitNamedFramebuffer=GetAddress<glBlitNamedFramebuffer>("glBlitNamedFramebuffer");
-			CheckNamedFramebufferStatus=GetAddress<glCheckNamedFramebufferStatus>("glCheckNamedFramebufferStatus");
-			GetNamedFramebufferParameteri=GetAddress<glGetNamedFramebufferParameteri>("glGetNamedFramebufferParameteriv");
-			GetNamedFramebufferParameteriv=GetAddress<glGetNamedFramebufferParameteriv>("glGetNamedFramebufferParameteriv");
-			GetNamedFramebufferAttachmentParameteri=GetAddress<glGetNamedFramebufferAttachmentParameteri>("glGetNamedFramebufferAttachmentParameteriv");
-			GetNamedFramebufferAttachmentParameteriv=GetAddress<glGetNamedFramebufferAttachmentParameteriv>("glGetNamedFramebufferAttachmentParameteriv");
-			_CreateRenderbuffer=GetAddress<glCreateRenderbuffer>("glCreateRenderbuffers");
-			_CreateRenderbuffers=GetAddress<glCreateRenderbuffers>("glCreateRenderbuffers");
-			NamedRenderbufferStorage=GetAddress<glNamedRenderbufferStorage>("glNamedRenderbufferStorage");
-			NamedRenderbufferStorageMultisample=GetAddress<glNamedRenderbufferStorageMultisample>("glNamedRenderbufferStorageMultisample");
-			GetNamedRenderbufferParameteri=GetAddress<glGetNamedRenderbufferParameteri>("glGetNamedRenderbufferParameteriv");
-			GetNamedRenderbufferParameteriv=GetAddress<glGetNamedRenderbufferParameteriv>("glGetNamedRenderbufferParameteriv");
-			_CreateTexture=GetAddress<glCreateTexture>("glCreateTextures");
-			_CreateTextures=GetAddress<glCreateTextures>("glCreateTextures");
-			TextureBuffer=GetAddress<glTextureBuffer>("glTextureBuffer");
-			TextureStorage1D=GetAddress<glTextureStorage1D>("glTextureStorage1D");
-			TextureStorage2D=GetAddress<glTextureStorage2D>("glTextureStorage2D");
-			TextureStorage3D=GetAddress<glTextureStorage3D>("glTextureStorage3D");
-			TextureStorage2DMultisample=GetAddress<glTextureStorage2DMultisample>("glTextureStorage2DMultisample");
-			TextureStorage3DMultisample=GetAddress<glTextureStorage3DMultisample>("glTextureStorage3DMultisample");
-			_TextureSubImage1D=GetAddress<glTextureSubImage1D>("glTextureSubImage1D");
-			_TextureSubImage2D=GetAddress<glTextureSubImage2D>("glTextureSubImage2D");
-			_TextureSubImage3D=GetAddress<glTextureSubImage3D>("glTextureSubImage3D");
-			_CompressedTextureSubImage1D=GetAddress<glCompressedTextureSubImage1D>("glCompressedTextureSubImage1D");
-			_CompressedTextureSubImage2D=GetAddress<glCompressedTextureSubImage2D>("glCompressedTextureSubImage2D");
-			_CompressedTextureSubImage3D=GetAddress<glCompressedTextureSubImage3D>("glCompressedTextureSubImage3D");
-			CopyTextureSubImage1D=GetAddress<glCopyTextureSubImage1D>("glCopyTextureSubImage1D");
-			CopyTextureSubImage2D=GetAddress<glCopyTextureSubImage2D>("glCopyTextureSubImage2D");
-			CopyTextureSubImage3D=GetAddress<glCopyTextureSubImage3D>("glCopyTextureSubImage3D");
-			TextureParameterf=GetAddress<glTextureParameterf>("glTextureParameterf");
-			TextureParameterfv=GetAddress<glTextureParameterfv>("glTextureParameterfv");
-			_TextureParameteri=GetAddress<glTextureParameteri>("glTextureParameteri");
-			TextureParameteriv=GetAddress<glTextureParameteriv>("glTextureParameteriv");
-			TextureParameterIiv=GetAddress<glTextureParameterIiv>("glTextureParameterIiv");
-			TextureParameterIuiv=GetAddress<glTextureParameterIuiv>("glTextureParameterIuiv");
-			GenerateTextureMipmap=GetAddress<glGenerateTextureMipmap>("glGenerateTextureMipmap");
-			BindTextureUnit=GetAddress<glBindTextureUnit>("glBindTextureUnit");
-			_GetTextureImage=GetAddress<glGetTextureImage>("glGetTextureImage");
-			_GetCompressedTextureImage=GetAddress<glGetCompressedTextureImage>("glGetCompressedTextureImage");
-			GetTextureLevelParameterf=GetAddress<glGetTextureLevelParameterf>("glGetTextureLevelParameterfv");
-			GetTextureLevelParameterfv=GetAddress<glGetTextureLevelParameterfv>("glGetTextureLevelParameterfv");
-			GetTextureLevelParameteri=GetAddress<glGetTextureLevelParameteri>("glGetTextureLevelParameteriv");
-			GetTextureLevelParameteriv=GetAddress<glGetTextureLevelParameteriv>("glGetTextureLevelParameteriv");
-			GetTextureParameterf=GetAddress<glGetTextureParameterf>("glGetTextureParameterfv");
-			GetTextureParameterfv=GetAddress<glGetTextureParameterfv>("glGetTextureParameterfv");
-			_GetTextureParameteri=GetAddress<glGetTextureParameteri>("glGetTextureParameteriv");
-			_GetTextureParameteriv=GetAddress<glGetTextureParameteriv>("glGetTextureParameteriv");
-			GetTextureParameterIi=GetAddress<glGetTextureParameterIi>("glGetTextureParameterIiv");
-			GetTextureParameterIiv=GetAddress<glGetTextureParameterIiv>("glGetTextureParameterIiv");
-			GetTextureParameterIui=GetAddress<glGetTextureParameterIui>("glGetTextureParameterIuiv");
-			GetTextureParameterIuiv=GetAddress<glGetTextureParameterIuiv>("glGetTextureParameterIuiv");
-			_CreateVertexArray=GetAddress<glCreateVertexArray>("glCreateVertexArrays");
-			_CreateVertexArrays=GetAddress<glCreateVertexArrays>("glCreateVertexArrays");
-			DisableVertexArrayAttrib=GetAddress<glDisableVertexArrayAttrib>("glDisableVertexArrayAttrib");
-			EnableVertexArrayAttrib=GetAddress<glEnableVertexArrayAttrib>("glEnableVertexArrayAttrib");
-			VertexArrayElementBuffer=GetAddress<glVertexArrayElementBuffer>("glVertexArrayElementBuffer");
-			VertexArrayAttribBinding=GetAddress<glVertexArrayAttribBinding>("glVertexArrayAttribBinding");
-			VertexArrayAttribFormat=GetAddress<glVertexArrayAttribFormat>("glVertexArrayAttribFormat");
-			VertexArrayAttribIFormat=GetAddress<glVertexArrayAttribIFormat>("glVertexArrayAttribIFormat");
-			VertexArrayAttribLFormat=GetAddress<glVertexArrayAttribLFormat>("glVertexArrayAttribLFormat");
-			VertexArrayBindingDivisor=GetAddress<glVertexArrayBindingDivisor>("glVertexArrayBindingDivisor");
-			GetVertexArrayi=GetAddress<glGetVertexArrayi>("glGetVertexArrayiv");
-			GetVertexArrayiv=GetAddress<glGetVertexArrayiv>("glGetVertexArrayiv");
-			GetVertexArrayIndexedi=GetAddress<glGetVertexArrayIndexedi>("glGetVertexArrayIndexediv");
-			GetVertexArrayIndexediv=GetAddress<glGetVertexArrayIndexediv>("glGetVertexArrayIndexediv");
-			GetVertexArrayIndexed64i=GetAddress<glGetVertexArrayIndexed64i>("glGetVertexArrayIndexed64iv");
-			GetVertexArrayIndexed64iv=GetAddress<glGetVertexArrayIndexed64iv>("glGetVertexArrayIndexed64iv");
-			_CreateSampler=GetAddress<glCreateSampler>("glCreateSamplers");
-			_CreateSamplers=GetAddress<glCreateSamplers>("glCreateSamplers");
-			_CreateProgramPipeline=GetAddress<glCreateProgramPipeline>("glCreateProgramPipelines");
-			_CreateProgramPipelines=GetAddress<glCreateProgramPipelines>("glCreateProgramPipelines");
-			_CreateQuery=GetAddress<glCreateQuery>("glCreateQueries");
-			_CreateQueries=GetAddress<glCreateQueries>("glCreateQueries");
-			MemoryBarrierByRegion=GetAddress<glMemoryBarrierByRegion>("glMemoryBarrierByRegion");
-			_GetTextureSubImage=GetAddress<glGetTextureSubImage>("glGetTextureSubImage");
-			_GetCompressedTextureSubImage=GetAddress<glGetCompressedTextureSubImage>("glGetCompressedTextureSubImage");
-			GetGraphicsResetStatus=GetAddress<glGetGraphicsResetStatus>("glGetGraphicsResetStatus");
-			_GetnCompressedTexImage=GetAddress<glGetnCompressedTexImage>("glGetnCompressedTexImage");
-			_GetnTexImage=GetAddress<glGetnTexImage>("glGetnTexImage");
-			GetnUniformdv=GetAddress<glGetnUniformdv>("glGetnUniformdv");
-			GetnUniformfv=GetAddress<glGetnUniformfv>("glGetnUniformfv");
-			GetnUniformiv=GetAddress<glGetnUniformiv>("glGetnUniformiv");
-			GetnUniformuiv=GetAddress<glGetnUniformuiv>("glGetnUniformuiv");
-			_ReadnPixels=GetAddress<glReadnPixels>("glReadnPixels");
-			TextureBarrier=GetAddress<glTextureBarrier>("glTextureBarrier");
+			ClipControl = GetAddress<glClipControl>("glClipControl");
+			_CreateTransformFeedback = GetAddress<glCreateTransformFeedback>("glCreateTransformFeedbacks");
+			_CreateTransformFeedbacks = GetAddress<glCreateTransformFeedbacks>("glCreateTransformFeedbacks");
+			TransformFeedbackBufferBase = GetAddress<glTransformFeedbackBufferBase>("glTransformFeedbackBufferBase");
+			GetTransformFeedbacki = GetAddress<glGetTransformFeedbacki>("glGetTransformFeedbackiv");
+			GetTransformFeedbackiv = GetAddress<glGetTransformFeedbackiv>("glGetTransformFeedbackiv");
+			GetTransformFeedbacki_ = GetAddress<glGetTransformFeedbacki_>("glGetTransformFeedbacki_v");
+			GetTransformFeedbacki_v = GetAddress<glGetTransformFeedbacki_v>("glGetTransformFeedbacki_v");
+			GetTransformFeedbacki64_ = GetAddress<glGetTransformFeedbacki64_>("glGetTransformFeedbacki64_v");
+			GetTransformFeedbacki64_v = GetAddress<glGetTransformFeedbacki64_v>("glGetTransformFeedbacki64_v");
+			_CreateBuffer = GetAddress<glCreateBuffer>("glCreateBuffers");
+			_CreateBuffers = GetAddress<glCreateBuffers>("glCreateBuffers");
+			_ClearNamedBufferData = GetAddress<glClearNamedBufferData>("glClearNamedBufferData");
+			MapNamedBuffer = GetAddress<glMapNamedBuffer>("glMapNamedBuffer");
+			UnmapNamedBuffer = GetAddress<glUnmapNamedBuffer>("glUnmapNamedBuffer");
+			GetNamedBufferParameteri = GetAddress<glGetNamedBufferParameteri>("glGetNamedBufferParameteriv");
+			GetNamedBufferParameteriv = GetAddress<glGetNamedBufferParameteriv>("glGetNamedBufferParameteriv");
+			GetNamedBufferParameteri64 = GetAddress<glGetNamedBufferParameteri64>("glGetNamedBufferParameteri64v");
+			GetNamedBufferParameteri64v = GetAddress<glGetNamedBufferParameteri64v>("glGetNamedBufferParameteri64v");
+			GetNamedBufferPointerv = GetAddress<glGetNamedBufferPointerv>("glGetNamedBufferPointerv");
+			_CreateFramebuffer = GetAddress<glCreateFramebuffer>("glCreateFramebuffers");
+			_CreateFramebuffers = GetAddress<glCreateFramebuffers>("glCreateFramebuffers");
+			NamedFramebufferRenderbuffer = GetAddress<glNamedFramebufferRenderbuffer>("glNamedFramebufferRenderbuffer");
+			NamedFramebufferParameteri = GetAddress<glNamedFramebufferParameteri>("glNamedFramebufferParameteri");
+			NamedFramebufferTexture = GetAddress<glNamedFramebufferTexture>("glNamedFramebufferTexture");
+			NamedFramebufferTextureLayer = GetAddress<glNamedFramebufferTextureLayer>("glNamedFramebufferTextureLayer");
+			NamedFramebufferDrawBuffer = GetAddress<glNamedFramebufferDrawBuffer>("glNamedFramebufferDrawBuffer");
+			NamedFramebufferDrawBuffers = GetAddress<glNamedFramebufferDrawBuffers>("glNamedFramebufferDrawBuffers");
+			NamedFramebufferReadBuffer = GetAddress<glNamedFramebufferReadBuffer>("glNamedFramebufferReadBuffer");
+			InvalidateNamedFramebufferData = GetAddress<glInvalidateNamedFramebufferData>("glInvalidateNamedFramebufferData");
+			InvalidateNamedFramebufferSubData = GetAddress<glInvalidateNamedFramebufferSubData>("glInvalidateNamedFramebufferSubData");
+			ClearNamedFramebufferiv = GetAddress<glClearNamedFramebufferiv>("glClearNamedFramebufferiv");
+			ClearNamedFramebufferuiv = GetAddress<glClearNamedFramebufferuiv>("glClearNamedFramebufferuiv");
+			ClearNamedFramebufferfv = GetAddress<glClearNamedFramebufferfv>("glClearNamedFramebufferfv");
+			ClearNamedFramebufferfi = GetAddress<glClearNamedFramebufferfi>("glClearNamedFramebufferfi");
+			BlitNamedFramebuffer = GetAddress<glBlitNamedFramebuffer>("glBlitNamedFramebuffer");
+			CheckNamedFramebufferStatus = GetAddress<glCheckNamedFramebufferStatus>("glCheckNamedFramebufferStatus");
+			GetNamedFramebufferParameteri = GetAddress<glGetNamedFramebufferParameteri>("glGetNamedFramebufferParameteriv");
+			GetNamedFramebufferParameteriv = GetAddress<glGetNamedFramebufferParameteriv>("glGetNamedFramebufferParameteriv");
+			GetNamedFramebufferAttachmentParameteri = GetAddress<glGetNamedFramebufferAttachmentParameteri>("glGetNamedFramebufferAttachmentParameteriv");
+			GetNamedFramebufferAttachmentParameteriv = GetAddress<glGetNamedFramebufferAttachmentParameteriv>("glGetNamedFramebufferAttachmentParameteriv");
+			_CreateRenderbuffer = GetAddress<glCreateRenderbuffer>("glCreateRenderbuffers");
+			_CreateRenderbuffers = GetAddress<glCreateRenderbuffers>("glCreateRenderbuffers");
+			NamedRenderbufferStorage = GetAddress<glNamedRenderbufferStorage>("glNamedRenderbufferStorage");
+			NamedRenderbufferStorageMultisample = GetAddress<glNamedRenderbufferStorageMultisample>("glNamedRenderbufferStorageMultisample");
+			GetNamedRenderbufferParameteri = GetAddress<glGetNamedRenderbufferParameteri>("glGetNamedRenderbufferParameteriv");
+			GetNamedRenderbufferParameteriv = GetAddress<glGetNamedRenderbufferParameteriv>("glGetNamedRenderbufferParameteriv");
+			_CreateTexture = GetAddress<glCreateTexture>("glCreateTextures");
+			_CreateTextures = GetAddress<glCreateTextures>("glCreateTextures");
+			TextureBuffer = GetAddress<glTextureBuffer>("glTextureBuffer");
+			TextureStorage1D = GetAddress<glTextureStorage1D>("glTextureStorage1D");
+			TextureStorage2D = GetAddress<glTextureStorage2D>("glTextureStorage2D");
+			TextureStorage3D = GetAddress<glTextureStorage3D>("glTextureStorage3D");
+			TextureStorage2DMultisample = GetAddress<glTextureStorage2DMultisample>("glTextureStorage2DMultisample");
+			TextureStorage3DMultisample = GetAddress<glTextureStorage3DMultisample>("glTextureStorage3DMultisample");
+			_TextureSubImage1D = GetAddress<glTextureSubImage1D>("glTextureSubImage1D");
+			_TextureSubImage2D = GetAddress<glTextureSubImage2D>("glTextureSubImage2D");
+			_TextureSubImage3D = GetAddress<glTextureSubImage3D>("glTextureSubImage3D");
+			_CompressedTextureSubImage1D = GetAddress<glCompressedTextureSubImage1D>("glCompressedTextureSubImage1D");
+			_CompressedTextureSubImage2D = GetAddress<glCompressedTextureSubImage2D>("glCompressedTextureSubImage2D");
+			_CompressedTextureSubImage3D = GetAddress<glCompressedTextureSubImage3D>("glCompressedTextureSubImage3D");
+			CopyTextureSubImage1D = GetAddress<glCopyTextureSubImage1D>("glCopyTextureSubImage1D");
+			CopyTextureSubImage2D = GetAddress<glCopyTextureSubImage2D>("glCopyTextureSubImage2D");
+			CopyTextureSubImage3D = GetAddress<glCopyTextureSubImage3D>("glCopyTextureSubImage3D");
+			TextureParameterf = GetAddress<glTextureParameterf>("glTextureParameterf");
+			TextureParameterfv = GetAddress<glTextureParameterfv>("glTextureParameterfv");
+			_TextureParameteri = GetAddress<glTextureParameteri>("glTextureParameteri");
+			TextureParameteriv = GetAddress<glTextureParameteriv>("glTextureParameteriv");
+			TextureParameterIiv = GetAddress<glTextureParameterIiv>("glTextureParameterIiv");
+			TextureParameterIuiv = GetAddress<glTextureParameterIuiv>("glTextureParameterIuiv");
+			GenerateTextureMipmap = GetAddress<glGenerateTextureMipmap>("glGenerateTextureMipmap");
+			BindTextureUnit = GetAddress<glBindTextureUnit>("glBindTextureUnit");
+			_GetTextureImage = GetAddress<glGetTextureImage>("glGetTextureImage");
+			_GetCompressedTextureImage = GetAddress<glGetCompressedTextureImage>("glGetCompressedTextureImage");
+			GetTextureLevelParameterf = GetAddress<glGetTextureLevelParameterf>("glGetTextureLevelParameterfv");
+			GetTextureLevelParameterfv = GetAddress<glGetTextureLevelParameterfv>("glGetTextureLevelParameterfv");
+			GetTextureLevelParameteri = GetAddress<glGetTextureLevelParameteri>("glGetTextureLevelParameteriv");
+			GetTextureLevelParameteriv = GetAddress<glGetTextureLevelParameteriv>("glGetTextureLevelParameteriv");
+			GetTextureParameterf = GetAddress<glGetTextureParameterf>("glGetTextureParameterfv");
+			GetTextureParameterfv = GetAddress<glGetTextureParameterfv>("glGetTextureParameterfv");
+			_GetTextureParameteri = GetAddress<glGetTextureParameteri>("glGetTextureParameteriv");
+			_GetTextureParameteriv = GetAddress<glGetTextureParameteriv>("glGetTextureParameteriv");
+			GetTextureParameterIi = GetAddress<glGetTextureParameterIi>("glGetTextureParameterIiv");
+			GetTextureParameterIiv = GetAddress<glGetTextureParameterIiv>("glGetTextureParameterIiv");
+			GetTextureParameterIui = GetAddress<glGetTextureParameterIui>("glGetTextureParameterIuiv");
+			GetTextureParameterIuiv = GetAddress<glGetTextureParameterIuiv>("glGetTextureParameterIuiv");
+			_CreateVertexArray = GetAddress<glCreateVertexArray>("glCreateVertexArrays");
+			_CreateVertexArrays = GetAddress<glCreateVertexArrays>("glCreateVertexArrays");
+			DisableVertexArrayAttrib = GetAddress<glDisableVertexArrayAttrib>("glDisableVertexArrayAttrib");
+			EnableVertexArrayAttrib = GetAddress<glEnableVertexArrayAttrib>("glEnableVertexArrayAttrib");
+			VertexArrayElementBuffer = GetAddress<glVertexArrayElementBuffer>("glVertexArrayElementBuffer");
+			VertexArrayAttribBinding = GetAddress<glVertexArrayAttribBinding>("glVertexArrayAttribBinding");
+			VertexArrayAttribFormat = GetAddress<glVertexArrayAttribFormat>("glVertexArrayAttribFormat");
+			VertexArrayAttribIFormat = GetAddress<glVertexArrayAttribIFormat>("glVertexArrayAttribIFormat");
+			VertexArrayAttribLFormat = GetAddress<glVertexArrayAttribLFormat>("glVertexArrayAttribLFormat");
+			VertexArrayBindingDivisor = GetAddress<glVertexArrayBindingDivisor>("glVertexArrayBindingDivisor");
+			GetVertexArrayi = GetAddress<glGetVertexArrayi>("glGetVertexArrayiv");
+			GetVertexArrayiv = GetAddress<glGetVertexArrayiv>("glGetVertexArrayiv");
+			GetVertexArrayIndexedi = GetAddress<glGetVertexArrayIndexedi>("glGetVertexArrayIndexediv");
+			GetVertexArrayIndexediv = GetAddress<glGetVertexArrayIndexediv>("glGetVertexArrayIndexediv");
+			GetVertexArrayIndexed64i = GetAddress<glGetVertexArrayIndexed64i>("glGetVertexArrayIndexed64iv");
+			GetVertexArrayIndexed64iv = GetAddress<glGetVertexArrayIndexed64iv>("glGetVertexArrayIndexed64iv");
+			_CreateSampler = GetAddress<glCreateSampler>("glCreateSamplers");
+			_CreateSamplers = GetAddress<glCreateSamplers>("glCreateSamplers");
+			_CreateProgramPipeline = GetAddress<glCreateProgramPipeline>("glCreateProgramPipelines");
+			_CreateProgramPipelines = GetAddress<glCreateProgramPipelines>("glCreateProgramPipelines");
+			_CreateQuery = GetAddress<glCreateQuery>("glCreateQueries");
+			_CreateQueries = GetAddress<glCreateQueries>("glCreateQueries");
+			MemoryBarrierByRegion = GetAddress<glMemoryBarrierByRegion>("glMemoryBarrierByRegion");
+			_GetTextureSubImage = GetAddress<glGetTextureSubImage>("glGetTextureSubImage");
+			_GetCompressedTextureSubImage = GetAddress<glGetCompressedTextureSubImage>("glGetCompressedTextureSubImage");
+			GetGraphicsResetStatus = GetAddress<glGetGraphicsResetStatus>("glGetGraphicsResetStatus");
+			_GetnCompressedTexImage = GetAddress<glGetnCompressedTexImage>("glGetnCompressedTexImage");
+			_GetnTexImage = GetAddress<glGetnTexImage>("glGetnTexImage");
+			GetnUniformdv = GetAddress<glGetnUniformdv>("glGetnUniformdv");
+			GetnUniformfv = GetAddress<glGetnUniformfv>("glGetnUniformfv");
+			GetnUniformiv = GetAddress<glGetnUniformiv>("glGetnUniformiv");
+			GetnUniformuiv = GetAddress<glGetnUniformuiv>("glGetnUniformuiv");
+			_ReadnPixels = GetAddress<glReadnPixels>("glReadnPixels");
+			TextureBarrier = GetAddress<glTextureBarrier>("glTextureBarrier");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				TransformFeedbackBufferRange_32=GetAddress<glTransformFeedbackBufferRange_32>("glTransformFeedbackBufferRange");
-				NamedBufferStorage_32=GetAddress<glNamedBufferStorage_32>("glNamedBufferStorage");
-				NamedBufferData_32=GetAddress<glNamedBufferData_32>("glNamedBufferData");
-				NamedBufferSubData_32=GetAddress<glNamedBufferSubData_32>("glNamedBufferSubData");
-				CopyNamedBufferSubData_32=GetAddress<glCopyNamedBufferSubData_32>("glCopyNamedBufferSubData");
-				ClearNamedBufferSubData_32=GetAddress<glClearNamedBufferSubData_32>("glClearNamedBufferSubData");
-				MapNamedBufferRange_32=GetAddress<glMapNamedBufferRange_32>("glMapNamedBufferRange");
-				FlushMappedNamedBufferRange_32=GetAddress<glFlushMappedNamedBufferRange_32>("glFlushMappedNamedBufferRange");
-				GetNamedBufferSubData_32=GetAddress<glGetNamedBufferSubData_32>("glGetNamedBufferSubData");
-				TextureBufferRange_32=GetAddress<glTextureBufferRange_32>("glTextureBufferRange");
-				VertexArrayVertexBuffer_32=GetAddress<glVertexArrayVertexBuffer_32>("glVertexArrayVertexBuffer");
-				VertexArrayVertexBuffers_32=GetAddress<glVertexArrayVertexBuffers_32>("glVertexArrayVertexBuffers");
-				GetQueryBufferObjecti64v_32=GetAddress<glGetQueryBufferObjecti64v_32>("glGetQueryBufferObjecti64v");
-				GetQueryBufferObjectiv_32=GetAddress<glGetQueryBufferObjectiv_32>("glGetQueryBufferObjectiv");
-				GetQueryBufferObjectui64v_32=GetAddress<glGetQueryBufferObjectui64v_32>("glGetQueryBufferObjectui64v");
-				GetQueryBufferObjectuiv_32=GetAddress<glGetQueryBufferObjectuiv_32>("glGetQueryBufferObjectuiv");
+				TransformFeedbackBufferRange_32 = GetAddress<glTransformFeedbackBufferRange_32>("glTransformFeedbackBufferRange");
+				NamedBufferStorage_32 = GetAddress<glNamedBufferStorage_32>("glNamedBufferStorage");
+				NamedBufferData_32 = GetAddress<glNamedBufferData_32>("glNamedBufferData");
+				NamedBufferSubData_32 = GetAddress<glNamedBufferSubData_32>("glNamedBufferSubData");
+				CopyNamedBufferSubData_32 = GetAddress<glCopyNamedBufferSubData_32>("glCopyNamedBufferSubData");
+				ClearNamedBufferSubData_32 = GetAddress<glClearNamedBufferSubData_32>("glClearNamedBufferSubData");
+				MapNamedBufferRange_32 = GetAddress<glMapNamedBufferRange_32>("glMapNamedBufferRange");
+				FlushMappedNamedBufferRange_32 = GetAddress<glFlushMappedNamedBufferRange_32>("glFlushMappedNamedBufferRange");
+				GetNamedBufferSubData_32 = GetAddress<glGetNamedBufferSubData_32>("glGetNamedBufferSubData");
+				TextureBufferRange_32 = GetAddress<glTextureBufferRange_32>("glTextureBufferRange");
+				VertexArrayVertexBuffer_32 = GetAddress<glVertexArrayVertexBuffer_32>("glVertexArrayVertexBuffer");
+				VertexArrayVertexBuffers_32 = GetAddress<glVertexArrayVertexBuffers_32>("glVertexArrayVertexBuffers");
+				GetQueryBufferObjecti64v_32 = GetAddress<glGetQueryBufferObjecti64v_32>("glGetQueryBufferObjecti64v");
+				GetQueryBufferObjectiv_32 = GetAddress<glGetQueryBufferObjectiv_32>("glGetQueryBufferObjectiv");
+				GetQueryBufferObjectui64v_32 = GetAddress<glGetQueryBufferObjectui64v_32>("glGetQueryBufferObjectui64v");
+				GetQueryBufferObjectuiv_32 = GetAddress<glGetQueryBufferObjectuiv_32>("glGetQueryBufferObjectuiv");
 
-				platformDependend=TransformFeedbackBufferRange_32!=null&&NamedBufferStorage_32!=null&&NamedBufferData_32!=null&&
-					NamedBufferSubData_32!=null&&CopyNamedBufferSubData_32!=null&&ClearNamedBufferSubData_32!=null&&
-					MapNamedBufferRange_32!=null&&FlushMappedNamedBufferRange_32!=null&&GetNamedBufferSubData_32!=null&&
-					TextureBufferRange_32!=null&&VertexArrayVertexBuffer_32!=null&&VertexArrayVertexBuffers_32!=null&&
-					GetQueryBufferObjecti64v_32!=null&&GetQueryBufferObjectiv_32!=null&&GetQueryBufferObjectui64v_32!=null&&
-					GetQueryBufferObjectuiv_32!=null;
+				platformDependend = TransformFeedbackBufferRange_32 != null && NamedBufferStorage_32 != null && NamedBufferData_32 != null &&
+					NamedBufferSubData_32 != null && CopyNamedBufferSubData_32 != null && ClearNamedBufferSubData_32 != null &&
+					MapNamedBufferRange_32 != null && FlushMappedNamedBufferRange_32 != null && GetNamedBufferSubData_32 != null &&
+					TextureBufferRange_32 != null && VertexArrayVertexBuffer_32 != null && VertexArrayVertexBuffers_32 != null &&
+					GetQueryBufferObjecti64v_32 != null && GetQueryBufferObjectiv_32 != null && GetQueryBufferObjectui64v_32 != null &&
+					GetQueryBufferObjectuiv_32 != null;
 			}
 			else
 			{
-				TransformFeedbackBufferRange_64=GetAddress<glTransformFeedbackBufferRange_64>("glTransformFeedbackBufferRange");
-				NamedBufferStorage_64=GetAddress<glNamedBufferStorage_64>("glNamedBufferStorage");
-				NamedBufferData_64=GetAddress<glNamedBufferData_64>("glNamedBufferData");
-				NamedBufferSubData_64=GetAddress<glNamedBufferSubData_64>("glNamedBufferSubData");
-				CopyNamedBufferSubData_64=GetAddress<glCopyNamedBufferSubData_64>("glCopyNamedBufferSubData");
-				ClearNamedBufferSubData_64=GetAddress<glClearNamedBufferSubData_64>("glClearNamedBufferSubData");
-				MapNamedBufferRange_64=GetAddress<glMapNamedBufferRange_64>("glMapNamedBufferRange");
-				FlushMappedNamedBufferRange_64=GetAddress<glFlushMappedNamedBufferRange_64>("glFlushMappedNamedBufferRange");
-				GetNamedBufferSubData_64=GetAddress<glGetNamedBufferSubData_64>("glGetNamedBufferSubData");
-				TextureBufferRange_64=GetAddress<glTextureBufferRange_64>("glTextureBufferRange");
-				VertexArrayVertexBuffer_64=GetAddress<glVertexArrayVertexBuffer_64>("glVertexArrayVertexBuffer");
-				VertexArrayVertexBuffers_64=GetAddress<glVertexArrayVertexBuffers_64>("glVertexArrayVertexBuffers");
-				GetQueryBufferObjecti64v_64=GetAddress<glGetQueryBufferObjecti64v_64>("glGetQueryBufferObjecti64v");
-				GetQueryBufferObjectiv_64=GetAddress<glGetQueryBufferObjectiv_64>("glGetQueryBufferObjectiv");
-				GetQueryBufferObjectui64v_64=GetAddress<glGetQueryBufferObjectui64v_64>("glGetQueryBufferObjectui64v");
-				GetQueryBufferObjectuiv_64=GetAddress<glGetQueryBufferObjectuiv_64>("glGetQueryBufferObjectuiv");
+				TransformFeedbackBufferRange_64 = GetAddress<glTransformFeedbackBufferRange_64>("glTransformFeedbackBufferRange");
+				NamedBufferStorage_64 = GetAddress<glNamedBufferStorage_64>("glNamedBufferStorage");
+				NamedBufferData_64 = GetAddress<glNamedBufferData_64>("glNamedBufferData");
+				NamedBufferSubData_64 = GetAddress<glNamedBufferSubData_64>("glNamedBufferSubData");
+				CopyNamedBufferSubData_64 = GetAddress<glCopyNamedBufferSubData_64>("glCopyNamedBufferSubData");
+				ClearNamedBufferSubData_64 = GetAddress<glClearNamedBufferSubData_64>("glClearNamedBufferSubData");
+				MapNamedBufferRange_64 = GetAddress<glMapNamedBufferRange_64>("glMapNamedBufferRange");
+				FlushMappedNamedBufferRange_64 = GetAddress<glFlushMappedNamedBufferRange_64>("glFlushMappedNamedBufferRange");
+				GetNamedBufferSubData_64 = GetAddress<glGetNamedBufferSubData_64>("glGetNamedBufferSubData");
+				TextureBufferRange_64 = GetAddress<glTextureBufferRange_64>("glTextureBufferRange");
+				VertexArrayVertexBuffer_64 = GetAddress<glVertexArrayVertexBuffer_64>("glVertexArrayVertexBuffer");
+				VertexArrayVertexBuffers_64 = GetAddress<glVertexArrayVertexBuffers_64>("glVertexArrayVertexBuffers");
+				GetQueryBufferObjecti64v_64 = GetAddress<glGetQueryBufferObjecti64v_64>("glGetQueryBufferObjecti64v");
+				GetQueryBufferObjectiv_64 = GetAddress<glGetQueryBufferObjectiv_64>("glGetQueryBufferObjectiv");
+				GetQueryBufferObjectui64v_64 = GetAddress<glGetQueryBufferObjectui64v_64>("glGetQueryBufferObjectui64v");
+				GetQueryBufferObjectuiv_64 = GetAddress<glGetQueryBufferObjectuiv_64>("glGetQueryBufferObjectuiv");
 
-				platformDependend=TransformFeedbackBufferRange_64!=null&&NamedBufferStorage_64!=null&&NamedBufferData_64!=null&&
-					NamedBufferSubData_64!=null&&CopyNamedBufferSubData_64!=null&&ClearNamedBufferSubData_64!=null&&
-					MapNamedBufferRange_64!=null&&FlushMappedNamedBufferRange_64!=null&&GetNamedBufferSubData_64!=null&&
-					TextureBufferRange_64!=null&&VertexArrayVertexBuffer_64!=null&&VertexArrayVertexBuffers_64!=null&&
-					GetQueryBufferObjecti64v_64!=null&&GetQueryBufferObjectiv_64!=null&&GetQueryBufferObjectui64v_64!=null&&
-					GetQueryBufferObjectuiv_64!=null;
+				platformDependend = TransformFeedbackBufferRange_64 != null && NamedBufferStorage_64 != null && NamedBufferData_64 != null &&
+					NamedBufferSubData_64 != null && CopyNamedBufferSubData_64 != null && ClearNamedBufferSubData_64 != null &&
+					MapNamedBufferRange_64 != null && FlushMappedNamedBufferRange_64 != null && GetNamedBufferSubData_64 != null &&
+					TextureBufferRange_64 != null && VertexArrayVertexBuffer_64 != null && VertexArrayVertexBuffers_64 != null &&
+					GetQueryBufferObjecti64v_64 != null && GetQueryBufferObjectiv_64 != null && GetQueryBufferObjectui64v_64 != null &&
+					GetQueryBufferObjectuiv_64 != null;
 			}
 
-			VERSION_4_5=VERSION_4_4&&ClipControl!=null&&_CreateTransformFeedbacks!=null&&TransformFeedbackBufferBase!=null&&
-				GetTransformFeedbackiv!=null&&GetTransformFeedbacki_v!=null&&GetTransformFeedbacki64_v!=null&&_CreateBuffers!=null&&
-				_ClearNamedBufferData!=null&&MapNamedBuffer!=null&&UnmapNamedBuffer!=null&&GetNamedBufferParameteriv!=null&&
-				GetNamedBufferParameteri64v!=null&&GetNamedBufferPointerv!=null&&_CreateFramebuffers!=null&&NamedFramebufferRenderbuffer!=null&&
-				NamedFramebufferParameteri!=null&&NamedFramebufferTexture!=null&&NamedFramebufferTextureLayer!=null&&
-				NamedFramebufferDrawBuffers!=null&&NamedFramebufferReadBuffer!=null&&InvalidateNamedFramebufferData!=null&&
-				InvalidateNamedFramebufferSubData!=null&&ClearNamedFramebufferiv!=null&&ClearNamedFramebufferuiv!=null&&
-				ClearNamedFramebufferfv!=null&&ClearNamedFramebufferfi!=null&&BlitNamedFramebuffer!=null&&CheckNamedFramebufferStatus!=null&&
-				GetNamedFramebufferParameteriv!=null&&GetNamedFramebufferAttachmentParameteriv!=null&&_CreateRenderbuffers!=null&&
-				NamedRenderbufferStorage!=null&&NamedRenderbufferStorageMultisample!=null&&GetNamedRenderbufferParameteriv!=null&&
-				_CreateTextures!=null&&TextureBuffer!=null&&TextureStorage1D!=null&&TextureStorage2D!=null&&TextureStorage3D!=null&&
-				TextureStorage2DMultisample!=null&&TextureStorage3DMultisample!=null&&_TextureSubImage1D!=null&&_TextureSubImage2D!=null&&
-				_TextureSubImage3D!=null&&_CompressedTextureSubImage1D!=null&&_CompressedTextureSubImage2D!=null&&
-				_CompressedTextureSubImage3D!=null&&CopyTextureSubImage1D!=null&&CopyTextureSubImage2D!=null&&CopyTextureSubImage3D!=null&&
-				TextureParameterfv!=null&&TextureParameteriv!=null&&TextureParameterIiv!=null&&
-				TextureParameterIuiv!=null&&GenerateTextureMipmap!=null&&BindTextureUnit!=null&&_GetTextureImage!=null&&
-				_GetCompressedTextureImage!=null&&GetTextureLevelParameterfv!=null&&GetTextureLevelParameteriv!=null&&
-				GetTextureParameterfv!=null&&_GetTextureParameteriv!=null&&GetTextureParameterIiv!=null&&GetTextureParameterIuiv!=null&&
-				_CreateVertexArrays!=null&&DisableVertexArrayAttrib!=null&&EnableVertexArrayAttrib!=null&&VertexArrayElementBuffer!=null&&
-				VertexArrayAttribBinding!=null&&VertexArrayAttribFormat!=null&&VertexArrayAttribIFormat!=null&&VertexArrayAttribLFormat!=null&&
-				VertexArrayBindingDivisor!=null&&GetVertexArrayiv!=null&&GetVertexArrayIndexediv!=null&&GetVertexArrayIndexed64iv!=null&&
-				_CreateSamplers!=null&&_CreateProgramPipelines!=null&&_CreateQueries!=null&&MemoryBarrierByRegion!=null&&_GetTextureSubImage!=null&&
-				_GetCompressedTextureSubImage!=null&&GetGraphicsResetStatus!=null&&_GetnCompressedTexImage!=null&&_GetnTexImage!=null&&
-				GetnUniformdv!=null&&GetnUniformfv!=null&&GetnUniformiv!=null&&GetnUniformuiv!=null&&_ReadnPixels!=null&&
-				TextureBarrier!=null&&platformDependend;
+			VERSION_4_5 = VERSION_4_4 && ClipControl != null && _CreateTransformFeedbacks != null && TransformFeedbackBufferBase != null &&
+				GetTransformFeedbackiv != null && GetTransformFeedbacki_v != null && GetTransformFeedbacki64_v != null && _CreateBuffers != null &&
+				_ClearNamedBufferData != null && MapNamedBuffer != null && UnmapNamedBuffer != null && GetNamedBufferParameteriv != null &&
+				GetNamedBufferParameteri64v != null && GetNamedBufferPointerv != null && _CreateFramebuffers != null && NamedFramebufferRenderbuffer != null &&
+				NamedFramebufferParameteri != null && NamedFramebufferTexture != null && NamedFramebufferTextureLayer != null &&
+				NamedFramebufferDrawBuffers != null && NamedFramebufferReadBuffer != null && InvalidateNamedFramebufferData != null &&
+				InvalidateNamedFramebufferSubData != null && ClearNamedFramebufferiv != null && ClearNamedFramebufferuiv != null &&
+				ClearNamedFramebufferfv != null && ClearNamedFramebufferfi != null && BlitNamedFramebuffer != null && CheckNamedFramebufferStatus != null &&
+				GetNamedFramebufferParameteriv != null && GetNamedFramebufferAttachmentParameteriv != null && _CreateRenderbuffers != null &&
+				NamedRenderbufferStorage != null && NamedRenderbufferStorageMultisample != null && GetNamedRenderbufferParameteriv != null &&
+				_CreateTextures != null && TextureBuffer != null && TextureStorage1D != null && TextureStorage2D != null && TextureStorage3D != null &&
+				TextureStorage2DMultisample != null && TextureStorage3DMultisample != null && _TextureSubImage1D != null && _TextureSubImage2D != null &&
+				_TextureSubImage3D != null && _CompressedTextureSubImage1D != null && _CompressedTextureSubImage2D != null &&
+				_CompressedTextureSubImage3D != null && CopyTextureSubImage1D != null && CopyTextureSubImage2D != null && CopyTextureSubImage3D != null &&
+				TextureParameterfv != null && TextureParameteriv != null && TextureParameterIiv != null &&
+				TextureParameterIuiv != null && GenerateTextureMipmap != null && BindTextureUnit != null && _GetTextureImage != null &&
+				_GetCompressedTextureImage != null && GetTextureLevelParameterfv != null && GetTextureLevelParameteriv != null &&
+				GetTextureParameterfv != null && _GetTextureParameteriv != null && GetTextureParameterIiv != null && GetTextureParameterIuiv != null &&
+				_CreateVertexArrays != null && DisableVertexArrayAttrib != null && EnableVertexArrayAttrib != null && VertexArrayElementBuffer != null &&
+				VertexArrayAttribBinding != null && VertexArrayAttribFormat != null && VertexArrayAttribIFormat != null && VertexArrayAttribLFormat != null &&
+				VertexArrayBindingDivisor != null && GetVertexArrayiv != null && GetVertexArrayIndexediv != null && GetVertexArrayIndexed64iv != null &&
+				_CreateSamplers != null && _CreateProgramPipelines != null && _CreateQueries != null && MemoryBarrierByRegion != null && _GetTextureSubImage != null &&
+				_GetCompressedTextureSubImage != null && GetGraphicsResetStatus != null && _GetnCompressedTexImage != null && _GetnTexImage != null &&
+				GetnUniformdv != null && GetnUniformfv != null && GetnUniformiv != null && GetnUniformuiv != null && _ReadnPixels != null &&
+				TextureBarrier != null && platformDependend;
 		}
 	}
 }

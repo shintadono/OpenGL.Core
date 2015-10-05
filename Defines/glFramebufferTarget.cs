@@ -32,16 +32,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Read framebuffer.
 		/// </summary>
-		READ_FRAMEBUFFER=0x8CA8,
+		READ_FRAMEBUFFER = 0x8CA8,
 
 		/// <summary>
 		/// Draw framebuffer.
 		/// </summary>
-		DRAW_FRAMEBUFFER=0x8CA9,
+		DRAW_FRAMEBUFFER = 0x8CA9,
 
 		/// <summary>
 		/// Used to bind both framebuffer at once.
 		/// </summary>
-		FRAMEBUFFER=0x8D40,
+		FRAMEBUFFER = 0x8D40,
 	}
 }

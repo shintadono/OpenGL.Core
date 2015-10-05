@@ -34,6 +34,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 1D texture object.
 		/// </summary>
-		TEXTURE_1D=0x0DE0,
+		TEXTURE_1D = 0x0DE0,
 	}
 }

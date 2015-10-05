@@ -32,26 +32,26 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Severity of debug message is high. OpenGL errors, dangerous undefined behaviour, GLSL compiler or linker errors.
 		/// </summary>
-		DEBUG_SEVERITY_HIGH=0x9146,
+		DEBUG_SEVERITY_HIGH = 0x9146,
 
 		/// <summary>
 		/// Severity of debug message is medium. Severe performance warnings, GLSL compiler or linker warnings, deprecated behaviour.
 		/// </summary>
-		DEBUG_SEVERITY_MEDIUM=0x9147,
+		DEBUG_SEVERITY_MEDIUM = 0x9147,
 
 		/// <summary>
 		/// Severity of debug message is low. Performance warnings, trival undefined behaviour.
 		/// </summary>
-		DEBUG_SEVERITY_LOW=0x9148,
+		DEBUG_SEVERITY_LOW = 0x9148,
 
 		/// <summary>
 		/// Debug message is just a message, which is not an error or performance concern.
 		/// </summary>
-		DEBUG_SEVERITY_NOTIFICATION=0x826B,
+		DEBUG_SEVERITY_NOTIFICATION = 0x826B,
 
 		/// <summary>
 		/// Debug message control.
 		/// </summary>
-		DONT_CARE=0x1100,
+		DONT_CARE = 0x1100,
 	}
 }

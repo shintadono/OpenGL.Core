@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns pointer to the user callback function.
 		/// </summary>
-		DEBUG_CALLBACK_FUNCTION=0x8244,
+		DEBUG_CALLBACK_FUNCTION = 0x8244,
 
 		/// <summary>
 		/// Returns pointer to the user callback parameter.
 		/// </summary>
-		DEBUG_CALLBACK_USER_PARAM=0x8245,
+		DEBUG_CALLBACK_USER_PARAM = 0x8245,
 	}
 }

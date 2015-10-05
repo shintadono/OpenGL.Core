@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed sync object type.
 		/// </summary>
-		SYNC_FENCE=0x9116,
+		SYNC_FENCE = 0x9116,
 	}
 }

@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed value.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_POINTER=0x8645,
+		VERTEX_ATTRIB_ARRAY_POINTER = 0x8645,
 	}
 }

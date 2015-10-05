@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns an array of two floats. (x and y position of the sample)
 		/// </summary>
-		SAMPLE_POSITION=0x8E50,
+		SAMPLE_POSITION = 0x8E50,
 	}
 }

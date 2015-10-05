@@ -23,7 +23,6 @@
 #endregion
 
 using System;
-using System.Runtime.InteropServices;
 
 namespace OpenGL.Core
 {
@@ -50,7 +49,7 @@ namespace OpenGL.Core
 		public delegate void glMultiDrawArrays(glDrawMode mode, int[] first, int[] count, int drawcount);
 
 		internal delegate void glMultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, IntPtr[] indices, int primcount);
-		
+
 		/// <summary>
 		/// Sets point parameters.
 		/// </summary>
@@ -64,7 +63,7 @@ namespace OpenGL.Core
 		/// <param name="pname">A <see cref="glPointParameter"/> specifying the parameter.</param>
 		/// <param name="params">The values the point parameter will be set to.</param>
 		public delegate void glPointParameterfv(glPointParameter pname, params float[] @params);
-		
+
 		internal delegate void glPointParameteri(glPointParameter pname, int param);
 
 		/// <summary>
@@ -107,7 +106,7 @@ namespace OpenGL.Core
 		/// Renders primitives from array.
 		/// </summary>
 		public static glMultiDrawArrays MultiDrawArrays;
-		
+
 		private static glMultiDrawElements _MultiDrawElements;
 
 		/// <summary>
@@ -146,25 +145,12 @@ namespace OpenGL.Core
 		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
 		/// <param name="count">Numbers of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="indices"/>.</param>
-		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, IntPtr[] indices, int drawcount)
-		{
-			_MultiDrawElements(mode, count, type, indices, drawcount);
-		}
-
-		/// <summary>
-		/// Renders primitives from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="count">Numbers of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
 		/// <param name="offsets">The offsets into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="offsets"/>.</param>
 		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, int[] offsets, int drawcount)
 		{
-			IntPtr[] iOffsets=new IntPtr[drawcount];
-			for(int i=0; i<drawcount; i++) iOffsets[i]=(IntPtr)offsets[i];
+			IntPtr[] iOffsets = new IntPtr[drawcount];
+			for (int i = 0; i < drawcount; i++) iOffsets[i] = (IntPtr)offsets[i];
 			_MultiDrawElements(mode, count, type, iOffsets, drawcount);
 		}
 
@@ -178,137 +164,13 @@ namespace OpenGL.Core
 		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="offsets"/>.</param>
 		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, long[] offsets, int drawcount)
 		{
-			IntPtr[] iOffsets=new IntPtr[drawcount];
-			for(int i=0; i<drawcount; i++)
+			IntPtr[] iOffsets = new IntPtr[drawcount];
+			for (int i = 0; i < drawcount; i++)
 			{
-				if(((long)offsets[i]>>32)!=0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
-				iOffsets[i]=(IntPtr)offsets[i];
+				if (IntPtr.Size == 4 && ((long)offsets[i] >> 32) != 0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
+				iOffsets[i] = (IntPtr)offsets[i];
 			}
 			_MultiDrawElements(mode, count, type, iOffsets, drawcount);
-		}
-
-		/// <summary>
-		/// Renders primitives from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="count">Numbers of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="indices"/>.</param>
-		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, byte[][] indices, int drawcount)
-		{
-			GCHandle[] hIndices=new GCHandle[drawcount];
-			IntPtr[] iIndices=new IntPtr[drawcount];
-
-			for(int i=0; i<drawcount; i++)
-			{
-				hIndices[i]=GCHandle.Alloc(indices[i], GCHandleType.Pinned);
-				iIndices[i]=hIndices[i].AddrOfPinnedObject();
-			}
-
-			try
-			{
-				_MultiDrawElements(mode, count, type, iIndices, drawcount);
-			}
-			finally
-			{
-				for(int i=0; i<drawcount; i++) hIndices[i].Free();
-				hIndices=null;
-				iIndices=null;
-			}
-		}
-
-		/// <summary>
-		/// Renders primitives from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="count">Numbers of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="indices"/>.</param>
-		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, ushort[][] indices, int drawcount)
-		{
-			GCHandle[] hIndices=new GCHandle[drawcount];
-			IntPtr[] iIndices=new IntPtr[drawcount];
-
-			for(int i=0; i<drawcount; i++)
-			{
-				hIndices[i]=GCHandle.Alloc(indices[i], GCHandleType.Pinned);
-				iIndices[i]=hIndices[i].AddrOfPinnedObject();
-			}
-
-			try
-			{
-				_MultiDrawElements(mode, count, type, iIndices, drawcount);
-			}
-			finally
-			{
-				for(int i=0; i<drawcount; i++) hIndices[i].Free();
-				hIndices=null;
-				iIndices=null;
-			}
-		}
-
-		/// <summary>
-		/// Renders primitives from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="count">Numbers of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="indices"/>.</param>
-		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, int[][] indices, int drawcount)
-		{
-			GCHandle[] hIndices=new GCHandle[drawcount];
-			IntPtr[] iIndices=new IntPtr[drawcount];
-
-			for(int i=0; i<drawcount; i++)
-			{
-				hIndices[i]=GCHandle.Alloc(indices[i], GCHandleType.Pinned);
-				iIndices[i]=hIndices[i].AddrOfPinnedObject();
-			}
-
-			try
-			{
-				_MultiDrawElements(mode, count, type, iIndices, drawcount);
-			}
-			finally
-			{
-				for(int i=0; i<drawcount; i++) hIndices[i].Free();
-				hIndices=null;
-				iIndices=null;
-			}
-		}
-
-		/// <summary>
-		/// Renders primitives from array via indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="count">Numbers of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		/// <param name="drawcount">Number of draws (Length of <paramref name="count"/> and <paramref name="indices"/>.</param>
-		public static void MultiDrawElements(glDrawMode mode, int[] count, glDrawElementsType type, uint[][] indices, int drawcount)
-		{
-			GCHandle[] hIndices=new GCHandle[drawcount];
-			IntPtr[] iIndices=new IntPtr[drawcount];
-
-			for(int i=0; i<drawcount; i++)
-			{
-				hIndices[i]=GCHandle.Alloc(indices[i], GCHandleType.Pinned);
-				iIndices[i]=hIndices[i].AddrOfPinnedObject();
-			}
-
-			try
-			{
-				_MultiDrawElements(mode, count, type, iIndices, drawcount);
-			}
-			finally
-			{
-				for(int i=0; i<drawcount; i++) hIndices[i].Free();
-				hIndices=null;
-				iIndices=null;
-			}
 		}
 		#endregion
 
@@ -337,18 +199,18 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_1_4()
 		{
-			BlendFuncSeparate=GetAddress<glBlendFuncSeparate>("glBlendFuncSeparate");
-			MultiDrawArrays=GetAddress<glMultiDrawArrays>("glMultiDrawArrays");
-			_MultiDrawElements=GetAddress<glMultiDrawElements>("glMultiDrawElements");
-			PointParameterf=GetAddress<glPointParameterf>("glPointParameterf");
-			PointParameterfv=GetAddress<glPointParameterfv>("glPointParameterfv");
-			_PointParameteri=GetAddress<glPointParameteri>("glPointParameteri");
-			PointParameteriv=GetAddress<glPointParameteriv>("glPointParameteriv");
-			BlendColor=GetAddress<glBlendColor>("glBlendColor");
-			BlendEquation=GetAddress<glBlendEquation>("glBlendEquation");
+			BlendFuncSeparate = GetAddress<glBlendFuncSeparate>("glBlendFuncSeparate");
+			MultiDrawArrays = GetAddress<glMultiDrawArrays>("glMultiDrawArrays");
+			_MultiDrawElements = GetAddress<glMultiDrawElements>("glMultiDrawElements");
+			PointParameterf = GetAddress<glPointParameterf>("glPointParameterf");
+			PointParameterfv = GetAddress<glPointParameterfv>("glPointParameterfv");
+			_PointParameteri = GetAddress<glPointParameteri>("glPointParameteri");
+			PointParameteriv = GetAddress<glPointParameteriv>("glPointParameteriv");
+			BlendColor = GetAddress<glBlendColor>("glBlendColor");
+			BlendEquation = GetAddress<glBlendEquation>("glBlendEquation");
 
-			VERSION_1_4=VERSION_1_3&&BlendFuncSeparate!=null&&MultiDrawArrays!=null&&_MultiDrawElements!=null&&
-				PointParameterf!=null&&_PointParameteri!=null&&BlendColor!=null&&BlendEquation!=null;
+			VERSION_1_4 = VERSION_1_3 && BlendFuncSeparate != null && MultiDrawArrays != null && _MultiDrawElements != null &&
+				PointParameterf != null && _PointParameteri != null && BlendColor != null && BlendEquation != null;
 		}
 	}
 }

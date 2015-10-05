@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Sync object unsignaled.
 		/// </summary>
-		UNSIGNALED=0x9118,
+		UNSIGNALED = 0x9118,
 
 		/// <summary>
 		/// Sync object signaled.
 		/// </summary>
-		SIGNALED=0x9119,
+		SIGNALED = 0x9119,
 	}
 }

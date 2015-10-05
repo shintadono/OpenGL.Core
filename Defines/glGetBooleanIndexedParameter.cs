@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Color write enables for each (indexed) draw buffer. Array of 4 <b>bool</b>s for red, green, blue and alpha.
 		/// </summary>
-		COLOR_WRITEMASK=0x0C23,
+		COLOR_WRITEMASK = 0x0C23,
 
 		/// <summary>
 		/// Has the texture object multiple layers for each (indexed) texture object?
 		/// </summary>
-		IMAGE_BINDING_LAYERED=0x8F3C,
+		IMAGE_BINDING_LAYERED = 0x8F3C,
 	}
 }

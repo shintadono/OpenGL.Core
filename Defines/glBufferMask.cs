@@ -35,21 +35,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Handle nothing.
 		/// </summary>
-		None=0x00000000,
+		None = 0x00000000,
 
 		/// <summary>
 		/// Handle depth values.
 		/// </summary>
-		DEPTH_BUFFER_BIT=0x00000100,
+		DEPTH_BUFFER_BIT = 0x00000100,
 
 		/// <summary>
 		/// Handle stencil values.
 		/// </summary>
-		STENCIL_BUFFER_BIT=0x00000400,
+		STENCIL_BUFFER_BIT = 0x00000400,
 
 		/// <summary>
 		/// Handle color values.
 		/// </summary>
-		COLOR_BUFFER_BIT=0x00004000,
+		COLOR_BUFFER_BIT = 0x00004000,
 	}
 }

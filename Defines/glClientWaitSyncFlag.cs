@@ -35,11 +35,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Handle nothing.
 		/// </summary>
-		None=0x00000000,
+		None = 0x00000000,
 
 		/// <summary>
 		/// Perform <see cref="gl.Flush"/> before blocking sync object.
 		/// </summary>
-		SYNC_FLUSH_COMMANDS_BIT=0x00000001,
+		SYNC_FLUSH_COMMANDS_BIT = 0x00000001,
 	}
 }

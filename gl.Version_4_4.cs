@@ -96,17 +96,17 @@ namespace OpenGL.Core
 
 		private static glBindBuffersRange_32 BindBuffersRange_32;
 		private static glBindBuffersRange_64 BindBuffersRange_64;
-		
+
 		/// <summary>
 		/// Binds one or more texture objects to a sequence of consecutive texture units.
 		/// </summary>
 		public static glBindTextures BindTextures;
-		
+
 		/// <summary>
 		/// Binds one or more sampler objects to a sequence of consecutive texture units.
 		/// </summary>
 		public static glBindSamplers BindSamplers;
-		
+
 		/// <summary>
 		/// Binds one or more texture images to a sequence of consecutive image units.
 		/// </summary>
@@ -127,7 +127,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, IntPtr data, glBufferStorageFlag flags)
 		{
-			if(IntPtr.Size==4) BufferStorage_32(target, size, data, flags);
+			if (IntPtr.Size == 4) BufferStorage_32(target, size, data, flags);
 			else BufferStorage_64(target, size, data, flags);
 		}
 
@@ -140,10 +140,9 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, IntPtr data, glBufferStorageFlag flags)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				BufferStorage_32(target, (int)size, data, flags);
 			}
 			else BufferStorage_64(target, size, data, flags);
@@ -158,7 +157,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, byte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -178,7 +177,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, byte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -198,7 +197,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, sbyte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -218,7 +217,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, sbyte[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -238,7 +237,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, short[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -258,7 +257,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, short[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -278,7 +277,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, ushort[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -298,7 +297,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, ushort[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -318,7 +317,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, int[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -338,7 +337,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, int[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -358,7 +357,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, uint[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -378,7 +377,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, uint[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -398,7 +397,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, long[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -418,7 +417,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, long[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -438,7 +437,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, ulong[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -458,7 +457,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, ulong[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -478,7 +477,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, float[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -498,7 +497,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, float[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -518,7 +517,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, int size, double[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -538,7 +537,7 @@ namespace OpenGL.Core
 		/// <param name="flags">A mask of <see cref="glBufferStorageFlag"/>s specifying the usage of the buffer's data store.</param>
 		public static void BufferStorage(glBufferTarget target, long size, double[] data, glBufferStorageFlag flags)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferStorage(target, size, hData.AddrOfPinnedObject(), flags);
@@ -574,7 +573,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -595,7 +594,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -616,7 +615,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -637,7 +636,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -658,7 +657,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -679,7 +678,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -700,7 +699,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -721,7 +720,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -742,7 +741,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -763,7 +762,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexImage(uint texture, int level, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexImage(texture, level, format, type, hData.AddrOfPinnedObject());
@@ -811,7 +810,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -838,7 +837,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -865,7 +864,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -892,7 +891,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -919,7 +918,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -946,7 +945,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -973,7 +972,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -1000,7 +999,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -1027,7 +1026,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -1054,7 +1053,7 @@ namespace OpenGL.Core
 		/// <param name="data">The constant value used to fill the texture.</param>
 		public static void ClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hData.AddrOfPinnedObject());
@@ -1078,19 +1077,19 @@ namespace OpenGL.Core
 		/// <param name="sizes">The sizes of the ranges.</param>
 		public static void BindBuffersRange(glBufferTarget target, uint first, int count, uint[] buffers, int[] offsets, int[] sizes)
 		{
-			if(IntPtr.Size==4) BindBuffersRange_32(target, first, count, buffers, offsets, sizes);
+			if (IntPtr.Size == 4) BindBuffersRange_32(target, first, count, buffers, offsets, sizes);
 			else
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					BindBuffersRange_64(target, first, count, null, null, null);
 					return;
 				}
 
-				long[] lOffsets=new long[offsets.Length];
+				long[] lOffsets = new long[offsets.Length];
 				Array.Copy(offsets, lOffsets, offsets.Length);
 
-				long[] lSizes=new long[sizes.Length];
+				long[] lSizes = new long[sizes.Length];
 				Array.Copy(sizes, lSizes, sizes.Length);
 
 				BindBuffersRange_64(target, first, count, buffers, lOffsets, lSizes);
@@ -1108,24 +1107,24 @@ namespace OpenGL.Core
 		/// <param name="sizes">The sizes of the ranges.</param>
 		public static void BindBuffersRange(glBufferTarget target, uint first, int count, uint[] buffers, long[] offsets, long[] sizes)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					BindBuffersRange_32(target, first, count, null, null, null);
 					return;
 				}
 
-				int[] iOffsets=new int[first+count];
-				int[] iSizes=new int[first+count];
-				for(int i=0; i<count; i++)
+				int[] iOffsets = new int[first + count];
+				int[] iSizes = new int[first + count];
+				for (int i = 0; i < count; i++)
 				{
-					long offset=offsets[first+i];
-					long size=sizes[first+i];
-					if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
-					if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("sizes", PlatformArrayErrorString);
-					iOffsets[first+i]=(int)offset;
-					iSizes[first+i]=(int)size;
+					long offset = offsets[first + i];
+					long size = sizes[first + i];
+					if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
+					if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("sizes", PlatformArrayErrorString);
+					iOffsets[first + i] = (int)offset;
+					iSizes[first + i] = (int)size;
 				}
 
 				BindBuffersRange_32(target, first, count, buffers, iOffsets, iSizes);
@@ -1145,16 +1144,16 @@ namespace OpenGL.Core
 		/// <param name="strides">The strides to associate with the binding points.</param>
 		public static void BindVertexBuffers(uint first, int count, uint[] buffers, int[] offsets, int[] strides)
 		{
-			if(IntPtr.Size==4) BindVertexBuffers_32(first, count, buffers, offsets, strides);
+			if (IntPtr.Size == 4) BindVertexBuffers_32(first, count, buffers, offsets, strides);
 			else
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					BindVertexBuffers_64(first, count, null, null, null);
 					return;
 				}
 
-				long[] lOffsets=new long[offsets.Length];
+				long[] lOffsets = new long[offsets.Length];
 				Array.Copy(offsets, lOffsets, offsets.Length);
 
 				BindVertexBuffers_64(first, count, buffers, lOffsets, strides);
@@ -1171,20 +1170,20 @@ namespace OpenGL.Core
 		/// <param name="strides">The strides to associate with the binding points.</param>
 		public static void BindVertexBuffers(uint first, int count, uint[] buffers, long[] offsets, int[] strides)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(buffers==null)
+				if (buffers == null)
 				{
 					BindVertexBuffers_32(first, count, null, null, null);
 					return;
 				}
 
-				int[] iOffsets=new int[first+count];
-				for(int i=0; i<count; i++)
+				int[] iOffsets = new int[first + count];
+				for (int i = 0; i < count; i++)
 				{
-					long offset=offsets[first+i];
-					if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
-					iOffsets[first+i]=(int)offset;
+					long offset = offsets[first + i];
+					if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offsets", PlatformArrayErrorString);
+					iOffsets[first + i] = (int)offset;
 				}
 
 				BindVertexBuffers_32(first, count, buffers, iOffsets, strides);
@@ -1196,33 +1195,33 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_4_4()
 		{
-			_ClearTexImage=GetAddress<glClearTexImage>("glClearTexImage");
-			_ClearTexSubImage=GetAddress<glClearTexSubImage>("glClearTexSubImage");
-			BindBuffersBase=GetAddress<glBindBuffersBase>("glBindBuffersBase");
-			BindTextures=GetAddress<glBindTextures>("glBindTextures");
-			BindSamplers=GetAddress<glBindSamplers>("glBindSamplers");
-			BindImageTextures=GetAddress<glBindImageTextures>("glBindImageTextures");
+			_ClearTexImage = GetAddress<glClearTexImage>("glClearTexImage");
+			_ClearTexSubImage = GetAddress<glClearTexSubImage>("glClearTexSubImage");
+			BindBuffersBase = GetAddress<glBindBuffersBase>("glBindBuffersBase");
+			BindTextures = GetAddress<glBindTextures>("glBindTextures");
+			BindSamplers = GetAddress<glBindSamplers>("glBindSamplers");
+			BindImageTextures = GetAddress<glBindImageTextures>("glBindImageTextures");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				BufferStorage_32=GetAddress<glBufferStorage_32>("glBufferStorage");
-				BindBuffersRange_32=GetAddress<glBindBuffersRange_32>("glBindBuffersRange");
-				BindVertexBuffers_32=GetAddress<glBindVertexBuffers_32>("glBindVertexBuffers");
+				BufferStorage_32 = GetAddress<glBufferStorage_32>("glBufferStorage");
+				BindBuffersRange_32 = GetAddress<glBindBuffersRange_32>("glBindBuffersRange");
+				BindVertexBuffers_32 = GetAddress<glBindVertexBuffers_32>("glBindVertexBuffers");
 
-				platformDependend=BufferStorage_32!=null&&BindBuffersRange_32!=null&&BindVertexBuffers_32!=null;
+				platformDependend = BufferStorage_32 != null && BindBuffersRange_32 != null && BindVertexBuffers_32 != null;
 			}
 			else
 			{
-				BufferStorage_64=GetAddress<glBufferStorage_64>("glBufferStorage");
-				BindBuffersRange_64=GetAddress<glBindBuffersRange_64>("glBindBuffersRange");
-				BindVertexBuffers_64=GetAddress<glBindVertexBuffers_64>("glBindVertexBuffers");
+				BufferStorage_64 = GetAddress<glBufferStorage_64>("glBufferStorage");
+				BindBuffersRange_64 = GetAddress<glBindBuffersRange_64>("glBindBuffersRange");
+				BindVertexBuffers_64 = GetAddress<glBindVertexBuffers_64>("glBindVertexBuffers");
 
-				platformDependend=BufferStorage_64!=null&&BindBuffersRange_64!=null&&BindVertexBuffers_64!=null;
+				platformDependend = BufferStorage_64 != null && BindBuffersRange_64 != null && BindVertexBuffers_64 != null;
 			}
 
-			VERSION_4_4=VERSION_4_3&&_ClearTexImage!=null&&_ClearTexSubImage!=null&&BindBuffersBase!=null&&
-				BindTextures!=null&&BindSamplers!=null&&BindImageTextures!=null&&platformDependend;
+			VERSION_4_4 = VERSION_4_3 && _ClearTexImage != null && _ClearTexSubImage != null && BindBuffersBase != null &&
+				BindTextures != null && BindSamplers != null && BindImageTextures != null && platformDependend;
 		}
 	}
 }

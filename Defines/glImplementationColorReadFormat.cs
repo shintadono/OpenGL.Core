@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// RGBA color value.
 		/// </summary>
-		RGBA=0x1908,
+		RGBA = 0x1908,
 	}
 }

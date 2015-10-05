@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// The GL context has not been in a reset state since the last call.
 		/// </summary>
-		NO_ERROR=0,
+		NO_ERROR = 0,
 
 		/// <summary>
 		/// A reset has been detected that is attributable to the current GL context.
 		/// </summary>
-		GUILTY_CONTEXT_RESET=0x8253,
+		GUILTY_CONTEXT_RESET = 0x8253,
 
 		/// <summary>
 		/// A reset has been detected that is not attributable to the current GL context.
 		/// </summary>
-		INNOCENT_CONTEXT_RESET=0x8254,
+		INNOCENT_CONTEXT_RESET = 0x8254,
 
 		/// <summary>
 		/// A detected graphics reset whose cause is unknown.
 		/// </summary>
-		UNKNOWN_CONTEXT_RESET=0x8255,
+		UNKNOWN_CONTEXT_RESET = 0x8255,
 	}
 }

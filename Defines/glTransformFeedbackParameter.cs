@@ -33,26 +33,26 @@ namespace OpenGL.Core
 		/// For <see cref="gl.GetTransformFeedbackiv"/>: Buffer object bound to generic binding point for transform feedback.
 		/// For <see cref="gl.GetTransformFeedbacki_v"/>: Buffer objects bound to each (indexed) transform feedback buffer.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER_BINDING=0x8C8F,
+		TRANSFORM_FEEDBACK_BUFFER_BINDING = 0x8C8F,
 
 		/// <summary>
 		/// Size of binding range for each (indexed) transform feedback attribute stream. Only used with <see cref="gl.GetTransformFeedbacki64_v"/>.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER_SIZE=0x8C85,
+		TRANSFORM_FEEDBACK_BUFFER_SIZE = 0x8C85,
 
 		/// <summary>
 		/// Start offset of binding range for each (indexed) transform feedback attribute stream. Only used with <see cref="gl.GetTransformFeedbacki64_v"/>.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER_START=0x8C84,
+		TRANSFORM_FEEDBACK_BUFFER_START = 0x8C84,
 
 		/// <summary>
 		/// Is transform feedback active? Only used with <see cref="gl.GetTransformFeedbackiv"/>.
 		/// </summary>
-		TRANSFORM_FEEDBACK_ACTIVE=0x8E24,
+		TRANSFORM_FEEDBACK_ACTIVE = 0x8E24,
 
 		/// <summary>
 		/// Is transform feedback paused? Only used with <see cref="gl.GetTransformFeedbackiv"/>.
 		/// </summary>
-		TRANSFORM_FEEDBACK_PAUSED=0x8E23,
+		TRANSFORM_FEEDBACK_PAUSED = 0x8E23,
 	}
 }

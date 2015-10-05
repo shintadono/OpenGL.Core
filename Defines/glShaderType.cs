@@ -32,31 +32,31 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Fragment shader.
 		/// </summary>
-		FRAGMENT_SHADER=0x8B30,
+		FRAGMENT_SHADER = 0x8B30,
 
 		/// <summary>
 		/// Vertex shader.
 		/// </summary>
-		VERTEX_SHADER=0x8B31,
+		VERTEX_SHADER = 0x8B31,
 
 		/// <summary>
 		/// Geometry shader.
 		/// </summary>
-		GEOMETRY_SHADER=0x8DD9,
+		GEOMETRY_SHADER = 0x8DD9,
 
 		/// <summary>
 		/// Tesselation evaluation shader.
 		/// </summary>
-		TESS_EVALUATION_SHADER=0x8E87,
+		TESS_EVALUATION_SHADER = 0x8E87,
 
 		/// <summary>
 		/// Tesselation control shader.
 		/// </summary>
-		TESS_CONTROL_SHADER=0x8E88,
+		TESS_CONTROL_SHADER = 0x8E88,
 
 		/// <summary>
 		/// Compute shader.
 		/// </summary>
-		COMPUTE_SHADER=0x91B9,
+		COMPUTE_SHADER = 0x91B9,
 	}
 }

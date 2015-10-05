@@ -32,31 +32,31 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Precisions of a <c>lowp float</c>.
 		/// </summary>
-		LOW_FLOAT=0x8DF0,
+		LOW_FLOAT = 0x8DF0,
 
 		/// <summary>
 		/// Precisions of a <c>mediump float</c>.
 		/// </summary>
-		MEDIUM_FLOAT=0x8DF1,
+		MEDIUM_FLOAT = 0x8DF1,
 
 		/// <summary>
 		/// Precisions of a <c>highp float</c>.
 		/// </summary>
-		HIGH_FLOAT=0x8DF2,
+		HIGH_FLOAT = 0x8DF2,
 
 		/// <summary>
 		/// Precisions of a <c>lowp int</c>.
 		/// </summary>
-		LOW_INT=0x8DF3,
+		LOW_INT = 0x8DF3,
 
 		/// <summary>
 		/// Precisions of a <c>mediump int</c>.
 		/// </summary>
-		MEDIUM_INT=0x8DF4,
+		MEDIUM_INT = 0x8DF4,
 
 		/// <summary>
 		/// Precisions of a <c>highp int</c>.
 		/// </summary>
-		HIGH_INT=0x8DF5,
+		HIGH_INT = 0x8DF5,
 	}
 }

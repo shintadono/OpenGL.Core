@@ -34,50 +34,50 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 1D texture object.
 		/// </summary>
-		TEXTURE_1D=0x0DE0,
+		TEXTURE_1D = 0x0DE0,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_1D=0x8063,
+		PROXY_TEXTURE_1D = 0x8063,
 
 		/// <summary>
 		/// 2D texture object.
 		/// </summary>
-		TEXTURE_2D=0x0DE1,
+		TEXTURE_2D = 0x0DE1,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_2D=0x8064,
+		PROXY_TEXTURE_2D = 0x8064,
 
 		/// <summary>
 		/// 3D texture object.
 		/// </summary>
-		TEXTURE_3D=0x806F,
+		TEXTURE_3D = 0x806F,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_3D=0x8070,
+		PROXY_TEXTURE_3D = 0x8070,
 
 		/// <summary>
 		/// 2D rectangle texture object.
 		/// </summary>
-		TEXTURE_RECTANGLE=0x84F5,
+		TEXTURE_RECTANGLE = 0x84F5,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_RECTANGLE=0x84F7,
+		PROXY_TEXTURE_RECTANGLE = 0x84F7,
 
 		///// <summary>
 		///// Cube map texture object.
@@ -87,109 +87,109 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_X=0x8515,
+		TEXTURE_CUBE_MAP_POSITIVE_X = 0x8515,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_X=0x8516,
+		TEXTURE_CUBE_MAP_NEGATIVE_X = 0x8516,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_Y=0x8517,
+		TEXTURE_CUBE_MAP_POSITIVE_Y = 0x8517,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_Y=0x8518,
+		TEXTURE_CUBE_MAP_NEGATIVE_Y = 0x8518,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_POSITIVE_Z=0x8519,
+		TEXTURE_CUBE_MAP_POSITIVE_Z = 0x8519,
 
 		/// <summary>
 		/// Face of a cube map texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_NEGATIVE_Z=0x851A,
+		TEXTURE_CUBE_MAP_NEGATIVE_Z = 0x851A,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_CUBE_MAP=0x851B,
+		PROXY_TEXTURE_CUBE_MAP = 0x851B,
 
 		/// <summary>
 		/// 1D texture array object.
 		/// </summary>
-		TEXTURE_1D_ARRAY=0x8C18,
+		TEXTURE_1D_ARRAY = 0x8C18,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_1D_ARRAY=0x8C19,
+		PROXY_TEXTURE_1D_ARRAY = 0x8C19,
 
 		/// <summary>
 		/// 2D texture array object.
 		/// </summary>
-		TEXTURE_2D_ARRAY=0x8C1A,
+		TEXTURE_2D_ARRAY = 0x8C1A,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_2D_ARRAY=0x8C1B,
+		PROXY_TEXTURE_2D_ARRAY = 0x8C1B,
 
 		/// <summary>
 		/// Buffer texture object.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		TEXTURE_BUFFER=0x8C2A,
+		TEXTURE_BUFFER = 0x8C2A,
 
 		/// <summary>
 		/// Cube map array texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_ARRAY=0x9009,
+		TEXTURE_CUBE_MAP_ARRAY = 0x9009,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_CUBE_MAP_ARRAY=0x900B,
+		PROXY_TEXTURE_CUBE_MAP_ARRAY = 0x900B,
 
 		/// <summary>
 		/// 2D multisample texture object.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		TEXTURE_2D_MULTISAMPLE=0x9100,
+		TEXTURE_2D_MULTISAMPLE = 0x9100,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_2D_MULTISAMPLE=0x9101,
+		PROXY_TEXTURE_2D_MULTISAMPLE = 0x9101,
 
 		/// <summary>
 		/// 2D multisample texture array object.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		TEXTURE_2D_MULTISAMPLE_ARRAY=0x9102,
+		TEXTURE_2D_MULTISAMPLE_ARRAY = 0x9102,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// Allowed only as argument in <see cref="O:OpenGL.Core.gl.GetTexLevelParameterfv">gl.GetTexLevelParameterfv</see>
 		/// and <see cref="O:OpenGL.Core.gl.GetTexLevelParameteriv">gl.GetTexLevelParameteriv</see>.
 		/// </summary>
-		PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY=0x9103,
+		PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY = 0x9103,
 	}
 }

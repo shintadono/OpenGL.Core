@@ -32,16 +32,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Unsigned byte value indices.
 		/// </summary>
-		UNSIGNED_BYTE=0x1401,
+		UNSIGNED_BYTE = 0x1401,
 
 		/// <summary>
 		/// Unsigned short value indices.
 		/// </summary>
-		UNSIGNED_SHORT=0x1403,
+		UNSIGNED_SHORT = 0x1403,
 
 		/// <summary>
 		/// Unsigned int value indices.
 		/// </summary>
-		UNSIGNED_INT=0x1405,
+		UNSIGNED_INT = 0x1405,
 	}
 }

@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// -
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Framebuffer attachment is a default framebuffer.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT=0x8218,
+		FRAMEBUFFER_DEFAULT = 0x8218,
 
 		/// <summary>
 		/// Framebuffer attachment is a renderbuffer.
 		/// </summary>
-		RENDERBUFFER=0x8D41,
+		RENDERBUFFER = 0x8D41,
 
 		/// <summary>
 		/// Framebuffer attachment is a texture.
 		/// </summary>
-		TEXTURE=0x1702,
+		TEXTURE = 0x1702,
 	}
 }

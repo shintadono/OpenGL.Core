@@ -126,15 +126,15 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_2_1()
 		{
-			UniformMatrix2x3fv=GetAddress<glUniformMatrix2x3fv>("glUniformMatrix2x3fv");
-			UniformMatrix3x2fv=GetAddress<glUniformMatrix3x2fv>("glUniformMatrix3x2fv");
-			UniformMatrix2x4fv=GetAddress<glUniformMatrix2x4fv>("glUniformMatrix2x4fv");
-			UniformMatrix4x2fv=GetAddress<glUniformMatrix4x2fv>("glUniformMatrix4x2fv");
-			UniformMatrix3x4fv=GetAddress<glUniformMatrix3x4fv>("glUniformMatrix3x4fv");
-			UniformMatrix4x3fv=GetAddress<glUniformMatrix4x3fv>("glUniformMatrix4x3fv");
+			UniformMatrix2x3fv = GetAddress<glUniformMatrix2x3fv>("glUniformMatrix2x3fv");
+			UniformMatrix3x2fv = GetAddress<glUniformMatrix3x2fv>("glUniformMatrix3x2fv");
+			UniformMatrix2x4fv = GetAddress<glUniformMatrix2x4fv>("glUniformMatrix2x4fv");
+			UniformMatrix4x2fv = GetAddress<glUniformMatrix4x2fv>("glUniformMatrix4x2fv");
+			UniformMatrix3x4fv = GetAddress<glUniformMatrix3x4fv>("glUniformMatrix3x4fv");
+			UniformMatrix4x3fv = GetAddress<glUniformMatrix4x3fv>("glUniformMatrix4x3fv");
 
-			VERSION_2_1=VERSION_2_0&&UniformMatrix2x3fv!=null&&UniformMatrix3x2fv!=null&&UniformMatrix2x4fv!=null&&
-				UniformMatrix4x2fv!=null&&UniformMatrix3x4fv!=null&&UniformMatrix4x3fv!=null;
+			VERSION_2_1 = VERSION_2_0 && UniformMatrix2x3fv != null && UniformMatrix3x2fv != null && UniformMatrix2x4fv != null &&
+				UniformMatrix4x2fv != null && UniformMatrix3x4fv != null && UniformMatrix4x3fv != null;
 		}
 	}
 }

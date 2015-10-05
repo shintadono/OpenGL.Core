@@ -32,16 +32,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Read only access.
 		/// </summary>
-		READ_ONLY=0x88B8,
+		READ_ONLY = 0x88B8,
 
 		/// <summary>
 		/// Write only access.
 		/// </summary>
-		WRITE_ONLY=0x88B9,
+		WRITE_ONLY = 0x88B9,
 
 		/// <summary>
 		/// Read and write access.
 		/// </summary>
-		READ_WRITE=0x88BA,
+		READ_WRITE = 0x88BA,
 	}
 }

@@ -35,36 +35,36 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Handle nothing.
 		/// </summary>
-		None=0x0000,
+		None = 0x0000,
 
 		/// <summary>
 		/// Read access to mapped store.
 		/// </summary>
-		MAP_READ_BIT=0x0001,
+		MAP_READ_BIT = 0x0001,
 
 		/// <summary>
 		/// Write access to mapped store.
 		/// </summary>
-		MAP_WRITE_BIT=0x0002,
+		MAP_WRITE_BIT = 0x0002,
 
 		/// <summary>
 		/// Allow server to read from and write to buffer, while mapped.
 		/// </summary>
-		MAP_PERSISTENT_BIT=0x0040,
+		MAP_PERSISTENT_BIT = 0x0040,
 
 		/// <summary>
 		/// OpenGL keeps simultaneously mapped (to client and server) buffer automatically coherent.
 		/// </summary>
-		MAP_COHERENT_BIT=0x0080,
+		MAP_COHERENT_BIT = 0x0080,
 
 		/// <summary>
 		/// Allow client updates to buffer through calls to <see cref="O:OpenGL.Core.gl.BufferSubData">gl.BufferSubData</see>.
 		/// </summary>
-		DYNAMIC_STORAGE_BIT=0x0100,
+		DYNAMIC_STORAGE_BIT = 0x0100,
 
 		/// <summary>
 		/// Tell implentation to use client side backing store for buffer.
 		/// </summary>
-		CLIENT_STORAGE_BIT=0x0200,
+		CLIENT_STORAGE_BIT = 0x0200,
 	}
 }

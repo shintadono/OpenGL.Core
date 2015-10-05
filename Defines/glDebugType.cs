@@ -32,51 +32,51 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Events that generated an error.
 		/// </summary>
-		DEBUG_TYPE_ERROR=0x824C,
+		DEBUG_TYPE_ERROR = 0x824C,
 
 		/// <summary>
 		/// Behavior that has been marked for deprecation.
 		/// </summary>
-		DEBUG_TYPE_DEPRECATED_BEHAVIOR=0x824D,
+		DEBUG_TYPE_DEPRECATED_BEHAVIOR = 0x824D,
 
 		/// <summary>
 		/// Behavior that is undefined according to the specification.
 		/// </summary>
-		DEBUG_TYPE_UNDEFINED_BEHAVIOR=0x824E,
+		DEBUG_TYPE_UNDEFINED_BEHAVIOR = 0x824E,
 
 		/// <summary>
 		/// Implementation-dependent performance warnings.
 		/// </summary>
-		DEBUG_TYPE_PERFORMANCE=0x8250,
+		DEBUG_TYPE_PERFORMANCE = 0x8250,
 
 		/// <summary>
 		/// Use of extensions or shaders in a way that is highly vendor-specific.
 		/// </summary>
-		DEBUG_TYPE_PORTABILITY=0x824F,
+		DEBUG_TYPE_PORTABILITY = 0x824F,
 
 		/// <summary>
 		/// Annotation of the command stream.
 		/// </summary>
-		DEBUG_TYPE_MARKER=0x8268,
+		DEBUG_TYPE_MARKER = 0x8268,
 
 		/// <summary>
 		/// Entering a debug group.
 		/// </summary>
-		DEBUG_TYPE_PUSH_GROUP=0x8269,
+		DEBUG_TYPE_PUSH_GROUP = 0x8269,
 
 		/// <summary>
 		/// Leave a debug group.
 		/// </summary>
-		DEBUG_TYPE_POP_GROUP=0x826A,
+		DEBUG_TYPE_POP_GROUP = 0x826A,
 
 		/// <summary>
 		/// Types of events that do not fit any of the ones listed above.
 		/// </summary>
-		DEBUG_TYPE_OTHER=0x8251,
+		DEBUG_TYPE_OTHER = 0x8251,
 
 		/// <summary>
 		/// Debug message control.
 		/// </summary>
-		DONT_CARE=0x1100,
+		DONT_CARE = 0x1100,
 	}
 }

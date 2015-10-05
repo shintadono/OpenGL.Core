@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Unsigned 8-bit integer.
 		/// </summary>
-		UNSIGNED_BYTE=0x1401,
+		UNSIGNED_BYTE = 0x1401,
 	}
 }

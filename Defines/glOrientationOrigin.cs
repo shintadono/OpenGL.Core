@@ -36,11 +36,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Origin is in the lower left corner.
 		/// </summary>
-		LOWER_LEFT=0x8CA1,
+		LOWER_LEFT = 0x8CA1,
 
 		/// <summary>
 		/// Origin is in the upper left corner.
 		/// </summary>
-		UPPER_LEFT=0x8CA2,
+		UPPER_LEFT = 0x8CA2,
 	}
 }

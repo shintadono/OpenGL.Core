@@ -32,61 +32,61 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Draw points.
 		/// </summary>
-		POINTS=0x0000,
+		POINTS = 0x0000,
 
 		/// <summary>
 		/// Draw line strip.
 		/// </summary>
-		LINE_STRIP=0x0003,
+		LINE_STRIP = 0x0003,
 
 		/// <summary>
 		/// Draw line loop.
 		/// </summary>
-		LINE_LOOP=0x0002,
+		LINE_LOOP = 0x0002,
 
 		/// <summary>
 		/// Draw lines.
 		/// </summary>
-		LINES=0x0001,
+		LINES = 0x0001,
 
 		/// <summary>
 		/// Draw triangle strip.
 		/// </summary>
-		TRIANGLE_STRIP=0x0005,
+		TRIANGLE_STRIP = 0x0005,
 
 		/// <summary>
 		/// Draw triangle fan.
 		/// </summary>
-		TRIANGLE_FAN=0x0006,
+		TRIANGLE_FAN = 0x0006,
 
 		/// <summary>
 		/// Draw triangles.
 		/// </summary>
-		TRIANGLES=0x0004,
+		TRIANGLES = 0x0004,
 
 		/// <summary>
 		/// Draw lines with adjacency.
 		/// </summary>
-		LINES_ADJACENCY=0x000A,
+		LINES_ADJACENCY = 0x000A,
 
 		/// <summary>
 		/// Draw line strip with adjacency.
 		/// </summary>
-		LINE_STRIP_ADJACENCY=0x000B,
+		LINE_STRIP_ADJACENCY = 0x000B,
 
 		/// <summary>
 		/// Draw triangles with adjacency.
 		/// </summary>
-		TRIANGLES_ADJACENCY=0x000C,
+		TRIANGLES_ADJACENCY = 0x000C,
 
 		/// <summary>
 		/// Draw triangle strip with adjacency.
 		/// </summary>
-		TRIANGLE_STRIP_ADJACENCY=0x000D,
+		TRIANGLE_STRIP_ADJACENCY = 0x000D,
 
 		/// <summary>
 		/// Draw patches.
 		/// </summary>
-		PATCHES=0x000E,
+		PATCHES = 0x000E,
 	}
 }

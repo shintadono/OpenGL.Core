@@ -35,35 +35,35 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Filter to nearest pixel.
 		/// </summary>
-		NEAREST=0x2600,
+		NEAREST = 0x2600,
 
 		/// <summary>
 		/// Interpolate pixels linear.
 		/// </summary>
-		LINEAR=0x2601,
+		LINEAR = 0x2601,
 
 		/// <summary>
 		/// Filter to nearest pixel for main image and mipmaps.
 		/// Used only with <see cref="glTextureParameter.TEXTURE_MIN_FILTER"/>.
 		/// </summary>
-		NEAREST_MIPMAP_NEAREST=0x2700,
+		NEAREST_MIPMAP_NEAREST = 0x2700,
 
 		/// <summary>
 		/// Interpolate pixels linear for the main image and filter to nearest pixel for mipmaps.
 		/// Used only with <see cref="glTextureParameter.TEXTURE_MIN_FILTER"/>.
 		/// </summary>
-		LINEAR_MIPMAP_NEAREST=0x2701,
+		LINEAR_MIPMAP_NEAREST = 0x2701,
 
 		/// <summary>
 		/// Interpolate pixels linear for mipmaps and filter to nearest pixel for the main image.
 		/// Used only with <see cref="glTextureParameter.TEXTURE_MIN_FILTER"/>.
 		/// </summary>
-		NEAREST_MIPMAP_LINEAR=0x2702,
+		NEAREST_MIPMAP_LINEAR = 0x2702,
 
 		/// <summary>
 		/// Interpolate pixels linear for main image and mipmaps.
 		/// Used only with <see cref="glTextureParameter.TEXTURE_MIN_FILTER"/>.
 		/// </summary>
-		LINEAR_MIPMAP_LINEAR=0x2703,
+		LINEAR_MIPMAP_LINEAR = 0x2703,
 	}
 }

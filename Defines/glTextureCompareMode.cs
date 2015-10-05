@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Compare mode off.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Compare mode on.
 		/// </summary>
-		COMPARE_REF_TO_TEXTURE=0x884E,
+		COMPARE_REF_TO_TEXTURE = 0x884E,
 	}
 }

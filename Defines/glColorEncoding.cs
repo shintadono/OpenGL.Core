@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returned if resource is not supported, or if image textures are not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Linear encoded color components.
 		/// </summary>
-		LINEAR=0x2601,
+		LINEAR = 0x2601,
 
 		/// <summary>
 		/// sRGB-encoded color components.
 		/// </summary>
-		SRGB=0x8C40,
+		SRGB = 0x8C40,
 	}
 }

@@ -491,7 +491,7 @@ namespace OpenGL.Core
 		/// <returns>The new sampler names as array.</returns>
 		public static uint[] GenSamplers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenSamplers(count, ret);
 			return ret;
 		}
@@ -529,7 +529,7 @@ namespace OpenGL.Core
 		{
 			int p;
 			_GetSamplerParameteri(sampler, pname, out p);
-			param=(glFilter)p;
+			param = (glFilter)p;
 		}
 
 		/// <summary>
@@ -542,7 +542,7 @@ namespace OpenGL.Core
 		{
 			int p;
 			_GetSamplerParameteri(sampler, pname, out p);
-			param=(glTextureWrapMode)p;
+			param = (glTextureWrapMode)p;
 		}
 
 		/// <summary>
@@ -555,7 +555,7 @@ namespace OpenGL.Core
 		{
 			int p;
 			_GetSamplerParameteri(sampler, pname, out p);
-			param=(glTextureCompareMode)p;
+			param = (glTextureCompareMode)p;
 		}
 
 		/// <summary>
@@ -568,7 +568,7 @@ namespace OpenGL.Core
 		{
 			int p;
 			_GetSamplerParameteri(sampler, pname, out p);
-			param=(glFunc)p;
+			param = (glFunc)p;
 		}
 		#endregion
 
@@ -632,49 +632,49 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_3_3()
 		{
-			BindFragDataLocationIndexed=GetAddress<glBindFragDataLocationIndexed>("glBindFragDataLocationIndexed");
-			GetFragDataIndex=GetAddress<glGetFragDataIndex>("glGetFragDataIndex");
-			_GenSampler=GetAddress<glGenSampler>("glGenSamplers");
-			_GenSamplers=GetAddress<glGenSamplers>("glGenSamplers");
-			DeleteSamplers=GetAddress<glDeleteSamplers>("glDeleteSamplers");
-			IsSampler=GetAddress<glIsSampler>("glIsSampler");
-			BindSampler=GetAddress<glBindSampler>("glBindSampler");
-			_SamplerParameteri=GetAddress<glSamplerParameteri>("glSamplerParameteri");
-			SamplerParameteriv=GetAddress<glSamplerParameteriv>("glSamplerParameteriv");
-			SamplerParameterf=GetAddress<glSamplerParameterf>("glSamplerParameterf");
-			SamplerParameterfv=GetAddress<glSamplerParameterfv>("glSamplerParameterfv");
-			SamplerParameterIiv=GetAddress<glSamplerParameterIiv>("glSamplerParameterIiv");
-			SamplerParameterIuiv=GetAddress<glSamplerParameterIuiv>("glSamplerParameterIuiv");
-			_GetSamplerParameteri=GetAddress<glGetSamplerParameteri>("glGetSamplerParameteriv");
-			GetSamplerParameteriv=GetAddress<glGetSamplerParameteriv>("glGetSamplerParameteriv");
-			GetSamplerParameterIi=GetAddress<glGetSamplerParameterIi>("glGetSamplerParameterIiv");
-			GetSamplerParameterIiv=GetAddress<glGetSamplerParameterIiv>("glGetSamplerParameterIiv");
-			GetSamplerParameterf=GetAddress<glGetSamplerParameterf>("glGetSamplerParameterfv");
-			GetSamplerParameterfv=GetAddress<glGetSamplerParameterfv>("glGetSamplerParameterfv");
-			GetSamplerParameterIui=GetAddress<glGetSamplerParameterIui>("glGetSamplerParameterIuiv");
-			GetSamplerParameterIuiv=GetAddress<glGetSamplerParameterIuiv>("glGetSamplerParameterIuiv");
-			QueryCounter=GetAddress<glQueryCounter>("glQueryCounter");
-			GetQueryObjecti64=GetAddress<glGetQueryObjecti64>("glGetQueryObjecti64v");
-			GetQueryObjecti64v=GetAddress<glGetQueryObjecti64v>("glGetQueryObjecti64v");
-			GetQueryObjectui64=GetAddress<glGetQueryObjectui64>("glGetQueryObjectui64v");
-			GetQueryObjectui64v=GetAddress<glGetQueryObjectui64v>("glGetQueryObjectui64v");
-			VertexAttribDivisor=GetAddress<glVertexAttribDivisor>("glVertexAttribDivisor");
-			VertexAttribP1ui=GetAddress<glVertexAttribP1ui>("glVertexAttribP1ui");
-			VertexAttribP1uiv=GetAddress<glVertexAttribP1uiv>("glVertexAttribP1uiv");
-			VertexAttribP2ui=GetAddress<glVertexAttribP2ui>("glVertexAttribP2ui");
-			VertexAttribP2uiv=GetAddress<glVertexAttribP2uiv>("glVertexAttribP2uiv");
-			VertexAttribP3ui=GetAddress<glVertexAttribP3ui>("glVertexAttribP3ui");
-			VertexAttribP3uiv=GetAddress<glVertexAttribP3uiv>("glVertexAttribP3uiv");
-			VertexAttribP4ui=GetAddress<glVertexAttribP4ui>("glVertexAttribP4ui");
-			VertexAttribP4uiv=GetAddress<glVertexAttribP4uiv>("glVertexAttribP4uiv");
+			BindFragDataLocationIndexed = GetAddress<glBindFragDataLocationIndexed>("glBindFragDataLocationIndexed");
+			GetFragDataIndex = GetAddress<glGetFragDataIndex>("glGetFragDataIndex");
+			_GenSampler = GetAddress<glGenSampler>("glGenSamplers");
+			_GenSamplers = GetAddress<glGenSamplers>("glGenSamplers");
+			DeleteSamplers = GetAddress<glDeleteSamplers>("glDeleteSamplers");
+			IsSampler = GetAddress<glIsSampler>("glIsSampler");
+			BindSampler = GetAddress<glBindSampler>("glBindSampler");
+			_SamplerParameteri = GetAddress<glSamplerParameteri>("glSamplerParameteri");
+			SamplerParameteriv = GetAddress<glSamplerParameteriv>("glSamplerParameteriv");
+			SamplerParameterf = GetAddress<glSamplerParameterf>("glSamplerParameterf");
+			SamplerParameterfv = GetAddress<glSamplerParameterfv>("glSamplerParameterfv");
+			SamplerParameterIiv = GetAddress<glSamplerParameterIiv>("glSamplerParameterIiv");
+			SamplerParameterIuiv = GetAddress<glSamplerParameterIuiv>("glSamplerParameterIuiv");
+			_GetSamplerParameteri = GetAddress<glGetSamplerParameteri>("glGetSamplerParameteriv");
+			GetSamplerParameteriv = GetAddress<glGetSamplerParameteriv>("glGetSamplerParameteriv");
+			GetSamplerParameterIi = GetAddress<glGetSamplerParameterIi>("glGetSamplerParameterIiv");
+			GetSamplerParameterIiv = GetAddress<glGetSamplerParameterIiv>("glGetSamplerParameterIiv");
+			GetSamplerParameterf = GetAddress<glGetSamplerParameterf>("glGetSamplerParameterfv");
+			GetSamplerParameterfv = GetAddress<glGetSamplerParameterfv>("glGetSamplerParameterfv");
+			GetSamplerParameterIui = GetAddress<glGetSamplerParameterIui>("glGetSamplerParameterIuiv");
+			GetSamplerParameterIuiv = GetAddress<glGetSamplerParameterIuiv>("glGetSamplerParameterIuiv");
+			QueryCounter = GetAddress<glQueryCounter>("glQueryCounter");
+			GetQueryObjecti64 = GetAddress<glGetQueryObjecti64>("glGetQueryObjecti64v");
+			GetQueryObjecti64v = GetAddress<glGetQueryObjecti64v>("glGetQueryObjecti64v");
+			GetQueryObjectui64 = GetAddress<glGetQueryObjectui64>("glGetQueryObjectui64v");
+			GetQueryObjectui64v = GetAddress<glGetQueryObjectui64v>("glGetQueryObjectui64v");
+			VertexAttribDivisor = GetAddress<glVertexAttribDivisor>("glVertexAttribDivisor");
+			VertexAttribP1ui = GetAddress<glVertexAttribP1ui>("glVertexAttribP1ui");
+			VertexAttribP1uiv = GetAddress<glVertexAttribP1uiv>("glVertexAttribP1uiv");
+			VertexAttribP2ui = GetAddress<glVertexAttribP2ui>("glVertexAttribP2ui");
+			VertexAttribP2uiv = GetAddress<glVertexAttribP2uiv>("glVertexAttribP2uiv");
+			VertexAttribP3ui = GetAddress<glVertexAttribP3ui>("glVertexAttribP3ui");
+			VertexAttribP3uiv = GetAddress<glVertexAttribP3uiv>("glVertexAttribP3uiv");
+			VertexAttribP4ui = GetAddress<glVertexAttribP4ui>("glVertexAttribP4ui");
+			VertexAttribP4uiv = GetAddress<glVertexAttribP4uiv>("glVertexAttribP4uiv");
 
-			VERSION_3_3=VERSION_3_2&&BindFragDataLocationIndexed!=null&&GetFragDataIndex!=null&&_GenSamplers!=null&&
-				DeleteSamplers!=null&&IsSampler!=null&&BindSampler!=null&&_SamplerParameteri!=null&&
-				SamplerParameteriv!=null&&SamplerParameterf!=null&&SamplerParameterfv!=null&&SamplerParameterIiv!=null&&
-				SamplerParameterIuiv!=null&&GetSamplerParameteriv!=null&&GetSamplerParameterIiv!=null&&
-				GetSamplerParameterfv!=null&&GetSamplerParameterIuiv!=null&&QueryCounter!=null&&
-				GetQueryObjecti64v!=null&&GetQueryObjectui64v!=null&&VertexAttribDivisor!=null&&VertexAttribP1uiv!=null&&
-				VertexAttribP2uiv!=null&&VertexAttribP3uiv!=null&&VertexAttribP4uiv!=null;
+			VERSION_3_3 = VERSION_3_2 && BindFragDataLocationIndexed != null && GetFragDataIndex != null && _GenSamplers != null &&
+				DeleteSamplers != null && IsSampler != null && BindSampler != null && _SamplerParameteri != null &&
+				SamplerParameteriv != null && SamplerParameterf != null && SamplerParameterfv != null && SamplerParameterIiv != null &&
+				SamplerParameterIuiv != null && GetSamplerParameteriv != null && GetSamplerParameterIiv != null &&
+				GetSamplerParameterfv != null && GetSamplerParameterIuiv != null && QueryCounter != null &&
+				GetQueryObjecti64v != null && GetQueryObjectui64v != null && VertexAttribDivisor != null && VertexAttribP1uiv != null &&
+				VertexAttribP2uiv != null && VertexAttribP3uiv != null && VertexAttribP4uiv != null;
 		}
 	}
 }

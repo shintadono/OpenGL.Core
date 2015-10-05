@@ -35,11 +35,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Core profile context.
 		/// </summary>
-		CONTEXT_CORE_PROFILE_BIT=0x00000001,
+		CONTEXT_CORE_PROFILE_BIT = 0x00000001,
 
 		/// <summary>
 		/// Compatibility profile context.
 		/// </summary>
-		CONTEXT_COMPATIBILITY_PROFILE_BIT=0x00000002,
+		CONTEXT_COMPATIBILITY_PROFILE_BIT = 0x00000002,
 	}
 }

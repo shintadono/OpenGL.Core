@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns object type as <see cref="glSyncObjectType"/>.
 		/// </summary>
-		OBJECT_TYPE=0x9112,
+		OBJECT_TYPE = 0x9112,
 
 		/// <summary>
 		/// Returns object condition as <see cref="glSyncCondition"/>.
 		/// </summary>
-		SYNC_CONDITION=0x9113,
+		SYNC_CONDITION = 0x9113,
 
 		/// <summary>
 		/// Returns object status as <see cref="glSyncStatus"/>.
 		/// </summary>
-		SYNC_STATUS=0x9114,
+		SYNC_STATUS = 0x9114,
 
 		/// <summary>
 		/// Returns object flags as <see cref="glSyncFlag"/>.
 		/// </summary>
-		SYNC_FLAGS=0x9115,
+		SYNC_FLAGS = 0x9115,
 	}
 }

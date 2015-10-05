@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns the current values of the query operation.
 		/// </summary>
-		CURRENT_QUERY=0x8865,
+		CURRENT_QUERY = 0x8865,
 
 		/// <summary>
 		/// Returns the 'precision' (number of bits available for storing the information) of the query operation.
 		/// </summary>
-		QUERY_COUNTER_BITS=0x8864,
+		QUERY_COUNTER_BITS = 0x8864,
 	}
 }

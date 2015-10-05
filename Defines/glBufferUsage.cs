@@ -32,46 +32,46 @@ namespace OpenGL.Core
 		/// <summary>
 		/// The data store contents will be specified once by the application, and sourced at most a few times.
 		/// </summary>
-		STREAM_DRAW=0x88E0,
+		STREAM_DRAW = 0x88E0,
 
 		/// <summary>
 		/// The data store contents will be specified once by reading data from OpenGL, and queried at most a few times by the application.
 		/// </summary>
-		STREAM_READ=0x88E1,
+		STREAM_READ = 0x88E1,
 
 		/// <summary>
 		/// The data store contents will be specified once by reading data from OpenGL, and sourced at most a few times.
 		/// </summary>
-		STREAM_COPY=0x88E2,
+		STREAM_COPY = 0x88E2,
 
 		/// <summary>
 		/// The data store contents will be specified once by the application, and sourced many times.
 		/// </summary>
-		STATIC_DRAW=0x88E4,
+		STATIC_DRAW = 0x88E4,
 
 		/// <summary>
 		/// The data store contents will be specified once by reading data from OpenGL, and queried many times by the application.
 		/// </summary>
-		STATIC_READ=0x88E5,
+		STATIC_READ = 0x88E5,
 
 		/// <summary>
 		/// The data store contents will be specified once by reading data from OpenGL, and sourced many times.
 		/// </summary>
-		STATIC_COPY=0x88E6,
+		STATIC_COPY = 0x88E6,
 
 		/// <summary>
 		/// The data store contents will be respecified repeatedly by the application, and sourced many times.
 		/// </summary>
-		DYNAMIC_DRAW=0x88E8,
+		DYNAMIC_DRAW = 0x88E8,
 
 		/// <summary>
 		/// The data store contents will be respecified repeatedly by reading data from OpenGL, and queried many times by the application.
 		/// </summary>
-		DYNAMIC_READ=0x88E9,
+		DYNAMIC_READ = 0x88E9,
 
 		/// <summary>
 		/// The data store contents will be respecified repeatedly by reading data from OpenGL, and sourced many times.
 		/// </summary>
-		DYNAMIC_COPY=0x88EA,
+		DYNAMIC_COPY = 0x88EA,
 	}
 }

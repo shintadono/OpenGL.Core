@@ -33,26 +33,26 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Geometry shader input primitive is <c>points</c>.
 		/// </summary>
-		POINTS=0x0000,
+		POINTS = 0x0000,
 
 		/// <summary>
 		/// Geometry shader input primitive is <c>lines</c>.
 		/// </summary>
-		LINES=0x0001,
+		LINES = 0x0001,
 
 		/// <summary>
 		/// Geometry shader input primitive is <c>triangles</c>.
 		/// </summary>
-		TRIANGLES=0x0004,
+		TRIANGLES = 0x0004,
 
 		/// <summary>
 		/// Geometry shader input primitive is <c>lines_adjacency</c>.
 		/// </summary>
-		LINES_ADJACENCY=0x000A,
+		LINES_ADJACENCY = 0x000A,
 
 		/// <summary>
 		/// Geometry shader input primitive is <c>triangles_adjacency</c>.
 		/// </summary>
-		TRIANGLES_ADJACENCY=0x000C,
+		TRIANGLES_ADJACENCY = 0x000C,
 	}
 }

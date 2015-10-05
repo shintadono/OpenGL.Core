@@ -32,111 +32,111 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Range of aliased line widths. Array of two <b>float</b>s (lo and hi).
 		/// </summary>
-		ALIASED_LINE_WIDTH_RANGE=0x846E,
+		ALIASED_LINE_WIDTH_RANGE = 0x846E,
 
 		/// <summary>
 		/// Constant blend color. Array of four <b>float</b>s (RGBA).
 		/// </summary>
-		BLEND_COLOR=0x8005,
+		BLEND_COLOR = 0x8005,
 
 		/// <summary>
 		/// Color buffer clear value. Array of four <b>float</b>s (RGBA).
 		/// </summary>
-		COLOR_CLEAR_VALUE=0x0C22,
+		COLOR_CLEAR_VALUE = 0x0C22,
 
 		/// <summary>
 		/// Depth buffer clear value.
 		/// </summary>
-		DEPTH_CLEAR_VALUE=0x0B73,
+		DEPTH_CLEAR_VALUE = 0x0B73,
 
 		/// <summary>
 		/// Current line width.
 		/// </summary>
-		LINE_WIDTH=0x0B21,
+		LINE_WIDTH = 0x0B21,
 
 		/// <summary>
 		/// Furthest positive offset for <c>interpolateAtOffset</c>.
 		/// </summary>
-		MAX_FRAGMENT_INTERPOLATION_OFFSET=0x8E5C,
+		MAX_FRAGMENT_INTERPOLATION_OFFSET = 0x8E5C,
 
 		/// <summary>
 		/// Maximum absolute texture level of detail bias.
 		/// </summary>
-		MAX_TEXTURE_LOD_BIAS=0x84FD,
+		MAX_TEXTURE_LOD_BIAS = 0x84FD,
 
 		/// <summary>
 		/// Maximum viewport dimensions. Array of two <b>float</b>s (x and y).
 		/// </summary>
-		MAX_VIEWPORT_DIMS=0x0D3A,
+		MAX_VIEWPORT_DIMS = 0x0D3A,
 
 		/// <summary>
 		/// Furthest negative offset for <c>interpolateAtOffset</c>.
 		/// </summary>
-		MIN_FRAGMENT_INTERPOLATION_OFFSET=0x8E5B,
+		MIN_FRAGMENT_INTERPOLATION_OFFSET = 0x8E5B,
 
 		/// <summary>
 		/// Fraction of multisamples to use for sample shading.
 		/// </summary>
-		MIN_SAMPLE_SHADING_VALUE=0x8C37,
+		MIN_SAMPLE_SHADING_VALUE = 0x8C37,
 
 		/// <summary>
 		/// Default inner tesselation level without control shader. Array of two <b>float</b>s.
 		/// </summary>
-		PATCH_DEFAULT_INNER_LEVEL=0x8E73,
+		PATCH_DEFAULT_INNER_LEVEL = 0x8E73,
 
 		/// <summary>
 		/// Default inner tesselation level without control shader. Array of four <b>float</b>s.
 		/// </summary>
-		PATCH_DEFAULT_OUTER_LEVEL=0x8E74,
+		PATCH_DEFAULT_OUTER_LEVEL = 0x8E74,
 
 		/// <summary>
 		/// Threshold for alpha attenuation.
 		/// </summary>
-		POINT_FADE_THRESHOLD_SIZE=0x8128,
+		POINT_FADE_THRESHOLD_SIZE = 0x8128,
 
 		/// <summary>
 		/// Current point size.
 		/// </summary>
-		POINT_SIZE=0x0B11,
+		POINT_SIZE = 0x0B11,
 
 		/// <summary>
 		/// Range of point sprite sizes. Array of two <b>float</b>s (lo and hi).
 		/// </summary>
-		POINT_SIZE_RANGE=0x0B12,
+		POINT_SIZE_RANGE = 0x0B12,
 
 		/// <summary>
 		/// Point sprite size granularity.
 		/// </summary>
-		POINT_SIZE_GRANULARITY=0x0B13,
+		POINT_SIZE_GRANULARITY = 0x0B13,
 
 		/// <summary>
 		/// Polygon offset factor.
 		/// </summary>
-		POLYGON_OFFSET_FACTOR=0x8038,
+		POLYGON_OFFSET_FACTOR = 0x8038,
 
 		/// <summary>
 		/// Polygon offset units.
 		/// </summary>
-		POLYGON_OFFSET_UNITS=0x2A00,
+		POLYGON_OFFSET_UNITS = 0x2A00,
 
 		/// <summary>
 		/// Coverage mask value.
 		/// </summary>
-		SAMPLE_COVERAGE_VALUE=0x80AA,
+		SAMPLE_COVERAGE_VALUE = 0x80AA,
 
 		/// <summary>
 		/// Range of antialiased line widths. Array of two <b>float</b>s (lo and hi).
 		/// </summary>
-		SMOOTH_LINE_WIDTH_RANGE=0x0B22,
+		SMOOTH_LINE_WIDTH_RANGE = 0x0B22,
 
 		/// <summary>
 		/// Antialiased line width granularity.
 		/// </summary>
-		SMOOTH_LINE_WIDTH_GRANULARITY=0x0B23,
+		SMOOTH_LINE_WIDTH_GRANULARITY = 0x0B23,
 
 		/// <summary>
 		/// Viewport bounds range. Array of two <b>float</b>s (min and max).
 		/// </summary>
-		VIEWPORT_BOUNDS_RANGE=0x825D,
+		VIEWPORT_BOUNDS_RANGE = 0x825D,
 	}
 }

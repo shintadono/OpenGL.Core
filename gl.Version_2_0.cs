@@ -1255,9 +1255,9 @@ namespace OpenGL.Core
 		/// <param name="name">Returns the name of the attribute variable.</param>
 		public static void GetActiveAttrib(uint program, uint index, int bufSize, out int length, out int size, out glGLSLType type, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveAttrib(program, index, bufSize+1, out length, out size, out type, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveAttrib(program, index, bufSize + 1, out length, out size, out type, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -1274,9 +1274,9 @@ namespace OpenGL.Core
 		/// <param name="name">Returns the name of the uniform variable.</param>
 		public static void GetActiveUniform(uint program, uint index, int bufSize, out int length, out int size, ref glGLSLType type, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveUniform(program, index, bufSize+1, out length, out size, out type, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveUniform(program, index, bufSize + 1, out length, out size, out type, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -1290,9 +1290,9 @@ namespace OpenGL.Core
 		/// <param name="infoLog">Returns the information log.</param>
 		public static void GetProgramInfoLog(uint program, int maxLength, out int length, out string infoLog)
 		{
-			StringBuilder tmp=new StringBuilder(maxLength+1);
-			_GetProgramInfoLog(program, maxLength+1, out length, tmp);
-			infoLog=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(maxLength + 1);
+			_GetProgramInfoLog(program, maxLength + 1, out length, tmp);
+			infoLog = tmp.ToString();
 		}
 		#endregion
 
@@ -1306,9 +1306,9 @@ namespace OpenGL.Core
 		/// <param name="infoLog">Returns the information log.</param>
 		public static void GetShaderInfoLog(uint shader, int maxLength, out int length, out string infoLog)
 		{
-			StringBuilder tmp=new StringBuilder(maxLength+1);
-			_GetShaderInfoLog(shader, maxLength+1, out length, tmp);
-			infoLog=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(maxLength + 1);
+			_GetShaderInfoLog(shader, maxLength + 1, out length, tmp);
+			infoLog = tmp.ToString();
 		}
 		#endregion
 
@@ -1322,9 +1322,9 @@ namespace OpenGL.Core
 		/// <param name="source">Returns the information log.</param>
 		public static void GetShaderSource(uint shader, int maxLength, out int length, out string source)
 		{
-			StringBuilder tmp=new StringBuilder(maxLength+1);
-			_GetShaderSource(shader, maxLength+1, out length, tmp);
-			source=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(maxLength + 1);
+			_GetShaderSource(shader, maxLength + 1, out length, tmp);
+			source = tmp.ToString();
 		}
 		#endregion
 
@@ -1337,13 +1337,13 @@ namespace OpenGL.Core
 		/// <param name="pointer">Returns a offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void GetVertexAttribPointerv(uint index, glVertexAttribPointerParameter pname, out int pointer)
 		{
-			if(IntPtr.Size==4) GetVertexAttribPointerv_32(index, pname, out pointer);
+			if (IntPtr.Size == 4) GetVertexAttribPointerv_32(index, pname, out pointer);
 			else
 			{
 				long lPointer;
 				GetVertexAttribPointerv_64(index, pname, out lPointer);
-				if(((long)lPointer>>32)!=0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
-				pointer=(int)lPointer;
+				if (((long)lPointer >> 32) != 0) throw new ArgumentOutOfRangeException("pointer", PlatformWrongTypeErrorString);
+				pointer = (int)lPointer;
 			}
 		}
 
@@ -1355,11 +1355,11 @@ namespace OpenGL.Core
 		/// <param name="pointer">Returns a offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/></param>
 		public static void GetVertexAttribPointerv(uint index, glVertexAttribPointerParameter pname, out long pointer)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
 				int iPointer;
 				GetVertexAttribPointerv_32(index, pname, out iPointer);
-				pointer=iPointer;
+				pointer = iPointer;
 			}
 			else GetVertexAttribPointerv_64(index, pname, out pointer);
 		}
@@ -1402,7 +1402,7 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribPointer(uint index, int size, glVertexAttribType type, bool normalized, int stride, int pointer)
 		{
-			if(IntPtr.Size==4) VertexAttribPointer_32(index, size, type, normalized, stride, pointer);
+			if (IntPtr.Size == 4) VertexAttribPointer_32(index, size, type, normalized, stride, pointer);
 			else VertexAttribPointer_64(index, size, type, normalized, stride, pointer);
 		}
 
@@ -1417,10 +1417,9 @@ namespace OpenGL.Core
 		/// <param name="pointer">Offset in bytes into the data store of the buffer bound to <see cref="glBufferTarget.ARRAY_BUFFER"/>.</param>
 		public static void VertexAttribPointer(uint index, int size, glVertexAttribType type, bool normalized, int stride, long pointer)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)pointer>>32)!=0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
-
+				if (((long)pointer >> 32) != 0) throw new ArgumentOutOfRangeException("pointer", PlatformErrorString);
 				VertexAttribPointer_32(index, size, type, normalized, stride, (int)pointer);
 			}
 			else VertexAttribPointer_64(index, size, type, normalized, stride, pointer);
@@ -1430,136 +1429,136 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_2_0()
 		{
-			BlendEquationSeparate=GetAddress<glBlendEquationSeparate>("glBlendEquationSeparate");
-			DrawBuffers=GetAddress<glDrawBuffers>("glDrawBuffers");
-			StencilOpSeparate=GetAddress<glStencilOpSeparate>("glStencilOpSeparate");
-			StencilFuncSeparate=GetAddress<glStencilFuncSeparate>("glStencilFuncSeparate");
-			StencilMaskSeparate=GetAddress<glStencilMaskSeparate>("glStencilMaskSeparate");
-			AttachShader=GetAddress<glAttachShader>("glAttachShader");
-			BindAttribLocation=GetAddress<glBindAttribLocation>("glBindAttribLocation");
-			CompileShader=GetAddress<glCompileShader>("glCompileShader");
-			CreateProgram=GetAddress<glCreateProgram>("glCreateProgram");
-			CreateShader=GetAddress<glCreateShader>("glCreateShader");
-			DeleteProgram=GetAddress<glDeleteProgram>("glDeleteProgram");
-			DeleteShader=GetAddress<glDeleteShader>("glDeleteShader");
-			DetachShader=GetAddress<glDetachShader>("glDetachShader");
-			DisableVertexAttribArray=GetAddress<glDisableVertexAttribArray>("glDisableVertexAttribArray");
-			EnableVertexAttribArray=GetAddress<glEnableVertexAttribArray>("glEnableVertexAttribArray");
-			_GetActiveAttrib=GetAddress<glGetActiveAttrib>("glGetActiveAttrib");
-			_GetActiveUniform=GetAddress<glGetActiveUniform>("glGetActiveUniform");
-			GetAttachedShaders=GetAddress<glGetAttachedShaders>("glGetAttachedShaders");
-			GetAttribLocation=GetAddress<glGetAttribLocation>("glGetAttribLocation");
-			GetProgrami=GetAddress<glGetProgrami>("glGetProgramiv");
-			GetProgramiv=GetAddress<glGetProgramiv>("glGetProgramiv");
-			_GetProgramInfoLog=GetAddress<glGetProgramInfoLog>("glGetProgramInfoLog");
-			GetShaderi=GetAddress<glGetShaderi>("glGetShaderiv");
-			GetShaderiv=GetAddress<glGetShaderiv>("glGetShaderiv");
-			_GetShaderInfoLog=GetAddress<glGetShaderInfoLog>("glGetShaderInfoLog");
-			_GetShaderSource=GetAddress<glGetShaderSource>("glGetShaderSource");
-			GetUniformLocation=GetAddress<glGetUniformLocation>("glGetUniformLocation");
-			GetUniformf=GetAddress<glGetUniformf>("glGetUniformfv");
-			GetUniformfv=GetAddress<glGetUniformfv>("glGetUniformfv");
-			GetUniformi=GetAddress<glGetUniformi>("glGetUniformiv");
-			GetUniformiv=GetAddress<glGetUniformiv>("glGetUniformiv");
-			GetVertexAttribd=GetAddress<glGetVertexAttribd>("glGetVertexAttribdv");
-			GetVertexAttribdv=GetAddress<glGetVertexAttribdv>("glGetVertexAttribdv");
-			GetVertexAttribf=GetAddress<glGetVertexAttribf>("glGetVertexAttribfv");
-			GetVertexAttribfv=GetAddress<glGetVertexAttribfv>("glGetVertexAttribfv");
-			GetVertexAttribi=GetAddress<glGetVertexAttribi>("glGetVertexAttribiv");
-			GetVertexAttribiv=GetAddress<glGetVertexAttribiv>("glGetVertexAttribiv");
-			IsProgram=GetAddress<glIsProgram>("glIsProgram");
-			IsShader=GetAddress<glIsShader>("glIsShader");
-			LinkProgram=GetAddress<glLinkProgram>("glLinkProgram");
-			_ShaderSource=GetAddress<glShaderSource>("glShaderSource");
-			UseProgram=GetAddress<glUseProgram>("glUseProgram");
-			Uniform1f=GetAddress<glUniform1f>("glUniform1f");
-			Uniform2f=GetAddress<glUniform2f>("glUniform2f");
-			Uniform3f=GetAddress<glUniform3f>("glUniform3f");
-			Uniform4f=GetAddress<glUniform4f>("glUniform4f");
-			Uniform1i=GetAddress<glUniform1i>("glUniform1i");
-			Uniform2i=GetAddress<glUniform2i>("glUniform2i");
-			Uniform3i=GetAddress<glUniform3i>("glUniform3i");
-			Uniform4i=GetAddress<glUniform4i>("glUniform4i");
-			Uniform1fv=GetAddress<glUniform1fv>("glUniform1fv");
-			Uniform2fv=GetAddress<glUniform2fv>("glUniform2fv");
-			Uniform3fv=GetAddress<glUniform3fv>("glUniform3fv");
-			Uniform4fv=GetAddress<glUniform4fv>("glUniform4fv");
-			Uniform1iv=GetAddress<glUniform1iv>("glUniform1iv");
-			Uniform2iv=GetAddress<glUniform2iv>("glUniform2iv");
-			Uniform3iv=GetAddress<glUniform3iv>("glUniform3iv");
-			Uniform4iv=GetAddress<glUniform4iv>("glUniform4iv");
-			UniformMatrix2fv=GetAddress<glUniformMatrix2fv>("glUniformMatrix2fv");
-			UniformMatrix3fv=GetAddress<glUniformMatrix3fv>("glUniformMatrix3fv");
-			UniformMatrix4fv=GetAddress<glUniformMatrix4fv>("glUniformMatrix4fv");
-			ValidateProgram=GetAddress<glValidateProgram>("glValidateProgram");
-			VertexAttrib1d=GetAddress<glVertexAttrib1d>("glVertexAttrib1d");
-			VertexAttrib1dv=GetAddress<glVertexAttrib1dv>("glVertexAttrib1dv");
-			VertexAttrib1f=GetAddress<glVertexAttrib1f>("glVertexAttrib1f");
-			VertexAttrib1fv=GetAddress<glVertexAttrib1fv>("glVertexAttrib1fv");
-			VertexAttrib1s=GetAddress<glVertexAttrib1s>("glVertexAttrib1s");
-			VertexAttrib1sv=GetAddress<glVertexAttrib1sv>("glVertexAttrib1sv");
-			VertexAttrib2d=GetAddress<glVertexAttrib2d>("glVertexAttrib2d");
-			VertexAttrib2dv=GetAddress<glVertexAttrib2dv>("glVertexAttrib2dv");
-			VertexAttrib2f=GetAddress<glVertexAttrib2f>("glVertexAttrib2f");
-			VertexAttrib2fv=GetAddress<glVertexAttrib2fv>("glVertexAttrib2fv");
-			VertexAttrib2s=GetAddress<glVertexAttrib2s>("glVertexAttrib2s");
-			VertexAttrib2sv=GetAddress<glVertexAttrib2sv>("glVertexAttrib2sv");
-			VertexAttrib3d=GetAddress<glVertexAttrib3d>("glVertexAttrib3d");
-			VertexAttrib3dv=GetAddress<glVertexAttrib3dv>("glVertexAttrib3dv");
-			VertexAttrib3f=GetAddress<glVertexAttrib3f>("glVertexAttrib3f");
-			VertexAttrib3fv=GetAddress<glVertexAttrib3fv>("glVertexAttrib3fv");
-			VertexAttrib3s=GetAddress<glVertexAttrib3s>("glVertexAttrib3s");
-			VertexAttrib3sv=GetAddress<glVertexAttrib3sv>("glVertexAttrib3sv");
-			VertexAttrib4Nbv=GetAddress<glVertexAttrib4Nbv>("glVertexAttrib4Nbv");
-			VertexAttrib4Niv=GetAddress<glVertexAttrib4Niv>("glVertexAttrib4Niv");
-			VertexAttrib4Nsv=GetAddress<glVertexAttrib4Nsv>("glVertexAttrib4Nsv");
-			VertexAttrib4Nub=GetAddress<glVertexAttrib4Nub>("glVertexAttrib4Nub");
-			VertexAttrib4Nubv=GetAddress<glVertexAttrib4Nubv>("glVertexAttrib4Nubv");
-			VertexAttrib4Nuiv=GetAddress<glVertexAttrib4Nuiv>("glVertexAttrib4Nuiv");
-			VertexAttrib4Nusv=GetAddress<glVertexAttrib4Nusv>("glVertexAttrib4Nusv");
-			VertexAttrib4bv=GetAddress<glVertexAttrib4bv>("glVertexAttrib4bv");
-			VertexAttrib4d=GetAddress<glVertexAttrib4d>("glVertexAttrib4d");
-			VertexAttrib4dv=GetAddress<glVertexAttrib4dv>("glVertexAttrib4dv");
-			VertexAttrib4f=GetAddress<glVertexAttrib4f>("glVertexAttrib4f");
-			VertexAttrib4fv=GetAddress<glVertexAttrib4fv>("glVertexAttrib4fv");
-			VertexAttrib4iv=GetAddress<glVertexAttrib4iv>("glVertexAttrib4iv");
-			VertexAttrib4s=GetAddress<glVertexAttrib4s>("glVertexAttrib4s");
-			VertexAttrib4sv=GetAddress<glVertexAttrib4sv>("glVertexAttrib4sv");
-			VertexAttrib4ubv=GetAddress<glVertexAttrib4ubv>("glVertexAttrib4ubv");
-			VertexAttrib4uiv=GetAddress<glVertexAttrib4uiv>("glVertexAttrib4uiv");
-			VertexAttrib4usv=GetAddress<glVertexAttrib4usv>("glVertexAttrib4usv");
+			BlendEquationSeparate = GetAddress<glBlendEquationSeparate>("glBlendEquationSeparate");
+			DrawBuffers = GetAddress<glDrawBuffers>("glDrawBuffers");
+			StencilOpSeparate = GetAddress<glStencilOpSeparate>("glStencilOpSeparate");
+			StencilFuncSeparate = GetAddress<glStencilFuncSeparate>("glStencilFuncSeparate");
+			StencilMaskSeparate = GetAddress<glStencilMaskSeparate>("glStencilMaskSeparate");
+			AttachShader = GetAddress<glAttachShader>("glAttachShader");
+			BindAttribLocation = GetAddress<glBindAttribLocation>("glBindAttribLocation");
+			CompileShader = GetAddress<glCompileShader>("glCompileShader");
+			CreateProgram = GetAddress<glCreateProgram>("glCreateProgram");
+			CreateShader = GetAddress<glCreateShader>("glCreateShader");
+			DeleteProgram = GetAddress<glDeleteProgram>("glDeleteProgram");
+			DeleteShader = GetAddress<glDeleteShader>("glDeleteShader");
+			DetachShader = GetAddress<glDetachShader>("glDetachShader");
+			DisableVertexAttribArray = GetAddress<glDisableVertexAttribArray>("glDisableVertexAttribArray");
+			EnableVertexAttribArray = GetAddress<glEnableVertexAttribArray>("glEnableVertexAttribArray");
+			_GetActiveAttrib = GetAddress<glGetActiveAttrib>("glGetActiveAttrib");
+			_GetActiveUniform = GetAddress<glGetActiveUniform>("glGetActiveUniform");
+			GetAttachedShaders = GetAddress<glGetAttachedShaders>("glGetAttachedShaders");
+			GetAttribLocation = GetAddress<glGetAttribLocation>("glGetAttribLocation");
+			GetProgrami = GetAddress<glGetProgrami>("glGetProgramiv");
+			GetProgramiv = GetAddress<glGetProgramiv>("glGetProgramiv");
+			_GetProgramInfoLog = GetAddress<glGetProgramInfoLog>("glGetProgramInfoLog");
+			GetShaderi = GetAddress<glGetShaderi>("glGetShaderiv");
+			GetShaderiv = GetAddress<glGetShaderiv>("glGetShaderiv");
+			_GetShaderInfoLog = GetAddress<glGetShaderInfoLog>("glGetShaderInfoLog");
+			_GetShaderSource = GetAddress<glGetShaderSource>("glGetShaderSource");
+			GetUniformLocation = GetAddress<glGetUniformLocation>("glGetUniformLocation");
+			GetUniformf = GetAddress<glGetUniformf>("glGetUniformfv");
+			GetUniformfv = GetAddress<glGetUniformfv>("glGetUniformfv");
+			GetUniformi = GetAddress<glGetUniformi>("glGetUniformiv");
+			GetUniformiv = GetAddress<glGetUniformiv>("glGetUniformiv");
+			GetVertexAttribd = GetAddress<glGetVertexAttribd>("glGetVertexAttribdv");
+			GetVertexAttribdv = GetAddress<glGetVertexAttribdv>("glGetVertexAttribdv");
+			GetVertexAttribf = GetAddress<glGetVertexAttribf>("glGetVertexAttribfv");
+			GetVertexAttribfv = GetAddress<glGetVertexAttribfv>("glGetVertexAttribfv");
+			GetVertexAttribi = GetAddress<glGetVertexAttribi>("glGetVertexAttribiv");
+			GetVertexAttribiv = GetAddress<glGetVertexAttribiv>("glGetVertexAttribiv");
+			IsProgram = GetAddress<glIsProgram>("glIsProgram");
+			IsShader = GetAddress<glIsShader>("glIsShader");
+			LinkProgram = GetAddress<glLinkProgram>("glLinkProgram");
+			_ShaderSource = GetAddress<glShaderSource>("glShaderSource");
+			UseProgram = GetAddress<glUseProgram>("glUseProgram");
+			Uniform1f = GetAddress<glUniform1f>("glUniform1f");
+			Uniform2f = GetAddress<glUniform2f>("glUniform2f");
+			Uniform3f = GetAddress<glUniform3f>("glUniform3f");
+			Uniform4f = GetAddress<glUniform4f>("glUniform4f");
+			Uniform1i = GetAddress<glUniform1i>("glUniform1i");
+			Uniform2i = GetAddress<glUniform2i>("glUniform2i");
+			Uniform3i = GetAddress<glUniform3i>("glUniform3i");
+			Uniform4i = GetAddress<glUniform4i>("glUniform4i");
+			Uniform1fv = GetAddress<glUniform1fv>("glUniform1fv");
+			Uniform2fv = GetAddress<glUniform2fv>("glUniform2fv");
+			Uniform3fv = GetAddress<glUniform3fv>("glUniform3fv");
+			Uniform4fv = GetAddress<glUniform4fv>("glUniform4fv");
+			Uniform1iv = GetAddress<glUniform1iv>("glUniform1iv");
+			Uniform2iv = GetAddress<glUniform2iv>("glUniform2iv");
+			Uniform3iv = GetAddress<glUniform3iv>("glUniform3iv");
+			Uniform4iv = GetAddress<glUniform4iv>("glUniform4iv");
+			UniformMatrix2fv = GetAddress<glUniformMatrix2fv>("glUniformMatrix2fv");
+			UniformMatrix3fv = GetAddress<glUniformMatrix3fv>("glUniformMatrix3fv");
+			UniformMatrix4fv = GetAddress<glUniformMatrix4fv>("glUniformMatrix4fv");
+			ValidateProgram = GetAddress<glValidateProgram>("glValidateProgram");
+			VertexAttrib1d = GetAddress<glVertexAttrib1d>("glVertexAttrib1d");
+			VertexAttrib1dv = GetAddress<glVertexAttrib1dv>("glVertexAttrib1dv");
+			VertexAttrib1f = GetAddress<glVertexAttrib1f>("glVertexAttrib1f");
+			VertexAttrib1fv = GetAddress<glVertexAttrib1fv>("glVertexAttrib1fv");
+			VertexAttrib1s = GetAddress<glVertexAttrib1s>("glVertexAttrib1s");
+			VertexAttrib1sv = GetAddress<glVertexAttrib1sv>("glVertexAttrib1sv");
+			VertexAttrib2d = GetAddress<glVertexAttrib2d>("glVertexAttrib2d");
+			VertexAttrib2dv = GetAddress<glVertexAttrib2dv>("glVertexAttrib2dv");
+			VertexAttrib2f = GetAddress<glVertexAttrib2f>("glVertexAttrib2f");
+			VertexAttrib2fv = GetAddress<glVertexAttrib2fv>("glVertexAttrib2fv");
+			VertexAttrib2s = GetAddress<glVertexAttrib2s>("glVertexAttrib2s");
+			VertexAttrib2sv = GetAddress<glVertexAttrib2sv>("glVertexAttrib2sv");
+			VertexAttrib3d = GetAddress<glVertexAttrib3d>("glVertexAttrib3d");
+			VertexAttrib3dv = GetAddress<glVertexAttrib3dv>("glVertexAttrib3dv");
+			VertexAttrib3f = GetAddress<glVertexAttrib3f>("glVertexAttrib3f");
+			VertexAttrib3fv = GetAddress<glVertexAttrib3fv>("glVertexAttrib3fv");
+			VertexAttrib3s = GetAddress<glVertexAttrib3s>("glVertexAttrib3s");
+			VertexAttrib3sv = GetAddress<glVertexAttrib3sv>("glVertexAttrib3sv");
+			VertexAttrib4Nbv = GetAddress<glVertexAttrib4Nbv>("glVertexAttrib4Nbv");
+			VertexAttrib4Niv = GetAddress<glVertexAttrib4Niv>("glVertexAttrib4Niv");
+			VertexAttrib4Nsv = GetAddress<glVertexAttrib4Nsv>("glVertexAttrib4Nsv");
+			VertexAttrib4Nub = GetAddress<glVertexAttrib4Nub>("glVertexAttrib4Nub");
+			VertexAttrib4Nubv = GetAddress<glVertexAttrib4Nubv>("glVertexAttrib4Nubv");
+			VertexAttrib4Nuiv = GetAddress<glVertexAttrib4Nuiv>("glVertexAttrib4Nuiv");
+			VertexAttrib4Nusv = GetAddress<glVertexAttrib4Nusv>("glVertexAttrib4Nusv");
+			VertexAttrib4bv = GetAddress<glVertexAttrib4bv>("glVertexAttrib4bv");
+			VertexAttrib4d = GetAddress<glVertexAttrib4d>("glVertexAttrib4d");
+			VertexAttrib4dv = GetAddress<glVertexAttrib4dv>("glVertexAttrib4dv");
+			VertexAttrib4f = GetAddress<glVertexAttrib4f>("glVertexAttrib4f");
+			VertexAttrib4fv = GetAddress<glVertexAttrib4fv>("glVertexAttrib4fv");
+			VertexAttrib4iv = GetAddress<glVertexAttrib4iv>("glVertexAttrib4iv");
+			VertexAttrib4s = GetAddress<glVertexAttrib4s>("glVertexAttrib4s");
+			VertexAttrib4sv = GetAddress<glVertexAttrib4sv>("glVertexAttrib4sv");
+			VertexAttrib4ubv = GetAddress<glVertexAttrib4ubv>("glVertexAttrib4ubv");
+			VertexAttrib4uiv = GetAddress<glVertexAttrib4uiv>("glVertexAttrib4uiv");
+			VertexAttrib4usv = GetAddress<glVertexAttrib4usv>("glVertexAttrib4usv");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				GetVertexAttribPointerv_32=GetAddress<glGetVertexAttribPointerv_32>("glGetVertexAttribPointerv");
-				VertexAttribPointer_32=GetAddress<glVertexAttribPointer_32>("glVertexAttribPointer");
+				GetVertexAttribPointerv_32 = GetAddress<glGetVertexAttribPointerv_32>("glGetVertexAttribPointerv");
+				VertexAttribPointer_32 = GetAddress<glVertexAttribPointer_32>("glVertexAttribPointer");
 
-				platformDependend=GetVertexAttribPointerv_32!=null&&VertexAttribPointer_32!=null;
+				platformDependend = GetVertexAttribPointerv_32 != null && VertexAttribPointer_32 != null;
 			}
 			else
 			{
-				GetVertexAttribPointerv_64=GetAddress<glGetVertexAttribPointerv_64>("glGetVertexAttribPointerv");
-				VertexAttribPointer_64=GetAddress<glVertexAttribPointer_64>("glVertexAttribPointer");
+				GetVertexAttribPointerv_64 = GetAddress<glGetVertexAttribPointerv_64>("glGetVertexAttribPointerv");
+				VertexAttribPointer_64 = GetAddress<glVertexAttribPointer_64>("glVertexAttribPointer");
 
-				platformDependend=GetVertexAttribPointerv_64!=null&&VertexAttribPointer_64!=null;
+				platformDependend = GetVertexAttribPointerv_64 != null && VertexAttribPointer_64 != null;
 			}
 
-			VERSION_2_0=VERSION_1_5&&BlendEquationSeparate!=null&&DrawBuffers!=null&&StencilOpSeparate!=null&&
-				StencilFuncSeparate!=null&&StencilMaskSeparate!=null&&AttachShader!=null&&
-				BindAttribLocation!=null&&CompileShader!=null&&CreateProgram!=null&&
-				CreateShader!=null&&DeleteProgram!=null&&DeleteShader!=null&&
-				DetachShader!=null&&DisableVertexAttribArray!=null&&EnableVertexAttribArray!=null&&
-				_GetActiveAttrib!=null&&_GetActiveUniform!=null&&GetAttachedShaders!=null&&
-				GetAttribLocation!=null&&GetProgramiv!=null&&_GetProgramInfoLog!=null&&
-				GetShaderiv!=null&&_GetShaderInfoLog!=null&&_GetShaderSource!=null&&
-				GetUniformLocation!=null&&GetUniformfv!=null&&GetUniformiv!=null&&
-				GetVertexAttribdv!=null&&GetVertexAttribfv!=null&&GetVertexAttribiv!=null&&
-				IsProgram!=null&&IsShader!=null&&LinkProgram!=null&&_ShaderSource!=null&&
-				UseProgram!=null&&Uniform4f!=null&&Uniform4i!=null&&Uniform4fv!=null&&
-				Uniform4iv!=null&&UniformMatrix4fv!=null&&ValidateProgram!=null&&
-				VertexAttrib1dv!=null&&VertexAttrib2dv!=null&&VertexAttrib3dv!=null&&
-				VertexAttrib4dv!=null&&VertexAttrib4Niv!=null&&platformDependend;
+			VERSION_2_0 = VERSION_1_5 && BlendEquationSeparate != null && DrawBuffers != null && StencilOpSeparate != null &&
+				StencilFuncSeparate != null && StencilMaskSeparate != null && AttachShader != null &&
+				BindAttribLocation != null && CompileShader != null && CreateProgram != null &&
+				CreateShader != null && DeleteProgram != null && DeleteShader != null &&
+				DetachShader != null && DisableVertexAttribArray != null && EnableVertexAttribArray != null &&
+				_GetActiveAttrib != null && _GetActiveUniform != null && GetAttachedShaders != null &&
+				GetAttribLocation != null && GetProgramiv != null && _GetProgramInfoLog != null &&
+				GetShaderiv != null && _GetShaderInfoLog != null && _GetShaderSource != null &&
+				GetUniformLocation != null && GetUniformfv != null && GetUniformiv != null &&
+				GetVertexAttribdv != null && GetVertexAttribfv != null && GetVertexAttribiv != null &&
+				IsProgram != null && IsShader != null && LinkProgram != null && _ShaderSource != null &&
+				UseProgram != null && Uniform4f != null && Uniform4i != null && Uniform4fv != null &&
+				Uniform4iv != null && UniformMatrix4fv != null && ValidateProgram != null &&
+				VertexAttrib1dv != null && VertexAttrib2dv != null && VertexAttrib3dv != null &&
+				VertexAttrib4dv != null && VertexAttrib4Niv != null && platformDependend;
 		}
 	}
 }

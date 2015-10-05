@@ -32,16 +32,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Set the number of vertices the patch is given. (<see cref="gl.PatchParameteri"/>)
 		/// </summary>
-		PATCH_VERTICES=0x8E72,
+		PATCH_VERTICES = 0x8E72,
 
 		/// <summary>
 		/// Set the two inner tesselation levels. (<see cref="gl.PatchParameterfv"/>)
 		/// </summary>
-		PATCH_DEFAULT_INNER_LEVEL=0x8E73,
+		PATCH_DEFAULT_INNER_LEVEL = 0x8E73,
 
 		/// <summary>
 		/// Set the four outer tesselation levels. (<see cref="gl.PatchParameterfv"/>)
 		/// </summary>
-		PATCH_DEFAULT_OUTER_LEVEL=0x8E74,
+		PATCH_DEFAULT_OUTER_LEVEL = 0x8E74,
 	}
 }

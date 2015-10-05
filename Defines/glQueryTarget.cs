@@ -32,41 +32,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// No query target set yet. Only returned as value by <b>gl.GetQueryObjecti(v)</b> with <see cref="glQueryObjectParameter.QUERY_TARGET"/>.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Number of samples passed in occlusion query.
 		/// </summary>
-		SAMPLES_PASSED=0x8914,
-		
+		SAMPLES_PASSED = 0x8914,
+
 		/// <summary>
 		/// 1 if number of samples passed is non-zero in an occlusion query.
 		/// </summary>
-		ANY_SAMPLES_PASSED=0x8C2F,
-		
+		ANY_SAMPLES_PASSED = 0x8C2F,
+
 		/// <summary>
 		/// 1 if number of samples passed is non-zero in an (implementation-dependent less precise version of an) occlusion query.
 		/// </summary>
-		ANY_SAMPLES_PASSED_CONSERVATIVE=0x8D6A,
+		ANY_SAMPLES_PASSED_CONSERVATIVE = 0x8D6A,
 
 		/// <summary>
 		/// Timer query.
 		/// </summary>
-		TIME_ELAPSED=0x88BF,
+		TIME_ELAPSED = 0x88BF,
 
 		/// <summary>
 		/// Number of primitives processed in a primitive query.
 		/// </summary>
-		PRIMITIVES_GENERATED=0x8C87,
+		PRIMITIVES_GENERATED = 0x8C87,
 
 		/// <summary>
 		/// Number of primitives written to feedback buffer in a primitive query.
 		/// </summary>
-		TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN=0x8C88,
+		TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN = 0x8C88,
 
 		/// <summary>
 		/// Timer query.
 		/// </summary>
-		TIMESTAMP=0x8E28,
+		TIMESTAMP = 0x8E28,
 	}
 }

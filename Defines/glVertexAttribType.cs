@@ -32,67 +32,67 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Unsigned 8-bit integers.
 		/// </summary>
-		UNSIGNED_BYTE=0x1401,
+		UNSIGNED_BYTE = 0x1401,
 
 		/// <summary>
 		/// Signed 8-bit integers.
 		/// </summary>
-		BYTE=0x1400,
+		BYTE = 0x1400,
 
 		/// <summary>
 		/// Unsigned 16-bit integers.
 		/// </summary>
-		UNSIGNED_SHORT=0x1403,
+		UNSIGNED_SHORT = 0x1403,
 
 		/// <summary>
 		/// Signed 16-bit integers.
 		/// </summary>
-		SHORT=0x1402,
+		SHORT = 0x1402,
 
 		/// <summary>
 		/// Unsigned 32-bit integers.
 		/// </summary>
-		UNSIGNED_INT=0x1405,
+		UNSIGNED_INT = 0x1405,
 
 		/// <summary>
 		/// Signed 32-bit integers.
 		/// </summary>
-		INT=0x1404,
+		INT = 0x1404,
 
 		/// <summary>
 		/// 16-bit floating-point values.
 		/// </summary>
-		HALF_FLOAT=0x140B,
+		HALF_FLOAT = 0x140B,
 
 		/// <summary>
 		/// 32-bit floating-point values.
 		/// </summary>
 		/// 
-		FLOAT=0x1406,
+		FLOAT = 0x1406,
 
 		/// <summary>
 		/// 64-bit floating-point values.
 		/// </summary>
-		DOUBLE=0x140A,
+		DOUBLE = 0x140A,
 
 		/// <summary>
 		/// Corresponds to the GLSL type <c>fixed.</c>
 		/// </summary>
-		FIXED=0x140C,
+		FIXED = 0x140C,
 
 		/// <summary>
 		/// 3 * 10-bit + 2-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_2_10_10_10_REV=0x8368,
+		UNSIGNED_INT_2_10_10_10_REV = 0x8368,
 
 		/// <summary>
 		/// 11-bit + 11-bit + 10-bit floats as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_10F_11F_11F_REV=0x8C3B,
+		UNSIGNED_INT_10F_11F_11F_REV = 0x8C3B,
 
 		/// <summary>
 		/// 3 * 10-bit + 2-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		INT_2_10_10_10_REV=0x8D9F,
+		INT_2_10_10_10_REV = 0x8D9F,
 	}
 }

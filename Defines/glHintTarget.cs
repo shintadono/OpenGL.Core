@@ -33,21 +33,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Line sampling quality.
 		/// </summary>
-		LINE_SMOOTH_HINT=0x0C52,
+		LINE_SMOOTH_HINT = 0x0C52,
 
 		/// <summary>
 		/// Polygon sampling quality.
 		/// </summary>
-		POLYGON_SMOOTH_HINT=0x0C53,
+		POLYGON_SMOOTH_HINT = 0x0C53,
 
 		/// <summary>
 		/// Quality and performance of texture image compression.
 		/// </summary>
-		TEXTURE_COMPRESSION_HINT=0x84EF,
+		TEXTURE_COMPRESSION_HINT = 0x84EF,
 
 		/// <summary>
 		/// Derivative accuracy for fragment processing built-in functions <c>dFdx</c>, <c>dFdy</c> and <c>fwidth</c>.
 		/// </summary>
-		FRAGMENT_SHADER_DERIVATIVE_HINT=0x8B8B,
+		FRAGMENT_SHADER_DERIVATIVE_HINT = 0x8B8B,
 	}
 }

@@ -78,20 +78,6 @@ namespace OpenGL.Core
 		/// <param name="end">End of the range.</param>
 		/// <param name="count">Number of indices.</param>
 		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, IntPtr indices)
-		{
-			_DrawRangeElements(mode, start, end, count, type, indices);
-		}
-
-		/// <summary>
-		/// Render primitives from array via a range of indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="start">Start of the range.</param>
-		/// <param name="end">End of the range.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, int offset)
 		{
@@ -109,96 +95,8 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.ELEMENT_ARRAY_BUFFER"/>.</param>
 		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_DrawRangeElements(mode, start, end, count, type, (IntPtr)offset);
-		}
-
-		/// <summary>
-		/// Render primitives from array via a range of indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="start">Start of the range.</param>
-		/// <param name="end">End of the range.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, byte[] indices)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawRangeElements(mode, start, end, count, type, hIndices.AddrOfPinnedObject());
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Render primitives from array via a range of indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="start">Start of the range.</param>
-		/// <param name="end">End of the range.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, ushort[] indices)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawRangeElements(mode, start, end, count, type, hIndices.AddrOfPinnedObject());
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Render primitives from array via a range of indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="start">Start of the range.</param>
-		/// <param name="end">End of the range.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, int[] indices)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawRangeElements(mode, start, end, count, type, hIndices.AddrOfPinnedObject());
-			}
-			finally
-			{
-				hIndices.Free();
-			}
-		}
-
-		/// <summary>
-		/// Render primitives from array via a range of indices.
-		/// </summary>
-		/// <param name="mode">A <see cref="glDrawMode"/> specifying the type of primitive to render.</param>
-		/// <param name="start">Start of the range.</param>
-		/// <param name="end">End of the range.</param>
-		/// <param name="count">Number of indices.</param>
-		/// <param name="type">A <see cref="glDrawElementsType"/> specifying the data type of the indices.</param>
-		/// <param name="indices">The array, where the indices are stored.</param>
-		public static void DrawRangeElements(glDrawMode mode, uint start, uint end, int count, glDrawElementsType type, uint[] indices)
-		{
-			GCHandle hIndices=GCHandle.Alloc(indices, GCHandleType.Pinned);
-			try
-			{
-				_DrawRangeElements(mode, start, end, count, type, hIndices.AddrOfPinnedObject());
-			}
-			finally
-			{
-				hIndices.Free();
-			}
 		}
 		#endregion
 
@@ -254,7 +152,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, (IntPtr)offset);
 		}
 
@@ -273,7 +171,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -299,7 +197,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -325,7 +223,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -351,7 +249,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -377,7 +275,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -403,7 +301,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -429,7 +327,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -455,7 +353,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -481,7 +379,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -507,7 +405,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexImage3D(glTexture3DProxyTarget target, int level, glInternalFormat internalformat, int width, int height, int depth, int border, glPixelFormat format, glPixelDataType type, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexImage3D(target, level, internalformat, width, height, depth, border, format, type, hPixels.AddrOfPinnedObject());
@@ -574,7 +472,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.PIXEL_UNPACK_BUFFER"/>.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, (IntPtr)offset);
 		}
 
@@ -594,7 +492,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, byte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -621,7 +519,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, sbyte[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -648,7 +546,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, short[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -675,7 +573,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ushort[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -702,7 +600,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, int[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -729,7 +627,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, uint[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -756,7 +654,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, long[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -783,7 +681,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, ulong[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -810,7 +708,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, float[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -837,7 +735,7 @@ namespace OpenGL.Core
 		/// <param name="pixels">Pointer to the pixels.</param>
 		public static void TexSubImage3D(glTexture3DTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, glPixelFormat format, glPixelDataType type, double[] pixels)
 		{
-			GCHandle hPixels=GCHandle.Alloc(pixels, GCHandleType.Pinned);
+			GCHandle hPixels = GCHandle.Alloc(pixels, GCHandleType.Pinned);
 			try
 			{
 				_TexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, hPixels.AddrOfPinnedObject());
@@ -852,12 +750,12 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_1_2()
 		{
-			_DrawRangeElements=GetAddress<glDrawRangeElements>("glDrawRangeElements");
-			_TexImage3D=GetAddress<glTexImage3D>("glTexImage3D");
-			_TexSubImage3D=GetAddress<glTexSubImage3D>("glTexSubImage3D");
-			CopyTexSubImage3D=GetAddress<glCopyTexSubImage3D>("glCopyTexSubImage3D");
+			_DrawRangeElements = GetAddress<glDrawRangeElements>("glDrawRangeElements");
+			_TexImage3D = GetAddress<glTexImage3D>("glTexImage3D");
+			_TexSubImage3D = GetAddress<glTexSubImage3D>("glTexSubImage3D");
+			CopyTexSubImage3D = GetAddress<glCopyTexSubImage3D>("glCopyTexSubImage3D");
 
-			VERSION_1_2=_DrawRangeElements!=null&&_TexImage3D!=null&&_TexSubImage3D!=null&&CopyTexSubImage3D!=null;
+			VERSION_1_2 = _DrawRangeElements != null && _TexImage3D != null && _TexSubImage3D != null && CopyTexSubImage3D != null;
 		}
 	}
 }

@@ -32,41 +32,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Test never passes.
 		/// </summary>
-		NEVER=0x0200,
+		NEVER = 0x0200,
 
 		/// <summary>
 		/// Test passes if referenced value is less than the stored value.
 		/// </summary>
-		LESS=0x0201,
+		LESS = 0x0201,
 
 		/// <summary>
 		/// Test passes if referenced value is equal to the stored value.
 		/// </summary>
-		EQUAL=0x0202,
+		EQUAL = 0x0202,
 
 		/// <summary>
 		/// Test passes if referenced value is less than or equal to the stored value.
 		/// </summary>
-		LEQUAL=0x0203,
+		LEQUAL = 0x0203,
 
 		/// <summary>
 		/// Test passes if referenced value is greater than the stored value.
 		/// </summary>
-		GREATER=0x0204,
+		GREATER = 0x0204,
 
 		/// <summary>
 		/// Test passes if referenced value is not equal to the stored value.
 		/// </summary>
-		NOTEQUAL=0x0205,
+		NOTEQUAL = 0x0205,
 
 		/// <summary>
 		/// Test passes if referenced value is greater than or equal to the stored value.
 		/// </summary>
-		GEQUAL=0x0206,
+		GEQUAL = 0x0206,
 
 		/// <summary>
 		/// Test always passes.
 		/// </summary>
-		ALWAYS=0x0207,
+		ALWAYS = 0x0207,
 	}
 }

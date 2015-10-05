@@ -32,36 +32,36 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Message from OpenGL.
 		/// </summary>
-		DEBUG_SOURCE_API=0x8246,
+		DEBUG_SOURCE_API = 0x8246,
 
 		/// <summary>
 		/// Message from the window system.
 		/// </summary>
-		DEBUG_SOURCE_WINDOW_SYSTEM=0x8247,
+		DEBUG_SOURCE_WINDOW_SYSTEM = 0x8247,
 
 		/// <summary>
 		/// Message from the shader compiler.
 		/// </summary>
-		DEBUG_SOURCE_SHADER_COMPILER=0x8248,
+		DEBUG_SOURCE_SHADER_COMPILER = 0x8248,
 
 		/// <summary>
 		/// Message from the third-party middleware or external debuggers.
 		/// </summary>
-		DEBUG_SOURCE_THIRD_PARTY=0x8249,
+		DEBUG_SOURCE_THIRD_PARTY = 0x8249,
 
 		/// <summary>
 		/// Message from the application.
 		/// </summary>
-		DEBUG_SOURCE_APPLICATION=0x824A,
+		DEBUG_SOURCE_APPLICATION = 0x824A,
 
 		/// <summary>
 		/// Message from the other sources.
 		/// </summary>
-		DEBUG_SOURCE_OTHER=0x824B,
+		DEBUG_SOURCE_OTHER = 0x824B,
 
 		/// <summary>
 		/// Debug message control.
 		/// </summary>
-		DONT_CARE=0x1100,
+		DONT_CARE = 0x1100,
 	}
 }

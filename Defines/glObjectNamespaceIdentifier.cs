@@ -32,56 +32,56 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Buffer object.
 		/// </summary>
-		BUFFER=0x82E0,
+		BUFFER = 0x82E0,
 
 		/// <summary>
 		/// Framebuffer object.
 		/// </summary>
-		FRAMEBUFFER=0x8D40,
+		FRAMEBUFFER = 0x8D40,
 
 		/// <summary>
 		/// Program pipeline object.
 		/// </summary>
-		PROGRAM_PIPELINE=0x82E4,
+		PROGRAM_PIPELINE = 0x82E4,
 
 		/// <summary>
 		/// Programm object.
 		/// </summary>
-		PROGRAM=0x82E2,
+		PROGRAM = 0x82E2,
 
 		/// <summary>
 		/// Query object.
 		/// </summary>
-		QUERY=0x82E3,
+		QUERY = 0x82E3,
 
 		/// <summary>
 		/// Renderbuffer object.
 		/// </summary>
-		RENDERBUFFER=0x8D41,
+		RENDERBUFFER = 0x8D41,
 
 		/// <summary>
 		/// Sampler object.
 		/// </summary>
-		SAMPLER=0x82E6,
+		SAMPLER = 0x82E6,
 
 		/// <summary>
 		/// Shader object.
 		/// </summary>
-		SHADER=0x82E1,
+		SHADER = 0x82E1,
 
 		/// <summary>
 		/// Texture object.
 		/// </summary>
-		TEXTURE=0x1702,
+		TEXTURE = 0x1702,
 
 		/// <summary>
 		/// Transform feedback object.
 		/// </summary>
-		TRANSFORM_FEEDBACK=0x8E22,
+		TRANSFORM_FEEDBACK = 0x8E22,
 
 		/// <summary>
 		/// Vertex array object.
 		/// </summary>
-		VERTEX_ARRAY=0x8074,
+		VERTEX_ARRAY = 0x8074,
 	}
 }

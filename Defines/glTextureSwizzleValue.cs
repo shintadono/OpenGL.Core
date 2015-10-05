@@ -32,31 +32,31 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Color always zero.
 		/// </summary>
-		ZERO=0,
+		ZERO = 0,
 
 		/// <summary>
 		/// Color always one.
 		/// </summary>
-		ONE=1,
+		ONE = 1,
 
 		/// <summary>
 		/// Color from red channel.
 		/// </summary>
-		RED=0x1903,
+		RED = 0x1903,
 
 		/// <summary>
 		/// Color from green channel.
 		/// </summary>
-		GREEN=0x1904,
+		GREEN = 0x1904,
 
 		/// <summary>
 		/// Color from blue channel.
 		/// </summary>
-		BLUE=0x1905,
+		BLUE = 0x1905,
 
 		/// <summary>
 		/// Color from alpha channel.
 		/// </summary>
-		ALPHA=0x1906,
+		ALPHA = 0x1906,
 	}
 }

@@ -35,41 +35,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Use nothing.
 		/// </summary>
-		None=0x00000000,
+		None = 0x00000000,
 
 		/// <summary>
 		/// Use vertex shader stage.
 		/// </summary>
-		VERTEX_SHADER_BIT=0x00000001,
+		VERTEX_SHADER_BIT = 0x00000001,
 
 		/// <summary>
 		/// Use fragment shader stage.
 		/// </summary>
-		FRAGMENT_SHADER_BIT=0x00000002,
+		FRAGMENT_SHADER_BIT = 0x00000002,
 
 		/// <summary>
 		/// Use geometry shader stage.
 		/// </summary>
-		GEOMETRY_SHADER_BIT=0x00000004,
+		GEOMETRY_SHADER_BIT = 0x00000004,
 
 		/// <summary>
 		/// Use tesselation control shader stage.
 		/// </summary>
-		TESS_CONTROL_SHADER_BIT=0x00000008,
+		TESS_CONTROL_SHADER_BIT = 0x00000008,
 
 		/// <summary>
 		/// Use tesselation evaluation shader stage.
 		/// </summary>
-		TESS_EVALUATION_SHADER_BIT=0x00000010,
+		TESS_EVALUATION_SHADER_BIT = 0x00000010,
 
 		/// <summary>
 		/// Use compute shader stage.
 		/// </summary>
-		COMPUTE_SHADER_BIT=0x00000020,
+		COMPUTE_SHADER_BIT = 0x00000020,
 
 		/// <summary>
 		/// Use all shader stages.
 		/// </summary>
-		ALL_SHADER_BITS=0xFFFFFFFF,
+		ALL_SHADER_BITS = 0xFFFFFFFF,
 	}
 }

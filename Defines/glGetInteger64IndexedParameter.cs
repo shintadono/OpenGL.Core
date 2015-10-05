@@ -33,46 +33,46 @@ namespace OpenGL.Core
 		/// Size of binding range for each (indexed) atomic counter buffer. Used <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see>
 		/// for <see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/> to get the current number of bindings.
 		/// </summary>
-		ATOMIC_COUNTER_BUFFER_SIZE=0x92C3,
+		ATOMIC_COUNTER_BUFFER_SIZE = 0x92C3,
 
 		/// <summary>
 		/// Start offset of binding range for each (indexed) atomic counter buffer. Used by <see cref="O:OpenGL.Core.gl.GetIntegerv">gl.GetIntegerv</see> for <see cref="glGetIntegerParameter.ATOMIC_COUNTER_BUFFER_BINDING"/> to get the current number of bindings.
 		/// </summary>
-		ATOMIC_COUNTER_BUFFER_START=0x92C2,
+		ATOMIC_COUNTER_BUFFER_START = 0x92C2,
 
 		/// <summary>
 		/// Size of binding range for each (indexed) shader storage buffer.
 		/// </summary>
-		SHADER_STORAGE_BUFFER_SIZE=0x90D5,
+		SHADER_STORAGE_BUFFER_SIZE = 0x90D5,
 
 		/// <summary>
 		/// Start offset of binding range for each (indexed) shader storage buffer.
 		/// </summary>
-		SHADER_STORAGE_BUFFER_START=0x90D4,
+		SHADER_STORAGE_BUFFER_START = 0x90D4,
 
 		/// <summary>
 		/// Size of binding range for each (indexed) transform feedback attribute stream.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER_SIZE=0x8C85,
+		TRANSFORM_FEEDBACK_BUFFER_SIZE = 0x8C85,
 
 		/// <summary>
 		/// Start offset of binding range for each (indexed) transform feedback attribute stream.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER_START=0x8C84,
+		TRANSFORM_FEEDBACK_BUFFER_START = 0x8C84,
 
 		/// <summary>
 		/// Size of binding range for each (indexed) uniform buffer.
 		/// </summary>
-		UNIFORM_BUFFER_SIZE=0x8A2A,
+		UNIFORM_BUFFER_SIZE = 0x8A2A,
 
 		/// <summary>
 		/// Start offset of binding range for each (indexed) uniform buffer.
 		/// </summary>
-		UNIFORM_BUFFER_START=0x8A29,
+		UNIFORM_BUFFER_START = 0x8A29,
 
 		/// <summary>
 		/// Byte offset of the first element in data store of the buffer bound to each (indexed) vertex binding.
 		/// </summary>
-		VERTEX_BINDING_OFFSET=0x82D7,
+		VERTEX_BINDING_OFFSET = 0x82D7,
 	}
 }

@@ -32,56 +32,56 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Current uniform block buffer binding.
 		/// </summary>
-		UNIFORM_BLOCK_BINDING=0x8A3F,
+		UNIFORM_BLOCK_BINDING = 0x8A3F,
 
 		/// <summary>
 		/// Size of the active uniform block buffer.
 		/// </summary>
-		UNIFORM_BLOCK_DATA_SIZE=0x8A40,
+		UNIFORM_BLOCK_DATA_SIZE = 0x8A40,
 
 		/// <summary>
 		/// Uniform block name length.
 		/// </summary>
-		UNIFORM_BLOCK_NAME_LENGTH=0x8A41,
+		UNIFORM_BLOCK_NAME_LENGTH = 0x8A41,
 
 		/// <summary>
 		/// Number of active uniforms in uniform block.
 		/// </summary>
-		UNIFORM_BLOCK_ACTIVE_UNIFORMS=0x8A42,
+		UNIFORM_BLOCK_ACTIVE_UNIFORMS = 0x8A42,
 
 		/// <summary>
 		/// Indices of the active uniforms in uniform block.
 		/// </summary>
-		UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES=0x8A43,
+		UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES = 0x8A43,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the vertex shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER=0x8A44,
+		UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER = 0x8A44,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the geometry shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER=0x8A45,
+		UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER = 0x8A45,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the fragment shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER=0x8A46,
+		UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER = 0x8A46,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the tesselation control shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER=0x84F0,
+		UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER = 0x84F0,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the tesselation evaluation shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER=0x84F1,
+		UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER = 0x84F1,
 
 		/// <summary>
 		/// Indicates if the active uniform block buffer is referenced by the compute shader.
 		/// </summary>
-		UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER=0x90EC,
+		UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER = 0x90EC,
 	}
 }

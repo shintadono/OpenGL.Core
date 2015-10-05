@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Number of elements in subroutine uniform array.
 		/// </summary>
-		UNIFORM_SIZE=0x8A38,
+		UNIFORM_SIZE = 0x8A38,
 
 		/// <summary>
 		/// Length of subroutine uniform name.
 		/// </summary>
-		UNIFORM_NAME_LENGTH=0x8A39,
+		UNIFORM_NAME_LENGTH = 0x8A39,
 
 		/// <summary>
 		/// Number of compatible subroutines.
 		/// </summary>
-		NUM_COMPATIBLE_SUBROUTINES=0x8E4A,
+		NUM_COMPATIBLE_SUBROUTINES = 0x8E4A,
 
 		/// <summary>
 		/// List of <see cref="NUM_COMPATIBLE_SUBROUTINES"/> many compatible subroutines.
 		/// </summary>
-		COMPATIBLE_SUBROUTINES=0x8E4B,
+		COMPATIBLE_SUBROUTINES = 0x8E4B,
 	}
 }

@@ -295,7 +295,7 @@ namespace OpenGL.Core
 		/// <returns>The new query-IDs as array.</returns>
 		public static uint[] GenQueries(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenQueries(count, ret);
 			return ret;
 		}
@@ -339,7 +339,7 @@ namespace OpenGL.Core
 		/// <returns>The new buffer names as array.</returns>
 		public static uint[] GenBuffers(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenBuffers(count, ret);
 			return ret;
 		}
@@ -377,7 +377,7 @@ namespace OpenGL.Core
 		{
 			int value;
 			GetQueryObjecti(id, pname, out value);
-			param=value!=gl.FALSE;
+			param = value != gl.FALSE;
 		}
 
 		/// <summary>
@@ -390,7 +390,7 @@ namespace OpenGL.Core
 		{
 			int value;
 			GetQueryObjecti(id, pname, out value);
-			param=(glQueryTarget)value;
+			param = (glQueryTarget)value;
 		}
 		#endregion
 
@@ -425,7 +425,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.QUERY_BUFFER"/>.</param>
 		public static void GetQueryObjectiv(uint id, glQueryObjectParameter pname, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetQueryObjectiv(id, pname, (IntPtr)offset);
 		}
 
@@ -437,7 +437,7 @@ namespace OpenGL.Core
 		/// <param name="params">Returns the requested value.</param>
 		public static void GetQueryObjectiv(uint id, glQueryObjectParameter pname, int[] @params)
 		{
-			GCHandle hParams=GCHandle.Alloc(@params, GCHandleType.Pinned);
+			GCHandle hParams = GCHandle.Alloc(@params, GCHandleType.Pinned);
 			try
 			{
 				_GetQueryObjectiv(id, pname, hParams.AddrOfPinnedObject());
@@ -480,7 +480,7 @@ namespace OpenGL.Core
 		/// <param name="offset">The offset into the array bound to <see cref="glBufferTarget.QUERY_BUFFER"/>.</param>
 		public static void GetQueryObjectuiv(uint id, glQueryObjectParameter pname, long offset)
 		{
-			if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+			if (IntPtr.Size == 4 && ((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 			_GetQueryObjectuiv(id, pname, (IntPtr)offset);
 		}
 
@@ -492,7 +492,7 @@ namespace OpenGL.Core
 		/// <param name="params">Returns the requested value.</param>
 		public static void GetQueryObjectuiv(uint id, glQueryObjectParameter pname, uint[] @params)
 		{
-			GCHandle hParams=GCHandle.Alloc(@params, GCHandleType.Pinned);
+			GCHandle hParams = GCHandle.Alloc(@params, GCHandleType.Pinned);
 			try
 			{
 				_GetQueryObjectuiv(id, pname, hParams.AddrOfPinnedObject());
@@ -514,7 +514,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, IntPtr data, glBufferUsage usage)
 		{
-			if(IntPtr.Size==4) BufferData_32(target, size, data, usage);
+			if (IntPtr.Size == 4) BufferData_32(target, size, data, usage);
 			else BufferData_64(target, size, data, usage);
 		}
 
@@ -527,9 +527,9 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, IntPtr data, glBufferUsage usage)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				BufferData_32(target, (int)size, data, usage);
 			}
 			else BufferData_64(target, size, data, usage);
@@ -544,7 +544,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, byte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -564,7 +564,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, byte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -584,7 +584,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, sbyte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -604,7 +604,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, sbyte[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -624,7 +624,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, short[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -644,7 +644,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, short[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -664,7 +664,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, ushort[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -684,7 +684,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, ushort[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -704,7 +704,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, int[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -724,7 +724,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, int[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -744,7 +744,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, uint[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -764,7 +764,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, uint[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -784,7 +784,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, long[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -804,7 +804,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, long[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -824,7 +824,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, ulong[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -844,7 +844,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, ulong[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -864,7 +864,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, float[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -884,7 +884,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, float[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -904,7 +904,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, int size, double[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -924,7 +924,7 @@ namespace OpenGL.Core
 		/// <param name="usage">A <see cref="glBufferUsage"/> specifying the usage of the data store.</param>
 		public static void BufferData(glBufferTarget target, long size, double[] data, glBufferUsage usage)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferData(target, size, h.AddrOfPinnedObject(), usage);
@@ -946,7 +946,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, IntPtr data)
 		{
-			if(IntPtr.Size==4) BufferSubData_32(target, offset, size, data);
+			if (IntPtr.Size == 4) BufferSubData_32(target, offset, size, data);
 			else BufferSubData_64(target, offset, size, data);
 		}
 
@@ -959,11 +959,10 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				BufferSubData_32(target, (int)offset, (int)size, data);
 			}
 			else BufferSubData_64(target, offset, size, data);
@@ -978,7 +977,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -998,7 +997,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1018,7 +1017,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1038,7 +1037,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1058,7 +1057,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1078,7 +1077,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1098,7 +1097,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1118,7 +1117,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1138,7 +1137,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1158,7 +1157,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1178,7 +1177,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1198,7 +1197,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1218,7 +1217,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1238,7 +1237,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1258,7 +1257,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1278,7 +1277,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1298,7 +1297,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1318,7 +1317,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1338,7 +1337,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, int offset, int size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1358,7 +1357,7 @@ namespace OpenGL.Core
 		/// <param name="data">The data that will be loaded.</param>
 		public static void BufferSubData(glBufferTarget target, long offset, long size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				BufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1380,7 +1379,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, IntPtr data)
 		{
-			if(IntPtr.Size==4) GetBufferSubData_32(target, offset, size, data);
+			if (IntPtr.Size == 4) GetBufferSubData_32(target, offset, size, data);
 			else GetBufferSubData_64(target, offset, size, data);
 		}
 
@@ -1393,11 +1392,10 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				GetBufferSubData_32(target, (int)offset, (int)size, data);
 			}
 			else GetBufferSubData_64(target, offset, size, data);
@@ -1412,7 +1410,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1432,7 +1430,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, byte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1452,7 +1450,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1472,7 +1470,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, sbyte[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1492,7 +1490,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1512,7 +1510,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, short[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1532,7 +1530,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1552,7 +1550,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, ushort[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1572,7 +1570,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1592,7 +1590,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, int[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1612,7 +1610,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1632,7 +1630,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, uint[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1652,7 +1650,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1672,7 +1670,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, long[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1692,7 +1690,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1712,7 +1710,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, ulong[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1732,7 +1730,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1752,7 +1750,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, float[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1772,7 +1770,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, int offset, int size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1792,7 +1790,7 @@ namespace OpenGL.Core
 		/// <param name="data">The requested data.</param>
 		public static void GetBufferSubData(glBufferTarget target, long offset, long size, double[] data)
 		{
-			GCHandle h=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle h = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				GetBufferSubData(target, offset, size, h.AddrOfPinnedObject());
@@ -1807,53 +1805,53 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_1_5()
 		{
-			_GenQuery=GetAddress<glGenQuery>("glGenQueries");
-			_GenQueries=GetAddress<glGenQueries>("glGenQueries");
-			DeleteQueries=GetAddress<glDeleteQueries>("glDeleteQueries");
-			IsQuery=GetAddress<glIsQuery>("glIsQuery");
-			BeginQuery=GetAddress<glBeginQuery>("glBeginQuery");
-			EndQuery=GetAddress<glEndQuery>("glEndQuery");
-			GetQueryi=GetAddress<glGetQueryi>("glGetQueryiv");
-			GetQueryiv=GetAddress<glGetQueryiv>("glGetQueryiv");
-			_GetQueryObjecti=GetAddress<glGetQueryObjecti>("glGetQueryObjectiv");
-			_GetQueryObjectiv=GetAddress<glGetQueryObjectiv>("glGetQueryObjectiv");
-			GetQueryObjectui=GetAddress<glGetQueryObjectui>("glGetQueryObjectuiv");
-			_GetQueryObjectuiv=GetAddress<glGetQueryObjectuiv>("glGetQueryObjectuiv");
-			BindBuffer=GetAddress<glBindBuffer>("glBindBuffer");
-			DeleteBuffers=GetAddress<glDeleteBuffers>("glDeleteBuffers");
-			_GenBuffer=GetAddress<glGenBuffer>("glGenBuffers");
-			_GenBuffers=GetAddress<glGenBuffers>("glGenBuffers");
-			IsBuffer=GetAddress<glIsBuffer>("glIsBuffer");
-			MapBuffer=GetAddress<glMapBuffer>("glMapBuffer");
-			UnmapBuffer=GetAddress<glUnmapBuffer>("glUnmapBuffer");
-			GetBufferParameteri=GetAddress<glGetBufferParameteri>("glGetBufferParameteriv");
-			GetBufferParameteriv=GetAddress<glGetBufferParameteriv>("glGetBufferParameteriv");
-			GetBufferPointerv=GetAddress<glGetBufferPointerv>("glGetBufferPointerv");
+			_GenQuery = GetAddress<glGenQuery>("glGenQueries");
+			_GenQueries = GetAddress<glGenQueries>("glGenQueries");
+			DeleteQueries = GetAddress<glDeleteQueries>("glDeleteQueries");
+			IsQuery = GetAddress<glIsQuery>("glIsQuery");
+			BeginQuery = GetAddress<glBeginQuery>("glBeginQuery");
+			EndQuery = GetAddress<glEndQuery>("glEndQuery");
+			GetQueryi = GetAddress<glGetQueryi>("glGetQueryiv");
+			GetQueryiv = GetAddress<glGetQueryiv>("glGetQueryiv");
+			_GetQueryObjecti = GetAddress<glGetQueryObjecti>("glGetQueryObjectiv");
+			_GetQueryObjectiv = GetAddress<glGetQueryObjectiv>("glGetQueryObjectiv");
+			GetQueryObjectui = GetAddress<glGetQueryObjectui>("glGetQueryObjectuiv");
+			_GetQueryObjectuiv = GetAddress<glGetQueryObjectuiv>("glGetQueryObjectuiv");
+			BindBuffer = GetAddress<glBindBuffer>("glBindBuffer");
+			DeleteBuffers = GetAddress<glDeleteBuffers>("glDeleteBuffers");
+			_GenBuffer = GetAddress<glGenBuffer>("glGenBuffers");
+			_GenBuffers = GetAddress<glGenBuffers>("glGenBuffers");
+			IsBuffer = GetAddress<glIsBuffer>("glIsBuffer");
+			MapBuffer = GetAddress<glMapBuffer>("glMapBuffer");
+			UnmapBuffer = GetAddress<glUnmapBuffer>("glUnmapBuffer");
+			GetBufferParameteri = GetAddress<glGetBufferParameteri>("glGetBufferParameteriv");
+			GetBufferParameteriv = GetAddress<glGetBufferParameteriv>("glGetBufferParameteriv");
+			GetBufferPointerv = GetAddress<glGetBufferPointerv>("glGetBufferPointerv");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				BufferData_32=GetAddress<glBufferData_32>("glBufferData");
-				BufferSubData_32=GetAddress<glBufferSubData_32>("glBufferSubData");
-				GetBufferSubData_32=GetAddress<glGetBufferSubData_32>("glGetBufferSubData");
+				BufferData_32 = GetAddress<glBufferData_32>("glBufferData");
+				BufferSubData_32 = GetAddress<glBufferSubData_32>("glBufferSubData");
+				GetBufferSubData_32 = GetAddress<glGetBufferSubData_32>("glGetBufferSubData");
 
-				platformDependend=BufferData_32!=null&&BufferSubData_32!=null&&GetBufferSubData_32!=null;
+				platformDependend = BufferData_32 != null && BufferSubData_32 != null && GetBufferSubData_32 != null;
 			}
 			else
 			{
-				BufferData_64=GetAddress<glBufferData_64>("glBufferData");
-				BufferSubData_64=GetAddress<glBufferSubData_64>("glBufferSubData");
-				GetBufferSubData_64=GetAddress<glGetBufferSubData_64>("glGetBufferSubData");
+				BufferData_64 = GetAddress<glBufferData_64>("glBufferData");
+				BufferSubData_64 = GetAddress<glBufferSubData_64>("glBufferSubData");
+				GetBufferSubData_64 = GetAddress<glGetBufferSubData_64>("glGetBufferSubData");
 
-				platformDependend=BufferData_64!=null&&BufferSubData_64!=null&&GetBufferSubData_64!=null;
+				platformDependend = BufferData_64 != null && BufferSubData_64 != null && GetBufferSubData_64 != null;
 			}
 
-			VERSION_1_5=VERSION_1_4&&_GenQueries!=null&&DeleteQueries!=null&&IsQuery!=null&&
-				BeginQuery!=null&&EndQuery!=null&&GetQueryiv!=null&&
-				_GetQueryObjectiv!=null&&_GetQueryObjectuiv!=null&&BindBuffer!=null&&
-				DeleteBuffers!=null&&_GenBuffers!=null&&IsBuffer!=null&&
-				MapBuffer!=null&&UnmapBuffer!=null&&GetBufferParameteriv!=null&&
-				GetBufferPointerv!=null&&platformDependend;
+			VERSION_1_5 = VERSION_1_4 && _GenQueries != null && DeleteQueries != null && IsQuery != null &&
+				BeginQuery != null && EndQuery != null && GetQueryiv != null &&
+				_GetQueryObjectiv != null && _GetQueryObjectuiv != null && BindBuffer != null &&
+				DeleteBuffers != null && _GenBuffers != null && IsBuffer != null &&
+				MapBuffer != null && UnmapBuffer != null && GetBufferParameteriv != null &&
+				GetBufferPointerv != null && platformDependend;
 		}
 	}
 }

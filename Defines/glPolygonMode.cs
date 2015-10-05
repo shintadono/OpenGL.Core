@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Rasterize polygon vertices as if to be drawn with mode POINTS.
 		/// </summary>
-		POINT=0x1B00,
+		POINT = 0x1B00,
 
 		/// <summary>
 		/// Rasterize polygon edges as line segments.
 		/// </summary>
-		LINE=0x1B01,
+		LINE = 0x1B01,
 
 		/// <summary>
 		/// Default. Rasterize as filled polygon.
 		/// </summary>
-		FILL=0x1B02,
+		FILL = 0x1B02,
 	}
 }

@@ -35,46 +35,46 @@ namespace OpenGL.Core
 		/// <summary>
 		/// -
 		/// </summary>
-		None=0x0000,
+		None = 0x0000,
 
 		/// <summary>
 		/// Get read access.
 		/// </summary>
-		MAP_READ_BIT=0x0001,
+		MAP_READ_BIT = 0x0001,
 
 		/// <summary>
 		/// Get write access.
 		/// </summary>
-		MAP_WRITE_BIT=0x0002,
+		MAP_WRITE_BIT = 0x0002,
 
 		/// <summary>
 		/// Specified range of the buffer may be discarded.
 		/// </summary>
-		MAP_INVALIDATE_RANGE_BIT=0x0004,
+		MAP_INVALIDATE_RANGE_BIT = 0x0004,
 
 		/// <summary>
 		/// Entire buffer may be discarded.
 		/// </summary>
-		MAP_INVALIDATE_BUFFER_BIT=0x0008,
+		MAP_INVALIDATE_BUFFER_BIT = 0x0008,
 
 		/// <summary>
 		/// Modification to the buffer must/will be flushed by calling <see cref="O:OpenGL.Core.gl.FlushMappedBufferRange">gl.FlushMappedBufferRange</see>
 		/// </summary>
-		MAP_FLUSH_EXPLICIT_BIT=0x0010,
+		MAP_FLUSH_EXPLICIT_BIT = 0x0010,
 
 		/// <summary>
 		/// Do not attempt to synchronize pending operations on buffer before returning.
 		/// </summary>
-		MAP_UNSYNCHRONIZED_BIT=0x0020,
+		MAP_UNSYNCHRONIZED_BIT = 0x0020,
 
 		/// <summary>
 		/// Shared buffer with OpenGL while mapped.
 		/// </summary>
-		MAP_PERSISTENT_BIT=0x0040,
+		MAP_PERSISTENT_BIT = 0x0040,
 
 		/// <summary>
 		/// Perform mapping coherently. (When mapped and accessed by OpenGL.)
 		/// </summary>
-		MAP_COHERENT_BIT=0x0080,
+		MAP_COHERENT_BIT = 0x0080,
 	}
 }

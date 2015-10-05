@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed target.
 		/// </summary>
-		TRANSFORM_FEEDBACK=0x8E22,
+		TRANSFORM_FEEDBACK = 0x8E22,
 	}
 }

@@ -32,43 +32,43 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Error in <see cref="gl.CheckFramebufferStatus"/>.
 		/// </summary>
-		ERROR=0,
+		ERROR = 0,
 
 		/// <summary>
 		/// Framebuffer is complete.
 		/// </summary>
-		FRAMEBUFFER_COMPLETE=0x8CD5,
+		FRAMEBUFFER_COMPLETE = 0x8CD5,
 
 		/// <summary>
 		/// Framebuffer has an incomplete attachment.
 		/// </summary>
-		FRAMEBUFFER_INCOMPLETE_ATTACHMENT=0x8CD6,
+		FRAMEBUFFER_INCOMPLETE_ATTACHMENT = 0x8CD6,
 
 		/// <summary>
 		/// Framebuffer is missing an attachment.
 		/// </summary>
-		FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT=0x8CD7,
+		FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = 0x8CD7,
 		//FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER=0x8CDB, // not in standard
 		//FRAMEBUFFER_INCOMPLETE_READ_BUFFER=0x8CDC, // not in standard
 
 		/// <summary>
 		/// Number of samples or sample locations for attached buffer is/are different.
 		/// </summary>
-		FRAMEBUFFER_INCOMPLETE_MULTISAMPLE=0x8D56,
+		FRAMEBUFFER_INCOMPLETE_MULTISAMPLE = 0x8D56,
 
 		/// <summary>
 		/// Not all attachments are layered or of the same texture target.
 		/// </summary>
-		FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS=0x8DA8,
+		FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS = 0x8DA8,
 
 		/// <summary>
 		/// Framebuffer not (yet) defined.
 		/// </summary>
-		FRAMEBUFFER_UNDEFINED=0x8219,
+		FRAMEBUFFER_UNDEFINED = 0x8219,
 
 		/// <summary>
 		/// Combination of internal formats is not supported.
 		/// </summary>
-		FRAMEBUFFER_UNSUPPORTED=0x8CDD,
+		FRAMEBUFFER_UNSUPPORTED = 0x8CDD,
 	}
 }

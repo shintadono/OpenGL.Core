@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Threshold for alpha attenuation.
 		/// </summary>
-		POINT_FADE_THRESHOLD_SIZE=0x8128,
+		POINT_FADE_THRESHOLD_SIZE = 0x8128,
 
 		/// <summary>
 		/// Origin orientation for point sprites. (<see cref="glOrientationOrigin"/>
 		/// </summary>
-		POINT_SPRITE_COORD_ORIGIN=0x8CA0,
+		POINT_SPRITE_COORD_ORIGIN = 0x8CA0,
 	}
 }

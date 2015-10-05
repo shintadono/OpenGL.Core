@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Version of the GLSL.
 		/// </summary>
-		SHADING_LANGUAGE_VERSION=0x8B8C,
+		SHADING_LANGUAGE_VERSION = 0x8B8C,
 
 		/// <summary>
 		/// Extension string. (e.g. GL_ARB_robustness)
 		/// </summary>
-		EXTENSIONS=0x1F03,
+		EXTENSIONS = 0x1F03,
 	}
 }

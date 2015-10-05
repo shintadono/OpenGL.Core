@@ -458,7 +458,7 @@ namespace OpenGL.Core
 		/// Returns the parameter of framebuffers.
 		/// </summary>
 		public static glGetFramebufferParameteri GetFramebufferParameteri;
-		
+
 		/// <summary>
 		/// Returns the parameter of framebuffers.
 		/// </summary>
@@ -468,7 +468,7 @@ namespace OpenGL.Core
 		/// Returns parameters of internal formats.
 		/// </summary>
 		public static glGetInternalformati64 GetInternalformati64;
-		
+
 		/// <summary>
 		/// Returns parameters of internal formats.
 		/// </summary>
@@ -667,7 +667,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -688,7 +688,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -709,7 +709,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -730,7 +730,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -751,7 +751,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -772,7 +772,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -793,7 +793,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -814,7 +814,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -835,7 +835,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -856,7 +856,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferData(glBufferTarget target, glInternalFormat internalformat, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				_ClearBufferData(target, internalformat, format, type, hData.AddrOfPinnedObject());
@@ -881,7 +881,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, IntPtr data)
 		{
-			if(IntPtr.Size==4) ClearBufferSubData_32(target, internalformat, offset, size, format, type, data);
+			if (IntPtr.Size == 4) ClearBufferSubData_32(target, internalformat, offset, size, format, type, data);
 			else ClearBufferSubData_64(target, internalformat, offset, size, format, type, data);
 		}
 
@@ -897,11 +897,10 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, IntPtr data)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				ClearBufferSubData_32(target, internalformat, (int)offset, (int)size, format, type, data);
 			}
 			else ClearBufferSubData_64(target, internalformat, offset, size, format, type, data);
@@ -919,7 +918,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -942,7 +941,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, byte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -965,7 +964,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -988,7 +987,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, sbyte[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1011,7 +1010,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1034,7 +1033,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, short[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1057,7 +1056,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1080,7 +1079,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, ushort[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1103,7 +1102,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1126,7 +1125,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, int[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1149,7 +1148,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1172,7 +1171,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, uint[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1195,7 +1194,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1218,7 +1217,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, long[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1241,7 +1240,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1264,7 +1263,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, ulong[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1287,7 +1286,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1310,7 +1309,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, float[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1333,7 +1332,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, int offset, int size, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1356,7 +1355,7 @@ namespace OpenGL.Core
 		/// <param name="data">The 'fixed' value.</param>
 		public static void ClearBufferSubData(glBufferTarget target, glInternalFormat internalformat, long offset, long size, glPixelFormat format, glPixelDataType type, double[] data)
 		{
-			GCHandle hData=GCHandle.Alloc(data, GCHandleType.Pinned);
+			GCHandle hData = GCHandle.Alloc(data, GCHandleType.Pinned);
 			try
 			{
 				ClearBufferSubData(target, internalformat, offset, size, format, type, hData.AddrOfPinnedObject());
@@ -1375,7 +1374,7 @@ namespace OpenGL.Core
 		/// <param name="indirect">The offset into the buffer object currently bound to the <see cref="glBufferTarget.DISPATCH_INDIRECT_BUFFER"/> buffer target at which the dispatch parameters are stored.</param>
 		public static void DispatchComputeIndirect(int indirect)
 		{
-			if(IntPtr.Size==4) DispatchComputeIndirect_32(indirect);
+			if (IntPtr.Size == 4) DispatchComputeIndirect_32(indirect);
 			else DispatchComputeIndirect_64(indirect);
 		}
 
@@ -1385,10 +1384,9 @@ namespace OpenGL.Core
 		/// <param name="indirect">The offset into the buffer object currently bound to the <see cref="glBufferTarget.DISPATCH_INDIRECT_BUFFER"/> buffer target at which the dispatch parameters are stored.</param>
 		public static void DispatchComputeIndirect(long indirect)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)indirect>>32)!=0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
-
+				if (((long)indirect >> 32) != 0) throw new ArgumentOutOfRangeException("indirect", PlatformErrorString);
 				DispatchComputeIndirect_32((int)indirect);
 			}
 			else DispatchComputeIndirect_64(indirect);
@@ -1404,7 +1402,7 @@ namespace OpenGL.Core
 		/// <param name="length">The length of the region.</param>
 		public static void InvalidateBufferSubData(uint buffer, int offset, int length)
 		{
-			if(IntPtr.Size==4) InvalidateBufferSubData_32(buffer, offset, length);
+			if (IntPtr.Size == 4) InvalidateBufferSubData_32(buffer, offset, length);
 			else InvalidateBufferSubData_64(buffer, offset, length);
 		}
 
@@ -1416,11 +1414,10 @@ namespace OpenGL.Core
 		/// <param name="length">The length of the region.</param>
 		public static void InvalidateBufferSubData(uint buffer, long offset, long length)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)length>>32)!=0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)length >> 32) != 0) throw new ArgumentOutOfRangeException("length", PlatformErrorString);
 				InvalidateBufferSubData_32(buffer, (int)offset, (int)length);
 			}
 			else InvalidateBufferSubData_64(buffer, offset, length);
@@ -1439,9 +1436,9 @@ namespace OpenGL.Core
 		/// <param name="name">The name of the program resource.</param>
 		public static void GetProgramResourceName(uint program, glProgramInterface programInterface, uint index, int bufSize, out int length, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetProgramResourceName(program, programInterface, index, bufSize+1, out length, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetProgramResourceName(program, programInterface, index, bufSize + 1, out length, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -1456,7 +1453,7 @@ namespace OpenGL.Core
 		/// <param name="size">The length of the region.</param>
 		public static void TexBufferRange(glBufferTarget target, glInternalFormat internalformat, uint buffer, int offset, int size)
 		{
-			if(IntPtr.Size==4) TexBufferRange_32(target, internalformat, buffer, offset, size);
+			if (IntPtr.Size == 4) TexBufferRange_32(target, internalformat, buffer, offset, size);
 			else TexBufferRange_64(target, internalformat, buffer, offset, size);
 		}
 
@@ -1470,11 +1467,10 @@ namespace OpenGL.Core
 		/// <param name="size">The length of the region.</param>
 		public static void TexBufferRange(glBufferTarget target, glInternalFormat internalformat, uint buffer, long offset, long size)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-				if(((long)size>>32)!=0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
+				if (((long)size >> 32) != 0) throw new ArgumentOutOfRangeException("size", PlatformErrorString);
 				TexBufferRange_32(target, internalformat, buffer, (int)offset, (int)size);
 			}
 			else TexBufferRange_64(target, internalformat, buffer, offset, size);
@@ -1491,7 +1487,7 @@ namespace OpenGL.Core
 		/// <param name="stride">The distance between elements within the buffer.</param>
 		public static void BindVertexBuffer(uint bindingindex, uint buffer, int offset, int stride)
 		{
-			if(IntPtr.Size==4) BindVertexBuffer_32(bindingindex, buffer, offset, stride);
+			if (IntPtr.Size == 4) BindVertexBuffer_32(bindingindex, buffer, offset, stride);
 			else BindVertexBuffer_64(bindingindex, buffer, offset, stride);
 		}
 
@@ -1504,10 +1500,9 @@ namespace OpenGL.Core
 		/// <param name="stride">The distance between elements within the buffer.</param>
 		public static void BindVertexBuffer(uint bindingindex, uint buffer, long offset, int stride)
 		{
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				if(((long)offset>>32)!=0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
-
+				if (((long)offset >> 32) != 0) throw new ArgumentOutOfRangeException("offset", PlatformErrorString);
 				BindVertexBuffer_32(bindingindex, buffer, (int)offset, stride);
 			}
 			else BindVertexBuffer_64(bindingindex, buffer, offset, stride);
@@ -1528,9 +1523,9 @@ namespace OpenGL.Core
 		/// <param name="messageLog">Returns the message log.</param>
 		public static void GetDebugMessageLog(uint count, int bufSize, glDebugSource[] sources, glDebugType[] types, uint[] ids, glDebugSeverity[] severities, int[] lengths, out string messageLog)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetDebugMessageLog(count, bufSize+1, sources, types, ids, severities, lengths, tmp);
-			messageLog=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetDebugMessageLog(count, bufSize + 1, sources, types, ids, severities, lengths, tmp);
+			messageLog = tmp.ToString();
 		}
 		#endregion
 
@@ -1545,9 +1540,9 @@ namespace OpenGL.Core
 		/// <param name="label">Returns the label.</param>
 		public static void GetObjectLabel(glObjectNamespaceIdentifier identifier, uint name, int bufSize, out int length, out string label)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetObjectLabel(identifier, name, bufSize+1, out length, tmp);
-			label=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetObjectLabel(identifier, name, bufSize + 1, out length, tmp);
+			label = tmp.ToString();
 		}
 		#endregion
 
@@ -1561,9 +1556,9 @@ namespace OpenGL.Core
 		/// <param name="label">Returns the label.</param>
 		public static void GetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, out string label)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetObjectPtrLabel(ptr, bufSize+1, out length, tmp);
-			label=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetObjectPtrLabel(ptr, bufSize + 1, out length, tmp);
+			label = tmp.ToString();
 		}
 		#endregion
 
@@ -1576,9 +1571,9 @@ namespace OpenGL.Core
 		/// <returns>The index of the named uniform variable.</returns>
 		public static uint GetUniformIndex(uint program, string uniformName)
 		{
-			if(GetProgramResourceIndex!=null) return GetProgramResourceIndex(program, glProgramInterface.UNIFORM, uniformName);
+			if (GetProgramResourceIndex != null) return GetProgramResourceIndex(program, glProgramInterface.UNIFORM, uniformName);
 
-			uint[] ret=new uint[1];
+			uint[] ret = new uint[1];
 			GetUniformIndices(program, 1, new string[] { uniformName }, ret);
 			return ret[0];
 		}
@@ -1587,85 +1582,85 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_4_3()
 		{
-			_ClearBufferData=GetAddress<glClearBufferData>("glClearBufferData");
-			DispatchCompute=GetAddress<glDispatchCompute>("glDispatchCompute");
-			CopyImageSubData=GetAddress<glCopyImageSubData>("glCopyImageSubData");
-			FramebufferParameteri=GetAddress<glFramebufferParameteri>("glFramebufferParameteri");
-			GetFramebufferParameteri=GetAddress<glGetFramebufferParameteri>("glGetFramebufferParameteriv");
-			GetFramebufferParameteriv=GetAddress<glGetFramebufferParameteriv>("glGetFramebufferParameteriv");
-			GetInternalformati64=GetAddress<glGetInternalformati64>("glGetInternalformati64v");
-			GetInternalformati64v=GetAddress<glGetInternalformati64v>("glGetInternalformati64v");
-			InvalidateTexSubImage=GetAddress<glInvalidateTexSubImage>("glInvalidateTexSubImage");
-			InvalidateTexImage=GetAddress<glInvalidateTexImage>("glInvalidateTexImage");
-			InvalidateBufferData=GetAddress<glInvalidateBufferData>("glInvalidateBufferData");
-			InvalidateFramebuffer=GetAddress<glInvalidateFramebuffer>("glInvalidateFramebuffer");
-			InvalidateSubFramebuffer=GetAddress<glInvalidateSubFramebuffer>("glInvalidateSubFramebuffer");
-			MultiDrawArraysIndirect=GetAddress<glMultiDrawArraysIndirect>("glMultiDrawArraysIndirect");
-			MultiDrawElementsIndirect=GetAddress<glMultiDrawElementsIndirect>("glMultiDrawElementsIndirect");
-			GetProgramInterfacei=GetAddress<glGetProgramInterfacei>("glGetProgramInterfaceiv");
-			GetProgramInterfaceiv=GetAddress<glGetProgramInterfaceiv>("glGetProgramInterfaceiv");
-			GetProgramResourceIndex=GetAddress<glGetProgramResourceIndex>("glGetProgramResourceIndex");
-			_GetProgramResourceName=GetAddress<glGetProgramResourceName>("glGetProgramResourceName");
-			GetProgramResourcei=GetAddress<glGetProgramResourcei>("glGetProgramResourceiv");
-			GetProgramResourceiv=GetAddress<glGetProgramResourceiv>("glGetProgramResourceiv");
-			GetProgramResourceLocation=GetAddress<glGetProgramResourceLocation>("glGetProgramResourceLocation");
-			GetProgramResourceLocationIndex=GetAddress<glGetProgramResourceLocationIndex>("glGetProgramResourceLocationIndex");
-			ShaderStorageBlockBinding=GetAddress<glShaderStorageBlockBinding>("glShaderStorageBlockBinding");
-			TexStorage2DMultisample=GetAddress<glTexStorage2DMultisample>("glTexStorage2DMultisample");
-			TexStorage3DMultisample=GetAddress<glTexStorage3DMultisample>("glTexStorage3DMultisample");
-			TextureView=GetAddress<glTextureView>("glTextureView");
-			VertexAttribFormat=GetAddress<glVertexAttribFormat>("glVertexAttribFormat");
-			VertexAttribIFormat=GetAddress<glVertexAttribIFormat>("glVertexAttribIFormat");
-			VertexAttribLFormat=GetAddress<glVertexAttribLFormat>("glVertexAttribLFormat");
-			VertexAttribBinding=GetAddress<glVertexAttribBinding>("glVertexAttribBinding");
-			VertexBindingDivisor=GetAddress<glVertexBindingDivisor>("glVertexBindingDivisor");
-			DebugMessageControl=GetAddress<glDebugMessageControl>("glDebugMessageControl");
-			DebugMessageInsert=GetAddress<glDebugMessageInsert>("glDebugMessageInsert");
-			DebugMessageCallback=GetAddress<glDebugMessageCallback>("glDebugMessageCallback");
-			_GetDebugMessageLog=GetAddress<glGetDebugMessageLog>("glGetDebugMessageLog");
-			PushDebugGroup=GetAddress<glPushDebugGroup>("glPushDebugGroup");
-			PopDebugGroup=GetAddress<glPopDebugGroup>("glPopDebugGroup");
-			ObjectLabel=GetAddress<glObjectLabel>("glObjectLabel");
-			_GetObjectLabel=GetAddress<glGetObjectLabel>("glGetObjectLabel");
-			ObjectPtrLabel=GetAddress<glObjectPtrLabel>("glObjectPtrLabel");
-			_GetObjectPtrLabel=GetAddress<glGetObjectPtrLabel>("glGetObjectPtrLabel");
+			_ClearBufferData = GetAddress<glClearBufferData>("glClearBufferData");
+			DispatchCompute = GetAddress<glDispatchCompute>("glDispatchCompute");
+			CopyImageSubData = GetAddress<glCopyImageSubData>("glCopyImageSubData");
+			FramebufferParameteri = GetAddress<glFramebufferParameteri>("glFramebufferParameteri");
+			GetFramebufferParameteri = GetAddress<glGetFramebufferParameteri>("glGetFramebufferParameteriv");
+			GetFramebufferParameteriv = GetAddress<glGetFramebufferParameteriv>("glGetFramebufferParameteriv");
+			GetInternalformati64 = GetAddress<glGetInternalformati64>("glGetInternalformati64v");
+			GetInternalformati64v = GetAddress<glGetInternalformati64v>("glGetInternalformati64v");
+			InvalidateTexSubImage = GetAddress<glInvalidateTexSubImage>("glInvalidateTexSubImage");
+			InvalidateTexImage = GetAddress<glInvalidateTexImage>("glInvalidateTexImage");
+			InvalidateBufferData = GetAddress<glInvalidateBufferData>("glInvalidateBufferData");
+			InvalidateFramebuffer = GetAddress<glInvalidateFramebuffer>("glInvalidateFramebuffer");
+			InvalidateSubFramebuffer = GetAddress<glInvalidateSubFramebuffer>("glInvalidateSubFramebuffer");
+			MultiDrawArraysIndirect = GetAddress<glMultiDrawArraysIndirect>("glMultiDrawArraysIndirect");
+			MultiDrawElementsIndirect = GetAddress<glMultiDrawElementsIndirect>("glMultiDrawElementsIndirect");
+			GetProgramInterfacei = GetAddress<glGetProgramInterfacei>("glGetProgramInterfaceiv");
+			GetProgramInterfaceiv = GetAddress<glGetProgramInterfaceiv>("glGetProgramInterfaceiv");
+			GetProgramResourceIndex = GetAddress<glGetProgramResourceIndex>("glGetProgramResourceIndex");
+			_GetProgramResourceName = GetAddress<glGetProgramResourceName>("glGetProgramResourceName");
+			GetProgramResourcei = GetAddress<glGetProgramResourcei>("glGetProgramResourceiv");
+			GetProgramResourceiv = GetAddress<glGetProgramResourceiv>("glGetProgramResourceiv");
+			GetProgramResourceLocation = GetAddress<glGetProgramResourceLocation>("glGetProgramResourceLocation");
+			GetProgramResourceLocationIndex = GetAddress<glGetProgramResourceLocationIndex>("glGetProgramResourceLocationIndex");
+			ShaderStorageBlockBinding = GetAddress<glShaderStorageBlockBinding>("glShaderStorageBlockBinding");
+			TexStorage2DMultisample = GetAddress<glTexStorage2DMultisample>("glTexStorage2DMultisample");
+			TexStorage3DMultisample = GetAddress<glTexStorage3DMultisample>("glTexStorage3DMultisample");
+			TextureView = GetAddress<glTextureView>("glTextureView");
+			VertexAttribFormat = GetAddress<glVertexAttribFormat>("glVertexAttribFormat");
+			VertexAttribIFormat = GetAddress<glVertexAttribIFormat>("glVertexAttribIFormat");
+			VertexAttribLFormat = GetAddress<glVertexAttribLFormat>("glVertexAttribLFormat");
+			VertexAttribBinding = GetAddress<glVertexAttribBinding>("glVertexAttribBinding");
+			VertexBindingDivisor = GetAddress<glVertexBindingDivisor>("glVertexBindingDivisor");
+			DebugMessageControl = GetAddress<glDebugMessageControl>("glDebugMessageControl");
+			DebugMessageInsert = GetAddress<glDebugMessageInsert>("glDebugMessageInsert");
+			DebugMessageCallback = GetAddress<glDebugMessageCallback>("glDebugMessageCallback");
+			_GetDebugMessageLog = GetAddress<glGetDebugMessageLog>("glGetDebugMessageLog");
+			PushDebugGroup = GetAddress<glPushDebugGroup>("glPushDebugGroup");
+			PopDebugGroup = GetAddress<glPopDebugGroup>("glPopDebugGroup");
+			ObjectLabel = GetAddress<glObjectLabel>("glObjectLabel");
+			_GetObjectLabel = GetAddress<glGetObjectLabel>("glGetObjectLabel");
+			ObjectPtrLabel = GetAddress<glObjectPtrLabel>("glObjectPtrLabel");
+			_GetObjectPtrLabel = GetAddress<glGetObjectPtrLabel>("glGetObjectPtrLabel");
 
 			bool platformDependend;
-			if(IntPtr.Size==4)
+			if (IntPtr.Size == 4)
 			{
-				ClearBufferSubData_32=GetAddress<glClearBufferSubData_32>("glClearBufferSubData");
-				DispatchComputeIndirect_32=GetAddress<glDispatchComputeIndirect_32>("glDispatchComputeIndirect");
-				InvalidateBufferSubData_32=GetAddress<glInvalidateBufferSubData_32>("glInvalidateBufferSubData");
-				TexBufferRange_32=GetAddress<glTexBufferRange_32>("glTexBufferRange");
-				BindVertexBuffer_32=GetAddress<glBindVertexBuffer_32>("glBindVertexBuffer");
+				ClearBufferSubData_32 = GetAddress<glClearBufferSubData_32>("glClearBufferSubData");
+				DispatchComputeIndirect_32 = GetAddress<glDispatchComputeIndirect_32>("glDispatchComputeIndirect");
+				InvalidateBufferSubData_32 = GetAddress<glInvalidateBufferSubData_32>("glInvalidateBufferSubData");
+				TexBufferRange_32 = GetAddress<glTexBufferRange_32>("glTexBufferRange");
+				BindVertexBuffer_32 = GetAddress<glBindVertexBuffer_32>("glBindVertexBuffer");
 
-				platformDependend=ClearBufferSubData_32!=null&&DispatchComputeIndirect_32!=null&&
-					InvalidateBufferSubData_32!=null&&TexBufferRange_32!=null&&BindVertexBuffer_32!=null;
+				platformDependend = ClearBufferSubData_32 != null && DispatchComputeIndirect_32 != null &&
+					InvalidateBufferSubData_32 != null && TexBufferRange_32 != null && BindVertexBuffer_32 != null;
 			}
 			else
 			{
-				ClearBufferSubData_64=GetAddress<glClearBufferSubData_64>("glClearBufferSubData");
-				DispatchComputeIndirect_64=GetAddress<glDispatchComputeIndirect_64>("glDispatchComputeIndirect");
-				InvalidateBufferSubData_64=GetAddress<glInvalidateBufferSubData_64>("glInvalidateBufferSubData");
-				TexBufferRange_64=GetAddress<glTexBufferRange_64>("glTexBufferRange");
-				BindVertexBuffer_64=GetAddress<glBindVertexBuffer_64>("glBindVertexBuffer");
+				ClearBufferSubData_64 = GetAddress<glClearBufferSubData_64>("glClearBufferSubData");
+				DispatchComputeIndirect_64 = GetAddress<glDispatchComputeIndirect_64>("glDispatchComputeIndirect");
+				InvalidateBufferSubData_64 = GetAddress<glInvalidateBufferSubData_64>("glInvalidateBufferSubData");
+				TexBufferRange_64 = GetAddress<glTexBufferRange_64>("glTexBufferRange");
+				BindVertexBuffer_64 = GetAddress<glBindVertexBuffer_64>("glBindVertexBuffer");
 
-				platformDependend=ClearBufferSubData_64!=null&&DispatchComputeIndirect_64!=null&&
-					InvalidateBufferSubData_64!=null&&TexBufferRange_64!=null&&BindVertexBuffer_64!=null;
+				platformDependend = ClearBufferSubData_64 != null && DispatchComputeIndirect_64 != null &&
+					InvalidateBufferSubData_64 != null && TexBufferRange_64 != null && BindVertexBuffer_64 != null;
 			}
 
-			VERSION_4_3=VERSION_4_2&&_ClearBufferData!=null&&DispatchCompute!=null&&CopyImageSubData!=null&&
-				FramebufferParameteri!=null&&GetFramebufferParameteriv!=null&&GetInternalformati64v!=null&&
-				InvalidateTexSubImage!=null&&InvalidateTexImage!=null&&InvalidateBufferData!=null&&
-				InvalidateFramebuffer!=null&&InvalidateSubFramebuffer!=null&&MultiDrawArraysIndirect!=null&&
-				MultiDrawElementsIndirect!=null&&GetProgramInterfaceiv!=null&&GetProgramResourceIndex!=null&&
-				_GetProgramResourceName!=null&&GetProgramResourceiv!=null&&GetProgramResourceLocation!=null&&
-				GetProgramResourceLocationIndex!=null&&ShaderStorageBlockBinding!=null&&TexStorage2DMultisample!=null&&
-				TexStorage3DMultisample!=null&&TextureView!=null&&VertexAttribFormat!=null&&VertexAttribIFormat!=null&&
-				VertexAttribLFormat!=null&&VertexAttribBinding!=null&&VertexBindingDivisor!=null&&
-				DebugMessageControl!=null&&DebugMessageInsert!=null&&DebugMessageCallback!=null&&
-				_GetDebugMessageLog!=null&&PushDebugGroup!=null&&PopDebugGroup!=null&&ObjectLabel!=null&&
-				_GetObjectLabel!=null&&ObjectPtrLabel!=null&&_GetObjectPtrLabel!=null&&platformDependend;
+			VERSION_4_3 = VERSION_4_2 && _ClearBufferData != null && DispatchCompute != null && CopyImageSubData != null &&
+				FramebufferParameteri != null && GetFramebufferParameteriv != null && GetInternalformati64v != null &&
+				InvalidateTexSubImage != null && InvalidateTexImage != null && InvalidateBufferData != null &&
+				InvalidateFramebuffer != null && InvalidateSubFramebuffer != null && MultiDrawArraysIndirect != null &&
+				MultiDrawElementsIndirect != null && GetProgramInterfaceiv != null && GetProgramResourceIndex != null &&
+				_GetProgramResourceName != null && GetProgramResourceiv != null && GetProgramResourceLocation != null &&
+				GetProgramResourceLocationIndex != null && ShaderStorageBlockBinding != null && TexStorage2DMultisample != null &&
+				TexStorage3DMultisample != null && TextureView != null && VertexAttribFormat != null && VertexAttribIFormat != null &&
+				VertexAttribLFormat != null && VertexAttribBinding != null && VertexBindingDivisor != null &&
+				DebugMessageControl != null && DebugMessageInsert != null && DebugMessageCallback != null &&
+				_GetDebugMessageLog != null && PushDebugGroup != null && PopDebugGroup != null && ObjectLabel != null &&
+				_GetObjectLabel != null && ObjectPtrLabel != null && _GetObjectPtrLabel != null && platformDependend;
 		}
 	}
 }

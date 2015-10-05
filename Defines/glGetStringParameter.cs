@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Name of the vendor.
 		/// </summary>
-		VENDOR=0x1F00,
+		VENDOR = 0x1F00,
 
 		/// <summary>
 		/// Name of the renderer.
 		/// </summary>
-		RENDERER=0x1F01,
+		RENDERER = 0x1F01,
 
 		/// <summary>
 		/// Version of the OpenGL.
 		/// </summary>
-		VERSION=0x1F02,
+		VERSION = 0x1F02,
 
 		/// <summary>
 		/// Version of the GLSL.
 		/// </summary>
-		SHADING_LANGUAGE_VERSION=0x8B8C,
+		SHADING_LANGUAGE_VERSION = 0x8B8C,
 	}
 }

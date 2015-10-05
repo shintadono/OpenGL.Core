@@ -32,11 +32,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Near and far value for each (indexed) viewport. Array of two <b>double</b>s.
 		/// </summary>
-		DEPTH_RANGE=0x0B70,
+		DEPTH_RANGE = 0x0B70,
 
 		/// <summary>
 		/// Origin and extent for each (indexed) viewport. Array of four <b>float</b>s.
 		/// </summary>
-		VIEWPORT=0x0BA2,
+		VIEWPORT = 0x0BA2,
 	}
 }

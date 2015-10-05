@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Use first vertex of primitive.
 		/// </summary>
-		FIRST_VERTEX_CONVENTION=0x8E4D,
+		FIRST_VERTEX_CONVENTION = 0x8E4D,
 
 		/// <summary>
 		/// Use last vertex of primitive.
 		/// </summary>
-		LAST_VERTEX_CONVENTION=0x8E4E,
+		LAST_VERTEX_CONVENTION = 0x8E4E,
 
 		/// <summary>
 		/// Default convention. Not used with <see cref="gl.ProvokingVertex"/>. Returned by queries only.
 		/// </summary>
-		PROVOKING_VERTEX=0x8E4F,
+		PROVOKING_VERTEX = 0x8E4F,
 
 		/// <summary>
 		/// Undefined behavior. Not used with <see cref="gl.ProvokingVertex"/>. Returned by queries only.
 		/// </summary>
-		UNDEFINED_VERTEX=0x8260,
+		UNDEFINED_VERTEX = 0x8260,
 	}
 }

@@ -32,161 +32,161 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE0=0x84C0,
+		TEXTURE0 = 0x84C0,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE1=0x84C1,
+		TEXTURE1 = 0x84C1,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE2=0x84C2,
+		TEXTURE2 = 0x84C2,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE3=0x84C3,
+		TEXTURE3 = 0x84C3,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE4=0x84C4,
+		TEXTURE4 = 0x84C4,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE5=0x84C5,
+		TEXTURE5 = 0x84C5,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE6=0x84C6,
+		TEXTURE6 = 0x84C6,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE7=0x84C7,
+		TEXTURE7 = 0x84C7,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE8=0x84C8,
+		TEXTURE8 = 0x84C8,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE9=0x84C9,
+		TEXTURE9 = 0x84C9,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE10=0x84CA,
+		TEXTURE10 = 0x84CA,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE11=0x84CB,
+		TEXTURE11 = 0x84CB,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE12=0x84CC,
+		TEXTURE12 = 0x84CC,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE13=0x84CD,
+		TEXTURE13 = 0x84CD,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE14=0x84CE,
+		TEXTURE14 = 0x84CE,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE15=0x84CF,
+		TEXTURE15 = 0x84CF,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE16=0x84D0,
+		TEXTURE16 = 0x84D0,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE17=0x84D1,
+		TEXTURE17 = 0x84D1,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE18=0x84D2,
+		TEXTURE18 = 0x84D2,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE19=0x84D3,
+		TEXTURE19 = 0x84D3,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE20=0x84D4,
+		TEXTURE20 = 0x84D4,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE21=0x84D5,
+		TEXTURE21 = 0x84D5,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE22=0x84D6,
+		TEXTURE22 = 0x84D6,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE23=0x84D7,
+		TEXTURE23 = 0x84D7,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE24=0x84D8,
+		TEXTURE24 = 0x84D8,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE25=0x84D9,
+		TEXTURE25 = 0x84D9,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE26=0x84DA,
+		TEXTURE26 = 0x84DA,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE27=0x84DB,
+		TEXTURE27 = 0x84DB,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE28=0x84DC,
+		TEXTURE28 = 0x84DC,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE29=0x84DD,
+		TEXTURE29 = 0x84DD,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE30=0x84DE,
+		TEXTURE30 = 0x84DE,
 
 		/// <summary>
 		/// Texture unit.
 		/// </summary>
-		TEXTURE31=0x84DF,
+		TEXTURE31 = 0x84DF,
 	}
 }

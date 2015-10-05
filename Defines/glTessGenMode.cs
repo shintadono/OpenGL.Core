@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Tesselation evaluation shader primitive mode is <c>triangles</c>.
 		/// </summary>
-		TRIANGLES=0x0004,
+		TRIANGLES = 0x0004,
 
 		/// <summary>
 		/// Tesselation evaluation shader primitive mode is <c>isolines</c>.
 		/// </summary>
-		ISOLINES=0x8E7A,
+		ISOLINES = 0x8E7A,
 
 		/// <summary>
 		/// Tesselation evaluation shader primitive mode is <c>quads</c>.
 		/// </summary>
-		QUADS=0x0007,
+		QUADS = 0x0007,
 	}
 }

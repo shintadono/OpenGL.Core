@@ -32,16 +32,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Feature not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Feature supported, but may have performance issues.
 		/// </summary>
-		CAVEAT_SUPPORT=0x82B8,
+		CAVEAT_SUPPORT = 0x82B8,
 
 		/// <summary>
 		/// Feature fully supported.
 		/// </summary>
-		FULL_SUPPORT=0x82B7,
+		FULL_SUPPORT = 0x82B7,
 	}
 }

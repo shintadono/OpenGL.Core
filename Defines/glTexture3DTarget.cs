@@ -35,16 +35,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 3D texture object.
 		/// </summary>
-		TEXTURE_3D=0x806F,
+		TEXTURE_3D = 0x806F,
 
 		/// <summary>
 		/// 2D texture array object.
 		/// </summary>
-		TEXTURE_2D_ARRAY=0x8C1A,
+		TEXTURE_2D_ARRAY = 0x8C1A,
 
 		/// <summary>
 		/// Cube map array texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_ARRAY=0x9009,
+		TEXTURE_CUBE_MAP_ARRAY = 0x9009,
 	}
 }

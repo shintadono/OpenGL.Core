@@ -33,11 +33,11 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 1D texture object.
 		/// </summary>
-		TEXTURE_1D=0x0DE0,
+		TEXTURE_1D = 0x0DE0,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// </summary>
-		PROXY_TEXTURE_1D=0x8063,
+		PROXY_TEXTURE_1D = 0x8063,
 	}
 }

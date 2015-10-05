@@ -32,106 +32,106 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Atomic counter buffer interface.
 		/// </summary>
-		ATOMIC_COUNTER_BUFFER=0x92C0,
+		ATOMIC_COUNTER_BUFFER = 0x92C0,
 
 		/// <summary>
 		/// Buffer variables interface.
 		/// </summary>
-		BUFFER_VARIABLE=0x92E5,
+		BUFFER_VARIABLE = 0x92E5,
 
 		/// <summary>
 		/// Compute shader subroutine interface.
 		/// </summary>
-		COMPUTE_SUBROUTINE=0x92ED,
+		COMPUTE_SUBROUTINE = 0x92ED,
 
 		/// <summary>
 		/// Compute shader subroutine uniform interface.
 		/// </summary>
-		COMPUTE_SUBROUTINE_UNIFORM=0x92F3,
+		COMPUTE_SUBROUTINE_UNIFORM = 0x92F3,
 
 		/// <summary>
 		/// Fragment shader subroutine interface.
 		/// </summary>
-		FRAGMENT_SUBROUTINE=0x92EC,
+		FRAGMENT_SUBROUTINE = 0x92EC,
 
 		/// <summary>
 		/// Fragment shader subroutine uniform interface.
 		/// </summary>
-		FRAGMENT_SUBROUTINE_UNIFORM=0x92F2,
+		FRAGMENT_SUBROUTINE_UNIFORM = 0x92F2,
 
 		/// <summary>
 		/// Geometry shader subroutine interface.
 		/// </summary>
-		GEOMETRY_SUBROUTINE=0x92EB,
+		GEOMETRY_SUBROUTINE = 0x92EB,
 
 		/// <summary>
 		/// Geometry shader subroutine uniform interface.
 		/// </summary>
-		GEOMETRY_SUBROUTINE_UNIFORM=0x92F1,
+		GEOMETRY_SUBROUTINE_UNIFORM = 0x92F1,
 
 		/// <summary>
 		/// Program input interface.
 		/// </summary>
-		PROGRAM_INPUT=0x92E3,
+		PROGRAM_INPUT = 0x92E3,
 
 		/// <summary>
 		/// Program output interface.
 		/// </summary>
-		PROGRAM_OUTPUT=0x92E4,
+		PROGRAM_OUTPUT = 0x92E4,
 
 		/// <summary>
 		/// Shader storage block interface.
 		/// </summary>
-		SHADER_STORAGE_BLOCK=0x92E6,
+		SHADER_STORAGE_BLOCK = 0x92E6,
 
 		/// <summary>
 		/// Tesselation control shader subroutine interface.
 		/// </summary>
-		TESS_CONTROL_SUBROUTINE=0x92E9,
+		TESS_CONTROL_SUBROUTINE = 0x92E9,
 
 		/// <summary>
 		/// Tesselation evaluation shader subroutine interface.
 		/// </summary>
-		TESS_EVALUATION_SUBROUTINE=0x92EA,
+		TESS_EVALUATION_SUBROUTINE = 0x92EA,
 
 		/// <summary>
 		/// Tesselation control shader subroutine uniform interface.
 		/// </summary>
-		TESS_CONTROL_SUBROUTINE_UNIFORM=0x92EF,
+		TESS_CONTROL_SUBROUTINE_UNIFORM = 0x92EF,
 
 		/// <summary>
 		/// Tesselation evaluation shader subroutine uniform interface.
 		/// </summary>
-		TESS_EVALUATION_SUBROUTINE_UNIFORM=0x92F0,
+		TESS_EVALUATION_SUBROUTINE_UNIFORM = 0x92F0,
 
 		/// <summary>
 		/// Transform feedback buffer interface.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER=0x8C8E,
+		TRANSFORM_FEEDBACK_BUFFER = 0x8C8E,
 
 		/// <summary>
 		/// Transform feedback varying interface.
 		/// </summary>
-		TRANSFORM_FEEDBACK_VARYING=0x92F4,
+		TRANSFORM_FEEDBACK_VARYING = 0x92F4,
 
 		/// <summary>
 		/// Uniform interface.
 		/// </summary>
-		UNIFORM=0x92E1,
+		UNIFORM = 0x92E1,
 
 		/// <summary>
 		/// Uniform block interface.
 		/// </summary>
-		UNIFORM_BLOCK=0x92E2,
+		UNIFORM_BLOCK = 0x92E2,
 
 		/// <summary>
 		/// Vertex shader subroutine interface.
 		/// </summary>
-		VERTEX_SUBROUTINE=0x92E8,
+		VERTEX_SUBROUTINE = 0x92E8,
 
 		/// <summary>
 		/// Vertex shader subroutine uniform interface.
 		/// </summary>
-		VERTEX_SUBROUTINE_UNIFORM=0x92EE,
+		VERTEX_SUBROUTINE_UNIFORM = 0x92EE,
 	}
 }

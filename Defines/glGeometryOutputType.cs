@@ -33,16 +33,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Geometry shader output primitive is <c>points</c>.
 		/// </summary>
-		POINTS=0x0000,
+		POINTS = 0x0000,
 
 		/// <summary>
 		/// Geometry shader output primitive is <c>line_strip</c>.
 		/// </summary>
-		LINE_STRIP=0x0003,
+		LINE_STRIP = 0x0003,
 
 		/// <summary>
 		/// Geometry shader output primitive is <c>triangle_strip</c>.
 		/// </summary>
-		TRIANGLE_STRIP=0x0005,
+		TRIANGLE_STRIP = 0x0005,
 	}
 }

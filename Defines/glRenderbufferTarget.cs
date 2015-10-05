@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed target.
 		/// </summary>
-		RENDERBUFFER=0x8D41,
+		RENDERBUFFER = 0x8D41,
 	}
 }

@@ -35,12 +35,12 @@ namespace OpenGL.Core
 		/// Each subsequent variable is assigned to the same binding point as the previous variable
 		/// and an offset equal to the sum of the offset and size of the previous variable.
 		/// </summary>
-		INTERLEAVED_ATTRIBS=0x8C8C,
+		INTERLEAVED_ATTRIBS = 0x8C8C,
 
 		/// <summary>
 		/// Each subsequent variable is assigned to the binding point following the
 		/// binding point of the previous variable with an offset of zero.
 		/// </summary>
-		SEPARATE_ATTRIBS=0x8C8D,
+		SEPARATE_ATTRIBS = 0x8C8D,
 	}
 }

@@ -34,67 +34,67 @@ namespace OpenGL.Core
 		/// Returned if the resource has no other formats that are compatible or the resource does not support views or if
 		/// texture views are not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// 128-bit class.
 		/// </summary>
-		VIEW_CLASS_128_BITS=0x82C4,
+		VIEW_CLASS_128_BITS = 0x82C4,
 
 		/// <summary>
 		/// 96-bit class.
 		/// </summary>
-		VIEW_CLASS_96_BITS=0x82C5,
+		VIEW_CLASS_96_BITS = 0x82C5,
 
 		/// <summary>
 		/// 64-bit class.
 		/// </summary>
-		VIEW_CLASS_64_BITS=0x82C6,
+		VIEW_CLASS_64_BITS = 0x82C6,
 
 		/// <summary>
 		/// 48-bit class.
 		/// </summary>
-		VIEW_CLASS_48_BITS=0x82C7,
+		VIEW_CLASS_48_BITS = 0x82C7,
 
 		/// <summary>
 		/// 32-bit class.
 		/// </summary>
-		VIEW_CLASS_32_BITS=0x82C8,
+		VIEW_CLASS_32_BITS = 0x82C8,
 
 		/// <summary>
 		/// 24-bit class.
 		/// </summary>
-		VIEW_CLASS_24_BITS=0x82C9,
+		VIEW_CLASS_24_BITS = 0x82C9,
 
 		/// <summary>
 		/// 16-bit class.
 		/// </summary>
-		VIEW_CLASS_16_BITS=0x82CA,
+		VIEW_CLASS_16_BITS = 0x82CA,
 
 		/// <summary>
 		/// 8-bit class.
 		/// </summary>
-		VIEW_CLASS_8_BITS=0x82CB,
+		VIEW_CLASS_8_BITS = 0x82CB,
 
 		/// <summary>
 		/// Compressed RGTC1 (red) class.
 		/// </summary>
-		VIEW_CLASS_RGTC1_RED=0x82D0,
+		VIEW_CLASS_RGTC1_RED = 0x82D0,
 
 		/// <summary>
 		/// Compressed RGTC2 (red+green) class.
 		/// </summary>
-		VIEW_CLASS_RGTC2_RG=0x82D1,
+		VIEW_CLASS_RGTC2_RG = 0x82D1,
 
 		/// <summary>
 		/// Compressed BPTC (unsigned normalized) class.
 		/// </summary>
-		VIEW_CLASS_BPTC_UNORM=0x82D2,
+		VIEW_CLASS_BPTC_UNORM = 0x82D2,
 
 		/// <summary>
 		/// Compressed BPTC (float) class.
 		/// </summary>
-		VIEW_CLASS_BPTC_FLOAT=0x82D3,
+		VIEW_CLASS_BPTC_FLOAT = 0x82D3,
 
 		//VIEW_CLASS_S3TC_DXT1_RGB=0x82CC,
 		//VIEW_CLASS_S3TC_DXT1_RGBA=0x82CD,

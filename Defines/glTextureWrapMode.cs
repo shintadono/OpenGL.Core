@@ -35,26 +35,26 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Clamp texture to image edge.
 		/// </summary>
-		CLAMP_TO_EDGE=0x812F,
+		CLAMP_TO_EDGE = 0x812F,
 
 		/// <summary>
 		/// Clamp texture to border color.
 		/// </summary>
-		CLAMP_TO_BORDER=0x812D,
+		CLAMP_TO_BORDER = 0x812D,
 
 		/// <summary>
 		/// Repeat texture.
 		/// </summary>
-		REPEAT=0x2901,
+		REPEAT = 0x2901,
 
 		/// <summary>
 		/// Repeat texture mirrored.
 		/// </summary>
-		MIRRORED_REPEAT=0x8370,
+		MIRRORED_REPEAT = 0x8370,
 
 		/// <summary>
 		/// Same as <see cref="CLAMP_TO_EDGE"/>, but mirrored. New in OpenGL 4.4.
 		/// </summary>
-		MIRROR_CLAMP_TO_EDGE=0x8743,
+		MIRROR_CLAMP_TO_EDGE = 0x8743,
 	}
 }

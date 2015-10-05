@@ -35,86 +35,86 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Synchronize nothing.
 		/// </summary>
-		None=0x00000000,
+		None = 0x00000000,
 
 		/// <summary>
 		/// Synchronize vertex attrib arrays.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_BARRIER_BIT=0x00000001,
+		VERTEX_ATTRIB_ARRAY_BARRIER_BIT = 0x00000001,
 
 		/// <summary>
 		/// Synchronize element arrays.
 		/// </summary>
-		ELEMENT_ARRAY_BARRIER_BIT=0x00000002,
+		ELEMENT_ARRAY_BARRIER_BIT = 0x00000002,
 
 		/// <summary>
 		/// Synchronize uniforms.
 		/// </summary>
-		UNIFORM_BARRIER_BIT=0x00000004,
+		UNIFORM_BARRIER_BIT = 0x00000004,
 
 		/// <summary>
 		/// Synchronize shader textures accesses.
 		/// </summary>
-		TEXTURE_FETCH_BARRIER_BIT=0x00000008,
+		TEXTURE_FETCH_BARRIER_BIT = 0x00000008,
 
 		/// <summary>
 		/// Synchronize shader image access.
 		/// </summary>
-		SHADER_IMAGE_ACCESS_BARRIER_BIT=0x00000020,
+		SHADER_IMAGE_ACCESS_BARRIER_BIT = 0x00000020,
 
 		/// <summary>
 		/// Synchronize commands.
 		/// </summary>
-		COMMAND_BARRIER_BIT=0x00000040,
-		
+		COMMAND_BARRIER_BIT = 0x00000040,
+
 		/// <summary>
 		/// Synchronize pixel buffer accesses.
 		/// </summary>
-		PIXEL_BUFFER_BARRIER_BIT=0x00000080,
-		
+		PIXEL_BUFFER_BARRIER_BIT = 0x00000080,
+
 		/// <summary>
 		/// Synchronize texture accesses.
 		/// </summary>
-		TEXTURE_UPDATE_BARRIER_BIT=0x00000100,
-		
+		TEXTURE_UPDATE_BARRIER_BIT = 0x00000100,
+
 		/// <summary>
 		/// Synchronize buffer accesses.
 		/// </summary>
-		BUFFER_UPDATE_BARRIER_BIT=0x00000200,
-		
+		BUFFER_UPDATE_BARRIER_BIT = 0x00000200,
+
 		/// <summary>
 		/// Synchronize framebuffer accesses.
 		/// </summary>
-		FRAMEBUFFER_BARRIER_BIT=0x00000400,
-		
+		FRAMEBUFFER_BARRIER_BIT = 0x00000400,
+
 		/// <summary>
 		/// Synchronize transform feedback buffer accesses.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BARRIER_BIT=0x00000800,
-		
+		TRANSFORM_FEEDBACK_BARRIER_BIT = 0x00000800,
+
 		/// <summary>
 		/// Synchronize accesses to atomic counters.
 		/// </summary>
-		ATOMIC_COUNTER_BARRIER_BIT=0x00001000,
+		ATOMIC_COUNTER_BARRIER_BIT = 0x00001000,
 
 		/// <summary>
 		/// Synchronize shade buffer accesses.
 		/// </summary>
-		SHADER_STORAGE_BARRIER_BIT=0x00002000,
+		SHADER_STORAGE_BARRIER_BIT = 0x00002000,
 
 		/// <summary>
 		/// Synchronize mapped buffer accesses.
 		/// </summary>
-		CLIENT_MAPPED_BUFFER_BARRIER_BIT=0x00004000,
+		CLIENT_MAPPED_BUFFER_BARRIER_BIT = 0x00004000,
 
 		/// <summary>
 		/// Synchronize query buffer accesses.
 		/// </summary>
-		QUERY_BUFFER_BARRIER_BIT=0x00008000,
+		QUERY_BUFFER_BARRIER_BIT = 0x00008000,
 
 		/// <summary>
 		/// Synchronize everything.
 		/// </summary>
-		ALL_BARRIER_BITS=0xFFFFFFFF,
+		ALL_BARRIER_BITS = 0xFFFFFFFF,
 	}
 }

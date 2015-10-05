@@ -32,41 +32,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Wait for the results of the query to be available and then use the results to determine if subsquent rendering commands are discarded.
 		/// </summary>
-		QUERY_WAIT=0x8E13,
+		QUERY_WAIT = 0x8E13,
 
 		/// <summary>
 		/// OpenGL may choose to unconditionally execute the subsequent rendering commands without waiting for the query to complete.
 		/// </summary>
-		QUERY_NO_WAIT=0x8E14,
+		QUERY_NO_WAIT = 0x8E14,
 
 		/// <summary>
 		/// Wait for occlusion query results and discard rendering commands if the result of the occlusion query is zero.
 		/// </summary>
-		QUERY_BY_REGION_WAIT=0x8E15,
+		QUERY_BY_REGION_WAIT = 0x8E15,
 
 		/// <summary>
 		/// As <see cref="QUERY_BY_REGION_WAIT"/>, but may choose to unconditionally execute the subsequent rendering commands without waiting for the query to complete.
 		/// </summary>
-		QUERY_BY_REGION_NO_WAIT=0x8E16,
+		QUERY_BY_REGION_NO_WAIT = 0x8E16,
 
 		/// <summary>
 		/// As <see cref="QUERY_WAIT"/>, but inverted behavior.
 		/// </summary>
-		QUERY_WAIT_INVERTED=0x8E17,
+		QUERY_WAIT_INVERTED = 0x8E17,
 
 		/// <summary>
 		/// As <see cref="QUERY_NO_WAIT"/>, but inverted behavior.
 		/// </summary>
-		QUERY_NO_WAIT_INVERTED=0x8E18,
+		QUERY_NO_WAIT_INVERTED = 0x8E18,
 
 		/// <summary>
 		/// As <see cref="QUERY_BY_REGION_WAIT"/>, but inverted behavior.
 		/// </summary>
-		QUERY_BY_REGION_WAIT_INVERTED=0x8E19,
+		QUERY_BY_REGION_WAIT_INVERTED = 0x8E19,
 
 		/// <summary>
 		/// As <see cref="QUERY_BY_REGION_NO_WAIT"/>, but inverted behavior.
 		/// </summary>
-		QUERY_BY_REGION_NO_WAIT_INVERTED=0x8E1A,
+		QUERY_BY_REGION_NO_WAIT_INVERTED = 0x8E1A,
 	}
 }

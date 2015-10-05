@@ -32,66 +32,66 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Vertex buffer binding. New in OpenGL 4.3.
 		/// </summary>
-		VERTEX_ATTRIB_BINDING=0x82D4,
+		VERTEX_ATTRIB_BINDING = 0x82D4,
 
 		/// <summary>
 		/// Attribute array buffer binding.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_BUFFER_BINDING=0x889F,
+		VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = 0x889F,
 
 		/// <summary>
 		/// Vertex attrib array instance divisor.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_DIVISOR=0x88FE,
+		VERTEX_ATTRIB_ARRAY_DIVISOR = 0x88FE,
 
 		/// <summary>
 		/// Vertex attrib array enable.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_ENABLED=0x8622,
+		VERTEX_ATTRIB_ARRAY_ENABLED = 0x8622,
 
 		/// <summary>
 		/// Vertex attrib array has unconverted integers.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_INTEGER=0x88FD,
+		VERTEX_ATTRIB_ARRAY_INTEGER = 0x88FD,
 
 		/// <summary>
 		/// Vertex attrib array has unconverted doubles.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_LONG=0x874E,
+		VERTEX_ATTRIB_ARRAY_LONG = 0x874E,
 
 		/// <summary>
 		/// Vertex attrib array normalized.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_NORMALIZED=0x886A,
+		VERTEX_ATTRIB_ARRAY_NORMALIZED = 0x886A,
 
 		/// <summary>
 		/// Vertex attrib array size.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_SIZE=0x8623,
+		VERTEX_ATTRIB_ARRAY_SIZE = 0x8623,
 
 		/// <summary>
 		/// Vertex attrib array stride.
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_STRIDE=0x8624,
+		VERTEX_ATTRIB_ARRAY_STRIDE = 0x8624,
 
 		/// <summary>
 		/// Vertex attrib array type. (<see cref="glVertexAttribType"/>)
 		/// </summary>
-		VERTEX_ATTRIB_ARRAY_TYPE=0x8625,
+		VERTEX_ATTRIB_ARRAY_TYPE = 0x8625,
 
 		/// <summary>
 		/// Byte offset added to vertex binding offset for this attribute. New in OpenGL 4.3.
 		/// </summary>
-		VERTEX_ATTRIB_RELATIVE_OFFSET=0x82D5,
+		VERTEX_ATTRIB_RELATIVE_OFFSET = 0x82D5,
 
 		/// <summary>
 		/// Byte offset of the first element in data store of the buffer bound to each (indexed) vertex binding.
 		/// </summary>
-		VERTEX_BINDING_OFFSET=0x82D7,
+		VERTEX_BINDING_OFFSET = 0x82D7,
 
 		/// <summary>
 		/// Current generic vertex attribute values. Array of four <b>float</b>s.
 		/// </summary>
-		CURRENT_VERTEX_ATTRIB=0x8626,
+		CURRENT_VERTEX_ATTRIB = 0x8626,
 	}
 }

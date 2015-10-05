@@ -40,7 +40,7 @@ namespace OpenGL.Core
 		/// Constructs an instance of this class with the value of the argument.
 		/// </summary>
 		/// <param name="value">An instance of this class.</param>
-		public glFloat16(glFloat16 value) { Value=value.Value; }
+		public glFloat16(glFloat16 value) { Value = value.Value; }
 
 		/// <summary>
 		/// Constructs an instance of this class with the value of the argument.
@@ -48,17 +48,17 @@ namespace OpenGL.Core
 		/// <param name="value">An instance of <see cref="glUFloat10"/>.</param>
 		public glFloat16(glUFloat10 value)
 		{
-			int exp=value.Value&glUFloat10.ExponentMask;
-			int man=value.Value&glUFloat10.MantissaMask;
+			int exp = value.Value & glUFloat10.ExponentMask;
+			int man = value.Value & glUFloat10.MantissaMask;
 
-			if(exp==glUFloat10.ExponentMask)
+			if (exp == glUFloat10.ExponentMask)
 			{
-				if(man==0) Value=PositiveInfinity;
-				else Value=NaN;
+				if (man == 0) Value = PositiveInfinity;
+				else Value = NaN;
 				return;
 			}
 
-			Value=(ushort)((value.Value<<5)&FillMask);
+			Value = (ushort)((value.Value << 5) & FillMask);
 		}
 
 		/// <summary>
@@ -67,17 +67,17 @@ namespace OpenGL.Core
 		/// <param name="value">An instance of <see cref="glUFloat11"/>.</param>
 		public glFloat16(glUFloat11 value)
 		{
-			int exp=value.Value&glUFloat11.ExponentMask;
-			int man=value.Value&glUFloat11.MantissaMask;
+			int exp = value.Value & glUFloat11.ExponentMask;
+			int man = value.Value & glUFloat11.MantissaMask;
 
-			if(exp==glUFloat11.ExponentMask)
+			if (exp == glUFloat11.ExponentMask)
 			{
-				if(man==0) Value=PositiveInfinity;
-				else Value=NaN;
+				if (man == 0) Value = PositiveInfinity;
+				else Value = NaN;
 				return;
 			}
 
-			Value=(ushort)((value.Value<<4)&FillMask);
+			Value = (ushort)((value.Value << 4) & FillMask);
 		}
 
 		/// <summary>
@@ -88,72 +88,72 @@ namespace OpenGL.Core
 		{
 #if !SLOW_BUT_PLATTFORM_INDEPENDENT_FLOAT_CONVERSION
 			// Get bits as uint
-			SingleUInt32Union union=new SingleUInt32Union();
-			union.single=value;
-			uint ivalue=union.uint32;
+			SingleUInt32Union union = new SingleUInt32Union();
+			union.single = value;
+			uint ivalue = union.uint32;
 
 			// Signed zero?
-			if((ivalue&0x7FFFFFFF)==0)
+			if ((ivalue & 0x7FFFFFFF) == 0)
 			{
-				Value=(ushort)(ivalue>>16); // Set signed zero
+				Value = (ushort)(ivalue >> 16); // Set signed zero
 				return;
 			}
 
-			uint maskedSign=ivalue&0x80000000;
-			uint maskedExpo=ivalue&0x7F800000;
+			uint maskedSign = ivalue & 0x80000000;
+			uint maskedExpo = ivalue & 0x7F800000;
 
 			// Denormalized number? (this would underflow anyway)
-			if(maskedExpo==0)
+			if (maskedExpo == 0)
 			{
-				Value=(ushort)(maskedSign>>16); // Set signed zero
+				Value = (ushort)(maskedSign >> 16); // Set signed zero
 				return;
 			}
 
-			uint maskedMant=ivalue&0x007FFFFF;
+			uint maskedMant = ivalue & 0x007FFFFF;
 
 			// Infinity or NaN? (all exponent bits set)
-			if(maskedExpo==0x7F800000)
+			if (maskedExpo == 0x7F800000)
 			{
 				// NaN?
-				if(maskedMant!=0) Value=NaN;
-				else Value=(ushort)((maskedSign>>16)|ExponentMask); // Set signed infinity
+				if (maskedMant != 0) Value = NaN;
+				else Value = (ushort)((maskedSign >> 16) | ExponentMask); // Set signed infinity
 				return;
 			}
 
 			// Normalized number
-			Value=(ushort)(maskedSign>>16);
-			int iExponent=((int)maskedExpo>>23)-127+15; // Convert exponent from float range to 16-bit float range
+			Value = (ushort)(maskedSign >> 16);
+			int iExponent = ((int)maskedExpo >> 23) - 127 + 15; // Convert exponent from float range to 16-bit float range
 
 			// Overflow? (exponent out of range)
-			if(iExponent>=0x1F)
+			if (iExponent >= 0x1F)
 			{
-				Value|=ExponentMask; // Set signed infinity
+				Value |= ExponentMask; // Set signed infinity
 				return;
 			}
 
 			// Underflow? (exponent out of range)
-			if(iExponent<=0)
+			if (iExponent <= 0)
 			{
 				// No mantissa bits left
-				if((14-iExponent)>24) return;
+				if ((14 - iExponent) > 24) return;
 
 				// Make denormalized number
-				maskedMant|=0x00800000; // Add the leading one digit
+				maskedMant |= 0x00800000; // Add the leading one digit
 
-				ushort denormMantissa=(ushort)(maskedMant>>(14-iExponent));
+				ushort denormMantissa = (ushort)(maskedMant >> (14 - iExponent));
 
 				// Check for rounding
-				if(((maskedMant>>(13-iExponent))&1)!=0) denormMantissa++;
+				if (((maskedMant >> (13 - iExponent)) & 1) != 0) denormMantissa++;
 
-				Value|=denormMantissa;
+				Value |= denormMantissa;
 				return;
 			}
 
-			Value|=(ushort)(iExponent<<10);
-			Value|=(ushort)(maskedMant>>13);
+			Value |= (ushort)(iExponent << 10);
+			Value |= (ushort)(maskedMant >> 13);
 
 			// Check for rounding
-			if((maskedMant&0x00001000)!=0) Value++;
+			if ((maskedMant & 0x00001000) != 0) Value++;
 #else
 			if(float.IsNaN(value))
 			{
@@ -199,70 +199,70 @@ namespace OpenGL.Core
 		{
 #if !SLOW_BUT_PLATTFORM_INDEPENDENT_FLOAT_CONVERSION
 			// Get bits as uint
-			uint ivalue=(uint)(BitConverter.DoubleToInt64Bits(value)>>32);
+			uint ivalue = (uint)(BitConverter.DoubleToInt64Bits(value) >> 32);
 
 			// Signed zero?
-			if((ivalue&0x7FFFFFFF)==0)
+			if ((ivalue & 0x7FFFFFFF) == 0)
 			{
-				Value=(ushort)(ivalue>>16); // Set signed zero
+				Value = (ushort)(ivalue >> 16); // Set signed zero
 				return;
 			}
 
-			uint maskedSign=ivalue&0x80000000;
-			uint maskedExpo=ivalue&0x7FF00000;
+			uint maskedSign = ivalue & 0x80000000;
+			uint maskedExpo = ivalue & 0x7FF00000;
 
 			// Denormalized number? (this would underflow anyway)
-			if(maskedExpo==0)
+			if (maskedExpo == 0)
 			{
-				Value=(ushort)(maskedSign>>16); // Set signed zero
+				Value = (ushort)(maskedSign >> 16); // Set signed zero
 				return;
 			}
 
-			uint maskedMant=ivalue&0x000FFFFF;
+			uint maskedMant = ivalue & 0x000FFFFF;
 
 			// Infinity or NaN? (all exponent bits set)
-			if(maskedExpo==0x7FF00000)
+			if (maskedExpo == 0x7FF00000)
 			{
 				// NaN?
-				if(maskedMant!=0) Value=NaN;
-				else Value=(ushort)((maskedSign>>16)|ExponentMask); // Set signed infinity
+				if (maskedMant != 0) Value = NaN;
+				else Value = (ushort)((maskedSign >> 16) | ExponentMask); // Set signed infinity
 				return;
 			}
 
 			// Normalized number
-			Value=(ushort)(maskedSign>>16);
-			int iExponent=((int)maskedExpo>>20)-1023+15; // Convert exponent from double range to 16-bit float range
+			Value = (ushort)(maskedSign >> 16);
+			int iExponent = ((int)maskedExpo >> 20) - 1023 + 15; // Convert exponent from double range to 16-bit float range
 
 			// Overflow? (exponent out of range)
-			if(iExponent>=0x1F)
+			if (iExponent >= 0x1F)
 			{
-				Value|=ExponentMask; // Set signed infinity
+				Value |= ExponentMask; // Set signed infinity
 				return;
 			}
 
 			// Underflow? (exponent out of range)
-			if(iExponent<=0)
+			if (iExponent <= 0)
 			{
 				// No mantissa bits left
-				if((11-iExponent)>21) return;
+				if ((11 - iExponent) > 21) return;
 
 				// Make denormalized number
-				maskedMant|=0x00100000; // Add the leading one digit
+				maskedMant |= 0x00100000; // Add the leading one digit
 
-				ushort denormMantissa=(ushort)(maskedMant>>(11-iExponent));
+				ushort denormMantissa = (ushort)(maskedMant >> (11 - iExponent));
 
 				// Check for rounding
-				if(((maskedMant>>(10-iExponent))&1)!=0) denormMantissa++;
+				if (((maskedMant >> (10 - iExponent)) & 1) != 0) denormMantissa++;
 
-				Value|=denormMantissa;
+				Value |= denormMantissa;
 				return;
 			}
 
-			Value|=(ushort)(iExponent<<10);
-			Value|=(ushort)(maskedMant>>10);
+			Value |= (ushort)(iExponent << 10);
+			Value |= (ushort)(maskedMant >> 10);
 
 			// Check for rounding
-			if((maskedMant&0x00000200)!=0) Value++;
+			if ((maskedMant & 0x00000200) != 0) Value++;
 #else
 			if(double.IsNaN(value))
 			{
@@ -357,61 +357,61 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Represents the smallest possible value this class can hold. This field is constant.
 		/// </summary>
-		public const float MinValue=-65504;
+		public const float MinValue = -65504;
 
 		/// <summary>
 		/// Represents the largest possible value this class can hold. This field is constant.
 		/// </summary>
-		public const float MaxValue=65504;
+		public const float MaxValue = 65504;
 
 		/// <summary>
 		/// Represents the smallest positive value that is greater than zero. This field is constant. (2^-24)
 		/// </summary>
-		public const float Epsilon=0.000000059604644775390625f;
+		public const float Epsilon = 0.000000059604644775390625f;
 
 		/// <summary>
 		/// Represents a value that is not a number (<b>NaN</b>). This field is constant.
 		/// (Exponent, mantissa and sign all bits set to 1)
 		/// </summary>
-		public const ushort NaN=FillMask;
+		public const ushort NaN = FillMask;
 
 		/// <summary>
 		/// Represents positive infinity. This field is constant.
 		/// (Exponent all bits set to 1, mantissa all bits set to 0 and sign set to 0)
 		/// </summary>
-		public const ushort PositiveInfinity=ExponentMask;
+		public const ushort PositiveInfinity = ExponentMask;
 
 		/// <summary>
 		/// Represents negative infinity. This field is constant.
 		/// (Exponent all bits set to 1, mantissa all bits set to 0 and sign set to 1)
 		/// </summary>
-		public const ushort NegativeInfinity=ExponentMask|SignMask;
+		public const ushort NegativeInfinity = ExponentMask | SignMask;
 
 		/// <summary>
 		/// Represents the smallest positive value that is greater than zero as the memory representation. This field is constant.
 		/// (Exponent all bits set to 0 and mantissa only the least significant bit set to 1)
 		/// </summary>
-		public const ushort EpsilonUShort=1;
+		public const ushort EpsilonUShort = 1;
 
 		/// <summary>
 		/// Mask that specifies the bit for the memory representation used to store the value. This field is constant.
 		/// </summary>
-		public const ushort FillMask=0xFFFF;
+		public const ushort FillMask = 0xFFFF;
 
 		/// <summary>
 		/// Mask that specifies the bit for the memory representation used to store the exponent of the value. This field is constant.
 		/// </summary>
-		public const ushort ExponentMask=0x7C00;
+		public const ushort ExponentMask = 0x7C00;
 
 		/// <summary>
 		/// Mask that specifies the bit for the memory representation used to store the mantissa of the value. This field is constant.
 		/// </summary>
-		public const ushort MantissaMask=0x03FF;
+		public const ushort MantissaMask = 0x03FF;
 
 		/// <summary>
 		/// Mask that specifies the bit for the memory representation used to store the sign of the value. This field is constant.
 		/// </summary>
-		public const ushort SignMask=0x8000;
+		public const ushort SignMask = 0x8000;
 
 		/// <summary>
 		/// Returns a value that indicates whether the specified value is not a number (<see cref="NaN"/>).
@@ -420,8 +420,8 @@ namespace OpenGL.Core
 		/// <returns><b>true</b> if <paramref name="value"/> evaluates to <see cref="NaN"/>; otherwise, <b>false</b>.</returns>
 		public static bool IsNaN(glFloat16 value)
 		{
-			if((value.Value&ExponentMask)!=ExponentMask) return false;
-			return (value.Value&MantissaMask)!=0;
+			if ((value.Value & ExponentMask) != ExponentMask) return false;
+			return (value.Value & MantissaMask) != 0;
 		}
 
 		/// <summary>
@@ -431,7 +431,7 @@ namespace OpenGL.Core
 		/// <returns><b>true</b> if <paramref name="value"/> evaluates to <see cref="PositiveInfinity"/> or <see cref="NegativeInfinity"/>; otherwise, <b>false</b>.</returns>
 		public static bool IsInfinity(glFloat16 value)
 		{
-			return (value.Value&(ExponentMask|MantissaMask))==ExponentMask;
+			return (value.Value & (ExponentMask | MantissaMask)) == ExponentMask;
 		}
 
 		/// <summary>
@@ -441,7 +441,7 @@ namespace OpenGL.Core
 		/// <returns><b>true</b> if <paramref name="value"/> evaluates to <see cref="NegativeInfinity"/>; otherwise, <b>false</b>.</returns>
 		public static bool IsNegativeInfinity(glFloat16 value)
 		{
-			return value.Value==NegativeInfinity;
+			return value.Value == NegativeInfinity;
 		}
 
 		/// <summary>
@@ -451,7 +451,7 @@ namespace OpenGL.Core
 		/// <returns><b>true</b> if <paramref name="value"/> evaluates to <see cref="PositiveInfinity"/>; otherwise, <b>false</b>.</returns>
 		public static bool IsPositiveInfinity(glFloat16 value)
 		{
-			return value.Value==PositiveInfinity;
+			return value.Value == PositiveInfinity;
 		}
 
 		/// <summary>
@@ -462,55 +462,55 @@ namespace OpenGL.Core
 		public static implicit operator float(glFloat16 value)
 		{
 #if !SLOW_BUT_PLATTFORM_INDEPENDENT_FLOAT_CONVERSION
-			SingleUInt32Union union=new SingleUInt32Union();
-			ushort v=value.Value;
+			SingleUInt32Union union = new SingleUInt32Union();
+			ushort v = value.Value;
 
 			// Signed zero?
-			if((v&0x7FFF)==0)
+			if ((v & 0x7FFF) == 0)
 			{
-				union.uint32=(uint)v<<16; // Return signed zero
+				union.uint32 = (uint)v << 16; // Return signed zero
 				return union.single;
 			}
 
 			// Not zero
-			uint sign=(uint)v&SignMask;
-			uint exponent=(uint)v&ExponentMask;
-			uint mantissa=(uint)v&MantissaMask;
+			uint sign = (uint)v & SignMask;
+			uint exponent = (uint)v & ExponentMask;
+			uint mantissa = (uint)v & MantissaMask;
 
 			// Infinity or NaN (all the exponent bits are set)
-			if(exponent==ExponentMask)
+			if (exponent == ExponentMask)
 			{
-				if(mantissa!=0) return float.NaN;
-				if(sign==0) return float.PositiveInfinity;
+				if (mantissa != 0) return float.NaN;
+				if (sign == 0) return float.PositiveInfinity;
 				return float.NegativeInfinity;
 			}
 
 			// Denormalized number
-			if(exponent==0)
+			if (exponent == 0)
 			{
 				// Find the exponent by loop-shifting until the leading one flows out mantissa
-				exponent=(exponent>>10)+127-15+1;
+				exponent = (exponent >> 10) + 127 - 15 + 1;
 				do
 				{
 					exponent--;
-					mantissa<<=1;
-				} while((mantissa&0x0400)==0);
+					mantissa <<= 1;
+				} while ((mantissa & 0x0400) == 0);
 
-				sign<<=16;
-				exponent<<=23;
-				mantissa=(mantissa&MantissaMask)<<13;
+				sign <<= 16;
+				exponent <<= 23;
+				mantissa = (mantissa & MantissaMask) << 13;
 
-				union.uint32=sign|exponent|mantissa;
+				union.uint32 = sign | exponent | mantissa;
 				return union.single;
 			}
 
 			// Normalized number
-			sign<<=16;
-			exponent=(exponent>>10)+127-15;
-			exponent<<=23;
-			mantissa=(mantissa&MantissaMask)<<13;
+			sign <<= 16;
+			exponent = (exponent >> 10) + 127 - 15;
+			exponent <<= 23;
+			mantissa = (mantissa & MantissaMask) << 13;
 
-			union.uint32=sign|exponent|mantissa;
+			union.uint32 = sign | exponent | mantissa;
 			return union.single;
 #else
 			int exp=value.Value&ExponentMask;
@@ -548,49 +548,49 @@ namespace OpenGL.Core
 		public static implicit operator double(glFloat16 value)
 		{
 #if !SLOW_BUT_PLATTFORM_INDEPENDENT_FLOAT_CONVERSION
-			ushort v=value.Value;
+			ushort v = value.Value;
 
 			// Signed zero?
-			if((v&0x7FFF)==0) return BitConverter.Int64BitsToDouble((long)v<<48); // Return signed zero
+			if ((v & 0x7FFF) == 0) return BitConverter.Int64BitsToDouble((long)v << 48); // Return signed zero
 
 			// Not zero
-			uint sign=(uint)v&SignMask;
-			uint exponent=(uint)v&ExponentMask;
-			uint mantissa=(uint)v&MantissaMask;
+			uint sign = (uint)v & SignMask;
+			uint exponent = (uint)v & ExponentMask;
+			uint mantissa = (uint)v & MantissaMask;
 
 			// Infinity or NaN (all the exponent bits are set)
-			if(exponent==ExponentMask)
+			if (exponent == ExponentMask)
 			{
-				if(mantissa!=0) return double.NaN;
-				if(sign==0) return double.PositiveInfinity;
+				if (mantissa != 0) return double.NaN;
+				if (sign == 0) return double.PositiveInfinity;
 				return double.NegativeInfinity;
 			}
 
 			// Denormalized number
-			if(exponent==0)
+			if (exponent == 0)
 			{
 				// Find the exponent by loop-shifting until the leading one flows out mantissa
-				exponent=(exponent>>10)+1023-15+1;
+				exponent = (exponent >> 10) + 1023 - 15 + 1;
 				do
 				{
 					exponent--;
-					mantissa<<=1;
-				} while((mantissa&0x0400)==0);
+					mantissa <<= 1;
+				} while ((mantissa & 0x0400) == 0);
 
-				sign<<=16;
-				exponent<<=20;
-				mantissa=(mantissa&MantissaMask)<<10;
+				sign <<= 16;
+				exponent <<= 20;
+				mantissa = (mantissa & MantissaMask) << 10;
 
-				return BitConverter.Int64BitsToDouble((long)(sign|exponent|mantissa)<<32);
+				return BitConverter.Int64BitsToDouble((long)(sign | exponent | mantissa) << 32);
 			}
 
 			// Normalized number
-			sign<<=16;
-			exponent=(exponent>>10)+1023-15;
-			exponent<<=20;
-			mantissa=(mantissa&MantissaMask)<<10;
+			sign <<= 16;
+			exponent = (exponent >> 10) + 1023 - 15;
+			exponent <<= 20;
+			mantissa = (mantissa & MantissaMask) << 10;
 
-			return BitConverter.Int64BitsToDouble((long)(sign|exponent|mantissa)<<32);
+			return BitConverter.Int64BitsToDouble((long)(sign | exponent | mantissa) << 32);
 #else
 			int exp=value.Value&ExponentMask;
 			int man=value.Value&MantissaMask;
@@ -618,7 +618,7 @@ namespace OpenGL.Core
 			return -(man*Epsilon)*(1<<(exp>>10));
 #endif
 		}
-	
+
 		// TODO: Add compare operators
 	}
 }

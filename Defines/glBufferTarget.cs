@@ -32,71 +32,71 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Buffer for vertex attributes.
 		/// </summary>
-		ARRAY_BUFFER=0x8892,
+		ARRAY_BUFFER = 0x8892,
 
 		/// <summary>
 		/// Atomic counter storages.
 		/// </summary>
-		ATOMIC_COUNTER_BUFFER=0x92C0,
+		ATOMIC_COUNTER_BUFFER = 0x92C0,
 
 		/// <summary>
 		/// Source buffer for copy operations.
 		/// </summary>
-		COPY_READ_BUFFER=0x8F36,
+		COPY_READ_BUFFER = 0x8F36,
 
 		/// <summary>
 		/// Destination buffer for copy operations.
 		/// </summary>
-		COPY_WRITE_BUFFER=0x8F37,
+		COPY_WRITE_BUFFER = 0x8F37,
 
 		/// <summary>
 		/// Buffer for indirect compute dispatch commands.
 		/// </summary>
-		DISPATCH_INDIRECT_BUFFER=0x90EE,
+		DISPATCH_INDIRECT_BUFFER = 0x90EE,
 
 		/// <summary>
 		/// Buffer for indirect command arguments.
 		/// </summary>
-		DRAW_INDIRECT_BUFFER=0x8F3F,
+		DRAW_INDIRECT_BUFFER = 0x8F3F,
 
 		/// <summary>
 		/// Buffer for vertex array indices.
 		/// </summary>
-		ELEMENT_ARRAY_BUFFER=0x8893,
+		ELEMENT_ARRAY_BUFFER = 0x8893,
 
 		/// <summary>
 		/// Target buffer for pixel read operations.
 		/// </summary>
-		PIXEL_PACK_BUFFER=0x88EB,
+		PIXEL_PACK_BUFFER = 0x88EB,
 
 		/// <summary>
 		/// Source buffer for pixel write operations.
 		/// </summary>
-		PIXEL_UNPACK_BUFFER=0x88EC,
+		PIXEL_UNPACK_BUFFER = 0x88EC,
 
 		/// <summary>
 		/// Buffer for query results.
 		/// </summary>
-		QUERY_BUFFER=0x9192,
+		QUERY_BUFFER = 0x9192,
 
 		/// <summary>
 		/// Read-write storages for shaders.
 		/// </summary>
-		SHADER_STORAGE_BUFFER=0x90D2,
+		SHADER_STORAGE_BUFFER = 0x90D2,
 
 		/// <summary>
 		/// Buffer for texture data.
 		/// </summary>
-		TEXTURE_BUFFER=0x8C2A,
+		TEXTURE_BUFFER = 0x8C2A,
 
 		/// <summary>
 		/// Buffer for transform feedback results.
 		/// </summary>
-		TRANSFORM_FEEDBACK_BUFFER=0x8C8E,
+		TRANSFORM_FEEDBACK_BUFFER = 0x8C8E,
 
 		/// <summary>
 		/// Uniform block storage.
 		/// </summary>
-		UNIFORM_BUFFER=0x8A11,
+		UNIFORM_BUFFER = 0x8A11,
 	}
 }

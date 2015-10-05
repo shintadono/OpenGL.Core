@@ -32,126 +32,126 @@ namespace OpenGL.Core
 		/// <summary>
 		/// -
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// 8-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_BYTE=0x1401,
+		UNSIGNED_BYTE = 0x1401,
 
 		/// <summary>
 		/// 8-bit signed integer.
 		/// </summary>
-		BYTE=0x1400,
+		BYTE = 0x1400,
 
 		/// <summary>
 		/// 16-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_SHORT=0x1403,
+		UNSIGNED_SHORT = 0x1403,
 
 		/// <summary>
 		/// 16-bit signed integer.
 		/// </summary>
-		SHORT=0x1402,
+		SHORT = 0x1402,
 
 		/// <summary>
 		/// 32-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_INT=0x1405,
+		UNSIGNED_INT = 0x1405,
 
 		/// <summary>
 		/// 32-bit signed integer.
 		/// </summary>
-		INT=0x1404,
+		INT = 0x1404,
 
 		/// <summary>
 		/// 16-bit signed float.
 		/// </summary>
-		HALF_FLOAT=0x140B,
+		HALF_FLOAT = 0x140B,
 
 		/// <summary>
 		/// 32-bit signed float.
 		/// </summary>
-		FLOAT=0x1406,
+		FLOAT = 0x1406,
 
 		/// <summary>
 		/// 3-bit + 3-bit + 2-bit as 8-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_BYTE_3_3_2=0x8032,
+		UNSIGNED_BYTE_3_3_2 = 0x8032,
 
 		/// <summary>
 		/// 3-bit + 3-bit + 2-bit as 8-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_BYTE_2_3_3_REV=0x8362,
+		UNSIGNED_BYTE_2_3_3_REV = 0x8362,
 
 		/// <summary>
 		/// 5-bit + 6-bit + 5-bit as 16-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_SHORT_5_6_5=0x8363,
+		UNSIGNED_SHORT_5_6_5 = 0x8363,
 
 		/// <summary>
 		/// 5-bit + 6-bit + 5-bit as 16-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_SHORT_5_6_5_REV=0x8364,
+		UNSIGNED_SHORT_5_6_5_REV = 0x8364,
 
 		/// <summary>
 		/// 4 * 4-bit as 16-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_SHORT_4_4_4_4=0x8033,
+		UNSIGNED_SHORT_4_4_4_4 = 0x8033,
 
 		/// <summary>
 		/// 4 * 4-bit as 16-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_SHORT_4_4_4_4_REV=0x8365,
+		UNSIGNED_SHORT_4_4_4_4_REV = 0x8365,
 
 		/// <summary>
 		/// 3 * 5-bit + 1-bit as 16-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_SHORT_5_5_5_1=0x8034,
+		UNSIGNED_SHORT_5_5_5_1 = 0x8034,
 
 		/// <summary>
 		/// 3 * 5-bit + 1-bit as 16-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_SHORT_1_5_5_5_REV=0x8366,
+		UNSIGNED_SHORT_1_5_5_5_REV = 0x8366,
 
 		/// <summary>
 		/// 4 * 8-bit as 32-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_INT_8_8_8_8=0x8035,
+		UNSIGNED_INT_8_8_8_8 = 0x8035,
 
 		/// <summary>
 		/// 4 * 8-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_8_8_8_8_REV=0x8367,
+		UNSIGNED_INT_8_8_8_8_REV = 0x8367,
 
 		/// <summary>
 		/// 3 * 10-bit + 2-bit as 32-bit unsigned integer.
 		/// </summary>
-		UNSIGNED_INT_10_10_10_2=0x8036,
+		UNSIGNED_INT_10_10_10_2 = 0x8036,
 
 		/// <summary>
 		/// 3 * 10-bit + 2-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_2_10_10_10_REV=0x8368,
+		UNSIGNED_INT_2_10_10_10_REV = 0x8368,
 
 		/// <summary>
 		/// 24-bit + 8-bit as 32-bit unsigned integer. (Combined depth and stencil value)
 		/// </summary>
-		UNSIGNED_INT_24_8=0x84FA,
+		UNSIGNED_INT_24_8 = 0x84FA,
 
 		/// <summary>
 		/// 11-bit + 11-bit + 10-bit floats as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_10F_11F_11F_REV=0x8C3B,
+		UNSIGNED_INT_10F_11F_11F_REV = 0x8C3B,
 
 		/// <summary>
 		/// 3 * 9-bit + 5-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
-		UNSIGNED_INT_5_9_9_9_REV=0x8C3E,
+		UNSIGNED_INT_5_9_9_9_REV = 0x8C3E,
 
 		/// <summary>
 		/// 32-bit float + 24-bit + 8-bit as 64-bit. (Combined depth (32F) and stencil (8) value)
 		/// </summary>
-		FLOAT_32_UNSIGNED_INT_24_8_REV=0x8DAD,
+		FLOAT_32_UNSIGNED_INT_24_8_REV = 0x8DAD,
 	}
 }

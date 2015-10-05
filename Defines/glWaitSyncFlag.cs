@@ -35,6 +35,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// -
 		/// </summary>
-		None=0x00000000,
+		None = 0x00000000,
 	}
 }

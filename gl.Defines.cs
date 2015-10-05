@@ -26,43 +26,46 @@ namespace OpenGL.Core
 {
 	public static partial class gl
 	{
-		internal const string DLLName="OPENGL32.DLL";
+		internal const string DLLName = "OPENGL32.DLL";
 
-		const string platformErrorString="Value to big for 32bit platform.";
+		const string platformErrorString = "Value to big for 32bit platform.";
 		static string PlatformErrorString { get { return platformErrorString; } }
 
-		const string platformArrayErrorString="A value in the array to big for 32bit platform.";
+		const string platformWrongTypeErrorString = "Plattform is 64bit and value need 64bit to store, but argument is only 32bit.";
+		static string PlatformWrongTypeErrorString { get { return platformWrongTypeErrorString; } }
+
+		const string platformArrayErrorString = "A value in the array to big for 32bit platform.";
 		static string PlatformArrayErrorString { get { return platformErrorString; } }
 
 		/// <summary>
 		/// Returned by <see cref="gl.GetProgramResourceIndex"/> on error.
 		/// And outputted by <see cref="gl.GetUniformSubroutineuiv"/> , if location is unused.
 		/// </summary>
-		public const uint INVALID_INDEX=0xFFFFFFFFu;
+		public const uint INVALID_INDEX = 0xFFFFFFFFu;
 
 		/// <summary>
 		/// Special timeout value for <see cref="gl.WaitSync"/>. (must be used)
 		/// </summary>
-		public const ulong TIMEOUT_IGNORED=0xFFFFFFFFFFFFFFFFul;
+		public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFFul;
 
 		/// <summary>
 		/// Value for <see cref="gl.VertexAttribFormat"/> and <see cref="O:gl.VertexAttribPointer"/>size argument.
 		/// </summary>
-		public const int BGRA=0x80E1;
+		public const int BGRA = 0x80E1;
 
 		/// <summary>
 		/// For convenience: Use in places, where int is used instead of bool (GLboolean).
 		/// </summary>
-		public const int FALSE=0;
+		public const int FALSE = 0;
 
 		/// <summary>
 		/// For convenience: Use in places, where int is used instead of bool (GLboolean).
 		/// </summary>
-		public const int TRUE=1;
+		public const int TRUE = 1;
 
 		/// <summary>
 		/// For convenience: Can be used, in places where int is used instead of a specific enum, to avoid typecasts where unnecessary.
 		/// </summary>
-		public const int NONE=0;
+		public const int NONE = 0;
 	}
 }

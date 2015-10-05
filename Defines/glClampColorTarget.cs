@@ -32,6 +32,6 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Only allowed target.
 		/// </summary>
-		CLAMP_READ_COLOR=0x891C,
+		CLAMP_READ_COLOR = 0x891C,
 	}
 }

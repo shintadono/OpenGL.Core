@@ -32,27 +32,27 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns the shader type (<see cref="glShaderType"/>).
 		/// </summary>
-		SHADER_TYPE=0x8B4F,
+		SHADER_TYPE = 0x8B4F,
 
 		/// <summary>
 		/// <b>gl.TRUE</b> is returned if the shader has been flagged for deletion, and <b>gl.FALSE</b> is returned otherwise.
 		/// </summary>
-		DELETE_STATUS=0x8B80,
+		DELETE_STATUS = 0x8B80,
 
 		/// <summary>
 		/// <b>gl.TRUE</b> is returned if the shader was last compiled successfully, and <b>gl.FALSE</b> is returned otherwise.
 		/// </summary>
-		COMPILE_STATUS=0x8B81,
+		COMPILE_STATUS = 0x8B81,
 
 		/// <summary>
 		/// Length of the info log, including a null terminator, is returned. If there is no info log, zero is returned.
 		/// </summary>
-		INFO_LOG_LENGTH=0x8B84,
+		INFO_LOG_LENGTH = 0x8B84,
 
 		/// <summary>
 		/// Length of the concatenation of the source strings making up the shader source, including a null terminator,
 		/// is returned. If no source has been defined, zero is returned.
 		/// </summary>
-		SHADER_SOURCE_LENGTH=0x8B88,
+		SHADER_SOURCE_LENGTH = 0x8B88,
 	}
 }

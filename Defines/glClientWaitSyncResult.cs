@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Sync object was signaled at the time <see cref="gl.ClientWaitSync"/> was called.
 		/// </summary>
-		ALREADY_SIGNALED=0x911A,
+		ALREADY_SIGNALED = 0x911A,
 
 		/// <summary>
 		/// <see cref="gl.ClientWaitSync"/> retured because the timeout period expired.
 		/// </summary>
-		TIMEOUT_EXPIRED=0x911B,
+		TIMEOUT_EXPIRED = 0x911B,
 
 		/// <summary>
 		/// Sync object was signaled before timeout period expired.
 		/// </summary>
-		CONDITION_SATISFIED=0x911C,
+		CONDITION_SATISFIED = 0x911C,
 
 		/// <summary>
 		/// <see cref="gl.ClientWaitSync"/> failed and returned immediately.
 		/// </summary>
-		WAIT_FAILED=0x911D,
+		WAIT_FAILED = 0x911D,
 	}
 }

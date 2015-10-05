@@ -32,56 +32,56 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Default width of framebuffer without attachments.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT_WIDTH=0x9310,
+		FRAMEBUFFER_DEFAULT_WIDTH = 0x9310,
 
 		/// <summary>
 		/// Default height of framebuffer without attachments.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT_HEIGHT=0x9311,
+		FRAMEBUFFER_DEFAULT_HEIGHT = 0x9311,
 
 		/// <summary>
 		/// Default number of layers of framebuffer without attachments.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT_LAYERS=0x9312,
+		FRAMEBUFFER_DEFAULT_LAYERS = 0x9312,
 
 		/// <summary>
 		/// Default number of samples of framebuffer without attachments.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT_SAMPLES=0x9313,
+		FRAMEBUFFER_DEFAULT_SAMPLES = 0x9313,
 
 		/// <summary>
 		/// Default sample location pattern of framebuffer without attachments.
 		/// </summary>
-		FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS=0x9314,
+		FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS = 0x9314,
 
 		/// <summary>
 		/// Is doublebuffering supported?
 		/// </summary>
-		DOUBLEBUFFER=0x0C32,
+		DOUBLEBUFFER = 0x0C32,
 
 		/// <summary>
 		/// Implementation preferred pixel format. Returns <see cref="glImplementationColorReadFormat"/>.
 		/// </summary>
-		IMPLEMENTATION_COLOR_READ_FORMAT=0x8B9B,
+		IMPLEMENTATION_COLOR_READ_FORMAT = 0x8B9B,
 
 		/// <summary>
 		/// Implementation preferred pixel data type. Returns <see cref="glImplementationColorReadType"/>.
 		/// </summary>
-		IMPLEMENTATION_COLOR_READ_TYPE=0x8B9A,
+		IMPLEMENTATION_COLOR_READ_TYPE = 0x8B9A,
 
 		/// <summary>
 		/// Number of multisample buffers.
 		/// </summary>
-		SAMPLE_BUFFERS=0x80A8,
+		SAMPLE_BUFFERS = 0x80A8,
 
 		/// <summary>
 		/// Coverage mask size.
 		/// </summary>
-		SAMPLES=0x80A9,
+		SAMPLES = 0x80A9,
 
 		/// <summary>
 		/// Is stereo supported?
 		/// </summary>
-		STEREO=0x0C33,
+		STEREO = 0x0C33,
 	}
 }

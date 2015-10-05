@@ -697,9 +697,9 @@ namespace OpenGL.Core
 		/// <param name="name">Returns the name of the shader subroutine uniform.</param>
 		public static void GetActiveSubroutineUniformName(uint program, glShaderType shadertype, uint index, int bufSize, out int length, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveSubroutineUniformName(program, shadertype, index, bufSize+1, out length, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveSubroutineUniformName(program, shadertype, index, bufSize + 1, out length, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -715,9 +715,9 @@ namespace OpenGL.Core
 		/// <param name="name">Returns the name of the shader subroutine.</param>
 		public static void GetActiveSubroutineName(uint program, glShaderType shadertype, uint index, int bufSize, out int length, out string name)
 		{
-			StringBuilder tmp=new StringBuilder(bufSize+1);
-			_GetActiveSubroutineName(program, shadertype, index, bufSize+1, out length, tmp);
-			name=tmp.ToString();
+			StringBuilder tmp = new StringBuilder(bufSize + 1);
+			_GetActiveSubroutineName(program, shadertype, index, bufSize + 1, out length, tmp);
+			name = tmp.ToString();
 		}
 		#endregion
 
@@ -749,7 +749,7 @@ namespace OpenGL.Core
 		/// <returns>The new transform feedback object names as array.</returns>
 		public static uint[] GenTransformFeedbacks(int count)
 		{
-			uint[] ret=new uint[count];
+			uint[] ret = new uint[count];
 			_GenTransformFeedbacks(count, ret);
 			return ret;
 		}
@@ -768,74 +768,74 @@ namespace OpenGL.Core
 
 		private static void Load_VERSION_4_0()
 		{
-			MinSampleShading=GetAddress<glMinSampleShading>("glMinSampleShading");
-			BlendEquationi=GetAddress<glBlendEquationi>("glBlendEquationi");
-			BlendEquationSeparatei=GetAddress<glBlendEquationSeparatei>("glBlendEquationSeparatei");
-			BlendFunci=GetAddress<glBlendFunci>("glBlendFunci");
-			BlendFuncSeparatei=GetAddress<glBlendFuncSeparatei>("glBlendFuncSeparatei");
-			DrawArraysIndirect=GetAddress<glDrawArraysIndirect>("glDrawArraysIndirect");
-			DrawElementsIndirect=GetAddress<glDrawElementsIndirect>("glDrawElementsIndirect");
-			Uniform1d=GetAddress<glUniform1d>("glUniform1d");
-			Uniform2d=GetAddress<glUniform2d>("glUniform2d");
-			Uniform3d=GetAddress<glUniform3d>("glUniform3d");
-			Uniform4d=GetAddress<glUniform4d>("glUniform4d");
-			Uniform1dv=GetAddress<glUniform1dv>("glUniform1dv");
-			Uniform2dv=GetAddress<glUniform2dv>("glUniform2dv");
-			Uniform3dv=GetAddress<glUniform3dv>("glUniform3dv");
-			Uniform4dv=GetAddress<glUniform4dv>("glUniform4dv");
-			UniformMatrix2dv=GetAddress<glUniformMatrix2dv>("glUniformMatrix2dv");
-			UniformMatrix3dv=GetAddress<glUniformMatrix3dv>("glUniformMatrix3dv");
-			UniformMatrix4dv=GetAddress<glUniformMatrix4dv>("glUniformMatrix4dv");
-			UniformMatrix2x3dv=GetAddress<glUniformMatrix2x3dv>("glUniformMatrix2x3dv");
-			UniformMatrix2x4dv=GetAddress<glUniformMatrix2x4dv>("glUniformMatrix2x4dv");
-			UniformMatrix3x2dv=GetAddress<glUniformMatrix3x2dv>("glUniformMatrix3x2dv");
-			UniformMatrix3x4dv=GetAddress<glUniformMatrix3x4dv>("glUniformMatrix3x4dv");
-			UniformMatrix4x2dv=GetAddress<glUniformMatrix4x2dv>("glUniformMatrix4x2dv");
-			UniformMatrix4x3dv=GetAddress<glUniformMatrix4x3dv>("glUniformMatrix4x3dv");
-			GetUniformd=GetAddress<glGetUniformd>("glGetUniformdv");
-			GetUniformdv=GetAddress<glGetUniformdv>("glGetUniformdv");
-			GetSubroutineUniformLocation=GetAddress<glGetSubroutineUniformLocation>("glGetSubroutineUniformLocation");
-			GetSubroutineIndex=GetAddress<glGetSubroutineIndex>("glGetSubroutineIndex");
-			GetActiveSubroutineUniformi=GetAddress<glGetActiveSubroutineUniformi>("glGetActiveSubroutineUniformiv");
-			GetActiveSubroutineUniformiv=GetAddress<glGetActiveSubroutineUniformiv>("glGetActiveSubroutineUniformiv");
-			_GetActiveSubroutineUniformName=GetAddress<glGetActiveSubroutineUniformName>("glGetActiveSubroutineUniformName");
-			_GetActiveSubroutineName=GetAddress<glGetActiveSubroutineName>("glGetActiveSubroutineName");
-			UniformSubroutinesuiv=GetAddress<glUniformSubroutinesuiv>("glUniformSubroutinesuiv");
-			GetUniformSubroutineui=GetAddress<glGetUniformSubroutineui>("glGetUniformSubroutineuiv");
-			GetUniformSubroutineuiv=GetAddress<glGetUniformSubroutineuiv>("glGetUniformSubroutineuiv");
-			GetProgramStagei=GetAddress<glGetProgramStagei>("glGetProgramStageiv");
-			GetProgramStageiv=GetAddress<glGetProgramStageiv>("glGetProgramStageiv");
-			PatchParameteri=GetAddress<glPatchParameteri>("glPatchParameteri");
-			PatchParameterfv=GetAddress<glPatchParameterfv>("glPatchParameterfv");
-			BindTransformFeedback=GetAddress<glBindTransformFeedback>("glBindTransformFeedback");
-			DeleteTransformFeedbacks=GetAddress<glDeleteTransformFeedbacks>("glDeleteTransformFeedbacks");
-			_GenTransformFeedback=GetAddress<glGenTransformFeedback>("glGenTransformFeedbacks");
-			_GenTransformFeedbacks=GetAddress<glGenTransformFeedbacks>("glGenTransformFeedbacks");
-			IsTransformFeedback=GetAddress<glIsTransformFeedback>("glIsTransformFeedback");
-			PauseTransformFeedback=GetAddress<glPauseTransformFeedback>("glPauseTransformFeedback");
-			ResumeTransformFeedback=GetAddress<glResumeTransformFeedback>("glResumeTransformFeedback");
-			DrawTransformFeedback=GetAddress<glDrawTransformFeedback>("glDrawTransformFeedback");
-			DrawTransformFeedbackStream=GetAddress<glDrawTransformFeedbackStream>("glDrawTransformFeedbackStream");
-			BeginQueryIndexed=GetAddress<glBeginQueryIndexed>("glBeginQueryIndexed");
-			EndQueryIndexed=GetAddress<glEndQueryIndexed>("glEndQueryIndexed");
-			GetQueryIndexedi=GetAddress<glGetQueryIndexedi>("glGetQueryIndexediv");
-			GetQueryIndexediv=GetAddress<glGetQueryIndexediv>("glGetQueryIndexediv");
+			MinSampleShading = GetAddress<glMinSampleShading>("glMinSampleShading");
+			BlendEquationi = GetAddress<glBlendEquationi>("glBlendEquationi");
+			BlendEquationSeparatei = GetAddress<glBlendEquationSeparatei>("glBlendEquationSeparatei");
+			BlendFunci = GetAddress<glBlendFunci>("glBlendFunci");
+			BlendFuncSeparatei = GetAddress<glBlendFuncSeparatei>("glBlendFuncSeparatei");
+			DrawArraysIndirect = GetAddress<glDrawArraysIndirect>("glDrawArraysIndirect");
+			DrawElementsIndirect = GetAddress<glDrawElementsIndirect>("glDrawElementsIndirect");
+			Uniform1d = GetAddress<glUniform1d>("glUniform1d");
+			Uniform2d = GetAddress<glUniform2d>("glUniform2d");
+			Uniform3d = GetAddress<glUniform3d>("glUniform3d");
+			Uniform4d = GetAddress<glUniform4d>("glUniform4d");
+			Uniform1dv = GetAddress<glUniform1dv>("glUniform1dv");
+			Uniform2dv = GetAddress<glUniform2dv>("glUniform2dv");
+			Uniform3dv = GetAddress<glUniform3dv>("glUniform3dv");
+			Uniform4dv = GetAddress<glUniform4dv>("glUniform4dv");
+			UniformMatrix2dv = GetAddress<glUniformMatrix2dv>("glUniformMatrix2dv");
+			UniformMatrix3dv = GetAddress<glUniformMatrix3dv>("glUniformMatrix3dv");
+			UniformMatrix4dv = GetAddress<glUniformMatrix4dv>("glUniformMatrix4dv");
+			UniformMatrix2x3dv = GetAddress<glUniformMatrix2x3dv>("glUniformMatrix2x3dv");
+			UniformMatrix2x4dv = GetAddress<glUniformMatrix2x4dv>("glUniformMatrix2x4dv");
+			UniformMatrix3x2dv = GetAddress<glUniformMatrix3x2dv>("glUniformMatrix3x2dv");
+			UniformMatrix3x4dv = GetAddress<glUniformMatrix3x4dv>("glUniformMatrix3x4dv");
+			UniformMatrix4x2dv = GetAddress<glUniformMatrix4x2dv>("glUniformMatrix4x2dv");
+			UniformMatrix4x3dv = GetAddress<glUniformMatrix4x3dv>("glUniformMatrix4x3dv");
+			GetUniformd = GetAddress<glGetUniformd>("glGetUniformdv");
+			GetUniformdv = GetAddress<glGetUniformdv>("glGetUniformdv");
+			GetSubroutineUniformLocation = GetAddress<glGetSubroutineUniformLocation>("glGetSubroutineUniformLocation");
+			GetSubroutineIndex = GetAddress<glGetSubroutineIndex>("glGetSubroutineIndex");
+			GetActiveSubroutineUniformi = GetAddress<glGetActiveSubroutineUniformi>("glGetActiveSubroutineUniformiv");
+			GetActiveSubroutineUniformiv = GetAddress<glGetActiveSubroutineUniformiv>("glGetActiveSubroutineUniformiv");
+			_GetActiveSubroutineUniformName = GetAddress<glGetActiveSubroutineUniformName>("glGetActiveSubroutineUniformName");
+			_GetActiveSubroutineName = GetAddress<glGetActiveSubroutineName>("glGetActiveSubroutineName");
+			UniformSubroutinesuiv = GetAddress<glUniformSubroutinesuiv>("glUniformSubroutinesuiv");
+			GetUniformSubroutineui = GetAddress<glGetUniformSubroutineui>("glGetUniformSubroutineuiv");
+			GetUniformSubroutineuiv = GetAddress<glGetUniformSubroutineuiv>("glGetUniformSubroutineuiv");
+			GetProgramStagei = GetAddress<glGetProgramStagei>("glGetProgramStageiv");
+			GetProgramStageiv = GetAddress<glGetProgramStageiv>("glGetProgramStageiv");
+			PatchParameteri = GetAddress<glPatchParameteri>("glPatchParameteri");
+			PatchParameterfv = GetAddress<glPatchParameterfv>("glPatchParameterfv");
+			BindTransformFeedback = GetAddress<glBindTransformFeedback>("glBindTransformFeedback");
+			DeleteTransformFeedbacks = GetAddress<glDeleteTransformFeedbacks>("glDeleteTransformFeedbacks");
+			_GenTransformFeedback = GetAddress<glGenTransformFeedback>("glGenTransformFeedbacks");
+			_GenTransformFeedbacks = GetAddress<glGenTransformFeedbacks>("glGenTransformFeedbacks");
+			IsTransformFeedback = GetAddress<glIsTransformFeedback>("glIsTransformFeedback");
+			PauseTransformFeedback = GetAddress<glPauseTransformFeedback>("glPauseTransformFeedback");
+			ResumeTransformFeedback = GetAddress<glResumeTransformFeedback>("glResumeTransformFeedback");
+			DrawTransformFeedback = GetAddress<glDrawTransformFeedback>("glDrawTransformFeedback");
+			DrawTransformFeedbackStream = GetAddress<glDrawTransformFeedbackStream>("glDrawTransformFeedbackStream");
+			BeginQueryIndexed = GetAddress<glBeginQueryIndexed>("glBeginQueryIndexed");
+			EndQueryIndexed = GetAddress<glEndQueryIndexed>("glEndQueryIndexed");
+			GetQueryIndexedi = GetAddress<glGetQueryIndexedi>("glGetQueryIndexediv");
+			GetQueryIndexediv = GetAddress<glGetQueryIndexediv>("glGetQueryIndexediv");
 
-			VERSION_4_0=VERSION_3_3&&MinSampleShading!=null&&BlendEquationi!=null&&BlendEquationSeparatei!=null&&
-				BlendFunci!=null&&BlendFuncSeparatei!=null&&DrawArraysIndirect!=null&&DrawElementsIndirect!=null&&
-				Uniform1d!=null&&Uniform2d!=null&&Uniform3d!=null&&Uniform4d!=null&&
-				Uniform1dv!=null&&Uniform2dv!=null&&Uniform3dv!=null&&Uniform4dv!=null&&
-				UniformMatrix2dv!=null&&UniformMatrix3dv!=null&&UniformMatrix4dv!=null&&
-				UniformMatrix2x3dv!=null&&UniformMatrix2x4dv!=null&&UniformMatrix3x2dv!=null&&
-				UniformMatrix3x4dv!=null&&UniformMatrix4x2dv!=null&&UniformMatrix4x3dv!=null&&
-				GetUniformdv!=null&&GetSubroutineUniformLocation!=null&&GetSubroutineIndex!=null&&
-				GetActiveSubroutineUniformiv!=null&&_GetActiveSubroutineUniformName!=null&&
-				_GetActiveSubroutineName!=null&&UniformSubroutinesuiv!=null&&GetUniformSubroutineuiv!=null&&
-				GetProgramStageiv!=null&&PatchParameteri!=null&&PatchParameterfv!=null&&
-				BindTransformFeedback!=null&&DeleteTransformFeedbacks!=null&&_GenTransformFeedbacks!=null&&
-				IsTransformFeedback!=null&&PauseTransformFeedback!=null&&ResumeTransformFeedback!=null&&
-				DrawTransformFeedback!=null&&DrawTransformFeedbackStream!=null&&BeginQueryIndexed!=null&&
-				EndQueryIndexed!=null&&GetQueryIndexediv!=null;
+			VERSION_4_0 = VERSION_3_3 && MinSampleShading != null && BlendEquationi != null && BlendEquationSeparatei != null &&
+				BlendFunci != null && BlendFuncSeparatei != null && DrawArraysIndirect != null && DrawElementsIndirect != null &&
+				Uniform1d != null && Uniform2d != null && Uniform3d != null && Uniform4d != null &&
+				Uniform1dv != null && Uniform2dv != null && Uniform3dv != null && Uniform4dv != null &&
+				UniformMatrix2dv != null && UniformMatrix3dv != null && UniformMatrix4dv != null &&
+				UniformMatrix2x3dv != null && UniformMatrix2x4dv != null && UniformMatrix3x2dv != null &&
+				UniformMatrix3x4dv != null && UniformMatrix4x2dv != null && UniformMatrix4x3dv != null &&
+				GetUniformdv != null && GetSubroutineUniformLocation != null && GetSubroutineIndex != null &&
+				GetActiveSubroutineUniformiv != null && _GetActiveSubroutineUniformName != null &&
+				_GetActiveSubroutineName != null && UniformSubroutinesuiv != null && GetUniformSubroutineuiv != null &&
+				GetProgramStageiv != null && PatchParameteri != null && PatchParameterfv != null &&
+				BindTransformFeedback != null && DeleteTransformFeedbacks != null && _GenTransformFeedbacks != null &&
+				IsTransformFeedback != null && PauseTransformFeedback != null && ResumeTransformFeedback != null &&
+				DrawTransformFeedback != null && DrawTransformFeedbackStream != null && BeginQueryIndexed != null &&
+				EndQueryIndexed != null && GetQueryIndexediv != null;
 		}
 	}
 }

@@ -35,41 +35,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// 3D texture object.
 		/// </summary>
-		TEXTURE_3D=0x806F,
+		TEXTURE_3D = 0x806F,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// </summary>
-		PROXY_TEXTURE_3D=0x8070,
+		PROXY_TEXTURE_3D = 0x8070,
 
 		/// <summary>
 		/// 2D texture array object.
 		/// </summary>
-		TEXTURE_2D_ARRAY=0x8C1A,
+		TEXTURE_2D_ARRAY = 0x8C1A,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// </summary>
-		PROXY_TEXTURE_2D_ARRAY=0x8C1B,
+		PROXY_TEXTURE_2D_ARRAY = 0x8C1B,
 
 		/// <summary>
 		/// Cube map array texture object.
 		/// </summary>
-		TEXTURE_CUBE_MAP_ARRAY=0x9009,
+		TEXTURE_CUBE_MAP_ARRAY = 0x9009,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// </summary>
-		PROXY_TEXTURE_CUBE_MAP_ARRAY=0x900B,
+		PROXY_TEXTURE_CUBE_MAP_ARRAY = 0x900B,
 
 		/// <summary>
 		/// 2D multisample texture array object.
 		/// </summary>
-		TEXTURE_2D_MULTISAMPLE_ARRAY=0x9102,
+		TEXTURE_2D_MULTISAMPLE_ARRAY = 0x9102,
 
 		/// <summary>
 		/// Virtual texture object, used to check, if a real texture object of that kind and specification could be created.
 		/// </summary>
-		PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY=0x9103,
+		PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY = 0x9103,
 	}
 }

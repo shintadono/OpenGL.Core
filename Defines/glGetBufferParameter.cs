@@ -32,51 +32,51 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Returns size of the buffer.
 		/// </summary>
-		BUFFER_SIZE=0x8764,
+		BUFFER_SIZE = 0x8764,
 
 		/// <summary>
 		/// Returns buffer usage as <see cref="glBufferUsage"/>.
 		/// </summary>
-		BUFFER_USAGE=0x8765,
+		BUFFER_USAGE = 0x8765,
 
 		/// <summary>
 		/// Returns buffer access as <see cref="glAccess"/>.
 		/// </summary>
-		BUFFER_ACCESS=0x88BB,
+		BUFFER_ACCESS = 0x88BB,
 
 		/// <summary>
 		/// Returns buffer access flags as <see cref="glMapBufferRangeAccess"/>.
 		/// </summary>
-		BUFFER_ACCESS_FLAGS=0x911F,
+		BUFFER_ACCESS_FLAGS = 0x911F,
 
 		/// <summary>
 		/// <see cref="gl.TRUE"/> if the storage is set immutable, <see cref="gl.FALSE"/> otherwise.
 		/// </summary>
-		BUFFER_IMMUTABLE_STORAGE=0x821F,
+		BUFFER_IMMUTABLE_STORAGE = 0x821F,
 
 		/// <summary>
 		/// <see cref="gl.TRUE"/> if a region of the buffer is mapped, <see cref="gl.FALSE"/> otherwise.
 		/// </summary>
-		BUFFER_MAPPED=0x88BC,
+		BUFFER_MAPPED = 0x88BC,
 
 		/// <summary>
 		/// Only allowed in <see cref="gl.GetBufferPointerv"/>.
 		/// </summary>
-		BUFFER_MAP_POINTER=0x88BD,
+		BUFFER_MAP_POINTER = 0x88BD,
 
 		/// <summary>
 		/// Returns the offset of the mapped region.
 		/// </summary>
-		BUFFER_MAP_OFFSET=0x9121,
+		BUFFER_MAP_OFFSET = 0x9121,
 
 		/// <summary>
 		/// Returns the size of the mapped region.
 		/// </summary>
-		BUFFER_MAP_LENGTH=0x9120,
+		BUFFER_MAP_LENGTH = 0x9120,
 
 		/// <summary>
 		/// Returns buffer storage flags as <see cref="glBufferStorageFlag"/>.
 		/// </summary>
-		BUFFER_STORAGE_FLAGS=0x8220,
+		BUFFER_STORAGE_FLAGS = 0x8220,
 	}
 }

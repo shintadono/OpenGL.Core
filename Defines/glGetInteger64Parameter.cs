@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Maximum value for element indices. (For compatibility with OpengGL ES implementations.)
 		/// </summary>
-		MAX_ELEMENT_INDEX=0x8D6B,
+		MAX_ELEMENT_INDEX = 0x8D6B,
 
 		/// <summary>
 		/// Maximum shader storage size.
 		/// </summary>
-		MAX_SHADER_STORAGE_BLOCK_SIZE=0x90DE,
+		MAX_SHADER_STORAGE_BLOCK_SIZE = 0x90DE,
 
 		/// <summary>
 		/// Maximum server wait timeout value.
 		/// </summary>
-		MAX_SERVER_WAIT_TIMEOUT=0x9111,
+		MAX_SERVER_WAIT_TIMEOUT = 0x9111,
 
 		/// <summary>
 		/// Current time.
 		/// </summary>
-		TIMESTAMP=0x8E28,
+		TIMESTAMP = 0x8E28,
 	}
 }

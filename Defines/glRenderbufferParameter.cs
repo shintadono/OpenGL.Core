@@ -32,51 +32,51 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Width of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_WIDTH=0x8D42,
+		RENDERBUFFER_WIDTH = 0x8D42,
 
 		/// <summary>
 		/// Height of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_HEIGHT=0x8D43,
+		RENDERBUFFER_HEIGHT = 0x8D43,
 
 		/// <summary>
 		/// Internal format (<see cref="glInternalFormat"/>) of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_INTERNAL_FORMAT=0x8D44,
+		RENDERBUFFER_INTERNAL_FORMAT = 0x8D44,
 
 		/// <summary>
 		/// Size in bits of the red component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_RED_SIZE=0x8D50,
+		RENDERBUFFER_RED_SIZE = 0x8D50,
 
 		/// <summary>
 		/// Size in bits of the green component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_GREEN_SIZE=0x8D51,
+		RENDERBUFFER_GREEN_SIZE = 0x8D51,
 
 		/// <summary>
 		/// Size in bits of the blue component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_BLUE_SIZE=0x8D52,
+		RENDERBUFFER_BLUE_SIZE = 0x8D52,
 
 		/// <summary>
 		/// Size in bits of the alpha component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_ALPHA_SIZE=0x8D53,
+		RENDERBUFFER_ALPHA_SIZE = 0x8D53,
 
 		/// <summary>
 		/// Size in bits of the depth component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_DEPTH_SIZE=0x8D54,
+		RENDERBUFFER_DEPTH_SIZE = 0x8D54,
 
 		/// <summary>
 		/// Size in bits of the stencil component of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_STENCIL_SIZE=0x8D55,
+		RENDERBUFFER_STENCIL_SIZE = 0x8D55,
 
 		/// <summary>
 		/// Number of samples of the renderbuffer.
 		/// </summary>
-		RENDERBUFFER_SAMPLES=0x8CAB,
+		RENDERBUFFER_SAMPLES = 0x8CAB,
 	}
 }

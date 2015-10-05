@@ -32,21 +32,21 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Number of active resources on an interface.
 		/// </summary>
-		ACTIVE_RESOURCES=0x92F5,
+		ACTIVE_RESOURCES = 0x92F5,
 
 		/// <summary>
 		/// Maximum name length for active resources.
 		/// </summary>
-		MAX_NAME_LENGTH=0x92F6,
+		MAX_NAME_LENGTH = 0x92F6,
 
 		/// <summary>
 		/// Maximum number of active variables for active resources.
 		/// </summary>
-		MAX_NUM_ACTIVE_VARIABLES=0x92F7,
+		MAX_NUM_ACTIVE_VARIABLES = 0x92F7,
 
 		/// <summary>
 		/// Maximum number of compatible subroutines for subroutine uniforms.
 		/// </summary>
-		MAX_NUM_COMPATIBLE_SUBROUTINES=0x92F8,
+		MAX_NUM_COMPATIBLE_SUBROUTINES = 0x92F8,
 	}
 }

@@ -36,31 +36,31 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Component not present or not supported.
 		/// </summary>
-		NONE=0,
+		NONE = 0,
 
 		/// <summary>
 		/// Component is signed integer.
 		/// </summary>
-		INT=0x1404,
+		INT = 0x1404,
 
 		/// <summary>
 		/// Component is unsigned integer.
 		/// </summary>
-		UNSIGNED_INT=0x1405,
+		UNSIGNED_INT = 0x1405,
 
 		/// <summary>
 		/// Component is floating-point.
 		/// </summary>
-		FLOAT=0x1406,
+		FLOAT = 0x1406,
 
 		/// <summary>
 		/// Component is unsigned normalized.
 		/// </summary>
-		UNSIGNED_NORMALIZED=0x8C17,
+		UNSIGNED_NORMALIZED = 0x8C17,
 
 		/// <summary>
 		/// Component is signed normalized.
 		/// </summary>
-		SIGNED_NORMALIZED=0x8F9C,
+		SIGNED_NORMALIZED = 0x8F9C,
 	}
 }

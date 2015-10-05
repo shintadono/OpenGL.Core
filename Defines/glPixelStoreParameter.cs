@@ -36,123 +36,123 @@ namespace OpenGL.Core
 		/// <summary>
 		/// <b>Boolean</b> value indicating, if byte-order for multi-byte values are swapped.
 		/// </summary>
-		UNPACK_SWAP_BYTES=0x0CF0,
+		UNPACK_SWAP_BYTES = 0x0CF0,
 
 		/// <summary>
 		/// <b>Boolean</b> value indicating the bit-order.
 		/// </summary>
 		[Obsolete("Deprecated since 4.3")]
-		UNPACK_LSB_FIRST=0x0CF1,
+		UNPACK_LSB_FIRST = 0x0CF1,
 
 		/// <summary>
 		/// <b>Integer</b>, overrides the <i>width</i> argument of pixel storage operations.
 		/// </summary>
-		UNPACK_ROW_LENGTH=0x0CF2,
+		UNPACK_ROW_LENGTH = 0x0CF2,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of rows skipped (for each image) in pixel storage operations.
 		/// </summary>
-		UNPACK_SKIP_ROWS=0x0CF3,
+		UNPACK_SKIP_ROWS = 0x0CF3,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of pixels skipped in each row in pixel storage operations.
 		/// </summary>
-		UNPACK_SKIP_PIXELS=0x0CF4,
+		UNPACK_SKIP_PIXELS = 0x0CF4,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the row-to-row spacing of the elements (byte position).
 		/// </summary>
-		UNPACK_ALIGNMENT=0x0CF5,
-		
+		UNPACK_ALIGNMENT = 0x0CF5,
+
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of images skipped in pixel storage operations.
 		/// </summary>
-		UNPACK_SKIP_IMAGES=0x806D,
+		UNPACK_SKIP_IMAGES = 0x806D,
 
 		/// <summary>
 		/// <b>Integer</b>, overrides the <i>height</i> argument of pixel storage operations.
 		/// </summary>
-		UNPACK_IMAGE_HEIGHT=0x806E,
+		UNPACK_IMAGE_HEIGHT = 0x806E,
 
 		/// <summary>
 		/// <b>Boolean</b> value indicating, if byte-order for multi-byte values are swapped.
 		/// </summary>
-		PACK_SWAP_BYTES=0x0D00,
+		PACK_SWAP_BYTES = 0x0D00,
 
 		/// <summary>
 		/// <b>Boolean</b> value indicating the bit-order.
 		/// </summary>
 		[Obsolete("Deprecated since 4.3")]
-		PACK_LSB_FIRST=0x0D01,
+		PACK_LSB_FIRST = 0x0D01,
 
 		/// <summary>
 		/// <b>Integer</b>, overrides the <i>width</i> argument of pixel storage operations.
 		/// </summary>
-		PACK_ROW_LENGTH=0x0D02,
+		PACK_ROW_LENGTH = 0x0D02,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of rows skipped (for each image) in pixel storage operations.
 		/// </summary>
-		PACK_SKIP_ROWS=0x0D03,
+		PACK_SKIP_ROWS = 0x0D03,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of pixels skipped in each row in pixel storage operations.
 		/// </summary>
-		PACK_SKIP_PIXELS=0x0D04,
+		PACK_SKIP_PIXELS = 0x0D04,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the row-to-row spacing of the elements (byte position).
 		/// </summary>
-		PACK_ALIGNMENT=0x0D05,
+		PACK_ALIGNMENT = 0x0D05,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the number of images skipped in pixel storage operations.
 		/// </summary>
-		PACK_SKIP_IMAGES=0x806B,
+		PACK_SKIP_IMAGES = 0x806B,
 
 		/// <summary>
 		/// <b>Integer</b>, overrides the <i>height</i> argument of pixel storage operations.
 		/// </summary>
-		PACK_IMAGE_HEIGHT=0x806C,
+		PACK_IMAGE_HEIGHT = 0x806C,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block width in pixel storage operations.
 		/// </summary>
-		UNPACK_COMPRESSED_BLOCK_WIDTH=0x9127,
+		UNPACK_COMPRESSED_BLOCK_WIDTH = 0x9127,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block height in pixel storage operations.
 		/// </summary>
-		UNPACK_COMPRESSED_BLOCK_HEIGHT=0x9128,
+		UNPACK_COMPRESSED_BLOCK_HEIGHT = 0x9128,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block depth in pixel storage operations.
 		/// </summary>
-		UNPACK_COMPRESSED_BLOCK_DEPTH=0x9129,
+		UNPACK_COMPRESSED_BLOCK_DEPTH = 0x9129,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block size in bytes in pixel storage operations.
 		/// </summary>
-		UNPACK_COMPRESSED_BLOCK_SIZE=0x912A,
+		UNPACK_COMPRESSED_BLOCK_SIZE = 0x912A,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block width in pixel storage operations.
 		/// </summary>
-		PACK_COMPRESSED_BLOCK_WIDTH=0x912B,
+		PACK_COMPRESSED_BLOCK_WIDTH = 0x912B,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block height in pixel storage operations.
 		/// </summary>
-		PACK_COMPRESSED_BLOCK_HEIGHT=0x912C,
+		PACK_COMPRESSED_BLOCK_HEIGHT = 0x912C,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block depth in pixel storage operations.
 		/// </summary>
-		PACK_COMPRESSED_BLOCK_DEPTH=0x912D,
+		PACK_COMPRESSED_BLOCK_DEPTH = 0x912D,
 
 		/// <summary>
 		/// <b>Integer</b>, specifying the compressed block size in bytes in pixel storage operations.
 		/// </summary>
-		PACK_COMPRESSED_BLOCK_SIZE=0x912E,
+		PACK_COMPRESSED_BLOCK_SIZE = 0x912E,
 	}
 }

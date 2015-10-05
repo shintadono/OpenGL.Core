@@ -32,41 +32,41 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Keep current value.
 		/// </summary>
-		KEEP=0x1E00,
+		KEEP = 0x1E00,
 
 		/// <summary>
 		/// Set to zero.
 		/// </summary>
-		ZERO=0,
+		ZERO = 0,
 
 		/// <summary>
 		/// Replace with reference value.
 		/// </summary>
-		REPLACE=0x1E01,
+		REPLACE = 0x1E01,
 
 		/// <summary>
 		/// Increment with saturation current value.
 		/// </summary>
-		INCR=0x1E02,
+		INCR = 0x1E02,
 
 		/// <summary>
 		/// Decrement with saturation current value.
 		/// </summary>
-		DECR=0x1E03,
+		DECR = 0x1E03,
 
 		/// <summary>
 		/// Invert current value.
 		/// </summary>
-		INVERT=0x150A,
+		INVERT = 0x150A,
 
 		/// <summary>
 		/// Increment without saturation current value.
 		/// </summary>
-		INCR_WRAP=0x8507,
+		INCR_WRAP = 0x8507,
 
 		/// <summary>
 		/// Decrement without saturation current value.
 		/// </summary>
-		DECR_WRAP=0x8508,
+		DECR_WRAP = 0x8508,
 	}
 }

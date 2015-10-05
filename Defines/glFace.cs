@@ -37,16 +37,16 @@ namespace OpenGL.Core
 		/// <summary>
 		/// Handle front face.
 		/// </summary>
-		FRONT=0x0404,
+		FRONT = 0x0404,
 
 		/// <summary>
 		/// Handle back face.
 		/// </summary>
-		BACK=0x0405,
+		BACK = 0x0405,
 
 		/// <summary>
 		/// Handle front and back face.
 		/// </summary>
-		FRONT_AND_BACK=0x0408,
+		FRONT_AND_BACK = 0x0408,
 	}
 }
