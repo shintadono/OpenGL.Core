@@ -22,6 +22,8 @@
 // MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 #endregion
 
+using System;
+
 namespace OpenGL.Core
 {
 	/// <summary>
@@ -588,5 +590,53 @@ namespace OpenGL.Core
 		/// Equivalent to GLSL keyword <c>atomic_uint</c>.
 		/// </summary>
 		UNSIGNED_INT_ATOMIC_COUNTER = 0x92DB,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>int64_t</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//INT64_ARB = 0x140E,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>i64vec2</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//INT64_VEC2_ARB = 0x8FE9,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>i64vec3</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//INT64_VEC3_ARB = 0x8FEA,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>i64vec4</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//INT64_VEC4_ARB = 0x8FEB,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>uint64_t</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//UNSIGNED_INT64_ARB = 0x140F,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>u64vec2</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//UNSIGNED_INT64_VEC2_ARB = 0x8FF5,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>u64vec3</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//UNSIGNED_INT64_VEC3_ARB = 0x8FF6,
+
+		///// <summary>
+		///// Equivalent to GLSL keyword <c>u64vec4</c>.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//UNSIGNED_INT64_VEC4_ARB = 0x8FF7,
 	}
 }

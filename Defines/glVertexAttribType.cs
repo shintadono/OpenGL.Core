@@ -22,6 +22,8 @@
 // MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
 #endregion
 
+using System;
+
 namespace OpenGL.Core
 {
 	/// <summary>
@@ -94,5 +96,17 @@ namespace OpenGL.Core
 		/// 3 * 10-bit + 2-bit as 32-bit unsigned integer in reversed order.
 		/// </summary>
 		INT_2_10_10_10_REV = 0x8D9F,
+
+		///// <summary>
+		///// Unsigned 64-bit integer.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//UNSIGNED_INT64_ARB = 0x140F,
+
+		///// <summary>
+		///// Signed 64-bit integer.
+		///// </summary>
+		//[Obsolete("OpenGL extension: GL_ARB_gpu_shader_int64")]
+		//INT64_ARB = 0x140E,
 	}
 }

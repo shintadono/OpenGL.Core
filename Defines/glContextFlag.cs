@@ -46,5 +46,23 @@ namespace OpenGL.Core
 		/// Returned, if context is a robust context.
 		/// </summary>
 		CONTEXT_FLAG_ROBUST_ACCESS_BIT = 0x00000004,
+
+		/// <summary>
+		/// Returned, if context is a robust context.
+		/// </summary>
+		[Obsolete("Use glContextFlag.CONTEXT_FLAG_ROBUST_ACCESS_BIT instead.")]
+		CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB = CONTEXT_FLAG_ROBUST_ACCESS_BIT,
+
+		///// <summary>
+		///// Returned, if no error behavior is enabled for this context.
+		///// </summary>
+		//[Obsolete("OpenGL ES extension: GL_KHR_no_error.")]
+		//CONTEXT_FLAG_NO_ERROR_BIT_KHR = 0x00000008,
+
+		///// <summary>
+		///// Returned, if context is created in protected mode with an extension such as EGL_EXT_protected_context.
+		///// </summary>
+		//[Obsolete("OpenGL ES extension: GL_EXT_protected_context.")]
+		//CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT = 0x00000010,
 	}
 }

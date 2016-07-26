@@ -643,7 +643,7 @@ namespace OpenGL.Core
 		MAX_PROGRAM_TEXEL_OFFSET = 0x8905,
 
 		/// <summary>
-		/// Maximum texel offset for <c>textureGather</c>.
+		/// Maximum texel offset for <c>textureGatherOffsets</c>.
 		/// </summary>
 		MAX_PROGRAM_TEXTURE_GATHER_OFFSET = 0x8E5F,
 
@@ -663,7 +663,7 @@ namespace OpenGL.Core
 		MAX_SAMPLE_MASK_WORDS = 0x8E59,
 
 		/// <summary>
-		/// Maximum number of samples supported for all non-integer formats.
+		/// Maximum number of samples supported for multisampling.
 		/// </summary>
 		MAX_SAMPLES = 0x8D57,
 
@@ -718,7 +718,7 @@ namespace OpenGL.Core
 		MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS = 0x8E81,
 
 		/// <summary>
-		/// Maximum number of components for a tesselation control shader per-patch outputs.
+		/// Total number of components for tesselation control shader outputs.
 		/// </summary>
 		MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS = 0x8E85,
 
@@ -942,7 +942,7 @@ namespace OpenGL.Core
 		MIN_PROGRAM_TEXEL_OFFSET = 0x8904,
 
 		/// <summary>
-		/// Minimum texel offset for <c>textureGather</c>.
+		/// Minimum texel offset for <c>textureGatherOffsets</c>.
 		/// </summary>
 		MIN_PROGRAM_TEXTURE_GATHER_OFFSET = 0x8E5E,
 

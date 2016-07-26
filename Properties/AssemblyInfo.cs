@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("OpenGL.Core")]
-[assembly: AssemblyCopyright("Copyright © 2014 by the Authors")]
+[assembly: AssemblyCopyright("Copyright © 2014-2016 by the Authors")]
 [assembly: AssemblyTrademark("OpenGL is a registered trademark, of Silicon Graphics International.")]
 [assembly: AssemblyCulture("")]
 
